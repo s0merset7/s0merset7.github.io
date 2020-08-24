@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Somerset&#39;s Blog</title>
+    <link>https://s0merset7.github.io/posts/</link>
+    <description>Somerset&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2020
+All rights reserved</copyright>
+    <lastBuildDate>Sun, 23 Aug 2020 23:34:33 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Hack the Box Walkthroughs Intro</title>
+        <link>https://s0merset7.github.io/posts/intro/</link>
+        <pubDate>Sun, 23 Aug 2020 23:34:33 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/intro/</guid>
+        <description>Hello and welcome to my walkthroughs for Hack the Box (HTB). I&amp;rsquo;ve challenged myself with completing 50 HTB machines over the course of 6 months to learn hacking tools and skills that will prepare me for a career in the field. Being that I am very much a beginner at the time of writing this, I won&amp;rsquo;t be able to solve any machine without guidance at first, so my plan is as follows:</description>
+      </item>
+    
+      <item>
+        <title>Markdown Syntax Guide</title>
+        <link>https://s0merset7.github.io/posts/markdown-syntax/</link>
+        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/markdown-syntax/</guid>
+        <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
+      </item>
+    
+      <item>
+        <title>Rich Content</title>
+        <link>https://s0merset7.github.io/posts/rich-content/</link>
+        <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/rich-content/</guid>
+        <description>A brief description of Hugo Shortcodes</description>
+      </item>
+    
+      <item>
+        <title>Placeholder Text</title>
+        <link>https://s0merset7.github.io/posts/placeholder-text/</link>
+        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/placeholder-text/</guid>
+        <description>Lorem Ipsum Dolor Si Amet</description>
+      </item>
+    
+      <item>
+        <title>Math Typesetting</title>
+        <link>https://s0merset7.github.io/posts/math-typesetting/</link>
+        <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/math-typesetting/</guid>
+        <description>A brief guide to setup KaTeX</description>
+      </item>
+    
+      <item>
+        <title>Emoji Support</title>
+        <link>https://s0merset7.github.io/posts/emoji-support/</link>
+        <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/emoji-support/</guid>
+        <description>Guide to emoji usage in Hugo</description>
+      </item>
+    
+      <item>
+        <title>Lorem Ipsum</title>
+        <link>https://s0merset7.github.io/posts/lorem-ipsum/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/lorem-ipsum/</guid>
+        <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc finibus enim quis eros vulputate cursus.</description>
+      </item>
+    
+      <item>
+        <title>More KaTeX</title>
+        <link>https://s0merset7.github.io/posts/more-katex/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/more-katex/</guid>
+        <description>Brief explanation of mhchem, copy-tex, etc.</description>
+      </item>
+    
+      <item>
+        <title>Read Me</title>
+        <link>https://s0merset7.github.io/posts/readme/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/readme/</guid>
+        <description>A copy of the README.md file.</description>
+      </item>
+    
+      <item>
+        <title>Syntax Highlighting Test</title>
+        <link>https://s0merset7.github.io/posts/syntax-highlighting-test/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/syntax-highlighting-test/</guid>
+        <description>A page full of code samples.</description>
+      </item>
+    
+  </channel>
+</rss>
