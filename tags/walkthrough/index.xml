@@ -15,7 +15,7 @@ All rights reserved</copyright>
         <pubDate>Sun, 23 Aug 2020 23:56:29 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/jerry_machine/</guid>
-        <description>In a new terminal window, run nmap -sC -sV 10.10.10.95  -sC: Adds on the &amp;ldquo;default&amp;rdquo; scripts to be run which include things like &amp;ldquo;Speed&amp;rdquo;, &amp;ldquo;usefulness&amp;rdquo;, and &amp;ldquo;Intrusiveness&amp;rdquo;. You can check them out in more detail by looking under &amp;ldquo;default&amp;rdquo; in the Script Categories section on this website -sV: Probe open ports to determine service/version info      It looks like we only have one open port (8080) and it&amp;rsquo;s running a service called Apache Tomcat/Coyote JSP engine 1.</description>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }   In a new terminal window, run nmap -sC -sV 10.10.10.95 -sC: Adds on the &amp;ldquo;default&amp;rdquo; scripts to be run which include things like &amp;ldquo;Speed&amp;rdquo;, &amp;ldquo;usefulness&amp;rdquo;, and &amp;ldquo;Intrusiveness&amp;rdquo;. You can check them out in more detail by looking under &amp;ldquo;default&amp;rdquo; in the Script Categories section on this website -sV: Probe open ports to determine service/version info    It looks like we only have one open port (8080) and it&amp;rsquo;s running a service called Apache Tomcat/Coyote JSP engine 1.</description>
       </item>
     
       <item>
@@ -24,7 +24,7 @@ All rights reserved</copyright>
         <pubDate>Sun, 23 Aug 2020 23:56:20 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/lame_machine/</guid>
-        <description>In a new terminal window, run nmap -sV -O -F --version-light 10.10.10.3    Another option is to open Zenmap and run a port scan on the same IP (to see just the information on the ports, you can go to the Ports/Hosts tab)  Zenmap is a program that does a really good job at visualizing and breaking down nmap commands into digestible bites        Now there a a LOT of different ways to use nmap, and being that I&amp;rsquo;m still learning you are going to be seeing a lot of different versions, but I will do my best to explain what each version does.</description>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }   In a new terminal window, run nmap -sV -O -F --version-light 10.10.10.3   Another option is to open Zenmap and run a port scan on the same IP (to see just the information on the ports, you can go to the Ports/Hosts tab) Zenmap is a program that does a really good job at visualizing and breaking down nmap commands into digestible bites       Now there a a LOT of different ways to use nmap, and being that I&amp;rsquo;m still learning you are going to be seeing a lot of different versions, but I will do my best to explain what each version does.</description>
       </item>
     
   </channel>

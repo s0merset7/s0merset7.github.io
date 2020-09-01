@@ -428,7 +428,7 @@
   
 
     
-      <meta name="theme-color" content="#dd587c">
+      <meta name="theme-color" content="#902b37">
     
 
   
@@ -436,7 +436,7 @@
   <style>
   
     html {
-      --accent: #dd587c;
+      --accent: #902b37;
     }
   
     .req-js,
@@ -496,7 +496,7 @@
 
   <script>
     
-      'use strict';const ROOT=document.documentElement;const SHEET=document.documentElement.style;const META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'};function setLight(){ROOT.dataset.mode='light'};if(localStorage.getItem('isDark')=='true'){setDark()}else if(localStorage.getItem('isDark')=='false'){setLight()};function getAccent(){if(ROOT.dataset.mode==='dark'){if(localStorage.getItem('darkAccent')===null){var currentAccent="#dd587c"}else{var currentAccent=localStorage.getItem('darkAccent')
+      'use strict';const ROOT=document.documentElement;const SHEET=document.documentElement.style;const META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'};function setLight(){ROOT.dataset.mode='light'};if(localStorage.getItem('isDark')=='true'){setDark()}else if(localStorage.getItem('isDark')=='false'){setLight()};function getAccent(){if(ROOT.dataset.mode==='dark'){if(localStorage.getItem('darkAccent')===null){var currentAccent="#902b37"}else{var currentAccent=localStorage.getItem('darkAccent')
 }}else if(ROOT.dataset.mode==='light'){if(localStorage.getItem('lightAccent')===null){var currentAccent="#225670"}else{var currentAccent=localStorage.getItem('lightAccent')
 }};return currentAccent};var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent);META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent);PALETTE.value=activeAccent;META_THEME_COLOR.setAttribute('content',activeAccent);};document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function smoothTransition(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'};function userModeChange(){smoothTransition();if(ROOT.dataset.mode=='light'){setDark();localStorage.setItem('isDark','true')
 }else{setLight();localStorage.setItem('isDark','false')
@@ -556,7 +556,7 @@
   
     <form role="search">
   
-      <label class="label-form" for="search-input">Search</label><input class="input-text" type="search" id="search-input" title='Search field. Accepts from 2 to 42 characters.' name="q" placeholder="ie.: Type what you&#39;re looking for" minlength="2" maxlength="42" pattern="^[\S].*" required><button aria-label="Run search." class="btn outline-dashed" type="submit"><svg aria-hidden="true"><use xlink:href="#search"/></svg></button>
+      <label class="label-form" for="search-input">Search</label><input class="input-text" type="search" id="search-input" title='Search field. Accepts from 2 to 42 characters.' name="q" placeholder="Type what you&#39;re looking for" minlength="2" maxlength="42" pattern="^[\S].*" required><button aria-label="Run search." class="btn outline-dashed" type="submit"><svg aria-hidden="true"><use xlink:href="#search"/></svg></button>
     </form>
   <hr>
 </section>
@@ -597,7 +597,7 @@ All rights reserved</p>
 
 
 <section class="req-js">
-  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#dd587c" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#dd587c"><option value="#1f676b"><option value="#f3a530"><option value="#902b37"><option value="#1dbc91"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"><option value="#1f676b"><option value="#f3a530"><option value="#dd587c"><option value="#1dbc91"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
 </section>
 
 
