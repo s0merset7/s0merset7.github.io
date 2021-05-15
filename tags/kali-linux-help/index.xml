@@ -8,7 +8,17 @@
     <language>en</language>
     <copyright>Copyright © 2020
 All rights reserved</copyright>
-    <lastBuildDate>Sun, 23 Aug 2020 23:34:33 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/kali-linux-help/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 May 2021 20:34:33 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/kali-linux-help/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Kali Linux Setup and Customization</title>
+        <link>https://s0merset7.github.io/posts/kali_setup/</link>
+        <pubDate>Fri, 14 May 2021 20:34:33 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/kali_setup/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
+There are two main ways in which you can set up Kali Linux, you can either create a Virtual Machine (VM) and install the Kali Operating System (OS), or you can Single/Dual Boot your computer to have Kali (both of which are 100% free).</description>
+      </item>
+    
       <item>
         <title>Hack the Box Walkthroughs Intro</title>
         <link>https://s0merset7.github.io/posts/intro/</link>
@@ -16,16 +26,6 @@ All rights reserved</copyright>
         
         <guid>https://s0merset7.github.io/posts/intro/</guid>
         <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Hello and welcome to my walkthroughs for Hack the Box (HTB). I&amp;rsquo;ve challenged myself with completing 50 HTB machines to learn hacking tools and skills that will prepare me for a career in the field. Being that I am a beginner at the time of writing this, I won&amp;rsquo;t be able to solve any machine without guidance at first, so my plan is as follows:</description>
-      </item>
-    
-      <item>
-        <title>Kali Linux Setup and Customization</title>
-        <link>https://s0merset7.github.io/posts/kali_setup/</link>
-        <pubDate>Thu, 14 May 2020 20:34:33 -0700</pubDate>
-        
-        <guid>https://s0merset7.github.io/posts/kali_setup/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
-There are two main ways in which you can set up Kali Linux, you can either create a Virtual Machine (VM) and install the Kali Operating System (OS), or you can Single/Dual Boot your computer to have Kali (both of which are 100% free).</description>
       </item>
     
   </channel>
