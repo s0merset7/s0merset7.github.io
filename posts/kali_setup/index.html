@@ -431,7 +431,7 @@
       "inLanguage": "en",
       "datePublished": "2021-05-14",
       "dateModified": "2021-05-14",
-      "wordCount" : "1096",
+      "wordCount" : "1098",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -661,7 +661,7 @@
 </ol>
 <pre aria-label="Box containing code sample." tabindex=0><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y &amp;&amp; sudo apt-get dist-upgrade -y
 </code></pre><p><br><div style="padding-left: 2em;">[ ] What this does is first retrieve any new updates to existing systems, follows through with upgrading them, and then upgrades the distributions along with all packets and their dependencies
-<br><div style="padding-left: 2em;">[ ] The <code>-y</code> flag automatically answers <em>yes</em> to any pop up questions to save time</div> </div></p>
+<div style="padding-left: 2em;">[ ] The <code>-y</code> flag automatically answers <em>yes</em> to any pop up questions to save time</div> </div></p>
 <ol start="2">
 <li>Copy paste the above code into a <code>.sh</code> file and give the script executable permissions by running <code>chmod +x file.sh</code> in the terminal, where <code>file.sh</code> is the name of the file you created</li>
 <li>Simply <code>cd</code> to where you stored your file and run <code>./file.sh</code> to update your system. Don&rsquo;t forget to update often!</li>
@@ -676,8 +676,9 @@
 <p>There are MANY tools that come preinstalled with your Kali Linux OS, however, there are plenty of tools that can be very helpful to include on your system. Listed below are a couple tools, followed by the terminal command needed to install the tool (these commands assume you are acting as root user. If you get an error message saying you do not have permissions, add <code>sudo</code> to the beginning of the command and enter your password with the prompt). Feel free to check out the corresponding links for more information on the usage of each tool:</p>
 <ol>
 <li><strong>Preload</strong> <code>apt-get install preload</code>
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Automatically identifies a users most commonly used applications and preloads binaries and dependencies into memory to provide faster access
-<br><input disabled="" type="checkbox"> <a href="https://www.linux.com/training-tutorials/using-preload-speed-linux/">https://www.linux.com/training-tutorials/using-preload-speed-linux/</a></div></li>
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Automatically identifies a users most commonly used applications and preloads binaries and dependencies into memory to provide faster access</div>
+ <div style="padding-left: 4em;">[ ] https://www.linux.com/training-tutorials/using-preload-speed-linux/</div>
+</li>
 <li><strong>BleachBit</strong> <code>apt-get install bleachbit</code>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Frees disk space and improves privacy by freeing the cache, deleting cookies, cleaning internet history, shredding temporary files, deleting logs, and discarding other unnecessary files. Advanced features include shredding files to prevent recovery, and wiping free disk space to hide traces of files than have not been fully deleted
 <br><input disabled="" type="checkbox"> <a href="https://www.bleachbit.org/">https://www.bleachbit.org/</a></div></li>
