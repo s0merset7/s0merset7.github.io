@@ -431,7 +431,7 @@
       "inLanguage": "en",
       "datePublished": "2021-05-14",
       "dateModified": "2021-05-14",
-      "wordCount" : "1092",
+      "wordCount" : "1086",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -640,7 +640,7 @@
 <p><em>Note: Much of the below information is summarized from <a href="https://ethicalhackingblog.com/about/">Gus Khawaja&rsquo;s</a> Pluralsight course &ldquo;Pentration Testing and Ethical Hacking with Kali Linux&rdquo;. Much credit goes to Gus&rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight</em></p>
 <p>There are two main ways in which you can set up Kali Linux, you can either create a Virtual Machine (VM) and install the Kali Operating System (OS), or you can Single/Dual Boot your computer to have Kali (both of which are 100% free). While both options may seem a bit daunting to newcomers, there are plenty of great tutorials available online:</p>
 <ul>
-<li>*VM Option: <a href="https://www.nakivo.com/blog/how-to-install-kali-linux-on-virtualbox/">https://www.nakivo.com/blog/how-to-install-kali-linux-on-virtualbox/</a></li>
+<li>VM Option: <a href="https://www.nakivo.com/blog/how-to-install-kali-linux-on-virtualbox/">https://www.nakivo.com/blog/how-to-install-kali-linux-on-virtualbox/</a></li>
 <li>Single Boot Option: <a href="https://www.kali.org/docs/installation/hard-disk-install/">https://www.kali.org/docs/installation/hard-disk-install/</a></li>
 <li>Dual Boot Option: <a href="https://www.kali.org/docs/installation/">https://www.kali.org/docs/installation/</a> (click on one of the three &ldquo;Dual Booting&rdquo; links that correspond to your current OS)</li>
 </ul>
@@ -662,8 +662,13 @@
 <li>Kali Linux normally doesn&rsquo;t auto update, so what we can do is make a simple script that does everything for us when we run it:</li>
 </ol>
 <pre aria-label="Box containing code sample." tabindex=0><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y &amp;&amp; sudo apt-get dist-upgrade -y
-</code></pre><p><br><div style="padding-left: 2em;">[ ] What this does is first retrieve any new updates to existing systems, follows through with upgrading them, and then upgrades the distributions along with all packets and their dependencies
-<div style="padding-left: 2em;">[ ] The <code>-y</code> flag automatically answers <em>yes</em> to any pop up questions to save time</div> </div></p>
+</code></pre><ul>
+<li>What this does is first retrieve any new updates to existing systems, follows through with upgrading them, and then upgrades the distributions along with all packets and their dependencies
+<ul>
+<li>The <code>-y</code> flag automatically answers <em>yes</em> to any pop up questions to save time</div> </div></li>
+</ul>
+</li>
+</ul>
 <ol start="2">
 <li>Copy paste the above code into a <code>.sh</code> file and give the script executable permissions by running <code>chmod +x file.sh</code> in the terminal, where <code>file.sh</code> is the name of the file you created</li>
 <li>Simply <code>cd</code> to where you stored your file and run <code>./file.sh</code> to update your system. Don&rsquo;t forget to update often!</li>
@@ -679,8 +684,7 @@
 <ol>
 <li><strong>Preload</strong> <code>apt-get install preload</code>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Automatically identifies a users most commonly used applications and preloads binaries and dependencies into memory to provide faster access</div>
- <div style="padding-left: 4em;">[ ] https://www.linux.com/training-tutorials/using-preload-speed-linux/</div>
-</li>
+<br><input disabled="" type="checkbox"> <a href="https://www.linux.com/training-tutorials/using-preload-speed-linux/">https://www.linux.com/training-tutorials/using-preload-speed-linux/</a></div></li>
 <li><strong>BleachBit</strong> <code>apt-get install bleachbit</code>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Frees disk space and improves privacy by freeing the cache, deleting cookies, cleaning internet history, shredding temporary files, deleting logs, and discarding other unnecessary files. Advanced features include shredding files to prevent recovery, and wiping free disk space to hide traces of files than have not been fully deleted
 <br><input disabled="" type="checkbox"> <a href="https://www.bleachbit.org/">https://www.bleachbit.org/</a></div></li>
