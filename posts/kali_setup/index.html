@@ -431,7 +431,7 @@
       "inLanguage": "en",
       "datePublished": "2021-05-14",
       "dateModified": "2021-05-14",
-      "wordCount" : "1086",
+      "wordCount" : "1084",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -665,7 +665,7 @@
 </code></pre><ul>
 <li>What this does is first retrieve any new updates to existing systems, follows through with upgrading them, and then upgrades the distributions along with all packets and their dependencies
 <ul>
-<li>The <code>-y</code> flag automatically answers <em>yes</em> to any pop up questions to save time</div> </div></li>
+<li>The <code>-y</code> flag automatically answers <em>yes</em> to any pop up questions to save time</li>
 </ul>
 </li>
 </ul>
@@ -683,7 +683,7 @@
 <p>There are MANY tools that come preinstalled with your Kali Linux OS, however, there are plenty of tools that can be very helpful to include on your system. Listed below are a couple tools, followed by the terminal command needed to install the tool (these commands assume you are acting as root user. If you get an error message saying you do not have permissions, add <code>sudo</code> to the beginning of the command and enter your password with the prompt). Feel free to check out the corresponding links for more information on the usage of each tool:</p>
 <ol>
 <li><strong>Preload</strong> <code>apt-get install preload</code>
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Automatically identifies a users most commonly used applications and preloads binaries and dependencies into memory to provide faster access</div>
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Automatically identifies a users most commonly used applications and preloads binaries and dependencies into memory to provide faster access
 <br><input disabled="" type="checkbox"> <a href="https://www.linux.com/training-tutorials/using-preload-speed-linux/">https://www.linux.com/training-tutorials/using-preload-speed-linux/</a></div></li>
 <li><strong>BleachBit</strong> <code>apt-get install bleachbit</code>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Frees disk space and improves privacy by freeing the cache, deleting cookies, cleaning internet history, shredding temporary files, deleting logs, and discarding other unnecessary files. Advanced features include shredding files to prevent recovery, and wiping free disk space to hide traces of files than have not been fully deleted
@@ -719,7 +719,9 @@
 mkdir keys_backup_ssh
 mv ssh_host_* keys_backup_ssh
 dpkg-reconfigure openssh-server
-</code></pre><p><br><div style="padding-left: 2em;">[ ] What this code does is first navigate to where the ssh keys exist on your computer, then creates a directory where we will store the current key pairs just as a backup. Then we move all items in the current directory who&rsquo;s name starts with &ldquo;ssh_host&rdquo; to the newly made backup directory. Finally, we run the last command that generates new keys for us</div></p>
+</code></pre><ul>
+<li>What this code does is first navigate to where the ssh keys exist on your computer, then creates a directory where we will store the current key pairs just as a backup. Then we move all items in the current directory who&rsquo;s name starts with &ldquo;ssh_host&rdquo; to the newly made backup directory. Finally, we run the last command that generates new keys for us</div></li>
+</ul>
 
 
 
