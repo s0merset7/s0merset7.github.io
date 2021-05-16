@@ -6,24 +6,24 @@
     <description>Somerset&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2020
+    <copyright>Copyright © 2021
 All rights reserved</copyright>
     <lastBuildDate>Fri, 14 May 2021 20:34:33 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-      <item>
-        <title>HacktheBox</title>
-        <link>https://s0merset7.github.io/tags/hackthebox/</link>
-        <pubDate>Fri, 14 May 2021 20:34:33 -0700</pubDate>
-        
-        <guid>https://s0merset7.github.io/tags/hackthebox/</guid>
-        <description></description>
-      </item>
-    
       <item>
         <title>Kali Linux Help</title>
         <link>https://s0merset7.github.io/tags/kali-linux-help/</link>
         <pubDate>Fri, 14 May 2021 20:34:33 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/tags/kali-linux-help/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>HacktheBox</title>
+        <link>https://s0merset7.github.io/tags/hackthebox/</link>
+        <pubDate>Sun, 23 Aug 2020 23:56:29 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/tags/hackthebox/</guid>
         <description></description>
       </item>
     
