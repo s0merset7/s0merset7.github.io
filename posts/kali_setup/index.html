@@ -431,7 +431,7 @@
       "inLanguage": "en",
       "datePublished": "2021-05-14",
       "dateModified": "2021-05-14",
-      "wordCount" : "1086",
+      "wordCount" : "1084",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -662,13 +662,16 @@
 <li>Kali Linux normally doesn&rsquo;t auto update, so what we can do is make a simple script that does everything for us when we run it:</li>
 </ol>
 <pre aria-label="Box containing code sample." tabindex=0><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y &amp;&amp; sudo apt-get dist-upgrade -y
-</code></pre><pre aria-label="Box containing code sample." tabindex=0><code>* What this does is first retrieve any new updates to existing systems, follows through with upgrading them, and then upgrades the distributions along with all packets and their dependencies
-    * The `-y` flag automatically answers *yes* to any pop up questions to save time
-</code></pre>
-<ol start="2">
-<li>Copy paste the above code into a <code>.sh</code> file and give the script executable permissions by running <code>chmod +x file.sh</code> in the terminal, where <code>file.sh</code> is the name of the file you created</li>
-<li>Simply <code>cd</code> to where you stored your file and run <code>./file.sh</code> to update your system. Don&rsquo;t forget to update often!</li>
-</ol>
+</code></pre><ul>
+<li>What this does is first retrieve any new updates to existing systems, follows through with upgrading them, and then upgrades the distributions along with all packets and their dependencies
+<ul>
+<li>The <code>-y</code> flag automatically answers <em>yes</em> to any pop up questions to save time</li>
+</ul>
+</li>
+</ul>
+<ol start ="2">
+<li>Copy paste the above code into a `.sh` file and give the script executable permissions by running `chmod +x file.sh` in the terminal, where `file.sh` is the name of the file you created</li>
+<li>Simply `cd` to where you stored your file and run `./file.sh` to update your system. Don't forget to update often!</li>
 
 
 
