@@ -8,7 +8,17 @@
     <language>en</language>
     <copyright>Copyright © 2021
 All rights reserved</copyright>
-    <lastBuildDate>Sun, 16 May 2021 18:44:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 20:24:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Pre-Pentration Test Checklist</title>
+        <link>https://s0merset7.github.io/posts/pentesting_checklist/</link>
+        <pubDate>Sun, 16 May 2021 20:24:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/pentesting_checklist/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
+Penetration testing is defined as the process of assessing the security model of an organization. When we perform a pentest, we want to make sure we not only do proper research, but also ensure that we are conducting the pentest properly and within the bounds of the client&amp;rsquo;s needs, as well as making sure to protect ourselves in the process.</description>
+      </item>
+    
       <item>
         <title>Useful Websites</title>
         <link>https://s0merset7.github.io/posts/useful_sites/</link>
