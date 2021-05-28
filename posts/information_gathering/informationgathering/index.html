@@ -698,28 +698,15 @@
 <br> <input disabled="" type="checkbox"> <strong>info:</strong> <em>[string]</em> - searches for information that google stores about the website itself
 <br> <input disabled="" type="checkbox"> <strong>intitle:</strong> <em>[string]</em> - searches for pages that contain the <em>string</em> in the title
 <br> <input disabled="" type="checkbox"> <strong>inurl:</strong> <em>[string]</em> - displays pages with the <em>string</em> in the URL
-<br> <input disabled="" type="checkbox"> <strong>site:</strong> <em>[string]</em> - displays pages for a specific site or domain with the <em>string</em>
- </div>
-</li>
-</ol>
-<ul>
-<li>To learn more about Google Dorks, many examples can be found here: <a href="https://www.exploit-db.com/google-hacking-database">https://www.exploit-db.com/google-hacking-database</a></li>
-</ul>
-<ol start="3">
-<li><strong>Document Metadata</strong>: the information that is appended to documents so that an application can manage them during their creation and storage (ex: application owner, date/time of creation/modification, network location, geolocation)</li>
-</ol>
-<ul>
-<li><strong>Metagoofil</strong>: Tool that performs a google search to identify and download a target&rsquo;s website documents, extracting usernames, software versions, server names, and workstation names. The ultimate goal here as a pentester is to make sure there are no results from tools like this on your client&rsquo;s site. Here are some of the common flags:
-<ul>
-<li><code>-d domainName</code> - specifies the domain name</li>
-<li><code>-t fileType</code> - specifies the file type you are searching for</li>
-<li><code>-o localDirectory</code> - specifies the working directory where we want to save our results</li>
-<li><code>-f</code> - indicates that you want the results to be saved as a txt file in provided directory (will be named &ldquo;html_links_timestamp.txt&rdquo;)</li>
-<li>Example: <code>metagoofil -d exampleSite.com -t pdf -o temp -f</code> - uses google to search exampleSite.com for any pdfs and saves the results in a the temp directory</li>
-</ul>
-</li>
-</ul>
-<ol start="4">
+<br> <input disabled="" type="checkbox"> <strong>site:</strong> <em>[string]</em> - displays pages for a specific site or domain with the <em>string</em> </div>
+To learn more about Google Dorks, many examples can be found here: <a href="https://www.exploit-db.com/google-hacking-database">https://www.exploit-db.com/google-hacking-database</a></li>
+<li><strong>Document Metadata</strong>: the information that is appended to documents so that an application can manage them during their creation and storage (ex: application owner, date/time of creation/modification, network location, geolocation)
+<br><div style="padding-left: 0em;"><input disabled="" type="checkbox"> <strong>Metagoofil</strong>: Tool that performs a google search to identify and download a target&rsquo;s website documents, extracting usernames, software versions, server names, and workstation names. The ultimate goal here as a pentester is to make sure there are no results from tools like this on your client&rsquo;s site. Here are some of the common flags:
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <code>-d domainName</code> - specifies the domain name
+<br> <input disabled="" type="checkbox"> <code>-t fileType</code> - specifies the file type you are searching for
+<br> <input disabled="" type="checkbox"> <code>-o localDirectory</code> - specifies the working directory where we want to save our results
+<br> <input disabled="" type="checkbox"> <code>-f</code> - indicates that you want the results to be saved as a txt file in provided directory (will be named &ldquo;html_links_timestamp.txt&rdquo;)
+<br> <input disabled="" type="checkbox"> Example: <code>metagoofil -d exampleSite.com -t pdf -o temp -f</code> - uses google to search exampleSite.com for any pdfs and saves the results in a the temp directory</div></div></li>
 <li><strong>TheHarvester</strong>: python script that searches through popular search engines and other sites for email addresses, hosts, and sub domains
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <code>-d domainName</code> - identifies the domain to be searched
 <br> <input disabled="" type="checkbox"> <code>-b searchEngine</code> - identifies the tool that will be used to extract the information (ex: Google, Bing, etc.). Can also just put <code>all</code> to specify all options
@@ -807,17 +794,10 @@
   
 
 </li>
-<li><strong>DNS Reconnaissance</strong>: identifying who owns a particular domain or series of IP addresses</li>
-</ol>
-<ul>
-<li><strong>Fierce</strong>: Tool that will run tests on given domains to attempt to find IP addresses, subdomains, hosts, and other sensitive information about a given domain
-<ul>
-<li><code>--domain domainName</code> - specifies the domain to run the tests on</li>
-<li>Example: <code>fierce --domain exampleSite.com</code> - will return all information that can be found from running tests on exampleSite.com</li>
-</ul>
-</li>
-</ul>
-<ol start="7">
+<li><strong>DNS Reconnaissance</strong>: identifying who owns a particular domain or series of IP addresses
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <strong>Fierce</strong>: Tool that will run tests on given domains to attempt to find IP addresses, subdomains, hosts, and other sensitive information about a given domain
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <code>--domain domainName</code> - specifies the domain to run the tests on
+<br> <input disabled="" type="checkbox"> Example: <code>fierce --domain exampleSite.com</code> - will return all information that can be found from running tests on exampleSite.com </div></div></li>
 <li><strong>Deepmagic Information Gathering Tool (Dmitry)</strong>: command line program written in C with the goal of finding out information about a host. This tool is especially useful for its speed by removing the need to enter multiple commands when searching through information different sources. For simplicity&rsquo;s sake, I included all of the testing flags in the example below, for specifics on each flag, run <code>dmitry -h</code>. The general idea is that this command runs many of the previous tests in addition to some new ones all at once and will save the results in a text file
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Example: <code>dmitry -winsepfbo s0merset7.github.io</code> - will perform every test (including whois lookups, search for subdomains and email addresses, TCP port scans, and more). Here is an example of the first few results found in the text file created after the program is run: </div>
 
@@ -1149,7 +1129,7 @@ We can here that in addition to instructions for use, under &ldquo;Options&rdquo
       class="lazyload "
       loading="lazy"
       src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src=",,.reconSS6.png"
+      data-src="../reconSS6.png"
       alt="Host List"
     />
     
@@ -1157,7 +1137,7 @@ We can here that in addition to instructions for use, under &ldquo;Options&rdquo
       <img
         
         loading="lazy"
-        src=",,.reconSS6.png"
+        src="../reconSS6.png"
         alt="Host List"
       />
     </noscript>
