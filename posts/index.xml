@@ -11,10 +11,10 @@ All rights reserved</copyright>
     <lastBuildDate>Sun, 30 May 2021 15:10:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
       <item>
         <title>External Pen-Testing</title>
-        <link>https://s0merset7.github.io/posts/externalpentesting/externalpentesting/</link>
+        <link>https://s0merset7.github.io/posts/external_pentesting/externalpentesting/</link>
         <pubDate>Sun, 30 May 2021 15:10:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/externalpentesting/externalpentesting/</guid>
+        <guid>https://s0merset7.github.io/posts/external_pentesting/externalpentesting/</guid>
         <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
 External Pen Testing is the process of testing the security surrounding external systems connected to the internet.</description>
       </item>
