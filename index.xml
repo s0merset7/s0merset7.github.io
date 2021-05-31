@@ -8,7 +8,17 @@
     <language>en</language>
     <copyright>Copyright © 2021
 All rights reserved</copyright>
-    <lastBuildDate>Sun, 30 May 2021 15:10:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 16:30:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Website Penetration Testing</title>
+        <link>https://s0merset7.github.io/posts/website_pentesting/webpentesting/</link>
+        <pubDate>Mon, 31 May 2021 16:30:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/website_pentesting/webpentesting/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
+There is a LOT to do when it comes to website penetration testing, and this post is by no means a comprehensive list of everything to do or than can be done.</description>
+      </item>
+    
       <item>
         <title>External Pen-Testing</title>
         <link>https://s0merset7.github.io/posts/external_pentesting/externalpentesting/</link>
