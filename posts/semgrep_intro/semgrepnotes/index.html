@@ -1,0 +1,1275 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.80.0 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Introduction to Semgrep | Somerset&#39;s Blog</title>
+
+
+<meta name="author" content="Somerset">
+
+
+
+<meta name="robots" content="index follow">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+
+
+
+  
+    <link rel="canonical" href="https://s0merset7.github.io/posts/semgrep_intro/semgrepnotes/">
+  
+
+
+
+
+
+
+
+
+<meta property="og:site_name" content="Somerset&#39;s Blog">
+<meta property="og:title" content="Introduction to Semgrep">
+
+  <meta property="og:url" content="https://s0merset7.github.io/posts/semgrep_intro/semgrepnotes/">
+
+
+
+
+
+
+
+
+  <meta property="og:type" content="article">
+  
+  
+    <meta property="article:published_time" content="2021-06-16">
+    <meta property="article:modified_time" content="2021-06-16">
+    <meta property="og:updated_time" content="2021-06-16">
+  
+
+  
+  
+  
+    <meta name="twitter:creator" content="@s0merset7">
+  
+  
+
+  <meta name="twitter:site" content="@s0merset7">
+
+
+
+
+
+
+
+  <meta name="twitter:dnt" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="theme-color" content="#222">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebSite",
+        "@id": "https:\/\/s0merset7.github.io\/"
+      },
+      "headline": "Introduction to Semgrep",
+      "description": "",
+      
+      "url": "https:\/\/s0merset7.github.io\/posts\/semgrep_intro\/semgrepnotes\/",
+      "inLanguage": "en",
+      "datePublished": "2021-06-16",
+      "dateModified": "2021-06-16",
+      "wordCount" : "1850",
+      "publisher": {
+        "@type": "Person",
+        "name": "Somerset"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Somerset",
+        "description": "Cybersecuirty enthusiast learning what I can",
+        "sameAs": ["https://github.com/s0merset7","https://www.linkedin.com/in/ryan-dinnan","https://twitter.com/s0merset7"]
+      }
+    }
+  </script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.46f9974dbd84e826ea113220f8fa8b1b862024b9588a4940f415ca16bc4e38fb7f345fb5e8881f7e5680d1237f05d359208acd0a4344e76fea4a90135f604c06.css" integrity="sha512-RvmXTb2E6CbqETIg&#43;PqLG4YgJLlYiklA9BXKFrxOOPt/NF&#43;16IgfflaA0SN/BdNZIIrNCkNE52/qSpATX2BMBg==">
+
+
+
+<noscript>
+
+  
+  
+
+  
+
+    
+      <meta name="theme-color" content="#902b37">
+    
+
+  
+
+  <style>
+  
+    html {
+      --accent: #902b37;
+    }
+  
+    .req-js,
+    img.lazyload {
+      display: none;
+    }
+    
+  </style>
+  
+</noscript>
+
+
+
+
+
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/oswald-v29-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+
+
+
+
+
+<script defer src="/js/lazysizes.min.min.a85a0eccaf9ef0d2f083a9dc4d0e05dc90acc5be0e84b43e20fde692871e1861ae0191f7c3ca2c00f2664efabf6aff2625a478b8f22ea43cb056cb6ec9a8d948.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  <link rel="me" href="https://github.com/s0merset7"> 
+
+  <link rel="me" href="https://www.linkedin.com/in/ryan-dinnan"> 
+
+  <link rel="me" href="https://twitter.com/s0merset7"> 
+
+
+
+
+
+
+
+  <script>
+    
+      'use strict';const ROOT=document.documentElement;const SHEET=document.documentElement.style;const META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'};function setLight(){ROOT.dataset.mode='light'};if(localStorage.getItem('isDark')=='true'){setDark()}else if(localStorage.getItem('isDark')=='false'){setLight()};function getAccent(){if(ROOT.dataset.mode==='dark'){if(localStorage.getItem('darkAccent')===null){var currentAccent="#902b37"}else{var currentAccent=localStorage.getItem('darkAccent')
+}}else if(ROOT.dataset.mode==='light'){if(localStorage.getItem('lightAccent')===null){var currentAccent="#225670"}else{var currentAccent=localStorage.getItem('lightAccent')
+}};return currentAccent};var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent);META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent);PALETTE.value=activeAccent;META_THEME_COLOR.setAttribute('content',activeAccent);};document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function smoothTransition(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'};function userModeChange(){smoothTransition();if(ROOT.dataset.mode=='light'){setDark();localStorage.setItem('isDark','true')
+}else{setLight();localStorage.setItem('isDark','false')
+};updateAccent()};document.querySelector('footer button').addEventListener('click',userModeChange)})
+    
+  </script>
+
+
+
+  </head>
+
+  <body>
+
+    <header>
+      
+
+  <a href="/">Somerset&#39;s Blog</a>
+
+
+
+
+  
+    <nav aria-label="Main menu.">
+      <ul>
+        
+          <li>
+            <a class="btn" href="/about/">About</a>
+          </li>
+        
+          <li>
+            <a class="btn" href="/posts/">Posts</a>
+          </li>
+        
+          <li>
+            <a class="btn" href="/contact/">Contact</a>
+          </li>
+        
+      </ul>
+    </nav>
+  
+
+
+    </header>
+
+    <div class="filler">
+      
+
+  <main>
+    <article>
+      <header>
+        
+        <h1>Introduction to Semgrep</h1>
+        
+        
+
+        
+          <section class="terms">
+            <ul><li><a class="btn" href="/tags/semgrep/">Semgrep</a></li></ul>
+          </section>
+          <p>
+            
+              Published on <time datetime="2021-06-16">2021-06-16</time>
+            
+          </p>
+        
+        
+        
+        
+      </header>
+    
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<style>
+	main {
+    margin: 90px auto;
+    padding: 0 15px;
+    max-width: 70%;
+	}
+</style>
+<p>The goal of this post is to give an introduction into how to create rules using Semgrep as well getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into exmples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</p>
+
+
+
+
+
+  <h2 id="table-of-contents">Table of Contents <a class="anchor" href="#table-of-contents" title='Anchor for "Table of Contents".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li><a href="#what-is-semgrep">What is Semgrep</a></li>
+<li><a href="#the-basics">Semgrep Basics</a></li>
+<li><a href="#basic-examples">Introductory Examples</a></li>
+<li><a href="#advanced">Coding Rules in Semgrep</a></li>
+</ul>
+
+
+
+
+
+  <h3 id="what-is-semgrep">What is Semgrep <a class="anchor" href="#what-is-semgrep" title='Anchor for "What is Semgrep".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>&ldquo;Semgrep is a customizable, lightweight, static analysis tool for finding bugs/enforcing code standards designed for security consultants and hackers&rdquo;</p>
+<p><strong>It is useful because:</strong></p>
+<ul>
+<li>It is open source (free)</li>
+<li>Supports many languages (go, python, java, javascript, php, and more)</li>
+<li>There are about <a href="https://semgrep.dev/r">1000 predefined rules</a> you can use &ldquo;out of the box&rdquo;</li>
+<li>Does NOT require buildable source code</li>
+<li>There is no Domain Specific Language (DSL) to learn, you can make custom patterns to match the code you are targeting</li>
+<li>Easy to use for any developer, does not require expertise</li>
+</ul>
+<p><strong>Assumptions Made by the Developers</strong></p>
+<ul>
+<li>Speed is important, scans should be completed in minutes, not hours/days</li>
+<li>It&rsquo;s better to have false negatives than false positives</li>
+<li>Ease of use is important
+<ul>
+<li>Prioritize first time users (as they are the average user)</li>
+<li>Should be accessible to developers, not just security professionals</li>
+</ul>
+</li>
+<li>Enforcing security standards is MORE important than finding every bug</li>
+</ul>
+<p><strong>Design Decisions</strong></p>
+<ul>
+<li>Focuses on single file/localized analysis
+<ul>
+<li>Better for speed and enforcing security protocols</li>
+</ul>
+</li>
+<li>Has rules that look like source code
+<ul>
+<li>Makes it easier for first time users</li>
+</ul>
+</li>
+</ul>
+<p><strong>Other Features</strong></p>
+<ul>
+<li>Compatible with Regex</li>
+<li>Confirming proper access given to files
+<ul>
+<li>Map out application routes</li>
+</ul>
+</li>
+<li>Check for weak RSA keys</li>
+<li>Check for calls on runtime objects</li>
+<li>Match JSON</li>
+<li>&ldquo;Generic&rdquo; mode to analyse code in languages not directly supported or any text</li>
+<li>Autofix/suggest option to correct common mistakes</li>
+<li>Software as a Service (SaaS) features when used on large scale (not open source)</li>
+</ul>
+
+
+
+
+
+  <h3 id="the-basics">The Basics <a class="anchor" href="#the-basics" title='Anchor for "The Basics".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>There are two operators that add functionality to Semgrep on top of whatever programming language you choose to use:</p>
+<ul>
+<li><strong>Ellipsis</strong> <code>...</code> - the ellipsis operator finds all calls to execute with zero or more arguments regardless of what they are</li>
+<li><strong>Metavariables</strong> <code>$VARIABLE</code> - these are like capture groups, a fill in for a unknown variable you want to match prior to its a assignment of a value</li>
+</ul>
+<p>To get a good introduction on these two operators, check out <a href="https://semgrep.dev/learn">this site</a> for a tutorial into Semgrep</p>
+
+
+
+
+
+  <h3 id="basic-examples">Basic Examples <a class="anchor" href="#basic-examples" title='Anchor for "Basic Examples".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>To test some of the functionalities of Semgrep, visit <a href="https://semgrep.dev/editor">this site</a> to play with the Semgrep Playground and follow along with the demos below:</p>
+<p>Taking a look at the image below we can see the Semgrep Playground User Interface. The basic layout will have the top left dropdown allowing you to choose your language, the Rule Bar to enter your rule, the Test Code block to see the code that the rule will be tested on and any results from the query will show up on the right hand side
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../semgrepSS1.png"
+      alt="Semgrep Playground Layout"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../semgrepSS1.png"
+        alt="Semgrep Playground Layout"
+      />
+    </noscript>
+  
+  
+
+</p>
+<p><strong>Identifying a Function Call</strong>
+<a href="https://semgrep.dev/s/clintgibler:python-exec-try">Click Here</a> to follow along with this example:</p>
+<ol>
+<li><code>exec(...)</code> will find all instances of the function <code>exec()</code> in your code. But it is smart, as you can see in the image below, the query will IGNORE comments and string literals while also IDENTIFYING the function even with varying syntax and aliases of the function call like <code>safe_function</code>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../semgrepSS2.png"
+      alt="Semgrep &amp;hellip; Example"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../semgrepSS2.png"
+        alt="Semgrep &amp;hellip; Example"
+      />
+    </noscript>
+  
+  
+
+</li>
+</ol>
+<p><strong>Cross Site Scripting (XSS)</strong>
+Following <a href="https://semgrep.dev/s/clintgibler:js-express-xss-try">this example</a>, we can see the code is vulnerable to a XSS attack as the user inputted query is not being filtered for any potentially malicious input.</p>
+<ol>
+<li>The benefit of Semgrep is we can search for whatever we want in out chosen language. So to start making a rule, we can just copy the source code and then begin to abstract it</li>
+<li>Let&rsquo;s replace <code>/foo</code> with <code>...</code>, as we want to search for anytime a general string is used regardless of its value</li>
+<li>We can add an <code>$</code> in front of an all caps name to represent a Metavariable. In this case, we can replace <code>name</code> in <code>req.query.name</code> with <code>$PARAM</code> to represent an unknown parameter
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Similarly we can replace the variable <code>resp</code> with <code>$VAR</code> to represent an unknown variable being passed</div></li>
+<li>This brings us to the rule of:
+<pre aria-label="Box containing code sample." tabindex=0><code>app.get('...', function (req, res) {
+    var $VAR = req.query.$PARAM;
+       
+    res.write($VAR);
+});
+</code></pre><p>Which we can see, correctly identifies one of our XSS vulnerabilities, but not both
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../semgrepSS3.png"
+      alt="XSS Rule V1"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../semgrepSS3.png"
+        alt="XSS Rule V1"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>We can see that the main differences between the two are the extra lines of code, and the extra arguments in functions. To take care of that, we can add some strategic ellipsis and arrows:</li>
+</ol>
+<pre aria-label="Box containing code sample." tabindex=0><code>app.get('...', function (req, res) {
+    var $VAR = req.query.$PARAM;
+    ...
+    res.write(&lt;... $VAR ...&gt;);
+});
+</code></pre><p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../semgrepSS4.png"
+      alt="XSS Rule V2"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../semgrepSS4.png"
+        alt="XSS Rule V2"
+      />
+    </noscript>
+  
+  
+
+</p>
+<p><strong>Business Logic</strong>
+Business Logic is when the code itself seems fine, but how the code works is fundamentally wrong (such as the order in which methods are called). Lets take a look at <a href="https://semgrep.dev/s/LNX">this example</a></p>
+<ol>
+<li>Sometimes we have a need for conditionals in our rules, for example if we want to check for the order of, or presence of certain items. To start off, lets copy the first method (lines 9-13)</li>
+<li>We don&rsquo;t care about the return type, so lets replace <code>void</code> with <code>$RETTYPE</code> as our Metavariable</li>
+<li>The function type and arguments don&rsquo;t matter either so we can replace <code>base_ok</code> with <code>$FUNC</code> and <code>Transaction t</code> with <code>...</code></li>
+<li>The main thing we are looking at here is the <code>make_transaction()</code> function, so we can add ellipsis above and below that statement as well as replacing the function&rsquo;s argument leaving us with this:
+<pre aria-label="Box containing code sample." tabindex=0><code>public $RETTYPE $FUNC(...) {
+...
+    make_transaction(...);
+...
+}
+</code></pre><p>If we run that, we get this result which locates everything that use the <code>make_transaction()</code> function
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../semgrepSS5.png"
+      alt="Business Logic V1"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../semgrepSS5.png"
+        alt="Business Logic V1"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>This is good but doesn&rsquo;t actually check if they business logic is right, we need to add a conditional by clicking the plus button to the right of the rule block</li>
+<li>We can see a dropdown of options, here we want <strong>and is not</strong>, and then copy the top rule into the bottom box</li>
+<li>Above the <code>make_transaction()</code> line in our new rule section, lets add an elipsis followed by <code>verify_transaction(...);</code>. What this does is make sure the verify function is never called prior to the make transaction function in any place the make transaction function exists, as we only want the transaction to be verified if it first has been made
+<pre aria-label="Box containing code sample." tabindex=0><code>public $RETTYPE $FUNC(...) {
+...
+    verify_transaction(...);
+...
+    make_transaction(...);
+...
+}
+</code></pre><p>When we run, we can see that it works and returns every time the verify transaction function is called before the make transaction function, with one exception
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../semgrepSS6.png"
+      alt="Business Logic V2"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../semgrepSS6.png"
+        alt="Business Logic V2"
+      />
+    </noscript>
+  
+  
+
+</p>
+</li>
+<li>In the very last method of the sample code, we see that it should be flagged as a vulnerability as the transaction that is verified is not the same one that is made</li>
+<li>To fix this, we can replace the function ellipses in the <strong>and is not</strong> rule with a Metavariable <code>$T</code></li>
+</ol>
+<pre aria-label="Box containing code sample." tabindex=0><code>public $RETTYPE $FUNC(...) {
+  ...
+    verify_transaction($T);
+  ...
+    make_transaction($T);
+  ...
+}
+</code></pre><p>And when we run this version we see it is able to catch all of the exceptions:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../semgrepSS7.png"
+      alt="Business Logic V3"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../semgrepSS7.png"
+        alt="Business Logic V3"
+      />
+    </noscript>
+  
+  
+
+</p>
+
+
+
+
+
+  <h3 id="advanced">Advanced <a class="anchor" href="#advanced" title='Anchor for "Advanced".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>What we were looking at before is the Semgrep UI, but as we make more complex rules it is easier to do so using Semgrep&rsquo;s natural syntax language, YAML
+You can read up on the specifics of YAML <a href="(https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)">here</a>, but the main outline of a Semgrep command is as follows:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+    - id: name-of-rule
+        patterns:
+        - pattern: $PATTERN_A
+        message: |
+            Write your message here
+        languages: [languageName]
+        severity: SEVERITYLEVEL
+</code></pre><p>To break this down:</p>
+<ul>
+<li><code>id</code> - the name of the rule, this should be alphanumeric with dashes replacing spaces</li>
+<li><code>patterns</code> - this is where your specific rules are, more information below but make sure to have proper syntax</li>
+<li><code>message</code> - (optional) this is the message that will be displayed when something is flagged. Often it is meant to help developers by providing context to what needs to be changed
+<ul>
+<li>Note the pipeline (<code>|</code>) in YAML is used to have multiple lines be compiled into single lines</li>
+</ul>
+</li>
+<li><code>language</code> - (optional) a place where you can put the language that this rule applies to</li>
+<li><code>severity</code> - (optional) how important the rule is, this is up to the user and can be on whatever scale they deem useful</li>
+</ul>
+<p><strong>Advanced Patterns</strong>
+There are five pattern commands that can be used in combination of one another. They are very similar to boolean expressions. Here is a brief description of each one followed by an example:</p>
+<ul>
+<li><code>pattern</code> = search for &ldquo;this&rdquo; AND &ldquo;that&rdquo;</li>
+</ul>
+<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+    - id: default-pattern-example
+        patterns:
+        - pattern: print(...)
+</code></pre><p>This rule will search for any instance of the <code>print()</code> function being called, regardless of its arguments</p>
+<ul>
+<li><code>pattern-either</code> = search for &ldquo;this&rdquo; OR &ldquo;that&rdquo;</li>
+</ul>
+<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+    - id: either-pattern-example
+        patterns:
+        - pattern-either:
+            - pattern: if(...)...
+            - pattern: print(...)
+</code></pre><p>This rule will return any instances of an <code>if()</code> statement call OR a <code>print()</code> statement call</p>
+<ul>
+<li><code>pattern-not</code> = filters out patterns you do not want to match, ie. matches &ldquo;this&rdquo; AND NOT &ldquo;that&rdquo;</li>
+</ul>
+<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+    - id: not-pattern-example
+        patterns:
+        - pattern: if (...)...
+        - pattern-not: if (&quot;...&quot; == $VAR)...
+</code></pre><p>This rule finds all instances of an <code>if</code> statement, but will filter out any instance where the first value is a string literal being compared to some other value</p>
+<ul>
+<li><code>pattern-inside</code> = allows you to search for patterns inside the pattern specified by <code>pattern-inside</code>. This means this command must be FIRST, and the following patterns will only search based on the set received from this command call</li>
+</ul>
+<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+    - id: inside-pattern-example
+        patterns:
+        - pattern-inside: |
+            func $FUNC(..., $VAR, ...) {
+                ...
+            }
+        - pattern: print($VAR)
+</code></pre><p>This rule will first narrow down its search to only functions that have at least one argument, and in those search for an instance of a <code>print()</code> statement that uses the same function argument</p>
+<ul>
+<li><code>pattern-not-inside</code> = filters out any matches inside the range defined by the pattern. This means this command can only come AFTER a previously defined pattern</li>
+</ul>
+<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+    - id: not-inside-pattern-example
+        patterns:
+        - pattern: print(...)
+        - pattern-not-inside: |
+            if (...) ...
+            ...
+</code></pre><p>This rule will find all instances of <code>print()</code>, but then narrow down those results to only <code>print()</code> calls that occur BEFORE an <code>if()</code> statement</p>
+<p><strong>Metavariable Regex</strong>
+In addition to the previous patterns, there is an option for Metavariables that will only match variables whose names fit a specified regular expression. To use them, follow this format:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+    - id: name-of-rule
+        patterns:
+        - pattern: $VARIABLE_A
+        - metavariable-regex:
+            metavariable: '$VARIABLE_A'
+            regex: '.*(wordA|wordB|wordC).*'
+</code></pre><p>To break this down:</p>
+<ul>
+<li><code>pattern</code> - like we defined above, can be any of the patterns/combination of that we&rsquo;ve learned</li>
+<li><code>metavariabel-regex</code> - we type this to let YAML know we are about to provide a regex rule</li>
+<li><code>metavariable</code> - this is where you specify which of your previously defined Metavariables you are going to be writing your regex rule for</li>
+<li><code>regex</code> - this is where you specify what expressions you want to match to the Metavariable you picked. Ie. you would only be returning instances where $VARIABLE_A includes &ldquo;wordA&rdquo;, &ldquo;wordB&rdquo;, OR &ldquo;wordC&rdquo;</li>
+</ul>
+
+
+
+
+
+  <h2 id="sources">Sources <a class="anchor" href="#sources" title='Anchor for "Sources".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li><a href="https://semgrep.dev/">Semgrep Official Site</a></li>
+<li><a href="https://semgrep.dev/learn">Semgrep Tutorial</a></li>
+<li><a href="https://www.youtube.com/watch?v=O5mh8j7-An8">Semgrep Presentation</a>
+<ul>
+<li><a href="https://go.r2c.dev/empire-hacking-semgrep">Clint Gibler&rsquo;s Presentation Slides</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=EIjoqwT53E4">Semgrep Open Security Summit Presentation</a>
+<ul>
+<li><a href="https://bit.ly/2020OpenSecuritySummit">Presentation Slides</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+    </article>
+  </main>
+
+
+    </div>
+    
+    <footer>
+      
+
+  <p>Copyright © 2021
+All rights reserved</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="req-js">
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"><option value="#1f676b"><option value="#f3a530"><option value="#dd587c"><option value="#1dbc91"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+</section>
+
+
+
+  <noscript>
+    <p class="noscript">Unable to execute JavaScript. Some features were disabled.</p>
+  </noscript>
+
+
+
+    </footer>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+      <symbol viewBox="0 0 512 512" id="adjust">
+        <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/>
+      </symbol>
+      
+      
+      
+      
+  
+<symbol viewBox="0 0 448 512" id="hashtag">
+  <path d="M440.667 182.109l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l14.623-81.891C377.123 38.754 371.468 32 363.997 32h-40.632a12 12 0 0 0-11.813 9.891L296.175 128H197.54l14.623-81.891C213.477 38.754 207.822 32 200.35 32h-40.632a12 12 0 0 0-11.813 9.891L132.528 128H53.432a12 12 0 0 0-11.813 9.891l-7.143 40C33.163 185.246 38.818 192 46.289 192h74.81L98.242 320H19.146a12 12 0 0 0-11.813 9.891l-7.143 40C-1.123 377.246 4.532 384 12.003 384h74.81L72.19 465.891C70.877 473.246 76.532 480 84.003 480h40.632a12 12 0 0 0 11.813-9.891L151.826 384h98.634l-14.623 81.891C234.523 473.246 240.178 480 247.65 480h40.632a12 12 0 0 0 11.813-9.891L315.472 384h79.096a12 12 0 0 0 11.813-9.891l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l22.857-128h79.096a12 12 0 0 0 11.813-9.891zM261.889 320h-98.634l22.857-128h98.634l-22.857 128z"/>
+</symbol>
+
+
+  <symbol viewBox="0 0 320 512" id="caret-down">
+    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"/>
+  </symbol>
+
+
+      
+      
+      
+    </svg>
+
+    
+    
+    
+
+      <script>
+        
+          'use strict';const PALETTE=document.querySelector('footer input');PALETTE.onchange=function(){const PICK=PALETTE.value;SHEET.setProperty('--accent',PICK);if(ROOT.dataset.mode==='light'){localStorage.setItem('lightAccent',PICK)}else{localStorage.setItem('darkAccent',PICK)};updateAccent()};
+        
+      </script>
+
+    
+    
+    
+    
+
+  </body>
+</html>
