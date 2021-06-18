@@ -431,7 +431,7 @@
       "inLanguage": "en",
       "datePublished": "2021-06-16",
       "dateModified": "2021-06-16",
-      "wordCount" : "1876",
+      "wordCount" : "1868",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -1096,13 +1096,13 @@ You can read up on the specifics of YAML <a href="(https://docs.ansible.com/ansi
 <ul>
 <li><code>id</code> - the name of the rule, this should be alphanumeric with dashes replacing spaces</li>
 <li><code>patterns</code> - this is where your specific rules are, more information below but make sure to have proper syntax</li>
-<li><code>message</code> - (optional) this is the message that will be displayed when something is flagged. Often it is meant to help developers by providing context to what needs to be changed
+<li><code>message</code> - this is the message that will be displayed when something is flagged. Often it is meant to help developers by providing context to what needs to be changed
 <ul>
 <li>Note the pipeline (<code>|</code>) in YAML is used to have multiple lines be compiled into single lines</li>
 </ul>
 </li>
-<li><code>language</code> - (optional) a place where you can put the language that this rule applies to</li>
-<li><code>severity</code> - (optional) how important the rule is, this is up to the user and can be on whatever scale they deem useful</li>
+<li><code>language</code> - a place where you can put the language that this rule applies to</li>
+<li><code>severity</code> - what kind of issue this code is, it can be either <code>INFO</code>, <code>WARNING</code>, or <code>ERROR</code></li>
 </ul>
 <p><strong>Advanced Patterns</strong>
 There are five pattern commands that can be used in combination of one another. They are very similar to boolean expressions. Here is a brief description of each one followed by an example:</p>
