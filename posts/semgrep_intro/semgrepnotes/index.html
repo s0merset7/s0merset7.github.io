@@ -70,8 +70,8 @@
   
   
     <meta property="article:published_time" content="2021-06-16">
-    <meta property="article:modified_time" content="2021-06-21">
-    <meta property="og:updated_time" content="2021-06-21">
+    <meta property="article:modified_time" content="2021-06-22">
+    <meta property="og:updated_time" content="2021-06-22">
   
 
   
@@ -430,8 +430,8 @@
       "url": "https:\/\/s0merset7.github.io\/posts\/semgrep_intro\/semgrepnotes\/",
       "inLanguage": "en",
       "datePublished": "2021-06-16",
-      "dateModified": "2021-06-21",
-      "wordCount" : "2572",
+      "dateModified": "2021-06-22",
+      "wordCount" : "2601",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -592,7 +592,7 @@
           </section>
           <p>
             
-              Last updated on <time datetime="2021-06-21">2021-06-21</time>
+              Last updated on <time datetime="2021-06-22">2021-06-22</time>
             
           </p>
         
@@ -708,7 +708,11 @@
 <li>Match JSON</li>
 <li>&ldquo;Generic&rdquo; mode to analyse code in languages not directly supported or any text</li>
 <li>Autofix/suggest option to correct common mistakes</li>
-<li>Software as a Service (SaaS) features when used on large scale (not open source)</li>
+<li>Software as a Service (SaaS) option when used on large scale (not open source)
+<ul>
+<li>Can interact with GitHub, Jira, Slack, and more</li>
+</ul>
+</li>
 </ul>
 
 
@@ -1284,7 +1288,7 @@ You can read up on the specifics of YAML <a href="(https://docs.ansible.com/ansi
 
   <h4 id="regex-patterns"><strong>Regex Patterns</strong> <a class="anchor" href="#regex-patterns" title='Anchor for "Regex Patterns".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
 
-<p>The five patterns we looked at before were all based on bitwise operators of the code. The following patterns are all based on bitwise operators of the regular expressions that can be found in the code, allowing for more specificity:</p>
+<p>The five patterns we looked at before were all based on bitwise operators of the code. The following patterns are all based on bitwise operators of the regular expressions that can be found in the code, allowing for more specificity. While there are many different types of Regex syntax, Semgrep uses <a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expressions(PCRE)</a>:</p>
 <ul>
 <li><code>pattern-regex</code> = searches for a compatible regular expression (works best for Python)</li>
 </ul>
@@ -1379,6 +1383,7 @@ You can read up on the specifics of YAML <a href="(https://docs.ansible.com/ansi
 <li><a href="https://bit.ly/2020OpenSecuritySummit">Presentation Slides</a></li>
 </ul>
 </li>
+<li><a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expression Cheat Sheet</a></li>
 </ul>
 
 
