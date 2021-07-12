@@ -814,21 +814,21 @@ We can also add the <code>?</code> at the end to indicate it could be one of the
 
 <ol>
 <li>
-<p>Is there any part that won&rsquo;t change between iterations?
+<p><strong>Is there any part that won&rsquo;t change between iterations?</strong>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> You can copy the unchanged parts as is in your Semgrep pattern
-<br><input disabled="" type="checkbox"> Special characters must be preceded by <code>\</code> </div></p>
+<br><input disabled="" type="checkbox"> Special characters must be preceded by <code>\</code></p>
 </li>
 <li>
-<p>Is there any part that is very similar between iterations?
+<p><strong>Is there any part that is very similar between iterations?</strong>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Precede a part with <code>(?i)</code> to ignore case
-<br><input disabled="" type="checkbox"> Follow a character with <code>?</code> when it may OR may not be present </div></p>
+<br><input disabled="" type="checkbox"> Follow a character with <code>?</code> when it may OR may not be present</p>
 </li>
 <li>
-<p>Is there something that is often different but in the same part?
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Put different possibilities of a part in an OR parameter <code>[Char1|Char1|Char3]</code> </div></p>
+<p><strong>Is there something that is often different but in the same part?</strong>
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Put different possibilities of a part in an OR parameter <code>[Char1|Char1|Char3]</code></p>
 </li>
 <li>
-<p>Is there a part that can include a range of potential characters?
+<p><strong>Is there a part that can include a range of potential characters?</strong>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> For common broad catagories, you can use the following
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <code>\d</code> - digit character (0-9)
 <br><input disabled="" type="checkbox"> <code>\w</code> - word character (alphanumeric and underscores)
