@@ -1,0 +1,937 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.80.0 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Making Regex Rules in Semgrep | Somerset&#39;s Blog</title>
+
+
+<meta name="author" content="Somerset">
+
+
+
+<meta name="robots" content="index follow">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+
+
+
+  
+    <link rel="canonical" href="https://s0merset7.github.io/posts/regex_walkthrough/">
+  
+
+
+
+
+
+
+
+
+<meta property="og:site_name" content="Somerset&#39;s Blog">
+<meta property="og:title" content="Making Regex Rules in Semgrep">
+
+  <meta property="og:url" content="https://s0merset7.github.io/posts/regex_walkthrough/">
+
+
+
+
+
+
+
+
+  <meta property="og:type" content="article">
+  
+  
+    <meta property="article:published_time" content="2021-07-12">
+    <meta property="article:modified_time" content="2020-07-12">
+    <meta property="og:updated_time" content="2020-07-12">
+  
+
+  
+  
+  
+    <meta name="twitter:creator" content="@s0merset7">
+  
+  
+
+  <meta name="twitter:site" content="@s0merset7">
+
+
+
+
+
+
+
+  <meta name="twitter:dnt" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="theme-color" content="#222">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebSite",
+        "@id": "https:\/\/s0merset7.github.io\/"
+      },
+      "headline": "Making Regex Rules in Semgrep",
+      "description": "",
+      
+      "url": "https:\/\/s0merset7.github.io\/posts\/regex_walkthrough\/",
+      "inLanguage": "en",
+      "datePublished": "2021-07-12",
+      "dateModified": "2020-07-12",
+      "wordCount" : "1062",
+      "publisher": {
+        "@type": "Person",
+        "name": "Somerset"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Somerset",
+        "description": "Cybersecuirty enthusiast learning what I can",
+        "sameAs": ["https://github.com/s0merset7","https://www.linkedin.com/in/ryan-dinnan","https://twitter.com/s0merset7"]
+      }
+    }
+  </script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.46f9974dbd84e826ea113220f8fa8b1b862024b9588a4940f415ca16bc4e38fb7f345fb5e8881f7e5680d1237f05d359208acd0a4344e76fea4a90135f604c06.css" integrity="sha512-RvmXTb2E6CbqETIg&#43;PqLG4YgJLlYiklA9BXKFrxOOPt/NF&#43;16IgfflaA0SN/BdNZIIrNCkNE52/qSpATX2BMBg==">
+
+
+
+<noscript>
+
+  
+  
+
+  
+
+    
+      <meta name="theme-color" content="#902b37">
+    
+
+  
+
+  <style>
+  
+    html {
+      --accent: #902b37;
+    }
+  
+    .req-js,
+    img.lazyload {
+      display: none;
+    }
+    
+  </style>
+  
+</noscript>
+
+
+
+
+
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/oswald-v29-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+
+
+
+
+
+<script defer src="/js/lazysizes.min.min.a85a0eccaf9ef0d2f083a9dc4d0e05dc90acc5be0e84b43e20fde692871e1861ae0191f7c3ca2c00f2664efabf6aff2625a478b8f22ea43cb056cb6ec9a8d948.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  <link rel="me" href="https://github.com/s0merset7"> 
+
+  <link rel="me" href="https://www.linkedin.com/in/ryan-dinnan"> 
+
+  <link rel="me" href="https://twitter.com/s0merset7"> 
+
+
+
+
+
+
+
+  <script>
+    
+      'use strict';const ROOT=document.documentElement;const SHEET=document.documentElement.style;const META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'};function setLight(){ROOT.dataset.mode='light'};if(localStorage.getItem('isDark')=='true'){setDark()}else if(localStorage.getItem('isDark')=='false'){setLight()};function getAccent(){if(ROOT.dataset.mode==='dark'){if(localStorage.getItem('darkAccent')===null){var currentAccent="#902b37"}else{var currentAccent=localStorage.getItem('darkAccent')
+}}else if(ROOT.dataset.mode==='light'){if(localStorage.getItem('lightAccent')===null){var currentAccent="#225670"}else{var currentAccent=localStorage.getItem('lightAccent')
+}};return currentAccent};var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent);META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent);PALETTE.value=activeAccent;META_THEME_COLOR.setAttribute('content',activeAccent);};document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function smoothTransition(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'};function userModeChange(){smoothTransition();if(ROOT.dataset.mode=='light'){setDark();localStorage.setItem('isDark','true')
+}else{setLight();localStorage.setItem('isDark','false')
+};updateAccent()};document.querySelector('footer button').addEventListener('click',userModeChange)})
+    
+  </script>
+
+
+
+  </head>
+
+  <body>
+
+    <header>
+      
+
+  <a href="/">Somerset&#39;s Blog</a>
+
+
+
+
+  
+    <nav aria-label="Main menu.">
+      <ul>
+        
+          <li>
+            <a class="btn" href="/about/">About</a>
+          </li>
+        
+          <li>
+            <a class="btn" href="/posts/">Posts</a>
+          </li>
+        
+          <li>
+            <a class="btn" href="/contact/">Contact</a>
+          </li>
+        
+      </ul>
+    </nav>
+  
+
+
+    </header>
+
+    <div class="filler">
+      
+
+  <main>
+    <article>
+      <header>
+        
+        <h1>Making Regex Rules in Semgrep</h1>
+        
+        
+
+        
+          <section class="terms">
+            <ul><li><a class="btn" href="/tags/semgrep/">Semgrep</a></li></ul>
+          </section>
+          <p>
+            
+              Last updated on <time datetime="2020-07-12">2020-07-12</time>
+            
+          </p>
+        
+        
+        
+        
+      </header>
+    
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<style>
+	main {
+    margin: 90px auto;
+    padding: 0 15px;
+    max-width: 70%;
+	}
+</style>
+<p>One feature of Semgrep is the ability to use regular expressions (regex) in your rule making. In the <a href="/posts/semgrep_intro/semgrepnotes/">previous post</a> we discussed what Semgrep is and how to use it, here we will be focusing specifically on how to use Semgrep in conjunction with regex as it can get complicated</p>
+
+
+
+
+
+  <h2 id="setup">Setup <a class="anchor" href="#setup" title='Anchor for "Setup".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<p>Make sure you have a good understanding of how to use Semgrep, especially with creating your own custom YAML rules</p>
+
+
+
+
+
+  <h3 id="helpful-resources">Helpful Resources <a class="anchor" href="#helpful-resources" title='Anchor for "Helpful Resources".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>While creating your regex rules, it is helpful to have an area to test and experiment with different patterns. To do so, you can check out either:</p>
+<ul>
+<li><a href="https://semgrep.dev/editor">Semgrep Playground</a> - where you can test custom Semgrep YAML rules agaisnt custom code</li>
+<li><a href="https://regex101.com/">Regex Playground</a> - where you can test specific regex patterns against custom datasets, in the upper right hand side it will even provide an explanation as to why it is matching certian cases
+<ul>
+<li>Please note that the compiler used on this site is not the same that Semgrep uses so there may be some small discrepencies between platforms</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="semgrep-yaml-rule-template">Semgrep YAML Rule Template <a class="anchor" href="#semgrep-yaml-rule-template" title='Anchor for "Semgrep YAML Rule Template".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>The following is a template for a Semgrep YAML regex rule that you can use as a basis:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+    - id: name-of-regex-rule
+        patterns:
+        - pattern-regex: regex_pattern_here
+        message: Write your message here
+        languages: [regex]
+        severity: SEVERITYLEVEL
+</code></pre><ul>
+<li>Keep in mind that <code>pattern-regex</code> is only one of five different regex pattern options. To learn about the other four, <a href="/posts/semgrep_intro/semgrepnotes/#regex-patterns">click here</a></li>
+</ul>
+
+
+
+
+
+  <h2 id="example-walkthrough">Example Walkthrough <a class="anchor" href="#example-walkthrough" title='Anchor for "Example Walkthrough".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<p>For the following example, we will be trying to create a regex pattern that will match all four of these secret keys:</p>
+<ul>
+<li>PASSWORD(secret_key0:&ldquo;qwertyuiopas&rdquo;)</li>
+<li>PASSWORD(SECRET_KEY1:&lsquo;qwert92iop674&rsquo;)</li>
+<li>PASSWORD(secretkey2:`QweRt92iopD2Fr4`)</li>
+<li>PASSWORD(SECRETkey3:QweRt92iD2Fr4)</li>
+</ul>
+<p>To do so, we will answer four different questions and by the end, have our pattern ready to throw into Semgrep</p>
+<ul>
+<li>The following examples will use the <code>#</code> chracter as a placeholder for a part of the pattern that has not been addressed yet</li>
+</ul>
+
+
+
+
+
+  <h3 id="1-is-there-any-part-that-wont-change-between-iterations">1. Is there any part that won&rsquo;t change between iterations? <a class="anchor" href="#1-is-there-any-part-that-wont-change-between-iterations" title='Anchor for "1. Is there any part that won&rsquo;t change between iterations?".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>If we look at each iteration of our secret keys, we can see that the begining <code>PASSWORD()</code> along with the middle <code>:</code> are present in the same location. While alphanumeric characters can be used exactly as they appear within your regex rules, special characters must be treated differently</p>
+
+
+
+
+
+  <h4 id="special-characters-are-reserved-characters-in-regex">Special characters are reserved characters in regex <a class="anchor" href="#special-characters-are-reserved-characters-in-regex" title='Anchor for "Special characters are reserved characters in regex".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
+
+<p>There are many reserved characters in regex patternsm, so many that almost every special character is also a reserved character. Meaning that if you want to match a special character, you must preceed it with a forward slash <code>\</code></p>
+<ul>
+<li>Example Pattern: <code>PASSWORD\(####\:####\)</code> - see it in action <a href="https://regex101.com/r/I3kps1/1/">here</a></li>
+</ul>
+
+
+
+
+
+  <h3 id="2-is-there-any-part-that-is-very-similar-between-iterations">2. Is there any part that is very similar between iterations? <a class="anchor" href="#2-is-there-any-part-that-is-very-similar-between-iterations" title='Anchor for "2. Is there any part that is very similar between iterations?".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Each iteration has the words &ldquo;secret&rdquo; and &ldquo;key&rdquo; in them, however they are both uppercase and lowercase, as well as sometimes separated with an underscore, and othertimes not. To get around these two types of variations, we need to introduce two new regex patterns:</p>
+
+
+
+
+
+  <h4 id="case-variations">Case variations <a class="anchor" href="#case-variations" title='Anchor for "Case variations".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
+
+<p>If we know our pattern will be the same but changing upper vs. lower case, we can preceed that part with <code>(?i)</code> to indicate we want to ignore the case</p>
+<ul>
+<li>Example Pattern: <code>PASSWORD\((?i)secret#(?i)key\:####\)</code> - see it in action <a href="https://regex101.com/r/brTBsG/1">here</a></li>
+</ul>
+
+
+
+
+
+  <h4 id="off-by-a-few-chracters">Off by a few chracters <a class="anchor" href="#off-by-a-few-chracters" title='Anchor for "Off by a few chracters".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
+
+<p>When the the presence of a character changes, we can follow that character with a <code>?</code> to indicate that this character may be here OR not
+follow character by <code>?</code> to say it doesnt matter</p>
+<ul>
+<li>Example Pattern:<code>PASSWORD\((?i)secret_?(?i)key\:####\)</code> - see it in action <a href="https://regex101.com/r/3JVdKV/1">here</a></li>
+</ul>
+
+
+
+
+
+  <h3 id="3-is-there-something-that-is-often-different-but-in-the-same-part">3. Is there something that is often different but in the same part? <a class="anchor" href="#3-is-there-something-that-is-often-different-but-in-the-same-part" title='Anchor for "3. Is there something that is often different but in the same part?".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Often times there will be a part of a pattern that will change, but have a limited number of variations it could be. In our case, at the beginning and the end of each key, there is either a <code>&quot;</code>, <code>'</code>, <code>`</code>, or none. To account for all of these variations we need to use an OR parameter</p>
+
+
+
+
+
+  <h4 id="how-to-use-or">How to use OR <a class="anchor" href="#how-to-use-or" title='Anchor for "How to use OR".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
+
+<p>To use the OR parameter, simply separate your different variations with a <code>|</code> and surround them all with <code>[]</code> like this</p>
+<ul>
+<li><code>[Char1|Char1|Char3]</code>
+We can also add the <code>?</code> at the end to indicate it could be one of these options OR none</li>
+<li>Example Pattern: <code>PASSWORD\((?i)secret_?(?i)key\:[&quot;|'|`]?####[&quot;|'|`]?\)</code> - see it in action <a href="https://regex101.com/r/jSO4Xq/1">here</a></li>
+</ul>
+
+
+
+
+
+  <h3 id="4-is-there-a-part-that-can-include-a-range-of-potential-characters">4. Is there a part that can include a range of potential characters? <a class="anchor" href="#4-is-there-a-part-that-can-include-a-range-of-potential-characters" title='Anchor for "4. Is there a part that can include a range of potential characters?".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Finally, we notice that in each iteration, there is something that is entirely different each time, the key number and the key value itself. Once we identify some key features about what these values can be (the key number is a one digit numeric value while the key value is a 12 to 15 character alphanumeric string) we can create patterns around them</p>
+<ul>
+<li>For common broad catagories, you can use the following
+<ul>
+<li><code>\d</code> - digit character (0-9)</li>
+<li><code>\w</code> - word character (alphanumeric and underscores)</li>
+<li><code>\s</code> - whitespace chracters (tabs/linespaces)</li>
+<li><code>.</code> - any character</li>
+</ul>
+</li>
+<li>to indicate a specific range of potential characters use <code>[]</code> with the specific characters
+<ul>
+<li><code>0-9</code> for numbers</li>
+<li><code>a-z</code> for lowercase alphabet</li>
+<li><code>A-Z</code> for uppercase alphabet</li>
+<li>can also use individual special characters</li>
+</ul>
+</li>
+<li>to indicate a range of expected characters, append the pattern with a <code>{#,#}</code></li>
+<li>Pattern Example: <code>PASSWORD\((?i)secret_?(?i)key\d{1}\:[&quot;|'|`]?[0-9a-zA-Z]{12,15}[&quot;|'|`]?\)</code></li>
+</ul>
+<p>This brings us to our final YAML rule of: <a href="https://semgrep.dev/s/s0merset7:regex_pattern_matching">(check it out in action here)</a></p>
+<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+  - id: detect-secret-keys
+    languages:
+      - regex
+    message: Secret Key Detected
+    pattern-regex: PASSWORD\((?i)secret_?(?i)key\d{1}\:[&quot;|'|`]?[0-9a-zA-Z]{12,15}[&quot;|'|`]?\)
+    severity: ERROR
+</code></pre>
+
+
+
+
+  <h2 id="summary">Summary <a class="anchor" href="#summary" title='Anchor for "Summary".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ol>
+<li>
+<p>Is there any part that won&rsquo;t change between iterations?
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> You can copy the unchanged parts as is in your Semgrep pattern
+<br><input disabled="" type="checkbox"> Special characters must be preceded by <code>\</code> </div></p>
+</li>
+<li>
+<p>Is there any part that is very similar between iterations?
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Preceed a part with <code>(?i)</code> to ignore case
+<br><input disabled="" type="checkbox"> Follow a chracter with <code>?</code> when it may OR may not be present </div></p>
+</li>
+<li>
+<p>Is there something that is often different but in the same part?
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Put different possibilities of a part in an OR parameter <code>[Char1|Char1|Char3]</code> </div></p>
+</li>
+<li>
+<p>Is there a part that can include a range of potential characters?
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> For common broad catagories, you can use the following
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <code>\d</code> - digit character (0-9)
+<br><input disabled="" type="checkbox"> <code>\w</code> - word character (alphanumeric and underscores)
+<br><input disabled="" type="checkbox"> <code>\s</code> - whitespace chracters (tabs/linespaces)
+<br><input disabled="" type="checkbox"> <code>.</code> - any character</div>
+<br><input disabled="" type="checkbox"> to indicate a specific range of potential characters use <code>[]</code> with the specific characters
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <code>0-9</code> for numbers
+<br><input disabled="" type="checkbox"> <code>a-z</code> for lowercase alphabet
+<br><input disabled="" type="checkbox"> <code>A-Z</code> for uppercase alphabet
+<br><input disabled="" type="checkbox"> can also use individual special characters</div>
+<br><input disabled="" type="checkbox"> to indicate a range of expected characters, append the pattern with a <code>{#,#}</code></div></p>
+
+
+
+
+
+  <h2 id="sources">Sources <a class="anchor" href="#sources" title='Anchor for "Sources".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li><a href="https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285">Regex Tutorial by Jonny Fox</a></li>
+<li><a href="https://regex101.com/">Regex Playground</a></li>
+<li><a href="https://semgrep.dev/docs/writing-rules/rule-syntax/#pattern-regex">Semgrep Regex Documentation</a></li>
+</ul>
+</li>
+</ol>
+
+
+
+    </article>
+  </main>
+
+
+    </div>
+    
+    <footer>
+      
+
+  <p>Copyright © 2021
+All rights reserved</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="req-js">
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"><option value="#1f676b"><option value="#f3a530"><option value="#dd587c"><option value="#1dbc91"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+</section>
+
+
+
+  <noscript>
+    <p class="noscript">Unable to execute JavaScript. Some features were disabled.</p>
+  </noscript>
+
+
+
+    </footer>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+      <symbol viewBox="0 0 512 512" id="adjust">
+        <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/>
+      </symbol>
+      
+      
+      
+      
+  
+<symbol viewBox="0 0 448 512" id="hashtag">
+  <path d="M440.667 182.109l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l14.623-81.891C377.123 38.754 371.468 32 363.997 32h-40.632a12 12 0 0 0-11.813 9.891L296.175 128H197.54l14.623-81.891C213.477 38.754 207.822 32 200.35 32h-40.632a12 12 0 0 0-11.813 9.891L132.528 128H53.432a12 12 0 0 0-11.813 9.891l-7.143 40C33.163 185.246 38.818 192 46.289 192h74.81L98.242 320H19.146a12 12 0 0 0-11.813 9.891l-7.143 40C-1.123 377.246 4.532 384 12.003 384h74.81L72.19 465.891C70.877 473.246 76.532 480 84.003 480h40.632a12 12 0 0 0 11.813-9.891L151.826 384h98.634l-14.623 81.891C234.523 473.246 240.178 480 247.65 480h40.632a12 12 0 0 0 11.813-9.891L315.472 384h79.096a12 12 0 0 0 11.813-9.891l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l22.857-128h79.096a12 12 0 0 0 11.813-9.891zM261.889 320h-98.634l22.857-128h98.634l-22.857 128z"/>
+</symbol>
+
+
+  <symbol viewBox="0 0 320 512" id="caret-down">
+    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"/>
+  </symbol>
+
+
+      
+      
+      
+    </svg>
+
+    
+    
+    
+
+      <script>
+        
+          'use strict';const PALETTE=document.querySelector('footer input');PALETTE.onchange=function(){const PICK=PALETTE.value;SHEET.setProperty('--accent',PICK);if(ROOT.dataset.mode==='light'){localStorage.setItem('lightAccent',PICK)}else{localStorage.setItem('darkAccent',PICK)};updateAccent()};
+        
+      </script>
+
+    
+    
+    
+    
+
+  </body>
+</html>
