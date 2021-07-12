@@ -431,7 +431,7 @@
       "inLanguage": "en",
       "datePublished": "2021-07-12",
       "dateModified": "2020-07-12",
-      "wordCount" : "1062",
+      "wordCount" : "1069",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -655,10 +655,10 @@
 
 <p>While creating your regex rules, it is helpful to have an area to test and experiment with different patterns. To do so, you can check out either:</p>
 <ul>
-<li><a href="https://semgrep.dev/editor">Semgrep Playground</a> - where you can test custom Semgrep YAML rules agaisnt custom code</li>
-<li><a href="https://regex101.com/">Regex Playground</a> - where you can test specific regex patterns against custom datasets, in the upper right hand side it will even provide an explanation as to why it is matching certian cases
+<li><a href="https://semgrep.dev/editor">Semgrep Playground</a> - where you can test custom Semgrep YAML rules against custom code</li>
+<li><a href="https://regex101.com/">Regex Playground</a> - where you can test specific regex patterns against custom datasets, in the upper right hand side it will even provide an explanation as to why it is matching certain cases
 <ul>
-<li>Please note that the compiler used on this site is not the same that Semgrep uses so there may be some small discrepencies between platforms</li>
+<li>Please note that the compiler used on this site is not the same that Semgrep uses so there may be some small discrepancies between platforms</li>
 </ul>
 </li>
 </ul>
@@ -696,7 +696,7 @@
 </ul>
 <p>To do so, we will answer four different questions and by the end, have our pattern ready to throw into Semgrep</p>
 <ul>
-<li>The following examples will use the <code>#</code> chracter as a placeholder for a part of the pattern that has not been addressed yet</li>
+<li>The following examples will use the <code>#</code> character as a placeholder for a part of the pattern that has not been addressed yet</li>
 </ul>
 
 
@@ -705,7 +705,7 @@
 
   <h3 id="1-is-there-any-part-that-wont-change-between-iterations">1. Is there any part that won&rsquo;t change between iterations? <a class="anchor" href="#1-is-there-any-part-that-wont-change-between-iterations" title='Anchor for "1. Is there any part that won&rsquo;t change between iterations?".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
 
-<p>If we look at each iteration of our secret keys, we can see that the begining <code>PASSWORD()</code> along with the middle <code>:</code> are present in the same location. While alphanumeric characters can be used exactly as they appear within your regex rules, special characters must be treated differently</p>
+<p>If we look at each iteration of our secret keys, we can see that the beginning <code>PASSWORD()</code> along with the middle <code>:</code> are present in the same location. While alphanumeric characters can be used exactly as they appear within your regex rules, special characters must be treated differently</p>
 
 
 
@@ -713,7 +713,7 @@
 
   <h4 id="special-characters-are-reserved-characters-in-regex">Special characters are reserved characters in regex <a class="anchor" href="#special-characters-are-reserved-characters-in-regex" title='Anchor for "Special characters are reserved characters in regex".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
 
-<p>There are many reserved characters in regex patternsm, so many that almost every special character is also a reserved character. Meaning that if you want to match a special character, you must preceed it with a forward slash <code>\</code></p>
+<p>There are many reserved characters in regex patterns, so many that almost every special character is also a reserved character. Meaning that if you want to match a special character, you must precede it with a forward slash <code>\</code></p>
 <ul>
 <li>Example Pattern: <code>PASSWORD\(####\:####\)</code> - see it in action <a href="https://regex101.com/r/I3kps1/1/">here</a></li>
 </ul>
@@ -724,7 +724,7 @@
 
   <h3 id="2-is-there-any-part-that-is-very-similar-between-iterations">2. Is there any part that is very similar between iterations? <a class="anchor" href="#2-is-there-any-part-that-is-very-similar-between-iterations" title='Anchor for "2. Is there any part that is very similar between iterations?".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
 
-<p>Each iteration has the words &ldquo;secret&rdquo; and &ldquo;key&rdquo; in them, however they are both uppercase and lowercase, as well as sometimes separated with an underscore, and othertimes not. To get around these two types of variations, we need to introduce two new regex patterns:</p>
+<p>Each iteration has the words &ldquo;secret&rdquo; and &ldquo;key&rdquo; in them, however they are both uppercase and lowercase, as well as sometimes separated with an underscore, and other times not. To get around these two types of variations, we need to introduce two new regex patterns:</p>
 
 
 
@@ -732,7 +732,7 @@
 
   <h4 id="case-variations">Case variations <a class="anchor" href="#case-variations" title='Anchor for "Case variations".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
 
-<p>If we know our pattern will be the same but changing upper vs. lower case, we can preceed that part with <code>(?i)</code> to indicate we want to ignore the case</p>
+<p>If we know our pattern will be the same but changing upper vs. lower case, we can preceded that part with <code>(?i)</code> to indicate we want to ignore the case</p>
 <ul>
 <li>Example Pattern: <code>PASSWORD\((?i)secret#(?i)key\:####\)</code> - see it in action <a href="https://regex101.com/r/brTBsG/1">here</a></li>
 </ul>
@@ -741,10 +741,10 @@
 
 
 
-  <h4 id="off-by-a-few-chracters">Off by a few chracters <a class="anchor" href="#off-by-a-few-chracters" title='Anchor for "Off by a few chracters".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
+  <h4 id="off-by-a-few-characters">Off by a few characters <a class="anchor" href="#off-by-a-few-characters" title='Anchor for "Off by a few characters".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
 
 <p>When the the presence of a character changes, we can follow that character with a <code>?</code> to indicate that this character may be here OR not
-follow character by <code>?</code> to say it doesnt matter</p>
+follow character by <code>?</code> to say it doesn&rsquo;t matter</p>
 <ul>
 <li>Example Pattern:<code>PASSWORD\((?i)secret_?(?i)key\:####\)</code> - see it in action <a href="https://regex101.com/r/3JVdKV/1">here</a></li>
 </ul>
@@ -782,7 +782,7 @@ We can also add the <code>?</code> at the end to indicate it could be one of the
 <ul>
 <li><code>\d</code> - digit character (0-9)</li>
 <li><code>\w</code> - word character (alphanumeric and underscores)</li>
-<li><code>\s</code> - whitespace chracters (tabs/linespaces)</li>
+<li><code>\s</code> - whitespace characters (tabs/linespaces)</li>
 <li><code>.</code> - any character</li>
 </ul>
 </li>
@@ -820,8 +820,8 @@ We can also add the <code>?</code> at the end to indicate it could be one of the
 </li>
 <li>
 <p>Is there any part that is very similar between iterations?
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Preceed a part with <code>(?i)</code> to ignore case
-<br><input disabled="" type="checkbox"> Follow a chracter with <code>?</code> when it may OR may not be present </div></p>
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Precede a part with <code>(?i)</code> to ignore case
+<br><input disabled="" type="checkbox"> Follow a character with <code>?</code> when it may OR may not be present </div></p>
 </li>
 <li>
 <p>Is there something that is often different but in the same part?
@@ -832,7 +832,7 @@ We can also add the <code>?</code> at the end to indicate it could be one of the
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> For common broad catagories, you can use the following
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <code>\d</code> - digit character (0-9)
 <br><input disabled="" type="checkbox"> <code>\w</code> - word character (alphanumeric and underscores)
-<br><input disabled="" type="checkbox"> <code>\s</code> - whitespace chracters (tabs/linespaces)
+<br><input disabled="" type="checkbox"> <code>\s</code> - whitespace characters (tabs/linespaces)
 <br><input disabled="" type="checkbox"> <code>.</code> - any character</div>
 <br><input disabled="" type="checkbox"> to indicate a specific range of potential characters use <code>[]</code> with the specific characters
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <code>0-9</code> for numbers
@@ -849,8 +849,9 @@ We can also add the <code>?</code> at the end to indicate it could be one of the
 
 <ul>
 <li><a href="https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285">Regex Tutorial by Jonny Fox</a></li>
-<li><a href="https://regex101.com/">Regex Playground</a></li>
 <li><a href="https://semgrep.dev/docs/writing-rules/rule-syntax/#pattern-regex">Semgrep Regex Documentation</a></li>
+<li><a href="https://regex101.com/">Regex Playground</a></li>
+<li><a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expression Cheat Sheet</a></li>
 </ul>
 </li>
 </ol>
