@@ -25,7 +25,7 @@ Setup  Make sure you have a good understanding of how to use Semgrep, especially
         <pubDate>Wed, 16 Jun 2021 15:13:52 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/semgrep_intro/semgrepnotes/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  The goal of this post is to give an introduction into how to create rules using Semgrep as well getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into exmples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</description>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  The goal of this post is to give an introduction into how to create rules using Semgrep as well as getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into examples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</description>
       </item>
     
       <item>

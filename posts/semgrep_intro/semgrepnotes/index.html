@@ -431,7 +431,7 @@
       "inLanguage": "en",
       "datePublished": "2021-06-16",
       "dateModified": "2021-06-22",
-      "wordCount" : "2603",
+      "wordCount" : "2604",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -637,7 +637,7 @@
     max-width: 70%;
 	}
 </style>
-<p>The goal of this post is to give an introduction into how to create rules using Semgrep as well getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into exmples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</p>
+<p>The goal of this post is to give an introduction into how to create rules using Semgrep as well as getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into examples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</p>
 
 
 
@@ -998,7 +998,7 @@
 </li>
 <li>This is good but doesn&rsquo;t actually check if they business logic is right, we need to add a conditional by clicking the plus button to the right of the rule block</li>
 <li>We can see a dropdown of options, here we want <strong>and is not</strong>, and then copy the top rule into the bottom box</li>
-<li>Above the <code>make_transaction()</code> line in our new rule section, lets add an elipsis followed by <code>verify_transaction(...);</code>. What this does is make sure the verify function is never called prior to the make transaction function in any place the make transaction function exists, as we only want the transaction to be verified if it first has been made
+<li>Above the <code>make_transaction()</code> line in our new rule section, lets add an ellipsis followed by <code>verify_transaction(...);</code>. What this does is make sure the verify function is never called prior to the make transaction function in any place the make transaction function exists, as we only want the transaction to be verified if it first has been made
 <pre aria-label="Box containing code sample." tabindex=0><code>public $RETTYPE $FUNC(...) {
 ...
     verify_transaction(...);
