@@ -70,8 +70,8 @@
   
   
     <meta property="article:published_time" content="2021-07-12">
-    <meta property="article:modified_time" content="2020-07-12">
-    <meta property="og:updated_time" content="2020-07-12">
+    <meta property="article:modified_time" content="2020-07-28">
+    <meta property="og:updated_time" content="2020-07-28">
   
 
   
@@ -430,8 +430,8 @@
       "url": "https:\/\/s0merset7.github.io\/posts\/regex_walkthrough\/",
       "inLanguage": "en",
       "datePublished": "2021-07-12",
-      "dateModified": "2020-07-12",
-      "wordCount" : "1077",
+      "dateModified": "2020-07-28",
+      "wordCount" : "1069",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -592,7 +592,7 @@
           </section>
           <p>
             
-              Last updated on <time datetime="2020-07-12">2020-07-12</time>
+              Last updated on <time datetime="2020-07-28">2020-07-28</time>
             
           </p>
         
@@ -813,22 +813,15 @@ We can also add the <code>?</code> at the end to indicate it could be one of the
   <h2 id="summary">Summary <a class="anchor" href="#summary" title='Anchor for "Summary".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
 
 <ol>
-<li>
-<p><strong>Is there any part that won&rsquo;t change between iterations?</strong>
+<li><strong>Is there any part that won&rsquo;t change between iterations?</strong>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> You can copy the unchanged parts as is in your Semgrep pattern
-<br><input disabled="" type="checkbox"> Special characters must be preceded by <code>\</code></p>
-</li>
-<li>
-<p><strong>Is there any part that is very similar between iterations?</strong>
+<br><input disabled="" type="checkbox"> Special characters must be preceded by <code>\</code></li>
+<li><strong>Is there any part that is very similar between iterations?</strong>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Precede a part with <code>(?i)</code> to ignore case
-<br><input disabled="" type="checkbox"> Follow a character with <code>?</code> when it may OR may not be present</p>
-</li>
-<li>
-<p><strong>Is there something that is often different but in the same part?</strong>
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Put different possibilities of a part in an OR parameter <code>[Char1|Char1|Char3]</code></p>
-</li>
-<li>
-<p><strong>Is there a part that can include a range of potential characters?</strong>
+<br><input disabled="" type="checkbox"> Follow a character with <code>?</code> when it may OR may not be present</li>
+<li><strong>Is there something that is often different but in the same part?</strong>
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Put different possibilities of a part in an OR parameter <code>[Char1|Char1|Char3]</code></li>
+<li><strong>Is there a part that can include a range of potential characters?</strong>
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> For common broad catagories, you can use the following
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> <code>\d</code> - digit character (0-9)
 <br><input disabled="" type="checkbox"> <code>\w</code> - word character (alphanumeric and underscores)
@@ -839,7 +832,8 @@ We can also add the <code>?</code> at the end to indicate it could be one of the
 <br><input disabled="" type="checkbox"> <code>a-z</code> for lowercase alphabet
 <br><input disabled="" type="checkbox"> <code>A-Z</code> for uppercase alphabet
 <br><input disabled="" type="checkbox"> can also use individual special characters</div>
-<br><input disabled="" type="checkbox"> to indicate a range of expected characters, append the pattern with a <code>{#,#}</code></div></p>
+<br><input disabled="" type="checkbox"> to indicate a range of expected characters, append the pattern with a <code>{#,#}</code></div></li>
+</ol>
 
 
 
@@ -847,12 +841,12 @@ We can also add the <code>?</code> at the end to indicate it could be one of the
 
   <h2 id="sources">Sources <a class="anchor" href="#sources" title='Anchor for "Sources".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
 
-<p><br><div style="padding-left: 2em;">[ ] <a href="https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285">Regex Tutorial by Jonny Fox</a>
-<br><div style="padding-left: 2em;">[ ] <a href="https://semgrep.dev/docs/writing-rules/rule-syntax/#pattern-regex">Semgrep Regex Documentation</a>
-<br><div style="padding-left: 2em;">[ ] <a href="https://regex101.com/">Regex Playground</a>
-<br><div style="padding-left: 2em;">[ ] <a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expression Cheat Sheet</a></p>
-</li>
-</ol>
+<ul>
+<li><a href="https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285">Regex Tutorial by Jonny Fox</a></li>
+<li><a href="https://semgrep.dev/docs/writing-rules/rule-syntax/#pattern-regex">Semgrep Regex Documentation</a></li>
+<li><a href="https://regex101.com/">Regex Playground</a></li>
+<li><a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expression Cheat Sheet</a></li>
+</ul>
 
 
 
