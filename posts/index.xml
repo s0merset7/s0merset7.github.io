@@ -8,7 +8,17 @@
     <language>en</language>
     <copyright>Copyright © 2021
 All rights reserved</copyright>
-    <lastBuildDate>Thu, 02 Sep 2021 12:13:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Sep 2021 14:00:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Program Misuse (Module 2)</title>
+        <link>https://s0merset7.github.io/posts/program_misuse/programmisuse/</link>
+        <pubDate>Thu, 02 Sep 2021 14:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/program_misuse/programmisuse/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili&amp;rsquo;s pwn.college lectures from the “Program Misuse” module. Much credit goes to Yan&amp;rsquo;s expertise! Please check out the pwn.college resources and challenges in the sources
+In module 2 there wasn&amp;rsquo;t as much content to cover so this post isn&amp;rsquo;t too long. I&amp;rsquo;d still reccomend checking out the lectures yourself for demonstrations on each of the topics covered.</description>
+      </item>
+    
       <item>
         <title>Program Interaction (Module 1)</title>
         <link>https://s0merset7.github.io/posts/program_interaction/programinteraction/</link>
