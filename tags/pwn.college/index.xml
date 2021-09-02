@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Somerset&#39;s Blog</title>
+    <link>https://s0merset7.github.io/tags/pwn.college/</link>
+    <description>Somerset&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2021
+All rights reserved</copyright>
+    <lastBuildDate>Thu, 02 Sep 2021 12:13:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/pwn.college/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Program Interaction (Module 1)</title>
+        <link>https://s0merset7.github.io/posts/program_interaction/programinteraction/</link>
+        <pubDate>Thu, 02 Sep 2021 12:13:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/program_interaction/programinteraction/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  As a part of my degree program, I have to take a class called CSE466: Computer Systems Security. The professor for this class (Dr. Shoshitaishvili) created pwn.college, a free education platform to guide not only students in the course, but anyone who wants to try it out. I will be publishing all of my notes from each relevant module of course here, though I highly recommend watching the lectures for yourself as they go much more in-depth!</description>
+      </item>
+    
+  </channel>
+</rss>
