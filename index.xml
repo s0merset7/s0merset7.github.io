@@ -8,7 +8,17 @@
     <language>en</language>
     <copyright>Copyright © 2021
 All rights reserved</copyright>
-    <lastBuildDate>Thu, 02 Sep 2021 14:00:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Sep 2021 20:11:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Assembly Refresher (Module 3)</title>
+        <link>https://s0merset7.github.io/posts/assembly_refresher/assemblyrefresher/</link>
+        <pubDate>Fri, 03 Sep 2021 20:11:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/assembly_refresher/assemblyrefresher/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Assembly Refresher” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo;t have experience with x86 then I&amp;rsquo;d recommend starting with Resources and learning some of the basics or the rest of this post won&amp;rsquo;t make much sense.</description>
+      </item>
+    
       <item>
         <title>Program Misuse (Module 2)</title>
         <link>https://s0merset7.github.io/posts/program_misuse/programmisuse/</link>
