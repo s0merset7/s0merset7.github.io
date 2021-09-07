@@ -8,7 +8,17 @@
     <language>en</language>
     <copyright>Copyright © 2021
 All rights reserved</copyright>
-    <lastBuildDate>Fri, 03 Sep 2021 20:11:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Sep 2021 19:00:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Shellcoding (Module 4)</title>
+        <link>https://s0merset7.github.io/posts/shellcoding_post/shellcodingpost/</link>
+        <pubDate>Mon, 06 Sep 2021 19:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/shellcoding_post/shellcodingpost/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Shellcode Injection” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo;t have experience with x86 then I&amp;rsquo;d recommend taking a look at the last post and learning some of the basics or the rest of this post won&amp;rsquo;t make much sense.</description>
+      </item>
+    
       <item>
         <title>Assembly Refresher (Module 3)</title>
         <link>https://s0merset7.github.io/posts/assembly_refresher/assemblyrefresher/</link>
