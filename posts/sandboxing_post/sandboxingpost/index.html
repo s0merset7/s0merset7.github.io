@@ -30,7 +30,7 @@
 
 
 
-<title>Program Misuse (Module 2) | Somerset&#39;s Blog</title>
+<title>Sandboxing (Module 5) | Somerset&#39;s Blog</title>
 
 
 <meta name="author" content="Somerset">
@@ -44,7 +44,7 @@
 
 
   
-    <link rel="canonical" href="https://s0merset7.github.io/posts/program_misuse/programmisuse/">
+    <link rel="canonical" href="https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/">
   
 
 
@@ -64,9 +64,9 @@
 
 
 <meta property="og:site_name" content="Somerset&#39;s Blog">
-<meta property="og:title" content="Program Misuse (Module 2)">
+<meta property="og:title" content="Sandboxing (Module 5)">
 
-  <meta property="og:url" content="https://s0merset7.github.io/posts/program_misuse/programmisuse/">
+  <meta property="og:url" content="https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/">
 
 
 
@@ -78,9 +78,9 @@
   <meta property="og:type" content="article">
   
   
-    <meta property="article:published_time" content="2021-09-02">
-    <meta property="article:modified_time" content="2021-09-02">
-    <meta property="og:updated_time" content="2021-09-02">
+    <meta property="article:published_time" content="2021-09-12">
+    <meta property="article:modified_time" content="2021-09-12">
+    <meta property="og:updated_time" content="2021-09-12">
   
 
   
@@ -433,14 +433,14 @@
         "@type": "WebSite",
         "@id": "https:\/\/s0merset7.github.io\/"
       },
-      "headline": "Program Misuse (Module 2)",
+      "headline": "Sandboxing (Module 5)",
       "description": "",
       
-      "url": "https:\/\/s0merset7.github.io\/posts\/program_misuse\/programmisuse\/",
+      "url": "https:\/\/s0merset7.github.io\/posts\/sandboxing_post\/sandboxingpost\/",
       "inLanguage": "en",
-      "datePublished": "2021-09-02",
-      "dateModified": "2021-09-02",
-      "wordCount" : "296",
+      "datePublished": "2021-09-12",
+      "dateModified": "2021-09-12",
+      "wordCount" : "460",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -587,7 +587,7 @@
     <article>
       <header>
         
-        <h1>Program Misuse (Module 2)</h1>
+        <h1>Sandboxing (Module 5)</h1>
         
         
 
@@ -597,7 +597,7 @@
           </section>
           <p>
             
-              Published on <time datetime="2021-09-02">2021-09-02</time>
+              Published on <time datetime="2021-09-12">2021-09-12</time>
             
           </p>
         
@@ -642,44 +642,23 @@
     max-width: 70%;
 	}
 </style>
-<p><em>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili&rsquo;s <a href="https://pwn.college/modules/misuse">pwn.college lectures</a> from the “Program Misuse” module. Much credit goes to Yan&rsquo;s expertise! Please check out the pwn.college resources and challenges in the sources</em></p>
-<p>In module 2 there wasn&rsquo;t as much content to cover so this post isn&rsquo;t too long. I&rsquo;d still reccomend checking out the lectures yourself for demonstrations on each of the topics covered.</p>
+<p><em>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s <a href="https://pwn.college/modules/sandbox">pwn.college lectures</a> from the “Sandboxing” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources</em></p>
 
 
 
 
 
-  <h2 id="priviledge-escalation">Priviledge Escalation <a class="anchor" href="#priviledge-escalation" title='Anchor for "Priviledge Escalation".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+  <h2 id="what-is-sandboxing">What is Sandboxing? <a class="anchor" href="#what-is-sandboxing" title='Anchor for "What is Sandboxing?".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
 
+<p>Idea Behind Sandboxing:</p>
 <ul>
-<li>Every process has a user ID (UID) and and a group ID (GID)
-<ul>
-<li>UID 0: the Linux admin user (root). Needed for:
-<ul>
-<li>Installing software</li>
-<li>Loading device drivers</li>
-<li>Shutting down/rebooting</li>
-<li>Changing system-wide settings</li>
-<li>Can be used to:
-<ul>
-<li>open ANY file</li>
-<li>execute any program</li>
-<li>assume any other user/group ID</li>
-<li>debug any program</li>
+<li>Untrusted data/code should live in a process with <em>almost zero</em> permissions</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-
-
-
-
-  <h3 id="linux-permission-model"><strong>Linux Permission Model:</strong> <a class="anchor" href="#linux-permission-model" title='Anchor for "Linux Permission Model:".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
-
+<ol>
+<li>Spawn &ldquo;privileged&rdquo; parent process</li>
+<li>Spawn &ldquo;sandboxed&rdquo; child processes</li>
+<li>When a child needs to perform a privileged action, it asks the parent</li>
+</ol>
 <p>
 
 
@@ -704,39 +683,49 @@
       class="lazyload "
       loading="lazy"
       src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src="../linuxPermissionModel.png"
-      alt="Linux Permission Model"
+      data-src="../idealSandbox.png"
+      alt="The Ideal Sandboxed Environment"
     />
     
     <noscript>
       <img
         
         loading="lazy"
-        src="../linuxPermissionModel.png"
-        alt="Linux Permission Model"
+        src="../idealSandbox.png"
+        alt="The Ideal Sandboxed Environment"
       />
     </noscript>
   
   
 
 </p>
+
+
+
+
+
+  <h2 id="chroot">chroot <a class="anchor" href="#chroot" title='Anchor for "chroot".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+
+
+
+
+
+  <h3 id="what-is-chroot-change-root">What is chroot (change-root): <a class="anchor" href="#what-is-chroot-change-root" title='Anchor for "What is chroot (change-root):".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
 <ul>
-<li>SUID(Set User ID): execute with the eUID(effective user ID) of the file owner rather than the parent process
+<li>used to be the de-facto sandboxing utility</li>
+<li>changes the meaning of &ldquo;/&rdquo; for a process (and its children)
 <ul>
-<li>Reset every time a file&rsquo;s ownership is changed</li>
+<li><code>chroot(&quot;/tmp/jail&quot;)</code> will disallow processes from getting out of the jail</li>
 </ul>
 </li>
-<li>SGID(Set Group ID): execute with the eGID(effective Group ID) of the file owner rather than the parent process</li>
-<li>Sticky: used for shared directories to limit file removal to file owners
+<li>no syscall filtering or other isolation</li>
+<li>chroot() does NOT:
 <ul>
-<li>ensures you can only delete files you have created in a shared directory</li>
-</ul>
-</li>
-<li>Effective ID(eUID/eGID): the UID/GID used for most access checks</li>
-<li>Read ID(UID/GID):the &ldquo;real&rdquo; user/group ID of the process owner, used for things such as signal checks</li>
-<li>Saved ID: a user/group ID that your process could switch its eUID/eGID to
-<ul>
-<li>Used for temporarily dropping privileges</li>
+<li>Close resources that reside outside of the jail</li>
+<li><code>cd (chdir())</code> into the jail</li>
+<li>Do anything else!</li>
 </ul>
 </li>
 </ul>
@@ -745,24 +734,142 @@
 
 
 
-  <h3 id="useful-commands">Useful Commands: <a class="anchor" href="#useful-commands" title='Anchor for "Useful Commands:".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+  <h3 id="pitfalls">Pitfalls: <a class="anchor" href="#pitfalls" title='Anchor for "Pitfalls:".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
 
 <ul>
-<li><code>id</code>: will list out the IDs of every process on your system</li>
-<li><code>sudo chmod u+s fileName</code>: add the SUID for the given file</li>
-<li><code>sh -p</code>: ensures that priviledges are not dropped when running a program</li>
+<li><code>chroot()</code> does not do anything to previously-open resources
+<ul>
+<li>linux has <code>openat()</code> and <code>execveat()</code> functions that take in <code>dirfd</code> as an argument</li>
+<li><code>dirfd</code> can be a file descriptor representing any open()ed directory, or the special value AT_FDCWD</li>
+</ul>
+</li>
+<li>the kernel has no momemory of previous <code>chroot()</code>s for a process
+<ul>
+<li>if you <code>chroot()</code> in a <code>chroot()</code> then the first one will be overwritten</li>
+</ul>
+</li>
+<li>not isolated from PID, networks, or IPC</li>
 </ul>
 
 
 
 
 
-  <h2 id="sources">Sources: <a class="anchor" href="#sources" title='Anchor for "Sources:".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+  <h2 id="seccomp">seccomp <a class="anchor" href="#seccomp" title='Anchor for "seccomp".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+
+
+
+
+
+  <h3 id="what-is-seccomp">What is seccomp: <a class="anchor" href="#what-is-seccomp" title='Anchor for "What is seccomp:".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
 
 <ul>
-<li><a href="https://pwn.college/modules/misuse">pwn.college Module 2 Lectures</a></li>
-<li><a href="https://dojo.pwn.college/challenges/misuse">pwn.college Module 2 Challenges</a></li>
+<li>Essentially a &ldquo;system call firewall&rdquo; for Linux
+<ul>
+<li>allows developers to allow/disallow/filter permitted system calls</li>
+</ul>
+</li>
+<li>seccomp rules are inherited by children</li>
+<li>Can restrict operations run by root</li>
+</ul>
+
+
+
+
+
+  <h3 id="how-does-it-work">How does it work: <a class="anchor" href="#how-does-it-work" title='Anchor for "How does it work:".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>seccomp uses the kernel functionality extended Berkeley Packet Filters (eBPF)
+<ul>
+<li>eBPFs are programs that run in an <em>in-kernel, &ldquo;probably-safe&rdquo;</em> virtual machine</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="breaking-out">Breaking Out <a class="anchor" href="#breaking-out" title='Anchor for "Breaking Out".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>Generally, sandboxed processes need to communicate with the privileged process
+<ul>
+<li>This means normally some system calls will be permitted, allowing for:
+<ul>
+<li>permissive policies</li>
+<li>syscall confusion</li>
+<li>kernel vulnerabilities in the syscall handlers</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h4 id="permissive-policies">Permissive Policies <a class="anchor" href="#permissive-policies" title='Anchor for "Permissive Policies".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
+
+<ul>
+<li>Caused by a combination of:
+<ul>
+<li>there are a lot of system calls with a lot of complexity, easy to miss something</li>
+<li>developers may avoid breaking functionality by erring on the side of permissiveness</li>
+</ul>
+</li>
+<li>Common syscalls to abuse:
+<ul>
+<li><code>ptrace()</code> can let a sandboxed process &ldquo;puppet&rdquo; a non-sandboxed process</li>
+<li><code>sendmsg()</code> can transfer file descriptor between processes</li>
+<li><code>prctl()</code> has bizarre possible effects</li>
+<li><code>process_vm_writev()</code> allows direct access to other process' memory</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h4 id="syscall-confusion">Syscall Confusion <a class="anchor" href="#syscall-confusion" title='Anchor for "Syscall Confusion".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
+
+<ul>
+<li>Many 64-bit architectures are <em>backwards compatible</em> with their 32-bit ancestors
+<ul>
+<li>some systems allow switching between 32-bit and 64-bit mode <em>in the same process</em>
+<ul>
+<li>the kernel must be ready for either mode</li>
+</ul>
+</li>
+<li>syscall numbers differ between architectures, including 64-bit vs 32-bit of the same architectures
+<ul>
+<li>these polices often fail to properly sandbox one or the other mode
+<ul>
+<li>Example: <code>exit()</code> is syscall 60 on amd64 but syscall 1 on x86</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h2 id="sources">Sources <a class="anchor" href="#sources" title='Anchor for "Sources".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li><a href="https://pwn.college/modules/sandbox">pwn.college Module 5 Lectures</a></li>
+<li><a href="https://dojo.pwn.college/challenges/sandbox">pwn.college Module 5 Challenges</a></li>
 <li><a href="https://www.twitch.tv/pwncollege">pwn.college Class Twitch Streams</a></li>
+<li><a href="https://x86.syscall.sh/">x86 System Calls</a></li>
+<li><a href="https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/">Ryan A. Chapman Linux System Call Table</a></li>
 </ul>
 
 

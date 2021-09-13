@@ -8,7 +8,18 @@
     <language>en</language>
     <copyright>Copyright © 2021
 All rights reserved</copyright>
-    <lastBuildDate>Mon, 06 Sep 2021 19:00:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 17:30:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Sandboxing (Module 5)</title>
+        <link>https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/</link>
+        <pubDate>Sun, 12 Sep 2021 17:30:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Sandboxing” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+What is Sandboxing?  Idea Behind Sandboxing:
+ Untrusted data/code should live in a process with almost zero permissions   Spawn &amp;ldquo;privileged&amp;rdquo; parent process Spawn &amp;ldquo;sandboxed&amp;rdquo; child processes When a child needs to perform a privileged action, it asks the parent     chroot  What is chroot (change-root):   used to be the de-facto sandboxing utility changes the meaning of &amp;ldquo;/&amp;rdquo; for a process (and its children)  chroot(&amp;quot;/tmp/jail&amp;quot;) will disallow processes from getting out of the jail   no syscall filtering or other isolation chroot() does NOT:  Close resources that reside outside of the jail cd (chdir()) into the jail Do anything else!</description>
+      </item>
+    
       <item>
         <title>Shellcoding (Module 4)</title>
         <link>https://s0merset7.github.io/posts/shellcoding_post/shellcodingpost/</link>
