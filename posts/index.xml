@@ -8,7 +8,18 @@
     <language>en</language>
     <copyright>Copyright © 2021
 All rights reserved</copyright>
-    <lastBuildDate>Sun, 12 Sep 2021 17:30:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Sep 2021 12:00:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Reverse Engineering (Module 6)</title>
+        <link>https://s0merset7.github.io/posts/reverse_engineering/reverseengineering/</link>
+        <pubDate>Sun, 19 Sep 2021 12:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/reverse_engineering/reverseengineering/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Binary Reverse Engineering” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+Functions and Frames  Control Flow Graphs: a way of visually representing a function
+ graph: word used to describe the entire function map block: set on instructions that will execute one after the other edges: represent conditional/unconditional jumps  Blue (Unconditional Jump): a jump that will always be taken Green (Conditional Jump): the condition is met (true) Red (Conditional Jump): the condition is not met (false)   prologue: sets up the stack frame  save off the caller&amp;rsquo;s base pointer set current stack pointer as the base pointer &amp;ldquo;allocate&amp;rdquo; space on the stack (subtract from the stack pointer)   epilogue: tears down the stack frame  &amp;ldquo;deallocate&amp;rdquo; the stack mov rsp, rbp  Note: data is NOT destroyed by default   restore the old base pointer   stack frame: reserved place in memory for the stack to operate  stack pointer (rsp): points to the leftmost side of the stack frame base pointer (rbp): points to the rightmost side of the stack frame    What is the stack:</description>
+      </item>
+    
       <item>
         <title>Sandboxing (Module 5)</title>
         <link>https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/</link>
