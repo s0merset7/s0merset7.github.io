@@ -1,0 +1,1711 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.82.1 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Introduction to Open Source Intelligence (OSINT) | Somerset&#39;s Blog</title>
+
+
+<meta name="author" content="Somerset">
+
+
+
+<meta name="robots" content="index follow">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+
+
+
+  
+    <link rel="canonical" href="https://s0merset7.github.io/posts/osint/introtoosint/">
+  
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+<meta property="og:site_name" content="Somerset&#39;s Blog">
+<meta property="og:title" content="Introduction to Open Source Intelligence (OSINT)">
+
+  <meta property="og:url" content="https://s0merset7.github.io/posts/osint/introtoosint/">
+
+
+
+
+
+
+
+
+  <meta property="og:type" content="article">
+  
+  
+    <meta property="article:published_time" content="2021-10-23">
+    <meta property="article:modified_time" content="2021-10-23">
+    <meta property="og:updated_time" content="2021-10-23">
+  
+
+  
+  
+  
+    <meta name="twitter:creator" content="@s0merset7">
+  
+  
+
+  <meta name="twitter:site" content="@s0merset7">
+
+
+
+
+
+
+
+  <meta name="twitter:dnt" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="theme-color" content="#222">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+    
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+        
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+    
+    
+
+    
+
+      
+      
+    
+
+  
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebSite",
+        "@id": "https:\/\/s0merset7.github.io\/"
+      },
+      "headline": "Introduction to Open Source Intelligence (OSINT)",
+      "description": "",
+      
+      "url": "https:\/\/s0merset7.github.io\/posts\/osint\/introtoosint\/",
+      "inLanguage": "en",
+      "datePublished": "2021-10-23",
+      "dateModified": "2021-10-23",
+      "wordCount" : "1860",
+      "publisher": {
+        "@type": "Person",
+        "name": "Somerset"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Somerset",
+        "description": "Cybersecuirty enthusiast learning what I can",
+        "sameAs": ["https://github.com/s0merset7","https://www.linkedin.com/in/ryan-dinnan","https://twitter.com/s0merset7"]
+      }
+    }
+  </script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.9ee32856170fec5024ff3829de02718c5f0870bfc1633f7aec8c84308e36821eba2d10df209342c3c2610bf537fd3eb7a4e41ae80b62d67bcc622c7c1fd133df.css" integrity="sha512-nuMoVhcP7FAk/zgp3gJxjF8IcL/BYz967IyEMI42gh66LRDfIJNCw8JhC/U3/T63pOQa6Ati1nvMYix8H9Ez3w==">
+
+
+
+<noscript>
+
+  
+  
+
+  
+
+    
+      <meta name="theme-color" content="#902b37">
+    
+
+  
+
+  <style>
+  
+    html {
+      --accent: #902b37;
+    }
+  
+    .req-js,
+    img.lazyload {
+      display: none;
+    }
+    
+  </style>
+  
+</noscript>
+
+
+
+
+
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/oswald-v29-latin-700.woff" as="font" crossorigin="anonymous">
+
+  <link rel="preload" href="/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+
+
+
+
+
+<script defer src="/js/lazysizes.min.min.a119ca60ecfe388cd8593368571986e9a789685d5d68c3c37cab079ff3ddd67c14f15acf56cbd8e554f09111201f5e46a6ed24138139d0820254a1342b92507c.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  <link rel="me" href="https://github.com/s0merset7"> 
+
+  <link rel="me" href="https://www.linkedin.com/in/ryan-dinnan"> 
+
+  <link rel="me" href="https://twitter.com/s0merset7"> 
+
+
+
+
+
+
+
+  <script>
+    
+      'use strict';const ROOT=document.documentElement,SHEET=document.documentElement.style,META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'}function setLight(){ROOT.dataset.mode='light'}localStorage.getItem('isDark')=='true'?setDark():localStorage.getItem('isDark')=='false'&&setLight(),function getAccent(){var a;return ROOT.dataset.mode==='dark'?localStorage.getItem('darkAccent')===null?(SHEET.setProperty('--accent',activeAccent),META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var a=getAccent();SHEET.setProperty('--accent',a),PALETTE.value=a,META_THEME_COLOR.setAttribute('content',a)}document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function a(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'}function b(){a(),ROOT.dataset.mode=='light'?(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' by the user.")):(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' by the user.")),updateAccent()}document.querySelector('footer button').addEventListener('click',b)})
+    
+  </script>
+
+
+
+  </head>
+
+  <body>
+
+    <header>
+      
+
+  <a href="/">Somerset&#39;s Blog</a>
+
+
+
+
+  
+    <nav aria-label="Main menu.">
+      <ul>
+        
+          <li>
+            <a class="btn" href="/about/">About</a>
+          </li>
+        
+          <li>
+            <a class="btn" href="/posts/">Posts</a>
+          </li>
+        
+          <li>
+            <a class="btn" href="/contact/">Contact</a>
+          </li>
+        
+      </ul>
+    </nav>
+  
+
+
+    </header>
+
+    <div class="filler">
+      
+
+  <main>
+    <article>
+      <header>
+        
+        <h1>Introduction to Open Source Intelligence (OSINT)</h1>
+        
+        
+
+        
+          <section class="terms">
+            <ul><li><a class="btn" href="/tags/osint/">OSINT</a></li></ul>
+          </section>
+          <p>
+            
+              Published on <time datetime="2021-10-23">2021-10-23</time>
+            
+          </p>
+        
+        
+        
+        
+      </header>
+    
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<style>
+	main {
+    margin: 90px auto;
+    padding: 0 15px;
+    max-width: 70%;
+	}
+</style>
+<p><em>Note: Much of the below information is summarized from <a href="https://academy.osintcombine.com/p/tracelabstraining">OSINT Combine&rsquo;s</a> course &ldquo;Trace Labs OSINT Foundations Course&rdquo;. Much credit goes to Chris Poulter&rsquo;s expertise! Check out their website and partners the sources</em></p>
+<p>Open Source Intelligence (OSINT) is a way of searching for information on only publicly available sources (open source). While this may seem to be the same way everyone searches for information, there are many tools and methodologies that can be used to enhance your research capabilities. This post will dive into a few of the basic ways in which you can improve your current skills and expose you to new resources to get you started on the path to OSINT.</p>
+
+
+
+
+
+  <h2 id="table-of-contents">Table of Contents <a class="anchor" href="#table-of-contents" title='Anchor for "Table of Contents".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li><a href="#advanced-google-searching">Advanced Google Searching</a>
+<ul>
+<li><a href="#google-dorks">Google Dorks</a></li>
+<li><a href="#date-range">Date Ranges</a></li>
+<li><a href="#icon-searching">Icon Searching</a></li>
+<li><a href="#addinglimiting-displayed-results">Adding and Limiting Displayed Results</a></li>
+<li><a href="#cache-searching-and-anonymity">Cache Searching and Anonymity</a></li>
+<li><a href="#event-searching">Event Searching</a></li>
+</ul>
+</li>
+<li><a href="#people-search-engines">People Search Engines</a></li>
+<li><a href="#username-correlation">Username Correlation</a>
+<ul>
+<li><a href="#finding-usernames">Finding Usernames</a></li>
+<li><a href="#account-information-gathering">Account Information Gathering</a></li>
+</ul>
+</li>
+<li><a href="#reverse-image-searching">Reverse Image Searching</a>
+<ul>
+<li><a href="#image-text-translation">Image Text Translation</a></li>
+</ul>
+</li>
+<li><a href="#cross-platform-social-media-network-analysis">Cross-Platform Social Media Network Analysis</a>
+<ul>
+<li><a href="#scraping-information">Scraping Information</a></li>
+<li><a href="#visualization">Visualization</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h2 id="advanced-google-searching">Advanced Google Searching <a class="anchor" href="#advanced-google-searching" title='Anchor for "Advanced Google Searching".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+
+
+
+
+
+  <h3 id="google-dorks">Google Dorks <a class="anchor" href="#google-dorks" title='Anchor for "Google Dorks".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Google Dork Query (or just a Google Dork) is a way of using Google&rsquo;s search features in an advanced way, allowing you to add parameters to specify your search results.</p>
+<p>The first way to narrow down your results is by adding a query to your search. Here is a table with all of the different types of Google queries along with examples on how to use them. Don&rsquo;t forget, you can have multiple queries in the same search to get even better results:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint1.png"
+      alt="Google Query Cheat Sheet"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint1.png"
+        alt="Google Query Cheat Sheet"
+      />
+    </noscript>
+  
+  
+
+</p>
+<ul>
+<li>The boolean operators (the last six entries in the table), can often be used the same way in other search engines and applications</li>
+</ul>
+
+
+
+
+
+  <h3 id="date-range">Date Range <a class="anchor" href="#date-range" title='Anchor for "Date Range".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Google has a feature called &ldquo;Tools&rdquo; that allows you to specify how recent you want your results to be, and additionally has a &ldquo;Custom&rdquo; option to specify a date range.
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint2.png"
+      alt="Google Tool GUI"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint2.png"
+        alt="Google Tool GUI"
+      />
+    </noscript>
+  
+  
+
+
+However, if we want to have this same feature with more control, then we can use the <code>after</code> and <code>before</code> queries. To use them, follow this syntax:</p>
+<ul>
+<li><code>after:year/month/day</code>
+<ul>
+<li>Ex: <code>osint after:2021/08/16</code> - to search for results related to osint published AFTER August 16th, 2021</li>
+</ul>
+</li>
+<li><code>before:year/month/day</code>
+<ul>
+<li>Ex: <code>osint before:2021/08/16</code> - to search for results related to osint published BEFORE August 16th, 2021</li>
+</ul>
+</li>
+</ul>
+<p>We can even combine the two queries together to specify a date range:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint3.png"
+      alt="Google Query Date Range"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint3.png"
+        alt="Google Query Date Range"
+      />
+    </noscript>
+  
+  
+
+</p>
+<ul>
+<li>This search would find results related to &ldquo;OSINT&rdquo; between the range of June 1st, 2020 and January 1st, 2021</li>
+</ul>
+
+
+
+
+
+  <h3 id="icon-searching">Icon Searching <a class="anchor" href="#icon-searching" title='Anchor for "Icon Searching".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Often times, certain types of information are accompanied by icons, and Google actually allows us to search by icons. It&rsquo;s as simple as copy pasting the icon you want into the search bar. A good place to look for common icons is on <a href="https://www.alt-codes.net">Alt-Codes.net</a>. This site stores lots of different icons that you can copy into the search bar.</p>
+<p>To make our searches more advanced, we can combine this feature with our previous queries.</p>
+<ul>
+<li>Say we wanted to find the contact information for lawyers in New York. We can find common icons for contact info <a href="https://www.alt-codes.net/telephone-symbols.php">here</a>, and then can make a query like this:</li>
+</ul>
+<p><code>site:linkedin.com/in &quot;lawyer&quot; (☎ OR ☏ OR ✆ OR 📞 OR 📱 OR ℡) AND New York</code>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint4.png"
+      alt="Icon Search Query"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint4.png"
+        alt="Icon Search Query"
+      />
+    </noscript>
+  
+  
+
+</p>
+
+
+
+
+
+  <h3 id="addinglimiting-displayed-results">Adding/Limiting Displayed Results <a class="anchor" href="#addinglimiting-displayed-results" title='Anchor for "Adding/Limiting Displayed Results".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Normally, Google limits the number of results shown per page to ten. In some situations it may be more convenient for us to have more or less results. To do this, go to the end of the URL of your search query and add <code>&amp;num=numberOfResults</code> where <code>numberOfResults</code> is an integer number of how many results you want shown per page.</p>
+<ul>
+<li>For example, if I were to append <code>&amp;num=2</code> to the end of the URL, my results page would look like this:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint5.png"
+      alt="Search Result Limiting"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint5.png"
+        alt="Search Result Limiting"
+      />
+    </noscript>
+  
+  
+
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="cache-searching-and-anonymity">Cache Searching and Anonymity <a class="anchor" href="#cache-searching-and-anonymity" title='Anchor for "Cache Searching and Anonymity".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Another query option we have is the <code>cache:domainName</code> query. This query will take us directly to a cached version of whatever website we enter. This means that instead of making a connection with the actual website servers, we are instead accessing a Google stored &ldquo;snapshot&rdquo; of the website from a previous date. An example would look something like this:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint6.png"
+      alt="Cached Website Header"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint6.png"
+        alt="Cached Website Header"
+      />
+    </noscript>
+  
+  
+
+</p>
+<ul>
+<li>You can see in the header of this page it shows the domain name, time of the &ldquo;snapshot&rdquo; and three different modes with &ldquo;Full Version&rdquo; selected</li>
+</ul>
+<p>By default, we will be on the &ldquo;Full Version&rdquo; of the cache, meaning that Google will attempt to recreate the website as well as it can, including requesting any and all images or media from the website&rsquo;s server. However, if we wanted to remain entirely anonymous, we can instead access the &ldquo;Text-Only Version&rdquo; (which will only load the text and any images stored in the source code, never accessing the website&rsquo;s server) by doing the following:</p>
+<ol>
+<li>Find your website on Google by searching <code>site:domainName</code></li>
+<li>Select the three vertical dots to the right of the URL, a pop up like this should appear:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint7.png"
+      alt="Kali Result Information"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint7.png"
+        alt="Kali Result Information"
+      />
+    </noscript>
+  
+  
+
+</li>
+<li>At the bottom on the pop-up, right click the &ldquo;Cached&rdquo; button and select &ldquo;Copy Link Address&rdquo;</li>
+<li>Paste the copied link into the URL search bar, append <code>&amp;strip=1</code> to the end, and press enter. You should get a result like this:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint8.png"
+      alt="Text-Only Cached Version"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint8.png"
+        alt="Text-Only Cached Version"
+      />
+    </noscript>
+  
+  
+
+</li>
+</ol>
+
+
+
+
+
+  <h3 id="event-searching">Event Searching <a class="anchor" href="#event-searching" title='Anchor for "Event Searching".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Google does a very good job at finding and organizing any instances of events. This can be helpful for us, because instead of having to find the event organizer to research an event, we can instead use Google to more efficiently find out all the same information.
+To do so, visit <code>https://google.com/search?q=desiredSearchParam&amp;ibp=htl;events</code>where <code>desiredSearchParam</code> is whatever you are searching for. You should get a page like this:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint9.png"
+      alt="Event Searching"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint9.png"
+        alt="Event Searching"
+      />
+    </noscript>
+  
+  
+
+</p>
+
+
+
+
+
+  <h2 id="people-search-engines">People Search Engines <a class="anchor" href="#people-search-engines" title='Anchor for "People Search Engines".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+
+
+
+
+
+  <h3 id="webmiihttpswebmiicom"><a href="https://webmii.com">Webmii</a> <a class="anchor" href="#webmiihttpswebmiicom" title='Anchor for "Webmii".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>A people search engine using Google</li>
+<li>Compiles in a readable format</li>
+<li>Provides an &ldquo;accuracy score&rdquo; for results</li>
+<li>Searches the broader internet</li>
+<li>Drawbacks:
+<ul>
+<li>The &ldquo;certainty level&rdquo; score can be very low</li>
+<li>Algorithm used to search is not publicly available</li>
+<li>Requires manual effort to validate info (false positives)</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="peekyouhttpswwwpeekyoucom"><a href="https://www.peekyou.com/">PeekYou</a> <a class="anchor" href="#peekyouhttpswwwpeekyoucom" title='Anchor for "PeekYou".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>Name, username, broader social media search</li>
+<li>Presents results with good detail</li>
+<li>U.S. focused, but can extend to global searches for social media and usernames</li>
+<li>Can preview social media sites
+<ul>
+<li>Lowers attribution levels since you&rsquo;re not visiting the social sites</li>
+</ul>
+</li>
+<li>Drawbacks:
+<ul>
+<li>Lots of links to scam websites</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="411comhttpswww411com"><a href="https://www.411.com">411.com</a> <a class="anchor" href="#411comhttpswww411com" title='Anchor for "411.com".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>People search for U.S. only (uses WhitePages data)</li>
+<li>Phone and reverse address lookup options</li>
+<li>Age and state filtering features</li>
+<li>Drawbacks:
+<ul>
+<li>Constantly wants you to buy premium (can still use information effectively)</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="thatsthemhttpsthatsthemcom"><a href="https://thatsthem.com">ThatsThem</a> <a class="anchor" href="#thatsthemhttpsthatsthemcom" title='Anchor for "ThatsThem".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>U.S. based people search</li>
+<li>IP address correlation feature</li>
+<li>Metric for &ldquo;social score&rdquo;</li>
+<li>Drawbacks:
+<ul>
+<li>Has a limited number of searches per day if your not signed up</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="zoominfohttpswwwzoominfocompeople"><a href="https://www.zoominfo.com/people/">Zoominfo</a> <a class="anchor" href="#zoominfohttpswwwzoominfocompeople" title='Anchor for "Zoominfo".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>Append the URL with <code>\&lt;first&gt;/\&lt;lastname&gt;</code> to specify a person</li>
+<li>Built for business professionals</li>
+<li>Can be Google searched</li>
+<li>Drawbacks:
+<ul>
+<li>Paid platform but has free get-arounds</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="inteliushttpsinteliuscompeople-search"><a href="https://intelius.com/people-search">Intelius</a> <a class="anchor" href="#inteliushttpsinteliuscompeople-search" title='Anchor for "Intelius".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>U.S. based searching</li>
+<li>Basic info for free</li>
+</ul>
+
+
+
+
+
+  <h3 id="whitepagescomauhttpswwwwhitepagescomau"><a href="https://www.whitepages.com.au/">Whitepages.com.au</a> <a class="anchor" href="#whitepagescomauhttpswwwwhitepagescomau" title='Anchor for "Whitepages.com.au".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>Australian only dataset</li>
+<li>Drawbacks:
+<ul>
+<li>Requires connection from Australia (use VPN)</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h2 id="username-correlation">Username Correlation <a class="anchor" href="#username-correlation" title='Anchor for "Username Correlation".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<p>This is the process of taking a username and using it to find other accounts across different social media platforms. There is a process that we should follow to ensure validation and continual searching:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint10.png"
+      alt="Username Correlation Process"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint10.png"
+        alt="Username Correlation Process"
+      />
+    </noscript>
+  
+  
+
+</p>
+
+
+
+
+
+  <h3 id="finding-usernames">Finding Usernames <a class="anchor" href="#finding-usernames" title='Anchor for "Finding Usernames".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>To verify if a certain platform has a specific username, you can use the below tools/strategies. Make sure to cross check results with multiple resources to eliminate false positives:</p>
+<ul>
+<li><a href="https://namechk.com/">Name Ch_k</a>
+<ul>
+<li>Note that green means the username is AVAILABLE on the site while red means it is taken</li>
+<li>This site is prone to false positives
+<ul>
+<li>The goal is getting started/efficiency, not validation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://namecheckup.com/">Name Checkup</a>
+<ul>
+<li>Note that green means the username is AVAILABlE, there is a key in the top right for all colors</li>
+<li>This site is also prone to false positives
+- The goal is getting started/efficiency, not validation</li>
+</ul>
+</li>
+<li>Advanced Google Search (Google Dork) <code>site:socialMediaSite.com &quot;username&quot;</code>
+<ul>
+<li>This will show a result searching only this website for instances of the username</li>
+<li>The preview text can also be very helpful</li>
+<li>Can also add an <code>@</code> in front of the username (if applicable) to narrow down results</li>
+</ul>
+</li>
+<li>Search Social Media Website
+<ul>
+<li>Many social media websites have a special URL for each user which can be searched to see if there is an existing page</li>
+<li>Common Formats:
+<ul>
+<li>facebook.com/username</li>
+<li>twitter.com/username</li>
+<li>instagram.com/username</li>
+<li>youtube.com/user/username</li>
+<li>tiktok.com/@username</li>
+<li>linkedin.com/in/user-name
+<ul>
+<li>LinkedIn sometimes adds random characters to usernames which will require you to search them separately</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="account-information-gathering">Account Information Gathering <a class="anchor" href="#account-information-gathering" title='Anchor for "Account Information Gathering".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Once you&rsquo;ve found the account, you will want to observe as much as you can, with extra emphasis on the below catagories. All of this information can be used to cross check users across different platforms to increase the level of certainty:</p>
+<ul>
+<li>Any links to additional social media</li>
+<li>About Section
+<ul>
+<li>If content is reused across different social media accounts</li>
+<li>Personal Information</li>
+</ul>
+</li>
+<li>Posting patterns
+<ul>
+<li>Frequency</li>
+<li>Content type</li>
+<li>Original posts vs. reposts</li>
+<li>Length/Sincerity of posts</li>
+</ul>
+</li>
+<li>Friends
+<ul>
+<li>Friends that commonly interact pn posts</li>
+</ul>
+</li>
+<li>Number of followers/following</li>
+<li>Photos</li>
+<li>Nicknames
+<ul>
+<li>Especially ones that can be used as alternative usernames</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h2 id="reverse-image-searching">Reverse Image Searching <a class="anchor" href="#reverse-image-searching" title='Anchor for "Reverse Image Searching".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<p>There are many search engines for reverse image searching, each with their pros and cons:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint11.png"
+      alt="2019 Reverse Image Search Capabilities Comparison Table"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint11.png"
+        alt="2019 Reverse Image Search Capabilities Comparison Table"
+      />
+    </noscript>
+  
+  
+
+</p>
+<p><strong><a href="https://images.google.com/">Google</a></strong></p>
+<ul>
+<li>Particularly good with locations and structures</li>
+<li>Results broken down by:
+<ul>
+<li>Image Size</li>
+<li>Results of where image is located on the internet</li>
+<li>Visually Similar Images</li>
+<li>Pages that include this image</li>
+</ul>
+</li>
+</ul>
+<p><strong><a href="https://yandex.com/images/">Yandex</a></strong></p>
+<ul>
+<li>Russian search engine similar to Google/Bing</li>
+<li>Leader of identifying individuals and finding matching images across the internet</li>
+</ul>
+<p><strong><a href="https://www.bing.com/visualsearch">Bing</a></strong></p>
+<ul>
+<li>Can select specific parts of the picture to search
+<ul>
+<li>Very efficient</li>
+</ul>
+</li>
+<li>Best for searching across LinkedIn (owned by same company)</li>
+</ul>
+<p><strong><a href="https://tineye.com/">TinEye</a></strong></p>
+<ul>
+<li>Focuses on finding exact image matches
+<ul>
+<li>Helpful for copyright searching</li>
+</ul>
+</li>
+</ul>
+<p><strong><a href="https://www.osintcombine.com/reverse-image-analyzer">OSINT Combine Image Analyzer</a></strong></p>
+<ul>
+<li>Tool created by OSINT professionals to combine some of the above sources into one easy to use resource</li>
+<li>Has additional filtering capabilities (such as partial vs full matches)</li>
+</ul>
+
+
+
+
+
+  <h3 id="image-text-translation">Image Text Translation <a class="anchor" href="#image-text-translation" title='Anchor for "Image Text Translation".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>It is helpful to be able to transcribe or translate text found in images. Many resources make frequent errors so make sure to cross check against different resources:</p>
+<p><strong><a href="https://translate.yandex.com/ocr">Yandex</a></strong></p>
+<ul>
+<li>Only works with a local file (must be downloaded)</li>
+<li>Will not translate directly, will have to copy text and put into translator</li>
+</ul>
+<p><strong><a href="https://cloud.google.com/vision/docs/drag-and-drop">Google</a></strong></p>
+
+
+
+
+
+  <h2 id="cross-platform-social-media-network-analysis">Cross-Platform Social Media Network Analysis <a class="anchor" href="#cross-platform-social-media-network-analysis" title='Anchor for "Cross-Platform Social Media Network Analysis".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<p>Social network analysis (SNA) is critical for:</p>
+<ul>
+<li>Identifying <em>broad network</em> associates</li>
+<li>Understanding usage clusters (groups of individuals) for associates</li>
+<li>Verifying associated metadata for clusters</li>
+<li>Can be visualized (using sociograms) to tell stories/assist in understanding an individual</li>
+</ul>
+<p>To better understand SNA, here is some of the basic terminology used:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <img
+      class="lazyload "
+      loading="lazy"
+      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
+      data-src="../osint12.png"
+      alt="SNA Vocab"
+    />
+    
+    <noscript>
+      <img
+        
+        loading="lazy"
+        src="../osint12.png"
+        alt="SNA Vocab"
+      />
+    </noscript>
+  
+  
+
+
+Types of Relationships Visualized:</p>
+<ul>
+<li>Simple Relationship (A &mdash; B)</li>
+<li>Directed Relationship (A &mdash;&gt; B)</li>
+<li>Symmetric Relationship (A &lt;&mdash;&gt; B)</li>
+</ul>
+
+
+
+
+
+  <h3 id="scraping-information">Scraping Information <a class="anchor" href="#scraping-information" title='Anchor for "Scraping Information".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>It is hard to manage all observations/information gathered from a social media account, so web scraping tools can be utilized to collect information and allow for customization/editing: <em>Note: You will need to sign into an account to use these tools, MAKE SURE YOU USE A FAKE ACCOUNT WHEN DOING SO!!</em></p>
+<ul>
+<li><strong>Facebook</strong>
+<ul>
+<li><a href="https://mbasic.facebook.com/">Mbasic</a>: Will open and scrape likes from multiple photos
+<ul>
+<li>Append <code>/username/friends</code> to the website to scrape friends list</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Twitter</strong>
+<ul>
+<li><a href="https://tweetbeaver.com/">Tweetbeaver</a>: Will download users &ldquo;favorites&rdquo;, friends list</li>
+</ul>
+</li>
+<li><strong>Instagram</strong>
+<ul>
+<li><a href="https://spatulah.com/">Spatulah</a>: Will download comments for multiple posts</li>
+<li>You can just copy paste a users' friends list online</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="visualization">Visualization <a class="anchor" href="#visualization" title='Anchor for "Visualization".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<p>Once we have scraped all of our information and placed it into a csv file, we want to visually model it:</p>
+<ul>
+<li><a href="http://osintcombine.tools/">OSINT Combine</a>
+<ul>
+<li>Provides rapid data visualization within the browser</li>
+<li>Limited to smaller datasets</li>
+</ul>
+</li>
+<li><a href="https://gephi.org/">Gephi</a>
+<ul>
+<li>Large scale data visualization</li>
+<li>Requires software installation on</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h2 id="sources">Sources <a class="anchor" href="#sources" title='Anchor for "Sources".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li><a href="https://academy.osintcombine.com/p/tracelabstraining">Trace Labs OSINT Foundations Course</a></li>
+<li><a href="https://academy.osintcombine.com/">OSINT Combine</a></li>
+<li><a href="https://www.tracelabs.org/">Trace Labs</a></li>
+<li><a href="https://ohshint.gitbook.io/oh-shint-its-a-blog/">Site with more OSINT Resources</a></li>
+<li><a href="http://www.agoogleaday.com/">Google Game to Practice Your Search Skills</a></li>
+</ul>
+
+
+
+    </article>
+  </main>
+
+
+    </div>
+    
+    <footer>
+      
+
+  <p>Copyright © 2021
+All rights reserved</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="req-js">
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"><option value="#1f676b"><option value="#f3a530"><option value="#dd587c"><option value="#1dbc91"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+</section>
+
+
+
+  <noscript>
+    <p class="noscript">Unable to execute JavaScript. Some features were disabled.</p>
+  </noscript>
+
+
+
+    </footer>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+      <symbol viewBox="0 0 512 512" id="adjust">
+        <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/>
+      </symbol>
+      
+      
+      
+      
+  
+<symbol viewBox="0 0 448 512" id="hashtag">
+  <path d="M440.667 182.109l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l14.623-81.891C377.123 38.754 371.468 32 363.997 32h-40.632a12 12 0 0 0-11.813 9.891L296.175 128H197.54l14.623-81.891C213.477 38.754 207.822 32 200.35 32h-40.632a12 12 0 0 0-11.813 9.891L132.528 128H53.432a12 12 0 0 0-11.813 9.891l-7.143 40C33.163 185.246 38.818 192 46.289 192h74.81L98.242 320H19.146a12 12 0 0 0-11.813 9.891l-7.143 40C-1.123 377.246 4.532 384 12.003 384h74.81L72.19 465.891C70.877 473.246 76.532 480 84.003 480h40.632a12 12 0 0 0 11.813-9.891L151.826 384h98.634l-14.623 81.891C234.523 473.246 240.178 480 247.65 480h40.632a12 12 0 0 0 11.813-9.891L315.472 384h79.096a12 12 0 0 0 11.813-9.891l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l22.857-128h79.096a12 12 0 0 0 11.813-9.891zM261.889 320h-98.634l22.857-128h98.634l-22.857 128z"/>
+</symbol>
+
+
+  <symbol viewBox="0 0 320 512" id="caret-down">
+    <path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"/>
+  </symbol>
+
+
+      
+      
+      
+    </svg>
+
+    
+    
+    
+
+      <script>
+        
+          'use strict';const PALETTE=document.querySelector('footer input');PALETTE.onchange=function(){const a=PALETTE.value;SHEET.setProperty('--accent',a),ROOT.dataset.mode==='light'?localStorage.setItem('lightAccent',a):localStorage.setItem('darkAccent',a),updateAccent()}
+        
+      </script>
+
+    
+    
+    
+    
+
+  </body>
+</html>
