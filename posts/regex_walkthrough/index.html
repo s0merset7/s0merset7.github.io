@@ -5,7 +5,7 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Hugo 0.81.0 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+<meta name="generator" content="Hugo 0.89.4 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
 
@@ -459,7 +459,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.ee646983e73ad639b2ecceee5f16919057dfee25f86285fd6526d4f9d13c1d5199dd6c7bc1045e78020e112a8974cb510bee72c28ab9933bf9ab27b7951a9d4b.css" integrity="sha512-nuMoVhcP7FAk/zgp3gJxjF8IcL/BYz967IyEMI42gh66LRDfIJNCw8JhC/U3/T63pOQa6Ati1nvMYix8H9Ez3w==">
+<link rel="stylesheet" href="/css/main.min.9ee32856170fec5024ff3829de02718c5f0870bfc1633f7aec8c84308e36821eba2d10df209342c3c2610bf537fd3eb7a4e41ae80b62d67bcc622c7c1fd133df.css" integrity="sha512-nuMoVhcP7FAk/zgp3gJxjF8IcL/BYz967IyEMI42gh66LRDfIJNCw8JhC/U3/T63pOQa6Ati1nvMYix8H9Ez3w==">
 
 
 
@@ -675,7 +675,7 @@
   <h3 id="semgrep-yaml-rule-template">Semgrep YAML Rule Template <a class="anchor" href="#semgrep-yaml-rule-template" title='Anchor for "Semgrep YAML Rule Template".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
 
 <p>The following is a template for a Semgrep YAML regex rule that you can use as a basis:</p>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: name-of-regex-rule
         patterns:
         - pattern-regex: regex_pattern_here
@@ -803,7 +803,7 @@ We can also add the <code>?</code> at the end to indicate it could be one of the
 <li>Pattern Example: <code>PASSWORD\((?i)secret_?(?i)key\d{1}\:[&quot;|'|`]?[0-9a-zA-Z]{12,15}[&quot;|'|`]?\)</code></li>
 </ul>
 <p>This brings us to our final YAML rule of: <a href="https://semgrep.dev/s/s0merset7:regex_pattern_matching">(check it out in action here)</a></p>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
   - id: detect-secret-keys
     languages:
       - regex

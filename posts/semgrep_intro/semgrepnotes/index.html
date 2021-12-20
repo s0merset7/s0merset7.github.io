@@ -5,7 +5,7 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Hugo 0.81.0 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+<meta name="generator" content="Hugo 0.89.4 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
 
@@ -459,7 +459,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.ee646983e73ad639b2ecceee5f16919057dfee25f86285fd6526d4f9d13c1d5199dd6c7bc1045e78020e112a8974cb510bee72c28ab9933bf9ab27b7951a9d4b.css" integrity="sha512-nuMoVhcP7FAk/zgp3gJxjF8IcL/BYz967IyEMI42gh66LRDfIJNCw8JhC/U3/T63pOQa6Ati1nvMYix8H9Ez3w==">
+<link rel="stylesheet" href="/css/main.min.9ee32856170fec5024ff3829de02718c5f0870bfc1633f7aec8c84308e36821eba2d10df209342c3c2610bf537fd3eb7a4e41ae80b62d67bcc622c7c1fd133df.css" integrity="sha512-nuMoVhcP7FAk/zgp3gJxjF8IcL/BYz967IyEMI42gh66LRDfIJNCw8JhC/U3/T63pOQa6Ati1nvMYix8H9Ez3w==">
 
 
 
@@ -846,12 +846,12 @@
 <li>We can add an <code>$</code> in front of an all caps name to represent a Metavariable. In this case, we can replace <code>name</code> in <code>req.query.name</code> with <code>$PARAM</code> to represent an unknown parameter
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Similarly we can replace the variable <code>resp</code> with <code>$VAR</code> to represent an unknown variable being passed</div></li>
 <li>This brings us to the rule of:
-<pre aria-label="Box containing code sample." tabindex=0><code>app.get('...', function (req, res) {
+<pre tabindex="0"><code>app.get('...', function (req, res) {
     var $VAR = req.query.$PARAM;
-       
+
     res.write($VAR);
 });
-</code></pre><p>Which we can see, correctly identifies one of our XSS vulnerabilities, but not both
+</code></pre>Which we can see, correctly identifies one of our XSS vulnerabilities, but not both
 
 
 
@@ -891,12 +891,11 @@
   
   
 
-</p>
 </li>
 <li>We can see that the main differences between the two are the extra lines of code, and the extra arguments in functions. To take care of that, we can add some strategic ellipsis and arrows:
 <br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> What these arrow brackets are doing is saying that we know our Metavariable exists somewhere in the expression, but we don&rsquo;t know exactly where it is</li>
 </ol>
-<pre aria-label="Box containing code sample." tabindex=0><code>app.get('...', function (req, res) {
+<pre tabindex="0"><code>app.get('...', function (req, res) {
     var $VAR = req.query.$PARAM;
     ...
     res.write(&lt;... $VAR ...&gt;);
@@ -954,12 +953,12 @@
 <li>We don&rsquo;t care about the return type, so lets replace <code>void</code> with <code>$RETTYPE</code> as our Metavariable</li>
 <li>The function type and arguments don&rsquo;t matter either so we can replace <code>base_ok</code> with <code>$FUNC</code> and <code>Transaction t</code> with <code>...</code></li>
 <li>The main thing we are looking at here is the <code>make_transaction()</code> function, so we can add ellipsis above and below that statement as well as replacing the function&rsquo;s argument leaving us with this:
-<pre aria-label="Box containing code sample." tabindex=0><code>public $RETTYPE $FUNC(...) {
+<pre tabindex="0"><code>public $RETTYPE $FUNC(...) {
 ...
     make_transaction(...);
 ...
 }
-</code></pre><p>If we run that, we get this result which locates everything that use the <code>make_transaction()</code> function
+</code></pre>If we run that, we get this result which locates everything that use the <code>make_transaction()</code> function
 
 
 
@@ -999,19 +998,18 @@
   
   
 
-</p>
 </li>
 <li>This is good but doesn&rsquo;t actually check if they business logic is right, we need to add a conditional by clicking the plus button to the right of the rule block</li>
 <li>We can see a dropdown of options, here we want <strong>and is not</strong>, and then copy the top rule into the bottom box</li>
 <li>Above the <code>make_transaction()</code> line in our new rule section, lets add an ellipsis followed by <code>verify_transaction(...);</code>. What this does is make sure the verify function is never called prior to the make transaction function in any place the make transaction function exists, as we only want the transaction to be verified if it first has been made
-<pre aria-label="Box containing code sample." tabindex=0><code>public $RETTYPE $FUNC(...) {
+<pre tabindex="0"><code>public $RETTYPE $FUNC(...) {
 ...
     verify_transaction(...);
 ...
     make_transaction(...);
 ...
 }
-</code></pre><p>When we run, we can see that it works and returns every time the verify transaction function is called before the make transaction function, with one exception
+</code></pre>When we run, we can see that it works and returns every time the verify transaction function is called before the make transaction function, with one exception
 
 
 
@@ -1051,12 +1049,11 @@
   
   
 
-</p>
 </li>
 <li>In the very last method of the sample code, we see that it should be flagged as a vulnerability as the transaction that is verified is not the same one that is made</li>
 <li>To fix this, we can replace the function ellipses in the <strong>and is not</strong> rule with a Metavariable <code>$T</code></li>
 </ol>
-<pre aria-label="Box containing code sample." tabindex=0><code>public $RETTYPE $FUNC(...) {
+<pre tabindex="0"><code>public $RETTYPE $FUNC(...) {
   ...
     verify_transaction($T);
   ...
@@ -1113,7 +1110,7 @@
 
 <p>What we were looking at before is the Semgrep UI, but as we make more complex rules it is easier to do so using Semgrep&rsquo;s natural syntax language, YAML
 You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html">here</a>, but the main outline of a Semgrep command is as follows:</p>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: name-of-rule
         patterns:
         - pattern: $PATTERN_A
@@ -1144,7 +1141,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>pattern</code> = search for &ldquo;this&rdquo; AND &ldquo;that&rdquo;</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: default-pattern-example
         patterns:
         - pattern: print(...)
@@ -1152,7 +1149,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>pattern-either</code> = search for &ldquo;this&rdquo; OR &ldquo;that&rdquo;</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: either-pattern-example
         patterns:
         - pattern-either:
@@ -1162,7 +1159,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>pattern-not</code> = filters out patterns you do not want to match, ie. matches &ldquo;this&rdquo; AND NOT &ldquo;that&rdquo;</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: not-pattern-example
         patterns:
         - pattern: if (...)...
@@ -1171,7 +1168,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>pattern-inside</code> = allows you to search for patterns inside the pattern specified by <code>pattern-inside</code>. This means this command must be FIRST, and the following patterns will only search based on the set received from this command call</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: inside-pattern-example
         patterns:
         - pattern-inside: |
@@ -1183,7 +1180,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>pattern-not-inside</code> = filters out any matches inside the range defined by the pattern. This means this command can only come AFTER a previously defined pattern</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: not-inside-pattern-example
         patterns:
         - pattern: print(...)
@@ -1297,7 +1294,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>pattern-regex</code> = searches for a compatible regular expression (works best for Python)</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: regex-pattern-example
         patterns:
         - pattern-inside: print(...)
@@ -1306,7 +1303,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>pattern-not-regex</code> = will filter out compatible regular expressions (works best for Python)</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: not-regex-pattern-example
         patterns:
         - pattern-inside: print(...)
@@ -1322,7 +1319,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>metavariable-regex</code> = this works similar to <code>pattern-regex</code>, but instead of matching any instance of the regex in the code, this will only match regex patterns found in a given Metavariable</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: metavariable-regex-example
         patterns:
         - pattern: print($VAR)
@@ -1346,7 +1343,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>metavariable-pattern</code> = this rule works the same way as <code>metavariable-regex</code> but instead of searching for matching regular expressions, it searches for matching patterns using the five pattern rules from above</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: metavariable-pattern-example
         patterns:
         - pattern: | 
@@ -1360,7 +1357,7 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>metavariable-comparison</code> = this rule will take a provided Metavariable and use a Python comparison function to evaluate the Metavariable&rsquo;s numeric value</li>
 </ul>
-<pre aria-label="Box containing code sample." tabindex=0><code>rules:
+<pre tabindex="0"><code>rules:
     - id: metavariable-comparison-example
         patterns:
         - pattern: set_value($VAR)
