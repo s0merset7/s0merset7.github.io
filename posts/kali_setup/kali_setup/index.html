@@ -5,7 +5,7 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Hugo 0.89.4 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+<meta name="generator" content="Hugo 0.81.0 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
 
@@ -664,7 +664,7 @@
   <h2 id="updating-kali-linux">Updating Kali Linux <a class="anchor" href="#updating-kali-linux" title='Anchor for "Updating Kali Linux".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
 
 <p>Kali Linux normally doesn&rsquo;t auto update, so what we can do is make a simple script that does everything for us when we run it:</p>
-<pre tabindex="0"><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y &amp;&amp; sudo apt-get dist-upgrade -y
+<pre aria-label="Box containing code sample." tabindex=0><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y &amp;&amp; sudo apt-get dist-upgrade -y
 </code></pre><ul>
 <li>What this does is first retrieve any new updates to existing systems, follows through with upgrading them, and then upgrades the distributions along with all packets and their dependencies
 <ul>
@@ -760,7 +760,7 @@
 <li>Kali Linux comes with default SSH key pairs, however it is generally safer to disable the default keys and make a new key pair for security&rsquo;s sake</li>
 <li>To do this, in the terminal type the following commands:</li>
 </ol>
-<pre tabindex="0"><code>cd /etc/ssh
+<pre aria-label="Box containing code sample." tabindex=0><code>cd /etc/ssh
 mkdir keys_backup_ssh
 mv ssh_host_* keys_backup_ssh
 dpkg-reconfigure openssh-server
