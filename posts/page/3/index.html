@@ -5,7 +5,7 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Hugo 0.89.4 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+<meta name="generator" content="Hugo 0.92.0 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
 
@@ -86,6 +86,8 @@
 
 
 
+
+  
 
 
   <meta property="og:type" content="website">
@@ -454,11 +456,8 @@
   
 
   
-
-    
-      <meta name="theme-color" content="#902b37">
-    
-
+    <meta name="theme-color" content="#902b37" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#225670" media="(prefers-color-scheme: light)">
   
 
   <style>
@@ -524,7 +523,7 @@
 
   <script>
     
-      'use strict';const ROOT=document.documentElement,SHEET=document.documentElement.style,META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'}function setLight(){ROOT.dataset.mode='light'}localStorage.getItem('isDark')=='true'?setDark():localStorage.getItem('isDark')=='false'&&setLight(),function getAccent(){var a;return ROOT.dataset.mode==='dark'?localStorage.getItem('darkAccent')===null?(SHEET.setProperty('--accent',activeAccent),META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var a=getAccent();SHEET.setProperty('--accent',a),PALETTE.value=a,META_THEME_COLOR.setAttribute('content',a)}document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function a(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'}function b(){a(),ROOT.dataset.mode=='light'?(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' by the user.")):(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' by the user.")),updateAccent()}document.querySelector('footer button').addEventListener('click',b)})
+      'use strict';const PREFERS_LIGHT=window.matchMedia('(prefers-color-scheme: light)'),PREFERS_DARK=window.matchMedia('(prefers-color-scheme: dark)'),ROOT=document.documentElement,SHEET=document.documentElement.style,META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'}function setLight(){ROOT.dataset.mode='light'}localStorage.getItem('isDark')=='true'?setDark():localStorage.getItem('isDark')=='false'?setLight():PREFERS_DARK.matches?setDark():PREFERS_LIGHT.matches&&setLight(),function getAccent(){var a;return ROOT.dataset.mode==='dark'?localStorage.getItem('darkAccent')===null?(SHEET.setProperty('--accent',activeAccent),META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var a=getAccent();SHEET.setProperty('--accent',a),PALETTE.value=a,META_THEME_COLOR.setAttribute('content',a)}document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function a(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'}function c(){a(),ROOT.dataset.mode=='light'?(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' by the user.")):(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' by the user.")),updateAccent()}function b(){a(),PREFERS_LIGHT.matches?(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' in OS level.")):PREFERS_DARK.matches&&(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' in OS level.")),updateAccent()}PREFERS_LIGHT.addListener(b),PREFERS_DARK.addListener(b),document.querySelector('footer button').addEventListener('click',c)})
     
   </script>
 
@@ -938,7 +937,7 @@ All rights reserved</p>
 
 
 <section class="req-js">
-  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"><option value="#1f676b"><option value="#f3a530"><option value="#dd587c"><option value="#1dbc91"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"></datalist>
 </section>
 
 
