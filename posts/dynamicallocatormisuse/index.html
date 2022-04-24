@@ -30,7 +30,7 @@
 
 
 
-<title>Pre-Pentration Test Checklist | Somerset&#39;s Blog</title>
+<title>Dynamic Allocator Misuse (Module B) | Somerset&#39;s Blog</title>
 
 
 <meta name="author" content="Somerset">
@@ -44,7 +44,7 @@
 
 
   
-    <link rel="canonical" href="https://s0merset7.github.io/posts/pentesting_checklist/">
+    <link rel="canonical" href="https://s0merset7.github.io/posts/dynamicallocatormisuse/">
   
 
 
@@ -64,9 +64,9 @@
 
 
 <meta property="og:site_name" content="Somerset&#39;s Blog">
-<meta property="og:title" content="Pre-Pentration Test Checklist">
+<meta property="og:title" content="Dynamic Allocator Misuse (Module B)">
 
-  <meta property="og:url" content="https://s0merset7.github.io/posts/pentesting_checklist/">
+  <meta property="og:url" content="https://s0merset7.github.io/posts/dynamicallocatormisuse/">
 
 
 
@@ -80,9 +80,9 @@
   <meta property="og:type" content="article">
   
   
-    <meta property="article:published_time" content="2021-05-16">
-    <meta property="article:modified_time" content="2021-05-16">
-    <meta property="og:updated_time" content="2021-05-16">
+    <meta property="article:published_time" content="2022-04-23">
+    <meta property="article:modified_time" content="2022-04-23">
+    <meta property="og:updated_time" content="2022-04-23">
   
 
   
@@ -435,14 +435,14 @@
         "@type": "WebSite",
         "@id": "https:\/\/s0merset7.github.io\/"
       },
-      "headline": "Pre-Pentration Test Checklist",
+      "headline": "Dynamic Allocator Misuse (Module B)",
       "description": "",
       
-      "url": "https:\/\/s0merset7.github.io\/posts\/pentesting_checklist\/",
+      "url": "https:\/\/s0merset7.github.io\/posts\/dynamicallocatormisuse\/",
       "inLanguage": "en",
-      "datePublished": "2021-05-16",
-      "dateModified": "2021-05-16",
-      "wordCount" : "824",
+      "datePublished": "2022-04-23",
+      "dateModified": "2022-04-23",
+      "wordCount" : "640",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -586,17 +586,17 @@
     <article>
       <header>
         
-        <h1>Pre-Pentration Test Checklist</h1>
+        <h1>Dynamic Allocator Misuse (Module B)</h1>
         
         
 
         
           <section class="terms">
-            <ul><li><a class="btn" href="/tags/pentesting/">Pentesting</a></li></ul>
+            <ul><li><a class="btn" href="/tags/pwn.college/">pwn.college</a></li></ul>
           </section>
           <p>
             
-              Published on <time datetime="2021-05-16">2021-05-16</time>
+              Last updated on <time datetime="2022-04-23">2022-04-23</time>
             
           </p>
         
@@ -641,58 +641,222 @@
     max-width: 70%;
 	}
 </style>
-<p><em>Note: Much of the below information is summarized from <a href="https://ethicalhackingblog.com/about/">Gus Khawaja&rsquo;s</a> Pluralsight course &ldquo;Pentration Testing and Ethical Hacking with Kali Linux&rdquo;. Much credit goes to Gus&rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight</em></p>
-<p>Penetration testing is defined as the process of assessing the security model of an organization. When we perform a pentest, we want to make sure we not only do proper research, but also ensure that we are conducting the pentest properly and within the bounds of the client&rsquo;s needs, as well as making sure to protect ourselves in the process. As such, here is a checklist to follow prior to any pesntest:</p>
-<ol>
-<li><strong>Gather Information About the Client Organization</strong>: Before stating a pentest, you need to gather information about the company that will be tested in order to have an in-depth understanding about the organization. Information should include:
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Foundation
-<br><input disabled="" type="checkbox"> Objectives of the Company
-<br><input disabled="" type="checkbox"> Company Products
-<br><input disabled="" type="checkbox"> Employee/Stakeholder Information
-<br><input disabled="" type="checkbox"> Business Partners
-<br><input disabled="" type="checkbox"> Clients
- </div>
+<p><em>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s <a href="https://pwn.college/modules/heap">pwn.college lectures</a> from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources</em></p>
+
+
+
+
+
+  <h1 id="dynamic-allocator-misuse-module-b">Dynamic Allocator Misuse (Module B)</h1> 
+
+
+
+
+
+
+  <h2 id="table-of-contents">Table of Contents <a class="anchor" href="#table-of-contents" title='Anchor for "Table of Contents".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li><a href="#the-heap">The Heap</a>
+<ul>
+<li><a href="#types-of-memory">Types of Memory</a></li>
+<li><a href="#how-the-heap-works">How the Heap Works</a>
+<ul>
+<li><a href="#the-data-segment">The Data Segment</a></li>
+</ul>
 </li>
-<li><strong>Visit the Client Organization Premises</strong>: Make sure you physically check out basic facilities like parking areas, restaurants, restrooms, elevators, etc. Don&rsquo;t forget to pay close attention to:
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Network Equipment (is there sufficient security?)
-<br><input disabled="" type="checkbox"> Server Room (if different from network room) </div></li>
-<li><strong>List Contact Details of Key Personnel of Client Organization</strong>: Make sure you not only have the contact info of the important people of the organization, but also the people who you will need to contact immediately in case of emergency and the best way to contact them. Information should include:
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Name
-<br><input disabled="" type="checkbox"> Department
-<br><input disabled="" type="checkbox"> Role
-<br><input disabled="" type="checkbox"> Mobile/Office Number
-<br><input disabled="" type="checkbox"> Email </div></li>
-<li><strong>Identify Office/Space Location</strong>: Inspect the area where the pentesting team will work (if the test is in person) and ensure that it is close to the network equipment room along with easy restroom access and that it is restricted from other general employees</li>
-<li><strong>Obtain Temporary Identification Cards for the Team</strong></li>
-<li><strong>Ask the Client to Create Domain Accounts</strong>: Accounts must be made for the team (both with limited and administrator access) to allow for completion of internal network tests</li>
-<li><strong>Ask the Client for Previous Penetration Testing Reports</strong>: This will allow the team to understand past problems, as well as allow your team to check how past solutions have held up, the reputation of past testers, and timeline of when the last test was completed</li>
-<li><strong>Identify Client&rsquo;s Security Compliance Requirements</strong>
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Physical Safeguards (access cards, active guards, etc.)
-<br><input disabled="" type="checkbox"> Security Mechanisms (Technical)
-<br><input disabled="" type="checkbox"> Company Standards </div></li>
-<li><strong>Ask the Client for a List of Servers, OS, and Network Devices</strong></li>
-<li><strong>Hire a Lawyer</strong>: Make sure it is someone who understands technology that will be able to make sure proper legal documents are created/verified relating to the penetration test BEFORE the test is started</li>
-<li><strong>Prepare a Legal Penetration Testing Document</strong>: Normally this is provided by the client, but it should be reviewed closely with the pentesting team and their lawyer. Normally this will include information related to the legality of the test as well as the project scope</li>
-<li><strong>Prepare a Nondisclosure Agreement(NDA)</strong>: AKA Confidential Disclosure Agreement, will be prepared to protect the client&rsquo;s sensitive data by preventing the team from talking about selected information. Make sure it is reviewed by the team and their lawyer</li>
-<li><strong>Obtain Liability Insurance</strong>: Make sure to have liability insurance from a local insurance agency. This makes sure you are protected in the case that a client sues for any damages caused</li>
-<li><strong>Allocate a Budget for the Project</strong>: The main purpose here is to estimate the overall expenses required for the project and should not forget to include:
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Travel
-<br><input disabled="" type="checkbox"> Lodging
-<br><input disabled="" type="checkbox"> Food </div></li>
-<li><strong>List the Time Scale</strong>: This scale should be in relation to the client&rsquo;s needs. You as a pentester need to accommodating in order to not negatively affect the client&rsquo;s organization</li>
-<li><strong>Daily/Hourly Fees Negotiation</strong>: Make sure that this fee is clearly established and negotiated PRIOR to beginning the pentest</li>
-<li><strong>Timeline fo the Project</strong>: This timeline should be in relation to your needs as a pentester, estimating how long it will take. This should include:
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Start Time
-<br><input disabled="" type="checkbox"> Project Milestones
-<br><input disabled="" type="checkbox"> Completion Date (Estimated) </div></li>
-<li><strong>Draft a Cost for the Project</strong>: You must prepare a quote that will include the estimated cost of services that will be provided to your client</li>
-<li><strong>Discuss the Test Workflow</strong>: A document must be prepared and given to the client (which the client will give an approval signature BEFORE the test) that will provide an outline of what you plan to do and how including:
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Steps (what kind of tests will be done, ex: Denial of Service)
-<br><input disabled="" type="checkbox"> Tools
-<br><input disabled="" type="checkbox"> Software
-<br><input disabled="" type="checkbox"> Special Equipment </div></li>
-<li><strong>Discuss the Final Report</strong>: Make sure your clients understand and are ok with how you plan to structure your final report. In general, a report should follow the chronological order in which tests were carried out and their results. Any vulnerabilities should be ranked according to their importance along with any recommendations for counter measures</li>
+</ul>
+</li>
+<li><a href="#dangers-of-the-heap">Dangers of the Heap</a></li>
+<li><a href="#thread-local-caching-tcache">Thread Local Caching (tcache)</a>
+<ul>
+<li><a href="#what-happens-on-free">Freeing</a></li>
+<li><a href="#what-happens-on-allocation">Allocating</a></li>
+</ul>
+</li>
+<li><a href="#metadata-and-chunks">Metadata and Chunks</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+
+
+
+
+
+  <h2 id="the-heap">The Heap <a class="anchor" href="#the-heap" title='Anchor for "The Heap".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+
+
+
+
+
+  <h3 id="types-of-memory">Types of Memory <a class="anchor" href="#types-of-memory" title='Anchor for "Types of Memory".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li><strong>ELF .text</strong>: Where the code lives</li>
+<li><strong>ELF .plt</strong>: Where the library function stubs live</li>
+<li><strong>ELF .got</strong>: Where pointers to imported symbols live</li>
+<li><strong>ELF .bss</strong>: Used for uninitialized global writable data
+<ul>
+<li>Example: global arrays without initial values</li>
+</ul>
+</li>
+<li><strong>ELF .data</strong>: Use for pre-initialized global writable data
+<ul>
+<li>Example: global arrays with initial values</li>
+</ul>
+</li>
+<li><strong>ELF .rodata</strong>: Yse for global read-only data
+<ul>
+<li>Example: string constants</li>
+</ul>
+</li>
+<li><strong>Stack</strong>: Local variables, temporary storage, call stack metadata</li>
+<li><strong>Heap</strong>: Place to store long-lived <em>dynamic</em> memory
+<ul>
+<li>Example: variable-length list</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h3 id="how-the-heap-works">How the Heap Works <a class="anchor" href="#how-the-heap-works" title='Anchor for "How the Heap Works".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>The heap works by initially allocating a large chunk of memory space, but only supplying smaller parts of that space to a program as needed</li>
+<li>It is implimented by ptmalloc/glibc (and analogues) and uses the following main functions (not an exhaustive list):
+<ul>
+<li><code>malloc()</code>: allocate some memory</li>
+<li><code>free()</code>: free a prior allocated chunk</li>
+<li><code>realloc()</code>: change the size of an allocation</li>
+<li><code>calloc()</code>: allocate and zero-out memory</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h4 id="the-data-segment">The Data Segment <a class="anchor" href="#the-data-segment" title='Anchor for "The Data Segment".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
+
+<ul>
+<li>Historical oddity from segmented memory spaces</li>
+<li>With ASLR, placed randomly into memory near the PIE base</li>
+<li>Starts with a size of 0</li>
+<li>managed by the <code>brk</code> and <code>sbrk</code> system calls
+<ul>
+<li><code>sbrk(NULL)</code>: returns the end of the data segment</li>
+<li><code>sbrek(delta)</code>: expands the end of the data segment by <code>delta</code> bytes</li>
+<li><code>brk(addr)</code>: expands the end of the data segment to <code>addr</code></li>
+</ul>
+</li>
+<li>This process is managed just like <code>mmap()</code></li>
+<li>ptmalloc slices off bits of the data segment for small allocations, and uses <code>mmap()</code> for large allocations</li>
+</ul>
+
+
+
+
+
+  <h2 id="dangers-of-the-heap">Dangers of the Heap <a class="anchor" href="#dangers-of-the-heap" title='Anchor for "Dangers of the Heap".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<p>Why is the heap vulnerable:</p>
+<ol>
+<li>Used by imperfect human programmers
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> forget to free memory
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> leads to resource exhaustion</div>
+<br><input disabled="" type="checkbox"> forget all the spots where pointers to data are stored
+<br><input disabled="" type="checkbox"> forget what&rsquo;s been freed
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> using free memory
+<br><input disabled="" type="checkbox"> freeing free memory</div>
+<br><input disabled="" type="checkbox"> corrupting metadata used by the allocator to keep track of heap state
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> conceptually similar to corruption internal function state on the stack</div></div></li>
+<li>A library that strived for performance
+<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> allocation and deallocation needs to be fast, or programs will slow down
+<br><input disabled="" type="checkbox"> optimizations often leave security as an afterthought</div></li>
 </ol>
+
+
+
+
+
+  <h3 id="double-freeing">Double Freeing <a class="anchor" href="#double-freeing" title='Anchor for "Double Freeing".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ul>
+<li>Pointers to an allocation remain valid after <code>free()</code>ing the allocation, and are sometimes <code>free()</code>d again</li>
+<li>New versions of glibc/ptmallloc introduced the <code>key</code> check
+<ul>
+<li>If <code>key</code> is overwritten, then the heap can be abused</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+  <h2 id="thread-local-caching-tcache">Thread Local Caching (tcache) <a class="anchor" href="#thread-local-caching-tcache" title='Anchor for "Thread Local Caching (tcache)".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li>tcache in ptmalloc is used to speed up repeated (small) allocations in a single thread
+<ul>
+<li>A caching layer with very few security checks</li>
+</ul>
+</li>
+<li>Implemented as a <strong>singly-linked</strong> list, with each thread having a list header for different-sized allocations</li>
+</ul>
+
+
+
+
+
+  <h3 id="what-happens-on-free">What Happens on <code>free()</code> <a class="anchor" href="#what-happens-on-free" title='Anchor for "What Happens on free()".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ol>
+<li><strong>Select</strong> the right &ldquo;bin&rdquo; based on the size</li>
+<li><strong>Check</strong> to make sure the entry hasn&rsquo;t already been freed (double-free)</li>
+<li><strong>Push</strong> the freed allocation to the front of the list</li>
+<li><strong>Record</strong> the tcache_perthread_struct associated with the freed allocation (for checking against double-frees)</li>
+</ol>
+
+
+
+
+
+  <h3 id="what-happens-on-allocation">What Happens on Allocation <a class="anchor" href="#what-happens-on-allocation" title='Anchor for "What Happens on Allocation".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+
+<ol>
+<li><strong>Select</strong> the bin number based on the requested size</li>
+<li><strong>Check</strong> the appropriate cache for available entries</li>
+<li><strong>Reuse</strong> the allocation in the front of the list if available</li>
+</ol>
+<p>Things NOT done:</p>
+<ul>
+<li>clearing all sensitive pointers (only <code>key</code> is cleared)</li>
+<li>checking if the <code>next (return[0])</code> address makes sense</li>
+</ul>
+
+
+
+
+
+  <h2 id="metadata-and-chunks">Metadata and Chunks <a class="anchor" href="#metadata-and-chunks" title='Anchor for "Metadata and Chunks".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
+
+<ul>
+<li>ptmalloc uses lots of metadata to track its operation and is kept in:
+<ul>
+<li>Global metadata (the tcache structure)</li>
+<li>Per-chunk metadata
+<ul>
+<li>A &ldquo;chunk&rdquo; is what <code>malloc()</code> is actually tracking, and the address seen by programmers is just the usable memory AFTER the headers in the chunk</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -701,8 +865,9 @@
   <h2 id="sources">Sources <a class="anchor" href="#sources" title='Anchor for "Sources".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h2> 
 
 <ul>
-<li><a href="https://ethicalhackingblog.com/">Gus Khawaja&rsquo;s Blog</a></li>
-<li><a href="https://www.pluralsight.com/courses/kali-linux-penetration-testing-ethical-hacking">Gus&rsquo;s Pluralsight Course: “Pentration Testing and Ethical Hacking with Kali Linux”</a></li>
+<li><a href="https://pwn.college/modules/heap">pwn.college Module B Lectures</a></li>
+<li><a href="https://dojo.pwn.college/challenges/heap">pwn.college Module B Challenges</a></li>
+<li><a href="https://www.twitch.tv/pwncollege">pwn.college Class Twitch Streams</a></li>
 </ul>
 
 

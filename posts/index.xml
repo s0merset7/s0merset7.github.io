@@ -8,7 +8,27 @@
     <language>en</language>
     <copyright>Copyright © 2021
 All rights reserved</copyright>
-    <lastBuildDate>Sat, 23 Oct 2021 23:23:45 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 12:00:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Dynamic Allocator Misuse (Module B)</title>
+        <link>https://s0merset7.github.io/posts/dynamicallocatormisuse/</link>
+        <pubDate>Sat, 23 Apr 2022 12:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/dynamicallocatormisuse/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+Dynamic Allocator Misuse (Module B) Table of Contents   The Heap  Types of Memory How the Heap Works  The Data Segment     Dangers of the Heap Thread Local Caching (tcache)  Freeing Allocating   Metadata and Chunks Sources  The Heap  Types of Memory   ELF .</description>
+      </item>
+    
+      <item>
+        <title>Memory Errors (Module 8)</title>
+        <link>https://s0merset7.github.io/posts/memoryerrors/</link>
+        <pubDate>Sun, 17 Apr 2022 12:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/memoryerrors/</guid>
+        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+Memory Errors (Module 8) Table of Contents   High-Level Problems Stack Smashing Causes of Corruption Stack Canaries Address Space Layout Resolution  Overwriting Page Offsets   Causes of Disclosure Sources  High-Level Problems (with the C language)   Trusting the Developer C is very low level, and trusts the developer knows what they are doing, even if it doest make sense.</description>
+      </item>
+    
       <item>
         <title>Introduction to Open Source Intelligence (OSINT)</title>
         <link>https://s0merset7.github.io/posts/osint/introtoosint/</link>
