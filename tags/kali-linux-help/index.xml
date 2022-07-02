@@ -15,7 +15,7 @@ All rights reserved</copyright>
         <pubDate>Fri, 14 May 2021 20:34:33 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/kali_setup/kali_setup/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
+        <description>Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
 There are two main ways in which you can set up Kali Linux, you can either create a Virtual Machine (VM) and install the Kali Operating System (OS), or you can Single/Dual Boot your computer to have Kali (both of which are 100% free).</description>
       </item>
     
@@ -25,7 +25,8 @@ There are two main ways in which you can set up Kali Linux, you can either creat
         <pubDate>Sun, 23 Aug 2020 23:34:33 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/intro/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Hello and welcome to my walkthroughs for Hack the Box (HTB). I&amp;rsquo;ve challenged myself with completing 50 HTB machines to learn hacking tools and skills that will prepare me for a career in the field. Being that I am a beginner at the time of writing this, I won&amp;rsquo;t be able to solve any machine without guidance at first, so my plan is as follows:</description>
+        <description>Hello and welcome to my walkthroughs for Hack the Box (HTB). I&amp;rsquo;ve challenged myself with completing 50 HTB machines to learn hacking tools and skills that will prepare me for a career in the field. Being that I am a beginner at the time of writing this, I won&amp;rsquo;t be able to solve any machine without guidance at first, so my plan is as follows:
+The first 10 machines I will do with the help of other write-ups and tutorials (I will attach links to any resources I use at the bottom of each of my walkthroughs).</description>
       </item>
     
   </channel>

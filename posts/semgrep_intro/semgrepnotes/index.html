@@ -5,7 +5,7 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Hugo 0.96.0 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+<meta name="generator" content="Hugo 0.100.2 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
 
@@ -51,15 +51,6 @@
 
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-
-
 
 
 
@@ -74,15 +65,13 @@
 
 
 
-  
-
 
   <meta property="og:type" content="article">
   
   
     <meta property="article:published_time" content="2021-06-16">
-    <meta property="article:modified_time" content="2021-06-22">
-    <meta property="og:updated_time" content="2021-06-22">
+    <meta property="article:modified_time" content="2021-06-16">
+    <meta property="og:updated_time" content="2021-06-16">
   
 
   
@@ -441,8 +430,8 @@
       "url": "https:\/\/s0merset7.github.io\/posts\/semgrep_intro\/semgrepnotes\/",
       "inLanguage": "en",
       "datePublished": "2021-06-16",
-      "dateModified": "2021-06-22",
-      "wordCount" : "2604",
+      "dateModified": "2021-06-16",
+      "wordCount" : "1843",
       "publisher": {
         "@type": "Person",
         "name": "Somerset"
@@ -471,8 +460,11 @@
   
 
   
-    <meta name="theme-color" content="#902b37" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#225670" media="(prefers-color-scheme: light)">
+
+    
+      <meta name="theme-color" content="#902b37">
+    
+
   
 
   <style>
@@ -515,7 +507,7 @@
 
 
 
-<script defer src="/js/lazysizes.min.min.0f5a80c796577b519f1fefeea5aa13dd1df0e80c9ff95a10b2b205ac4dac1544753d7ea18b8f611fb2e3a501bda83770841ee00dcc9d2a6056b0a2bd47392ac5.js" crossorigin="anonymous"></script>
+<script defer src="/js/lazysizes.min.min.7e214987354fe99d418737166c26c65aafe7f9f646816cf2b73228a9db1bdc1d15456a942a48b5ae581b4bc83ab81eaf84a8d9056a9ed750eaae6b65160c6cc3.js" crossorigin="anonymous"></script>
 
 
 
@@ -538,7 +530,7 @@
 
   <script>
     
-      'use strict';const PREFERS_LIGHT=window.matchMedia("(prefers-color-scheme: light)"),PREFERS_DARK=window.matchMedia("(prefers-color-scheme: dark)"),ROOT=document.documentElement,SHEET=document.documentElement.style,META_THEME_COLOR=document.querySelector("meta[name=theme-color]");function setDark(){ROOT.dataset.mode="dark"}function setLight(){ROOT.dataset.mode="light"}localStorage.getItem("isDark")=="true"?setDark():localStorage.getItem("isDark")=="false"?setLight():PREFERS_DARK.matches?setDark():PREFERS_LIGHT.matches&&setLight(),function getAccent(){if(ROOT.dataset.mode==="dark")if(localStorage.getItem("darkAccent")===null){var e="#902b37"}else e=localStorage.getItem("darkAccent"),else ROOT.dataset.mode==="light"&&(localStorage.getItem("lightAccent")===null?(return e}var activeAccent=getAccent();SHEET.setProperty("--accent",activeAccent),META_THEME_COLOR.setAttribute("content",activeAccent);function updateAccent(){var e=getAccent();SHEET.setProperty("--accent",e),PALETTE.value=e,META_THEME_COLOR.setAttribute("content",e)}document.addEventListener("DOMContentLoaded",function(){PALETTE.value=activeAccent;function e(){document.body.style.transition=document.querySelector("header").style.transition=document.querySelector("footer").style.transition="background-color .3s ease, color .3s ease"}function n(){e(),ROOT.dataset.mode=="light"?(setDark(),localStorage.setItem("isDark","true"),console.log("Mode changed to 'dark' by the user.")):(setLight(),localStorage.setItem("isDark","false"),console.log("Mode changed to 'light' by the user.")),updateAccent()}function t(){e(),PREFERS_LIGHT.matches?(setLight(),localStorage.setItem("isDark","false"),console.log("Mode changed to 'light' in OS level.")):PREFERS_DARK.matches&&(setDark(),localStorage.setItem("isDark","true"),console.log("Mode changed to 'dark' in OS level.")),updateAccent()}PREFERS_LIGHT.addListener(t),PREFERS_DARK.addListener(t),document.querySelector("footer button").addEventListener("click",n)})
+      'use strict';const ROOT=document.documentElement,SHEET=document.documentElement.style,META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'}function setLight(){ROOT.dataset.mode='light'}localStorage.getItem('isDark')=='true'?setDark():localStorage.getItem('isDark')=='false'&&setLight(),function getAccent(){if(ROOT.dataset.mode==='dark')if(localStorage.getItem('darkAccent')===null){var e="#902b37"}else e=localStorage.getItem('darkAccent'),else ROOT.dataset.mode==='light'&&(localStorage.getItem('lightAccent')===null?(return e}var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent),META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var e=getAccent();SHEET.setProperty('--accent',e),PALETTE.value=e,META_THEME_COLOR.setAttribute('content',e)}document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function e(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'}function t(){e(),ROOT.dataset.mode=='light'?(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' by the user.")):(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' by the user.")),updateAccent()}document.querySelector('footer button').addEventListener('click',t)})
     
   </script>
 
@@ -596,7 +588,7 @@
           </section>
           <p>
             
-              Last updated on <time datetime="2021-06-22">2021-06-22</time>
+              Published on <time datetime="2021-06-16">2021-06-16</time>
             
           </p>
         
@@ -641,7 +633,7 @@
     max-width: 70%;
 	}
 </style>
-<p>The goal of this post is to give an introduction into how to create rules using Semgrep as well as getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into examples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</p>
+<p>The goal of this post is to give an introduction into how to create rules using Semgrep as well getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into exmples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</p>
 
 
 
@@ -653,9 +645,7 @@
 <li><a href="#what-is-semgrep">What is Semgrep</a></li>
 <li><a href="#the-basics">Semgrep Basics</a></li>
 <li><a href="#basic-examples">Introductory Examples</a></li>
-<li><a href="#coding-in-yaml">Coding Rules in Semgrep</a></li>
-<li><a href="#running-locally">Running Semgrep in the Commandline</a></li>
-<li><a href="#advanced">Advanced Semgrep</a></li>
+<li><a href="#advanced">Coding Rules in Semgrep</a></li>
 </ul>
 
 
@@ -712,11 +702,7 @@
 <li>Match JSON</li>
 <li>&ldquo;Generic&rdquo; mode to analyse code in languages not directly supported or any text</li>
 <li>Autofix/suggest option to correct common mistakes</li>
-<li>Software as a Service (SaaS) option when used on large scale (not open source)
-<ul>
-<li>Can interact with GitHub, Jira, Slack, and more</li>
-</ul>
-</li>
+<li>Software as a Service (SaaS) features when used on large scale (not open source)</li>
 </ul>
 
 
@@ -727,7 +713,7 @@
 
 <p>There are two operators that add functionality to Semgrep on top of whatever programming language you choose to use:</p>
 <ul>
-<li><strong>Ellipsis</strong> <code>...</code> - the ellipsis operator is a filler for an unknown space with zero or more arguments regardless of what they are</li>
+<li><strong>Ellipsis</strong> <code>...</code> - the ellipsis operator finds all calls to execute with zero or more arguments regardless of what they are</li>
 <li><strong>Metavariables</strong> <code>$VARIABLE</code> - these are like capture groups, a fill in for a unknown variable you want to match prior to its a assignment of a value</li>
 </ul>
 <p>To get a good introduction on these two operators, check out <a href="https://semgrep.dev/learn">this site</a> for a tutorial into Semgrep</p>
@@ -764,7 +750,7 @@
       class="lazyload "
       loading="lazy"
       src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src="../semgrepSS1.png"
+      data-src="semgrepSS1.png"
       alt="Semgrep Playground Layout"
     />
     
@@ -772,7 +758,7 @@
       <img
         
         loading="lazy"
-        src="../semgrepSS1.png"
+        src="semgrepSS1.png"
         alt="Semgrep Playground Layout"
       />
     </noscript>
@@ -780,14 +766,8 @@
   
 
 </p>
-
-
-
-
-
-  <h4 id="identifying-a-function-call"><strong>Identifying a Function Call</strong> <a class="anchor" href="#identifying-a-function-call" title='Anchor for "Identifying a Function Call".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
-
-<p><a href="https://semgrep.dev/s/clintgibler:python-exec-try">Click Here</a> to follow along with this example:</p>
+<p><strong>Identifying a Function Call</strong>
+<a href="https://semgrep.dev/s/clintgibler:python-exec-try">Click Here</a> to follow along with this example:</p>
 <ol>
 <li><code>exec(...)</code> will find all instances of the function <code>exec()</code> in your code. But it is smart, as you can see in the image below, the query will IGNORE comments and string literals while also IDENTIFYING the function even with varying syntax and aliases of the function call like <code>safe_function</code>
 
@@ -814,7 +794,7 @@
       class="lazyload "
       loading="lazy"
       src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src="../semgrepSS2.png"
+      data-src="semgrepSS2.png"
       alt="Semgrep &amp;hellip; Example"
     />
     
@@ -822,7 +802,7 @@
       <img
         
         loading="lazy"
-        src="../semgrepSS2.png"
+        src="semgrepSS2.png"
         alt="Semgrep &amp;hellip; Example"
       />
     </noscript>
@@ -831,26 +811,24 @@
 
 </li>
 </ol>
-
-
-
-
-
-  <h4 id="cross-site-scripting-xss"><strong>Cross Site Scripting (XSS)</strong> <a class="anchor" href="#cross-site-scripting-xss" title='Anchor for "Cross Site Scripting (XSS)".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
-
-<p>Following <a href="https://semgrep.dev/s/clintgibler:js-express-xss-try">this example</a>, we can see the code is vulnerable to a XSS attack as the user inputted query is not being filtered for any potentially malicious input.</p>
+<p><strong>Cross Site Scripting (XSS)</strong>
+Following <a href="https://semgrep.dev/s/clintgibler:js-express-xss-try">this example</a>, we can see the code is vulnerable to a XSS attack as the user inputted query is not being filtered for any potentially malicious input.</p>
 <ol>
 <li>The benefit of Semgrep is we can search for whatever we want in out chosen language. So to start making a rule, we can just copy the source code and then begin to abstract it</li>
 <li>Let&rsquo;s replace <code>/foo</code> with <code>...</code>, as we want to search for anytime a general string is used regardless of its value</li>
 <li>We can add an <code>$</code> in front of an all caps name to represent a Metavariable. In this case, we can replace <code>name</code> in <code>req.query.name</code> with <code>$PARAM</code> to represent an unknown parameter
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Similarly we can replace the variable <code>resp</code> with <code>$VAR</code> to represent an unknown variable being passed</div></li>
-<li>This brings us to the rule of:
+<ul>
+<li>Similarly we can replace the variable <code>resp</code> with <code>$VAR</code> to represent an unknown variable being passed</li>
+</ul>
+</li>
+<li>This brings us to the rule of:</li>
+</ol>
 <pre tabindex="0"><code>app.get(&#39;...&#39;, function (req, res) {
     var $VAR = req.query.$PARAM;
-
+    
     res.write($VAR);
 });
-</code></pre>Which we can see, correctly identifies one of our XSS vulnerabilities, but not both
+</code></pre><p>Which we can see, correctly identifies one of our XSS vulnerabilities, but not both
 
 
 
@@ -875,7 +853,7 @@
       class="lazyload "
       loading="lazy"
       src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src="../semgrepSS3.png"
+      data-src="semgrepSS3.png"
       alt="XSS Rule V1"
     />
     
@@ -883,17 +861,15 @@
       <img
         
         loading="lazy"
-        src="../semgrepSS3.png"
+        src="semgrepSS3.png"
         alt="XSS Rule V1"
       />
     </noscript>
   
   
 
-</li>
-<li>We can see that the main differences between the two are the extra lines of code, and the extra arguments in functions. To take care of that, we can add some strategic ellipsis and arrows:
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> What these arrow brackets are doing is saying that we know our Metavariable exists somewhere in the expression, but we don&rsquo;t know exactly where it is</li>
-</ol>
+
+5. We can see that the main differences between the two are the extra lines of code, and the extra arguments in functions. To take care of that, we can add some strategic ellipsis and arrows:</p>
 <pre tabindex="0"><code>app.get(&#39;...&#39;, function (req, res) {
     var $VAR = req.query.$PARAM;
     ...
@@ -923,7 +899,7 @@
       class="lazyload "
       loading="lazy"
       src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src="../semgrepSS4.png"
+      data-src="semgrepSS4.png"
       alt="XSS Rule V2"
     />
     
@@ -931,7 +907,7 @@
       <img
         
         loading="lazy"
-        src="../semgrepSS4.png"
+        src="semgrepSS4.png"
         alt="XSS Rule V2"
       />
     </noscript>
@@ -939,25 +915,20 @@
   
 
 </p>
-
-
-
-
-
-  <h4 id="business-logic"><strong>Business Logic</strong> <a class="anchor" href="#business-logic" title='Anchor for "Business Logic".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
-
-<p>Business Logic is when the code itself seems fine, but how the code works is fundamentally wrong (such as the order in which methods are called). Lets take a look at <a href="https://semgrep.dev/s/LNX">this example</a></p>
+<p><strong>Business Logic</strong>
+Business Logic is when the code itself seems fine, but how the code works is fundamentally wrong (such as the order in which methods are called). Lets take a look at <a href="https://semgrep.dev/s/LNX">this example</a></p>
 <ol>
 <li>Sometimes we have a need for conditionals in our rules, for example if we want to check for the order of, or presence of certain items. To start off, lets copy the first method (lines 9-13)</li>
 <li>We don&rsquo;t care about the return type, so lets replace <code>void</code> with <code>$RETTYPE</code> as our Metavariable</li>
 <li>The function type and arguments don&rsquo;t matter either so we can replace <code>base_ok</code> with <code>$FUNC</code> and <code>Transaction t</code> with <code>...</code></li>
-<li>The main thing we are looking at here is the <code>make_transaction()</code> function, so we can add ellipsis above and below that statement as well as replacing the function&rsquo;s argument leaving us with this:
+<li>The main thing we are looking at here is the <code>make_transaction()</code> function, so we can add ellipsis above and below that statement as well as replacing the function&rsquo;s argument leaving us with this:</li>
+</ol>
 <pre tabindex="0"><code>public $RETTYPE $FUNC(...) {
-...
+  ...
     make_transaction(...);
-...
+  ...
 }
-</code></pre>If we run that, we get this result which locates everything that use the <code>make_transaction()</code> function
+</code></pre><p>If we run that, we get this result which locates everything that use the <code>make_transaction()</code> function
 
 
 
@@ -982,7 +953,7 @@
       class="lazyload "
       loading="lazy"
       src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src="../semgrepSS5.png"
+      data-src="semgrepSS5.png"
       alt="Business Logic V1"
     />
     
@@ -990,25 +961,25 @@
       <img
         
         loading="lazy"
-        src="../semgrepSS5.png"
+        src="semgrepSS5.png"
         alt="Business Logic V1"
       />
     </noscript>
   
   
 
-</li>
-<li>This is good but doesn&rsquo;t actually check if they business logic is right, we need to add a conditional by clicking the plus button to the right of the rule block</li>
-<li>We can see a dropdown of options, here we want <strong>and is not</strong>, and then copy the top rule into the bottom box</li>
-<li>Above the <code>make_transaction()</code> line in our new rule section, lets add an ellipsis followed by <code>verify_transaction(...);</code>. What this does is make sure the verify function is never called prior to the make transaction function in any place the make transaction function exists, as we only want the transaction to be verified if it first has been made
+
+6. This is good but doesn&rsquo;t actually check if they business logic is right, we need to add a conditional by clicking the plus button to the right of the rule block
+7. We can see a dropdown of options, here we want <strong>and is not</strong>, and then copy the top rule into the bottom box
+8. Above the <code>make_transaction()</code> line in our new rule section, lets add an elipsis followed by <code>verify_transaction(...);</code>. What this does is make sure the verify function is never called prior to the make transaction function in any place the make transaction function exists, as we only want the transaction to be verified if it first has been made</p>
 <pre tabindex="0"><code>public $RETTYPE $FUNC(...) {
-...
+  ...
     verify_transaction(...);
-...
+  ...
     make_transaction(...);
-...
+  ...
 }
-</code></pre>When we run, we can see that it works and returns every time the verify transaction function is called before the make transaction function, with one exception
+</code></pre><p>When we run, we can see that it works and returns every time the verify transaction function is called before the make transaction function, with one exception
 
 
 
@@ -1033,7 +1004,7 @@
       class="lazyload "
       loading="lazy"
       src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src="../semgrepSS6.png"
+      data-src="semgrepSS6.png"
       alt="Business Logic V2"
     />
     
@@ -1041,14 +1012,15 @@
       <img
         
         loading="lazy"
-        src="../semgrepSS6.png"
+        src="semgrepSS6.png"
         alt="Business Logic V2"
       />
     </noscript>
   
   
 
-</li>
+</p>
+<ol start="9">
 <li>In the very last method of the sample code, we see that it should be flagged as a vulnerability as the transaction that is verified is not the same one that is made</li>
 <li>To fix this, we can replace the function ellipses in the <strong>and is not</strong> rule with a Metavariable <code>$T</code></li>
 </ol>
@@ -1084,7 +1056,7 @@
       class="lazyload "
       loading="lazy"
       src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src="../semgrepSS7.png"
+      data-src="semgrepSS7.png"
       alt="Business Logic V3"
     />
     
@@ -1092,7 +1064,7 @@
       <img
         
         loading="lazy"
-        src="../semgrepSS7.png"
+        src="semgrepSS7.png"
         alt="Business Logic V3"
       />
     </noscript>
@@ -1105,10 +1077,10 @@
 
 
 
-  <h3 id="coding-in-yaml">Coding in YAML <a class="anchor" href="#coding-in-yaml" title='Anchor for "Coding in YAML".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
+  <h3 id="advanced">Advanced <a class="anchor" href="#advanced" title='Anchor for "Advanced".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
 
 <p>What we were looking at before is the Semgrep UI, but as we make more complex rules it is easier to do so using Semgrep&rsquo;s natural syntax language, YAML
-You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html">here</a>, but the main outline of a Semgrep command is as follows:</p>
+You can read up on the specifics of YAML <a href="(https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)">here</a>, but the main outline of a Semgrep command is as follows:</p>
 <pre tabindex="0"><code>rules:
     - id: name-of-rule
         patterns:
@@ -1121,22 +1093,16 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <ul>
 <li><code>id</code> - the name of the rule, this should be alphanumeric with dashes replacing spaces</li>
 <li><code>patterns</code> - this is where your specific rules are, more information below but make sure to have proper syntax</li>
-<li><code>message</code> - this is the message that will be displayed when something is flagged. Often it is meant to help developers by providing context to what needs to be changed
+<li><code>message</code> - (optional) this is the message that will be displayed when something is flagged. Often it is meant to help developers by providing context to what needs to be changed
 <ul>
 <li>Note the pipeline (<code>|</code>) in YAML is used to have multiple lines be compiled into single lines</li>
 </ul>
 </li>
-<li><code>language</code> - a place where you can put the language that this rule applies to</li>
-<li><code>severity</code> - what kind of issue this code is, it can be either <code>INFO</code>, <code>WARNING</code>, or <code>ERROR</code></li>
+<li><code>language</code> - (optional) a place where you can put the language that this rule applies to</li>
+<li><code>severity</code> - (optional) how important the rule is, this is up to the user and can be on whatever scale they deem useful</li>
 </ul>
-
-
-
-
-
-  <h4 id="coded-patterns"><strong>Coded Patterns</strong> <a class="anchor" href="#coded-patterns" title='Anchor for "Coded Patterns".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
-
-<p>There are five main pattern commands that can be used in combination with one another. They are very similar to boolean expressions. Here is a brief description of each one followed by an example:</p>
+<p><strong>Advanced Patterns</strong>
+There are five pattern commands that can be used in combination of one another. They are very similar to boolean expressions. Here is a brief description of each one followed by an example:</p>
 <ul>
 <li><code>pattern</code> = search for &ldquo;this&rdquo; AND &ldquo;that&rdquo;</li>
 </ul>
@@ -1187,183 +1153,22 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
             if (...) ...
             ...
 </code></pre><p>This rule will find all instances of <code>print()</code>, but then narrow down those results to only <code>print()</code> calls that occur BEFORE an <code>if()</code> statement</p>
-
-
-
-
-
-  <h3 id="running-locally">Running Locally <a class="anchor" href="#running-locally" title='Anchor for "Running Locally".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
-
-
-
-
-
-
-  <h4 id="installing"><strong>Installing</strong> <a class="anchor" href="#installing" title='Anchor for "Installing".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
-
-<ol>
-<li>Run <code>brew install semgrep</code> to install semgrep locally on a Mac (you must have <a href="https://brew.sh/">Homebrew</a> already installed)
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> For more details on installation on both Macs and other devices, <a href="https://semgrep.dev/docs/getting-started/">look here</a></div></li>
-</ol>
-
-
-
-
-
-  <h4 id="environment"><strong>Environment</strong> <a class="anchor" href="#environment" title='Anchor for "Environment".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
-
-<p>As Semgrep is now installed locally, you will be able to use <code>semgrep</code> as a command. Make sure that before running the command, your YAML rule file is in your current directory, which should be in the same directory that contains the directory/file you want to test. The general format is as follows:</p>
-<p><code>semgrep --config ruleFile.yml --timeout 0 /directoryToTest</code></p>
-<ul>
-<li><code>--config ruleFile.yml</code> - this tells Semgrep which YAML rule file you want to use in your test</li>
-<li><code>--timeout 0</code> - while this flag is technically optional, what it is doing is giving the time in seconds for how long Semgrep will wait for a single rule to run before it times out. When set to 0, it will never timeout, without the flag, the default is set to 30 seconds</li>
-<li><code>/directoryToTest</code> - this is the directory (or file) that you wish to run your rule(s) against</li>
-</ul>
-
-
-
-
-
-  <h4 id="shared-rulesets"><strong>Shared Rulesets</strong> <a class="anchor" href="#shared-rulesets" title='Anchor for "Shared Rulesets".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
-
-<p>While we know we have the ability to create our own rules, Semgrep has over 1000 pre-existing rules that have been vetted by the company for precision. Accessing these rulesets is pretty simple:</p>
-<ol>
-<li>Find the ruleset you want to use <a href="https://semgrep.dev/explore">on the Semgrep explore page</a>
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Each ruleset will list all of it&rsquo;s rules along with examples of how they work if you wish to explore them more in depth</div></li>
-<li>Once you&rsquo;ve selected your ruleset, in the top right corner there will be a section titled &ldquo;Test and Run Locally&rdquo; with a command you can copy as seen below
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  
-    <img
-      class="lazyload "
-      loading="lazy"
-      src="data:image/gif;base64,R0lGODdhAQABAIABAICAgDfSzywAAAAAAQABAAACAkQBADs="
-      data-src="../semgrepSS8.png"
-      alt="Test and Run Locally Command"
-    />
-    
-    <noscript>
-      <img
-        
-        loading="lazy"
-        src="../semgrepSS8.png"
-        alt="Test and Run Locally Command"
-      />
-    </noscript>
-  
-  
-
-</li>
-<li>With this command copied, we can add our <code>timeout 0 /directoryToTest</code> to the end and the ruleset will be run against the selected directory
-<br><div style="padding-left: 2em;"><input disabled="" type="checkbox"> Example: <code>semgrep --config &quot;p/r2c-security-audit&quot; --timeout 0 /directoryToTest</code> - this will run the <a href="https://semgrep.dev/p/r2c-security-audit">r2c-security-audit</a> ruleset on whatever directory you indicate</div></li>
-</ol>
-
-
-
-
-
-  <h3 id="advanced">Advanced <a class="anchor" href="#advanced" title='Anchor for "Advanced".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h3> 
-
-<p>While the instructions above will be able to guide you through ~80% of what you&rsquo;ll need to know for Semgrep, there are several other useful rule syntaxes that are good to know. I will provide a basic description of each of them followed by an example showing how to use it. For a more in-depth explanation of each rule, check out the <a href="https://semgrep.dev/docs/writing-rules/rule-syntax/">documentation</a></p>
-
-
-
-
-
-  <h4 id="regex-patterns"><strong>Regex Patterns</strong> <a class="anchor" href="#regex-patterns" title='Anchor for "Regex Patterns".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
-
-<p>The five patterns we looked at before were all based on bitwise operators of the code. The following patterns are all based on bitwise operators of the regular expressions that can be found in the code, allowing for more specificity. While there are many different types of Regex syntax, Semgrep uses <a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expressions(PCRE)</a>:</p>
-<ul>
-<li><code>pattern-regex</code> = searches for a compatible regular expression (works best for Python)</li>
-</ul>
+<p><strong>Metavariable Regex</strong>
+In addition to the previous patterns, there is an option for Metavariables that will only match variables whose names fit a specified regular expression. To use them, follow this format:</p>
 <pre tabindex="0"><code>rules:
-    - id: regex-pattern-example
+    - id: name-of-rule
         patterns:
-        - pattern-inside: print(...)
-        - pattern-regex: \d
-</code></pre><p>This rule will find all instances of <code>print()</code>, but then narrow down those results to only <code>print()</code> calls that include a decimal number in them</p>
-<ul>
-<li><code>pattern-not-regex</code> = will filter out compatible regular expressions (works best for Python)</li>
-</ul>
-<pre tabindex="0"><code>rules:
-    - id: not-regex-pattern-example
-        patterns:
-        - pattern-inside: print(...)
-        - pattern-not-regex: \d
-</code></pre><p>This rule will find all instances of <code>print()</code>, but then narrow down those results to only <code>print()</code> calls that DO NOT include a decimal number in them</p>
-
-
-
-
-
-  <h4 id="metavariable-rules"><strong>Metavariable Rules</strong> <a class="anchor" href="#metavariable-rules" title='Anchor for "Metavariable Rules".'><svg aria-hidden="true"><use xlink:href="#hashtag"/></svg></a></h4> 
-
-<ul>
-<li><code>metavariable-regex</code> = this works similar to <code>pattern-regex</code>, but instead of matching any instance of the regex in the code, this will only match regex patterns found in a given Metavariable</li>
-</ul>
-<pre tabindex="0"><code>rules:
-    - id: metavariable-regex-example
-        patterns:
-        - pattern: print($VAR)
+        - pattern: $VARIABLE_A
         - metavariable-regex:
-            metavariable: $VAR
-            regex: (hello|hi|welcome)
+            metavariable: &#39;$VARIABLE_A&#39;
+            regex: &#39;.*(wordA|wordB|wordC).*&#39;
 </code></pre><p>To break this down:</p>
 <ul>
 <li><code>pattern</code> - like we defined above, can be any of the patterns/combination of that we&rsquo;ve learned</li>
-<li><code>metavariable-regex</code> - we type this to let YAML know we are about to provide a regex rule</li>
+<li><code>metavariabel-regex</code> - we type this to let YAML know we are about to provide a regex rule</li>
 <li><code>metavariable</code> - this is where you specify which of your previously defined Metavariables you are going to be writing your regex rule for</li>
-<li><code>regex</code> - this is where you specify what expressions you want to match to the Metavariable you picked. In this case you would only be returning instances where $VAR includes &ldquo;hello&rdquo;, &ldquo;hi&rdquo;, OR &ldquo;welcome&rdquo; inside <code>print()</code> statements</li>
+<li><code>regex</code> - this is where you specify what expressions you want to match to the Metavariable you picked. Ie. you would only be returning instances where $VARIABLE_A includes &ldquo;wordA&rdquo;, &ldquo;wordB&rdquo;, OR &ldquo;wordC&rdquo;</li>
 </ul>
-
-
-
-
-
-  <h1 id="heading"></h1> 
-
-<ul>
-<li><code>metavariable-pattern</code> = this rule works the same way as <code>metavariable-regex</code> but instead of searching for matching regular expressions, it searches for matching patterns using the five pattern rules from above</li>
-</ul>
-<pre tabindex="0"><code>rules:
-    - id: metavariable-pattern-example
-        patterns:
-        - pattern: | 
-            if(&lt;... $VAR ...&gt;) {
-                $CALL
-            }
-        - metavariable-pattern:
-            metavariable: $CALL
-            pattern: print($VAR)
-</code></pre><p>This rule will search for all <code>if()</code> statements where the Metavariable <code>$VAR</code> is used, then it will check what is being executed in the <code>if()</code> statement with the <code>$CALL</code> Metavariable and will return any instance where <code>$CALL</code> is <code>print($VAR)</code></p>
-<ul>
-<li><code>metavariable-comparison</code> = this rule will take a provided Metavariable and use a Python comparison function to evaluate the Metavariable&rsquo;s numeric value</li>
-</ul>
-<pre tabindex="0"><code>rules:
-    - id: metavariable-comparison-example
-        patterns:
-        - pattern: set_value($VAR)
-        - metavariable-pattern:
-            comparison: $VAR &lt; 900
-            metavariable: $VAR
-</code></pre><p>This rule will search for all calls of the <code>set_value()</code> function where the variable passed in is less than 900. This can be useful if a value must be greater/less than a certain number to avoid issues</p>
 
 
 
@@ -1384,7 +1189,6 @@ You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansib
 <li><a href="https://bit.ly/2020OpenSecuritySummit">Presentation Slides</a></li>
 </ul>
 </li>
-<li><a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expression Cheat Sheet</a></li>
 </ul>
 
 
@@ -1413,7 +1217,7 @@ All rights reserved</p>
 
 
 <section class="req-js">
-  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"></datalist>
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"><option value="#1f676b"><option value="#f3a530"><option value="#dd587c"><option value="#1dbc91"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
 </section>
 
 
@@ -1456,7 +1260,7 @@ All rights reserved</p>
 
       <script>
         
-          'use strict';const PALETTE=document.querySelector("footer input");PALETTE.onchange=function(){const e=PALETTE.value;SHEET.setProperty("--accent",e),ROOT.dataset.mode==="light"?localStorage.setItem("lightAccent",e):localStorage.setItem("darkAccent",e),updateAccent()}
+          'use strict';const PALETTE=document.querySelector('footer input');PALETTE.onchange=function(){const e=PALETTE.value;SHEET.setProperty('--accent',e),ROOT.dataset.mode==='light'?localStorage.setItem('lightAccent',e):localStorage.setItem('darkAccent',e),updateAccent()}
         
       </script>
 
