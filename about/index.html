@@ -51,6 +51,15 @@
 
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
 
 
 
@@ -64,6 +73,8 @@
 
 
 
+
+  
 
 
   <meta property="og:type" content="website">
@@ -430,11 +441,8 @@
   
 
   
-
-    
-      <meta name="theme-color" content="#902b37">
-    
-
+    <meta name="theme-color" content="#902b37" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#225670" media="(prefers-color-scheme: light)">
   
 
   <style>
@@ -500,7 +508,7 @@
 
   <script>
     
-      'use strict';const ROOT=document.documentElement,SHEET=document.documentElement.style,META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'}function setLight(){ROOT.dataset.mode='light'}localStorage.getItem('isDark')=='true'?setDark():localStorage.getItem('isDark')=='false'&&setLight(),function getAccent(){if(ROOT.dataset.mode==='dark')if(localStorage.getItem('darkAccent')===null){var e="#902b37"}else e=localStorage.getItem('darkAccent'),else ROOT.dataset.mode==='light'&&(localStorage.getItem('lightAccent')===null?(return e}var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent),META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var e=getAccent();SHEET.setProperty('--accent',e),PALETTE.value=e,META_THEME_COLOR.setAttribute('content',e)}document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function e(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'}function t(){e(),ROOT.dataset.mode=='light'?(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' by the user.")):(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' by the user.")),updateAccent()}document.querySelector('footer button').addEventListener('click',t)})
+      'use strict';const PREFERS_LIGHT=window.matchMedia('(prefers-color-scheme: light)'),PREFERS_DARK=window.matchMedia('(prefers-color-scheme: dark)'),ROOT=document.documentElement,SHEET=document.documentElement.style,META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'}function setLight(){ROOT.dataset.mode='light'}localStorage.getItem('isDark')=='true'?setDark():localStorage.getItem('isDark')=='false'?setLight():PREFERS_DARK.matches?setDark():PREFERS_LIGHT.matches&&setLight(),function getAccent(){if(ROOT.dataset.mode==='dark')if(localStorage.getItem('darkAccent')===null){var e="#902b37"}else e=localStorage.getItem('darkAccent'),else ROOT.dataset.mode==='light'&&(localStorage.getItem('lightAccent')===null?(return e}var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent),META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var e=getAccent();SHEET.setProperty('--accent',e),PALETTE.value=e,META_THEME_COLOR.setAttribute('content',e)}document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function e(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'}function n(){e(),ROOT.dataset.mode=='light'?(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' by the user.")):(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' by the user.")),updateAccent()}function t(){e(),PREFERS_LIGHT.matches?(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' in OS level.")):PREFERS_DARK.matches&&(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' in OS level.")),updateAccent()}PREFERS_LIGHT.addListener(t),PREFERS_DARK.addListener(t),document.querySelector('footer button').addEventListener('click',n)})
     
   </script>
 
@@ -594,8 +602,9 @@
     max-width: 70%;
 	}
 </style>
-<p>Hello! I&rsquo;m Somerset, a Computer Systems Engineering major at Arizona State University with a concentration in Cybersecurity. I am still getting my bearings in the field but I&rsquo;m starting to take a liking to pentesting and more red team aspects. I learned a lot from my time at NaviSec <a href="https://navisec.io/">NaviSec</a> as an intern where I learned about professional pentesting and vulnerability assessments. My mentor at NaviSec (<a href="https://twitter.com/pry0cc">@pry0cc</a>) encouraged me to learn by doing retired <a href="https://www.hackthebox.eu/">Hack the Box</a> machines which recently has been my main focus along with preparing for my new upcoming internship.</p>
-<p>In my free time I enjoy movies, especially anything mystery thriller related (as you may have figured out with my name). I also leave the house occasionally to go hiking in the beautiful Phoenix area.</p>
+<p>Hello! I&rsquo;m Somerset, a senior student at university studying cybersecurity. While I&rsquo;m still getting my bearings in the field, I&rsquo;m learning as much as I can with whatever I can get my hands on. I have a couple of internships under my belt where I have learned a lot about pentesting and vulnerability assessments.</p>
+<p>As of now my interests lay in red team and OSINT fields but I hope to conyinue exploring all cybersecurity fields to find my true passion.</p>
+<p>In my free time I enjoy movies (especially mystery thriller), hiking, camping, online cybersecurity challenges, and competing in CTFs.</p>
 <p>
 
 
@@ -663,7 +672,7 @@ All rights reserved</p>
 
 
 <section class="req-js">
-  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"><option value="#1f676b"><option value="#f3a530"><option value="#dd587c"><option value="#1dbc91"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#902b37" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#225670"><option value="#902b37"></datalist>
 </section>
 
 

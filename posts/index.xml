@@ -8,14 +8,116 @@
     <language>en</language>
     <copyright>Copyright © 2021
 All rights reserved</copyright>
-    <lastBuildDate>Wed, 16 Jun 2021 15:13:52 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 12:00:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Dynamic Allocator Misuse (Module B)</title>
+        <link>https://s0merset7.github.io/posts/dynamicallocatormisuse/</link>
+        <pubDate>Sat, 23 Apr 2022 12:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/dynamicallocatormisuse/</guid>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+Dynamic Allocator Misuse (Module B) Table of Contents The Heap Types of Memory How the Heap Works The Data Segment Dangers of the Heap Thread Local Caching (tcache) Freeing Allocating Metadata and Chunks Sources The Heap Types of Memory ELF .</description>
+      </item>
+    
+      <item>
+        <title>Memory Errors (Module 8)</title>
+        <link>https://s0merset7.github.io/posts/memoryerrors/</link>
+        <pubDate>Sun, 17 Apr 2022 12:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/memoryerrors/</guid>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+Memory Errors (Module 8) Table of Contents High-Level Problems Stack Smashing Causes of Corruption Stack Canaries Address Space Layout Resolution Overwriting Page Offsets Causes of Disclosure Sources High-Level Problems (with the C language) Trusting the Developer C is very low level, and trusts the developer knows what they are doing, even if it doest make sense.</description>
+      </item>
+    
+      <item>
+        <title>Introduction to Open Source Intelligence (OSINT)</title>
+        <link>https://s0merset7.github.io/posts/osint/introtoosint/</link>
+        <pubDate>Sat, 23 Oct 2021 23:23:45 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/osint/introtoosint/</guid>
+        <description>Note: Much of the below information is summarized from OSINT Combine&amp;rsquo;s course &amp;ldquo;Trace Labs OSINT Foundations Course&amp;rdquo;. Much credit goes to Chris Poulter&amp;rsquo;s expertise! Check out their website and partners the sources
+Open Source Intelligence (OSINT) is a way of searching for information on only publicly available sources (open source). While this may seem to be the same way everyone searches for information, there are many tools and methodologies that can be used to enhance your research capabilities.</description>
+      </item>
+    
+      <item>
+        <title>Reverse Engineering (Module 6)</title>
+        <link>https://s0merset7.github.io/posts/reverse_engineering/reverseengineering/</link>
+        <pubDate>Sun, 19 Sep 2021 12:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/reverse_engineering/reverseengineering/</guid>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Binary Reverse Engineering” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+Functions and Frames Control Flow Graphs: a way of visually representing a function
+graph: word used to describe the entire function map block: set on instructions that will execute one after the other edges: represent conditional/unconditional jumps Blue (Unconditional Jump): a jump that will always be taken Green (Conditional Jump): the condition is met (true) Red (Conditional Jump): the condition is not met (false) prologue: sets up the stack frame save off the caller&amp;rsquo;s base pointer set current stack pointer as the base pointer &amp;ldquo;allocate&amp;rdquo; space on the stack (subtract from the stack pointer) epilogue: tears down the stack frame &amp;ldquo;deallocate&amp;rdquo; the stack mov rsp, rbp Note: data is NOT destroyed by default restore the old base pointer stack frame: reserved place in memory for the stack to operate stack pointer (rsp): points to the leftmost side of the stack frame base pointer (rbp): points to the rightmost side of the stack frame What is the stack:</description>
+      </item>
+    
+      <item>
+        <title>Sandboxing (Module 5)</title>
+        <link>https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/</link>
+        <pubDate>Sun, 12 Sep 2021 17:30:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/</guid>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Sandboxing” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+What is Sandboxing? Idea Behind Sandboxing:
+Untrusted data/code should live in a process with almost zero permissions Spawn &amp;ldquo;privileged&amp;rdquo; parent process Spawn &amp;ldquo;sandboxed&amp;rdquo; child processes When a child needs to perform a privileged action, it asks the parent chroot What is chroot (change-root): used to be the de-facto sandboxing utility changes the meaning of &amp;ldquo;/&amp;rdquo; for a process (and its children) chroot(&amp;quot;/tmp/jail&amp;quot;) will disallow processes from getting out of the jail no syscall filtering or other isolation chroot() does NOT: Close resources that reside outside of the jail cd (chdir()) into the jail Do anything else!</description>
+      </item>
+    
+      <item>
+        <title>Shellcoding (Module 4)</title>
+        <link>https://s0merset7.github.io/posts/shellcoding_post/shellcodingpost/</link>
+        <pubDate>Mon, 06 Sep 2021 19:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/shellcoding_post/shellcodingpost/</guid>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Shellcode Injection” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo;t have experience with x86 then I&amp;rsquo;d recommend taking a look at the last post and learning some of the basics or the rest of this post won&amp;rsquo;t make much sense.</description>
+      </item>
+    
+      <item>
+        <title>Assembly Refresher (Module 3)</title>
+        <link>https://s0merset7.github.io/posts/assembly_refresher/assemblyrefresher/</link>
+        <pubDate>Fri, 03 Sep 2021 20:11:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/assembly_refresher/assemblyrefresher/</guid>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Assembly Refresher” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo;t have experience with x86 then I&amp;rsquo;d recommend starting with Resources and learning some of the basics or the rest of this post won&amp;rsquo;t make much sense.</description>
+      </item>
+    
+      <item>
+        <title>Program Misuse (Module 2)</title>
+        <link>https://s0merset7.github.io/posts/program_misuse/programmisuse/</link>
+        <pubDate>Thu, 02 Sep 2021 14:00:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/program_misuse/programmisuse/</guid>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili&amp;rsquo;s pwn.college lectures from the “Program Misuse” module. Much credit goes to Yan&amp;rsquo;s expertise! Please check out the pwn.college resources and challenges in the sources
+In module 2 there wasn&amp;rsquo;t as much content to cover so this post isn&amp;rsquo;t too long. I&amp;rsquo;d still reccomend checking out the lectures yourself for demonstrations on each of the topics covered.
+Priviledge Escalation Every process has a user ID (UID) and and a group ID (GID) UID 0: the Linux admin user (root).</description>
+      </item>
+    
+      <item>
+        <title>Program Interaction (Module 1)</title>
+        <link>https://s0merset7.github.io/posts/program_interaction/programinteraction/</link>
+        <pubDate>Thu, 02 Sep 2021 12:13:00 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/program_interaction/programinteraction/</guid>
+        <description>As a part of my degree program, I have to take a class called CSE466: Computer Systems Security. The professor for this class (Dr. Shoshitaishvili) created pwn.college, a free education platform to guide not only students in the course, but anyone who wants to try it out. I will be publishing all of my notes from each relevant module of course here, though I highly recommend watching the lectures for yourself as they go much more in-depth!</description>
+      </item>
+    
+      <item>
+        <title>Making Regex Rules in Semgrep</title>
+        <link>https://s0merset7.github.io/posts/regex_walkthrough/</link>
+        <pubDate>Mon, 12 Jul 2021 07:18:20 -0700</pubDate>
+        
+        <guid>https://s0merset7.github.io/posts/regex_walkthrough/</guid>
+        <description>One feature of Semgrep is the ability to use regular expressions (regex) in your rule making. In the previous post we discussed what Semgrep is and how to use it, here we will be focusing specifically on how to use Semgrep in conjunction with regex as it can get complicated
+Setup Make sure you have a good understanding of how to use Semgrep, especially with creating your own custom YAML rules</description>
+      </item>
+    
       <item>
         <title>Introduction to Semgrep</title>
         <link>https://s0merset7.github.io/posts/semgrep_intro/semgrepnotes/</link>
         <pubDate>Wed, 16 Jun 2021 15:13:52 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/semgrep_intro/semgrepnotes/</guid>
-        <description>The goal of this post is to give an introduction into how to create rules using Semgrep as well getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into exmples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</description>
+        <description>The goal of this post is to give an introduction into how to create rules using Semgrep as well as getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into examples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</description>
       </item>
     
       <item>

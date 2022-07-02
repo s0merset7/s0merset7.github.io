@@ -15,8 +15,8 @@ All rights reserved</copyright>
         <pubDate>Sat, 23 Apr 2022 12:00:00 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/dynamicallocatormisuse/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
-Dynamic Allocator Misuse (Module B) Table of Contents   The Heap  Types of Memory How the Heap Works  The Data Segment     Dangers of the Heap Thread Local Caching (tcache)  Freeing Allocating   Metadata and Chunks Sources  The Heap  Types of Memory   ELF .</description>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+Dynamic Allocator Misuse (Module B) Table of Contents The Heap Types of Memory How the Heap Works The Data Segment Dangers of the Heap Thread Local Caching (tcache) Freeing Allocating Metadata and Chunks Sources The Heap Types of Memory ELF .</description>
       </item>
     
       <item>
@@ -25,8 +25,8 @@ Dynamic Allocator Misuse (Module B) Table of Contents   The Heap  Types of Memor
         <pubDate>Sun, 17 Apr 2022 12:00:00 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/memoryerrors/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
-Memory Errors (Module 8) Table of Contents   High-Level Problems Stack Smashing Causes of Corruption Stack Canaries Address Space Layout Resolution  Overwriting Page Offsets   Causes of Disclosure Sources  High-Level Problems (with the C language)   Trusting the Developer C is very low level, and trusts the developer knows what they are doing, even if it doest make sense.</description>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+Memory Errors (Module 8) Table of Contents High-Level Problems Stack Smashing Causes of Corruption Stack Canaries Address Space Layout Resolution Overwriting Page Offsets Causes of Disclosure Sources High-Level Problems (with the C language) Trusting the Developer C is very low level, and trusts the developer knows what they are doing, even if it doest make sense.</description>
       </item>
     
       <item>
@@ -35,9 +35,9 @@ Memory Errors (Module 8) Table of Contents   High-Level Problems Stack Smashing 
         <pubDate>Sun, 19 Sep 2021 12:00:00 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/reverse_engineering/reverseengineering/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Binary Reverse Engineering” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
-Functions and Frames  Control Flow Graphs: a way of visually representing a function
- graph: word used to describe the entire function map block: set on instructions that will execute one after the other edges: represent conditional/unconditional jumps  Blue (Unconditional Jump): a jump that will always be taken Green (Conditional Jump): the condition is met (true) Red (Conditional Jump): the condition is not met (false)   prologue: sets up the stack frame  save off the caller&amp;rsquo;s base pointer set current stack pointer as the base pointer &amp;ldquo;allocate&amp;rdquo; space on the stack (subtract from the stack pointer)   epilogue: tears down the stack frame  &amp;ldquo;deallocate&amp;rdquo; the stack mov rsp, rbp  Note: data is NOT destroyed by default   restore the old base pointer   stack frame: reserved place in memory for the stack to operate  stack pointer (rsp): points to the leftmost side of the stack frame base pointer (rbp): points to the rightmost side of the stack frame    What is the stack:</description>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Binary Reverse Engineering” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+Functions and Frames Control Flow Graphs: a way of visually representing a function
+graph: word used to describe the entire function map block: set on instructions that will execute one after the other edges: represent conditional/unconditional jumps Blue (Unconditional Jump): a jump that will always be taken Green (Conditional Jump): the condition is met (true) Red (Conditional Jump): the condition is not met (false) prologue: sets up the stack frame save off the caller&amp;rsquo;s base pointer set current stack pointer as the base pointer &amp;ldquo;allocate&amp;rdquo; space on the stack (subtract from the stack pointer) epilogue: tears down the stack frame &amp;ldquo;deallocate&amp;rdquo; the stack mov rsp, rbp Note: data is NOT destroyed by default restore the old base pointer stack frame: reserved place in memory for the stack to operate stack pointer (rsp): points to the leftmost side of the stack frame base pointer (rbp): points to the rightmost side of the stack frame What is the stack:</description>
       </item>
     
       <item>
@@ -46,9 +46,9 @@ Functions and Frames  Control Flow Graphs: a way of visually representing a func
         <pubDate>Sun, 12 Sep 2021 17:30:00 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Sandboxing” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
-What is Sandboxing?  Idea Behind Sandboxing:
- Untrusted data/code should live in a process with almost zero permissions   Spawn &amp;ldquo;privileged&amp;rdquo; parent process Spawn &amp;ldquo;sandboxed&amp;rdquo; child processes When a child needs to perform a privileged action, it asks the parent     chroot  What is chroot (change-root):   used to be the de-facto sandboxing utility changes the meaning of &amp;ldquo;/&amp;rdquo; for a process (and its children)  chroot(&amp;quot;/tmp/jail&amp;quot;) will disallow processes from getting out of the jail   no syscall filtering or other isolation chroot() does NOT:  Close resources that reside outside of the jail cd (chdir()) into the jail Do anything else!</description>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Sandboxing” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+What is Sandboxing? Idea Behind Sandboxing:
+Untrusted data/code should live in a process with almost zero permissions Spawn &amp;ldquo;privileged&amp;rdquo; parent process Spawn &amp;ldquo;sandboxed&amp;rdquo; child processes When a child needs to perform a privileged action, it asks the parent chroot What is chroot (change-root): used to be the de-facto sandboxing utility changes the meaning of &amp;ldquo;/&amp;rdquo; for a process (and its children) chroot(&amp;quot;/tmp/jail&amp;quot;) will disallow processes from getting out of the jail no syscall filtering or other isolation chroot() does NOT: Close resources that reside outside of the jail cd (chdir()) into the jail Do anything else!</description>
       </item>
     
       <item>
@@ -57,7 +57,7 @@ What is Sandboxing?  Idea Behind Sandboxing:
         <pubDate>Mon, 06 Sep 2021 19:00:00 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/shellcoding_post/shellcodingpost/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Shellcode Injection” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Shellcode Injection” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
 This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo;t have experience with x86 then I&amp;rsquo;d recommend taking a look at the last post and learning some of the basics or the rest of this post won&amp;rsquo;t make much sense.</description>
       </item>
     
@@ -67,7 +67,7 @@ This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo
         <pubDate>Fri, 03 Sep 2021 20:11:00 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/assembly_refresher/assemblyrefresher/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Assembly Refresher” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Assembly Refresher” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
 This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo;t have experience with x86 then I&amp;rsquo;d recommend starting with Resources and learning some of the basics or the rest of this post won&amp;rsquo;t make much sense.</description>
       </item>
     
@@ -77,8 +77,9 @@ This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo
         <pubDate>Thu, 02 Sep 2021 14:00:00 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/program_misuse/programmisuse/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili&amp;rsquo;s pwn.college lectures from the “Program Misuse” module. Much credit goes to Yan&amp;rsquo;s expertise! Please check out the pwn.college resources and challenges in the sources
-In module 2 there wasn&amp;rsquo;t as much content to cover so this post isn&amp;rsquo;t too long. I&amp;rsquo;d still reccomend checking out the lectures yourself for demonstrations on each of the topics covered.</description>
+        <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili&amp;rsquo;s pwn.college lectures from the “Program Misuse” module. Much credit goes to Yan&amp;rsquo;s expertise! Please check out the pwn.college resources and challenges in the sources
+In module 2 there wasn&amp;rsquo;t as much content to cover so this post isn&amp;rsquo;t too long. I&amp;rsquo;d still reccomend checking out the lectures yourself for demonstrations on each of the topics covered.
+Priviledge Escalation Every process has a user ID (UID) and and a group ID (GID) UID 0: the Linux admin user (root).</description>
       </item>
     
       <item>
@@ -87,7 +88,7 @@ In module 2 there wasn&amp;rsquo;t as much content to cover so this post isn&amp
         <pubDate>Thu, 02 Sep 2021 12:13:00 -0700</pubDate>
         
         <guid>https://s0merset7.github.io/posts/program_interaction/programinteraction/</guid>
-        <description>main { margin: 90px auto; padding: 0 15px; max-width: 70%; }  As a part of my degree program, I have to take a class called CSE466: Computer Systems Security. The professor for this class (Dr. Shoshitaishvili) created pwn.college, a free education platform to guide not only students in the course, but anyone who wants to try it out. I will be publishing all of my notes from each relevant module of course here, though I highly recommend watching the lectures for yourself as they go much more in-depth!</description>
+        <description>As a part of my degree program, I have to take a class called CSE466: Computer Systems Security. The professor for this class (Dr. Shoshitaishvili) created pwn.college, a free education platform to guide not only students in the course, but anyone who wants to try it out. I will be publishing all of my notes from each relevant module of course here, though I highly recommend watching the lectures for yourself as they go much more in-depth!</description>
       </item>
     
   </channel>
