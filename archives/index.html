@@ -5,7 +5,7 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Hugo 0.100.2 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+<meta name="generator" content="Hugo 0.101.0 -- gohugo.io / Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
 
@@ -44,7 +44,7 @@
 
 
   
-    <link rel="canonical" href="https://s0merset7.github.io/archives/">
+    <link rel="canonical" href="http://localhost:1313/archives/">
   
 
 
@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Somerset&#39;s Blog">
 <meta property="og:title" content="">
 
-  <meta property="og:url" content="https://s0merset7.github.io/archives/">
+  <meta property="og:url" content="http://localhost:1313/archives/">
 
 
 
@@ -418,7 +418,7 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "url": "https:\/\/s0merset7.github.io\/",
+      "url": "http:\/\/localhost:1313\/",
       "inLanguage": "en",
       "name": "Somerset's Blog",
       "description": "Somerset's blog",
@@ -431,7 +431,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.9ee32856170fec5024ff3829de02718c5f0870bfc1633f7aec8c84308e36821eba2d10df209342c3c2610bf537fd3eb7a4e41ae80b62d67bcc622c7c1fd133df.css" integrity="sha512-nuMoVhcP7FAk/zgp3gJxjF8IcL/BYz967IyEMI42gh66LRDfIJNCw8JhC/U3/T63pOQa6Ati1nvMYix8H9Ez3w==">
+<link rel="stylesheet" href="/css/main.min.e659922597c22e5b88c82715a26ce3a4a6d3538fd85c67e9ca70b6f3538f02ab78e1fd41708e48a4e035707169edef745faa2747f36c52a902783ed504a22acf.css" integrity="sha512-5lmSJZfCLluIyCcVomzjpKbTU4/YXGfpynC281OPAqt44f1BcI5IpOA1cHFp7e90X6onR/NsUqkCeD7VBKIqzw==">
 
 
 
@@ -485,7 +485,7 @@
 
 
 
-<script defer src="/js/lazysizes.min.min.7e214987354fe99d418737166c26c65aafe7f9f646816cf2b73228a9db1bdc1d15456a942a48b5ae581b4bc83ab81eaf84a8d9056a9ed750eaae6b65160c6cc3.js" crossorigin="anonymous"></script>
+<script defer src="/js/lazysizes.min.min.adf7bc6270eb381aa8421a6282fb66b779b1f8f32914ba67f955bb2584cdeda33c1efa41dfa2e9cc5e135e093236c3b3143ba85f201b5d8244f95588f0ad762d.js" crossorigin="anonymous"></script>
 
 
 
@@ -508,7 +508,7 @@
 
   <script>
     
-      'use strict';const PREFERS_LIGHT=window.matchMedia('(prefers-color-scheme: light)'),PREFERS_DARK=window.matchMedia('(prefers-color-scheme: dark)'),ROOT=document.documentElement,SHEET=document.documentElement.style,META_THEME_COLOR=document.querySelector('meta[name=theme-color]');function setDark(){ROOT.dataset.mode='dark'}function setLight(){ROOT.dataset.mode='light'}localStorage.getItem('isDark')=='true'?setDark():localStorage.getItem('isDark')=='false'?setLight():PREFERS_DARK.matches?setDark():PREFERS_LIGHT.matches&&setLight(),function getAccent(){if(ROOT.dataset.mode==='dark')if(localStorage.getItem('darkAccent')===null){var e="#902b37"}else e=localStorage.getItem('darkAccent'),else ROOT.dataset.mode==='light'&&(localStorage.getItem('lightAccent')===null?(return e}var activeAccent=getAccent();SHEET.setProperty('--accent',activeAccent),META_THEME_COLOR.setAttribute('content',activeAccent);function updateAccent(){var e=getAccent();SHEET.setProperty('--accent',e),PALETTE.value=e,META_THEME_COLOR.setAttribute('content',e)}document.addEventListener('DOMContentLoaded',function(){PALETTE.value=activeAccent;function e(){document.body.style.transition=document.querySelector('header').style.transition=document.querySelector('footer').style.transition='background-color .3s ease, color .3s ease'}function n(){e(),ROOT.dataset.mode=='light'?(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' by the user.")):(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' by the user.")),updateAccent()}function t(){e(),PREFERS_LIGHT.matches?(setLight(),localStorage.setItem('isDark','false'),console.log("Mode changed to 'light' in OS level.")):PREFERS_DARK.matches&&(setDark(),localStorage.setItem('isDark','true'),console.log("Mode changed to 'dark' in OS level.")),updateAccent()}PREFERS_LIGHT.addListener(t),PREFERS_DARK.addListener(t),document.querySelector('footer button').addEventListener('click',n)})
+      "use strict";const PREFERS_LIGHT=window.matchMedia("(prefers-color-scheme: light)"),PREFERS_DARK=window.matchMedia("(prefers-color-scheme: dark)"),ROOT=document.documentElement,SHEET=document.documentElement.style,META_THEME_COLOR=document.querySelector("meta[name=theme-color]");function setDark(){ROOT.dataset.mode="dark"}function setLight(){ROOT.dataset.mode="light"}localStorage.getItem("isDark")=="true"?setDark():localStorage.getItem("isDark")=="false"?setLight():PREFERS_DARK.matches?setDark():PREFERS_LIGHT.matches&&setLight(),console.log("Light/dark mode loaded.");function getAccent(){if(ROOT.dataset.mode==="dark")if(localStorage.getItem("darkAccent")===null){console.log("The user never used the palette while in the 'dark' mode."),console.log("As the mode is 'dark', loading the 'default accent color' for the dark mode.");var e="#902b37"}else e=localStorage.getItem("darkAccent"),console.log("The user previously used the palette while in the 'dark' mode."),console.log("As the mode is 'dark', loading the 'dark accent color' chosen by the user.");else ROOT.dataset.mode==="light"&&(localStorage.getItem("lightAccent")===null?(console.log("The user never used the palette while in the 'light' mode."),console.log("As the mode is 'light', loading the 'default accent color' for the light mode."),e="#225670"):(e=localStorage.getItem("lightAccent"),console.log("The user previously used the palette while in the 'light' mode."),console.log("As the mode is 'light', loading the 'light accent color' chosen by the user.")));return e}var activeAccent=getAccent();SHEET.setProperty("--accent",activeAccent),META_THEME_COLOR.setAttribute("content",activeAccent);function updateAccent(){var e=getAccent();SHEET.setProperty("--accent",e),PALETTE.value=e,META_THEME_COLOR.setAttribute("content",e)}document.addEventListener("DOMContentLoaded",function(){PALETTE.value=activeAccent;function e(){document.body.style.transition=document.querySelector("header").style.transition=document.querySelector("footer").style.transition="background-color .3s ease, color .3s ease"}function t(){e(),ROOT.dataset.mode=="light"?(setDark(),localStorage.setItem("isDark","true"),console.log("Mode changed to 'dark' by the user.")):(setLight(),localStorage.setItem("isDark","false"),console.log("Mode changed to 'light' by the user.")),updateAccent()}document.addEventListener("keydown",e=>{const n=e||window.event;if(n.keyCode===77&&n.ctrlKey&&n.altKey){t();return}},!1);function n(){e(),PREFERS_LIGHT.matches?(setLight(),localStorage.setItem("isDark","false"),console.log("Mode changed to 'light' in OS level.")):PREFERS_DARK.matches&&(setDark(),localStorage.setItem("isDark","true"),console.log("Mode changed to 'dark' in OS level.")),updateAccent()}PREFERS_LIGHT.addListener(n),PREFERS_DARK.addListener(n),document.querySelector("footer button").addEventListener("click",t)})
     
   </script>
 
@@ -613,7 +613,7 @@
     <footer>
       
 
-  <p>Copyright © 2021
+  <p>Copyright © 2022
 All rights reserved</p>
 
 
@@ -671,7 +671,7 @@ All rights reserved</p>
 
       <script>
         
-          'use strict';const PALETTE=document.querySelector('footer input');PALETTE.onchange=function(){const e=PALETTE.value;SHEET.setProperty('--accent',e),ROOT.dataset.mode==='light'?localStorage.setItem('lightAccent',e):localStorage.setItem('darkAccent',e),updateAccent()}
+          "use strict";const PALETTE=document.querySelector("footer input");PALETTE.onchange=function(){const e=PALETTE.value;SHEET.setProperty("--accent",e),ROOT.dataset.mode==="light"?localStorage.setItem("lightAccent",e):localStorage.setItem("darkAccent",e),updateAccent()}
         
       </script>
 
@@ -680,5 +680,5 @@ All rights reserved</p>
     
     
 
-  </body>
+  <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script></body>
 </html>

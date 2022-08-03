@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Somerset&#39;s Blog</title>
-    <link>https://s0merset7.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Somerset&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2021
+    <copyright>Copyright © 2022
 All rights reserved</copyright>
-    <lastBuildDate>Sat, 23 Apr 2022 12:00:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 12:00:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
       <item>
         <title>Dynamic Allocator Misuse (Module B)</title>
-        <link>https://s0merset7.github.io/posts/dynamicallocatormisuse/</link>
+        <link>http://localhost:1313/posts/dynamicallocatormisuse/</link>
         <pubDate>Sat, 23 Apr 2022 12:00:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/dynamicallocatormisuse/</guid>
+        <guid>http://localhost:1313/posts/dynamicallocatormisuse/</guid>
         <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
 Dynamic Allocator Misuse (Module B) Table of Contents The Heap Types of Memory How the Heap Works The Data Segment Dangers of the Heap Thread Local Caching (tcache) Freeing Allocating Metadata and Chunks Sources The Heap Types of Memory ELF .</description>
       </item>
     
       <item>
         <title>Memory Errors (Module 8)</title>
-        <link>https://s0merset7.github.io/posts/memoryerrors/</link>
+        <link>http://localhost:1313/posts/memoryerrors/</link>
         <pubDate>Sun, 17 Apr 2022 12:00:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/memoryerrors/</guid>
+        <guid>http://localhost:1313/posts/memoryerrors/</guid>
         <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
 Memory Errors (Module 8) Table of Contents High-Level Problems Stack Smashing Causes of Corruption Stack Canaries Address Space Layout Resolution Overwriting Page Offsets Causes of Disclosure Sources High-Level Problems (with the C language) Trusting the Developer C is very low level, and trusts the developer knows what they are doing, even if it doest make sense.</description>
       </item>
     
       <item>
         <title>Introduction to Open Source Intelligence (OSINT)</title>
-        <link>https://s0merset7.github.io/posts/osint/introtoosint/</link>
+        <link>http://localhost:1313/posts/osint/introtoosint/</link>
         <pubDate>Sat, 23 Oct 2021 23:23:45 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/osint/introtoosint/</guid>
+        <guid>http://localhost:1313/posts/osint/introtoosint/</guid>
         <description>Note: Much of the below information is summarized from OSINT Combine&amp;rsquo;s course &amp;ldquo;Trace Labs OSINT Foundations Course&amp;rdquo;. Much credit goes to Chris Poulter&amp;rsquo;s expertise! Check out their website and partners the sources
 Open Source Intelligence (OSINT) is a way of searching for information on only publicly available sources (open source). While this may seem to be the same way everyone searches for information, there are many tools and methodologies that can be used to enhance your research capabilities.</description>
       </item>
     
       <item>
         <title>Reverse Engineering (Module 6)</title>
-        <link>https://s0merset7.github.io/posts/reverse_engineering/reverseengineering/</link>
+        <link>http://localhost:1313/posts/reverse_engineering/reverseengineering/</link>
         <pubDate>Sun, 19 Sep 2021 12:00:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/reverse_engineering/reverseengineering/</guid>
+        <guid>http://localhost:1313/posts/reverse_engineering/reverseengineering/</guid>
         <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Binary Reverse Engineering” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
 Functions and Frames Control Flow Graphs: a way of visually representing a function
 graph: word used to describe the entire function map block: set on instructions that will execute one after the other edges: represent conditional/unconditional jumps Blue (Unconditional Jump): a jump that will always be taken Green (Conditional Jump): the condition is met (true) Red (Conditional Jump): the condition is not met (false) prologue: sets up the stack frame save off the caller&amp;rsquo;s base pointer set current stack pointer as the base pointer &amp;ldquo;allocate&amp;rdquo; space on the stack (subtract from the stack pointer) epilogue: tears down the stack frame &amp;ldquo;deallocate&amp;rdquo; the stack mov rsp, rbp Note: data is NOT destroyed by default restore the old base pointer stack frame: reserved place in memory for the stack to operate stack pointer (rsp): points to the leftmost side of the stack frame base pointer (rbp): points to the rightmost side of the stack frame What is the stack:</description>
@@ -52,10 +52,10 @@ graph: word used to describe the entire function map block: set on instructions 
     
       <item>
         <title>Sandboxing (Module 5)</title>
-        <link>https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/</link>
+        <link>http://localhost:1313/posts/sandboxing_post/sandboxingpost/</link>
         <pubDate>Sun, 12 Sep 2021 17:30:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/</guid>
+        <guid>http://localhost:1313/posts/sandboxing_post/sandboxingpost/</guid>
         <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Sandboxing” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
 What is Sandboxing? Idea Behind Sandboxing:
 Untrusted data/code should live in a process with almost zero permissions Spawn &amp;ldquo;privileged&amp;rdquo; parent process Spawn &amp;ldquo;sandboxed&amp;rdquo; child processes When a child needs to perform a privileged action, it asks the parent chroot What is chroot (change-root): used to be the de-facto sandboxing utility changes the meaning of &amp;ldquo;/&amp;rdquo; for a process (and its children) chroot(&amp;quot;/tmp/jail&amp;quot;) will disallow processes from getting out of the jail no syscall filtering or other isolation chroot() does NOT: Close resources that reside outside of the jail cd (chdir()) into the jail Do anything else!</description>
@@ -63,30 +63,30 @@ Untrusted data/code should live in a process with almost zero permissions Spawn 
     
       <item>
         <title>Shellcoding (Module 4)</title>
-        <link>https://s0merset7.github.io/posts/shellcoding_post/shellcodingpost/</link>
+        <link>http://localhost:1313/posts/shellcoding_post/shellcodingpost/</link>
         <pubDate>Mon, 06 Sep 2021 19:00:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/shellcoding_post/shellcodingpost/</guid>
+        <guid>http://localhost:1313/posts/shellcoding_post/shellcodingpost/</guid>
         <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Shellcode Injection” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
 This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo;t have experience with x86 then I&amp;rsquo;d recommend taking a look at the last post and learning some of the basics or the rest of this post won&amp;rsquo;t make much sense.</description>
       </item>
     
       <item>
         <title>Assembly Refresher (Module 3)</title>
-        <link>https://s0merset7.github.io/posts/assembly_refresher/assemblyrefresher/</link>
+        <link>http://localhost:1313/posts/assembly_refresher/assemblyrefresher/</link>
         <pubDate>Fri, 03 Sep 2021 20:11:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/assembly_refresher/assemblyrefresher/</guid>
+        <guid>http://localhost:1313/posts/assembly_refresher/assemblyrefresher/</guid>
         <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s pwn.college lectures from the “Assembly Refresher” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources
 This module relies heavily on preexisting x86 knowledge, so if you don&amp;rsquo;t have experience with x86 then I&amp;rsquo;d recommend starting with Resources and learning some of the basics or the rest of this post won&amp;rsquo;t make much sense.</description>
       </item>
     
       <item>
         <title>Program Misuse (Module 2)</title>
-        <link>https://s0merset7.github.io/posts/program_misuse/programmisuse/</link>
+        <link>http://localhost:1313/posts/program_misuse/programmisuse/</link>
         <pubDate>Thu, 02 Sep 2021 14:00:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/program_misuse/programmisuse/</guid>
+        <guid>http://localhost:1313/posts/program_misuse/programmisuse/</guid>
         <description>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili&amp;rsquo;s pwn.college lectures from the “Program Misuse” module. Much credit goes to Yan&amp;rsquo;s expertise! Please check out the pwn.college resources and challenges in the sources
 In module 2 there wasn&amp;rsquo;t as much content to cover so this post isn&amp;rsquo;t too long. I&amp;rsquo;d still reccomend checking out the lectures yourself for demonstrations on each of the topics covered.
 Priviledge Escalation Every process has a user ID (UID) and and a group ID (GID) UID 0: the Linux admin user (root).</description>
@@ -94,116 +94,116 @@ Priviledge Escalation Every process has a user ID (UID) and and a group ID (GID)
     
       <item>
         <title>Program Interaction (Module 1)</title>
-        <link>https://s0merset7.github.io/posts/program_interaction/programinteraction/</link>
+        <link>http://localhost:1313/posts/program_interaction/programinteraction/</link>
         <pubDate>Thu, 02 Sep 2021 12:13:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/program_interaction/programinteraction/</guid>
+        <guid>http://localhost:1313/posts/program_interaction/programinteraction/</guid>
         <description>As a part of my degree program, I have to take a class called CSE466: Computer Systems Security. The professor for this class (Dr. Shoshitaishvili) created pwn.college, a free education platform to guide not only students in the course, but anyone who wants to try it out. I will be publishing all of my notes from each relevant module of course here, though I highly recommend watching the lectures for yourself as they go much more in-depth!</description>
       </item>
     
       <item>
         <title>Making Regex Rules in Semgrep</title>
-        <link>https://s0merset7.github.io/posts/regex_walkthrough/</link>
+        <link>http://localhost:1313/posts/regex_walkthrough/</link>
         <pubDate>Mon, 12 Jul 2021 07:18:20 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/regex_walkthrough/</guid>
+        <guid>http://localhost:1313/posts/regex_walkthrough/</guid>
         <description>One feature of Semgrep is the ability to use regular expressions (regex) in your rule making. In the previous post we discussed what Semgrep is and how to use it, here we will be focusing specifically on how to use Semgrep in conjunction with regex as it can get complicated
 Setup Make sure you have a good understanding of how to use Semgrep, especially with creating your own custom YAML rules</description>
       </item>
     
       <item>
         <title>Introduction to Semgrep</title>
-        <link>https://s0merset7.github.io/posts/semgrep_intro/semgrepnotes/</link>
+        <link>http://localhost:1313/posts/semgrep_intro/semgrepnotes/</link>
         <pubDate>Wed, 16 Jun 2021 15:13:52 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/semgrep_intro/semgrepnotes/</guid>
+        <guid>http://localhost:1313/posts/semgrep_intro/semgrepnotes/</guid>
         <description>The goal of this post is to give an introduction into how to create rules using Semgrep as well as getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into examples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</description>
       </item>
     
       <item>
         <title>Website Penetration Testing</title>
-        <link>https://s0merset7.github.io/posts/website_pentesting/webpentesting/</link>
+        <link>http://localhost:1313/posts/website_pentesting/webpentesting/</link>
         <pubDate>Mon, 31 May 2021 16:30:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/website_pentesting/webpentesting/</guid>
+        <guid>http://localhost:1313/posts/website_pentesting/webpentesting/</guid>
         <description>Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
 There is a LOT to do when it comes to website penetration testing, and this post is by no means a comprehensive list of everything to do or than can be done.</description>
       </item>
     
       <item>
         <title>External Pen-Testing</title>
-        <link>https://s0merset7.github.io/posts/external_pentesting/externalpentesting/</link>
+        <link>http://localhost:1313/posts/external_pentesting/externalpentesting/</link>
         <pubDate>Sun, 30 May 2021 15:10:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/external_pentesting/externalpentesting/</guid>
+        <guid>http://localhost:1313/posts/external_pentesting/externalpentesting/</guid>
         <description>Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
 External Pen Testing is the process of testing the security surrounding external systems connected to the internet. This process also involves the discovery and exploitation of known and unknown vulnerabilities from the perspective of an outside attacker</description>
       </item>
     
       <item>
         <title>Information Gathering (Reconnaissance Phase)</title>
-        <link>https://s0merset7.github.io/posts/information_gathering/informationgathering/</link>
+        <link>http://localhost:1313/posts/information_gathering/informationgathering/</link>
         <pubDate>Thu, 27 May 2021 15:40:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/information_gathering/informationgathering/</guid>
+        <guid>http://localhost:1313/posts/information_gathering/informationgathering/</guid>
         <description>Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
 In this post, I will be demonstrating some of the tools and processes used during the Information Gathering (or Passive Reconnaissance) phase of pentesting. For our purposes, reconnaissance is defined as the use of open-sources to gain information about a target</description>
       </item>
     
       <item>
         <title>Pre-Pentration Test Checklist</title>
-        <link>https://s0merset7.github.io/posts/pentesting_checklist/</link>
+        <link>http://localhost:1313/posts/pentesting_checklist/</link>
         <pubDate>Sun, 16 May 2021 20:24:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/pentesting_checklist/</guid>
+        <guid>http://localhost:1313/posts/pentesting_checklist/</guid>
         <description>Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
 Penetration testing is defined as the process of assessing the security model of an organization. When we perform a pentest, we want to make sure we not only do proper research, but also ensure that we are conducting the pentest properly and within the bounds of the client&amp;rsquo;s needs, as well as making sure to protect ourselves in the process.</description>
       </item>
     
       <item>
         <title>Useful Websites</title>
-        <link>https://s0merset7.github.io/posts/useful_sites/</link>
+        <link>http://localhost:1313/posts/useful_sites/</link>
         <pubDate>Sun, 16 May 2021 18:44:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/useful_sites/</guid>
+        <guid>http://localhost:1313/posts/useful_sites/</guid>
         <description> There are hundreds of websites out there with useful information and helpful tools that can be used while hacking, so I decided to create a list of helpful websites for different aspects of hacking as I come along them. I will make sure to update this list as I come across more, so make sure to check back regularly!
 Information Gathering DNS Reconnaissance DNSDumpster: will provide a visual breakdown of where/what a domain&amp;rsquo;s servers/hosts are located, as well as maps the domain in relation to its hosts/servers Hunter: insert a domain and it will return known email addresses connected to the website (you do have to make an account but it is free) ViewDNS: site that allows you to run a variety of tests against domains, IPs, and email addresses such as Whois, IP History, Location Finder, and more Whoxy: performs Whois and Reverse Whois lookups, as well as searches for owners, emails, and more (search tool is at the top right of the website, you can ignore the paid options advertised) Active Reconnaissance Exploit Database: hopefully you know this one already, but use this to find common vulnerability exploits (CVE) and how to replicate them Website Pentesting HTTP Status Codes: a simple site that lists all possible HTTP status codes along with what they mean and some specific information you can interpret from them Decrypting/Password Attacks CyberChef: a GitHub project that allows you to use encryption/decryption tools against any given text Weak Passwords: website that gives you the current top 50 most common passwords in use Privilege Escalation Super helpful blog post that walks you through how to do enumeration on a new host with the intention of privilege escalation Reverse Shell Cheat Sheet: cheat sheet that provides the code for how to deploy a reverse shell and the process in different languages Reporting Carbon: nice site that allows you to paste your code and edit it to make it look more readable for reports </description>
       </item>
     
       <item>
         <title>Kali Linux Setup and Customization</title>
-        <link>https://s0merset7.github.io/posts/kali_setup/kali_setup/</link>
+        <link>http://localhost:1313/posts/kali_setup/kali_setup/</link>
         <pubDate>Fri, 14 May 2021 20:34:33 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/kali_setup/kali_setup/</guid>
+        <guid>http://localhost:1313/posts/kali_setup/kali_setup/</guid>
         <description>Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
 There are two main ways in which you can set up Kali Linux, you can either create a Virtual Machine (VM) and install the Kali Operating System (OS), or you can Single/Dual Boot your computer to have Kali (both of which are 100% free).</description>
       </item>
     
       <item>
         <title>Walkthrough of Jerry Machine – Hack the Box</title>
-        <link>https://s0merset7.github.io/posts/jerry_machine/</link>
+        <link>http://localhost:1313/posts/jerry_machine/</link>
         <pubDate>Sun, 23 Aug 2020 23:56:29 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/jerry_machine/</guid>
+        <guid>http://localhost:1313/posts/jerry_machine/</guid>
         <description>In a new terminal window, run nmap -sC -sV 10.10.10.95 -sC: Adds on the &amp;ldquo;default&amp;rdquo; scripts to be run which include things like &amp;ldquo;Speed&amp;rdquo;, &amp;ldquo;usefulness&amp;rdquo;, and &amp;ldquo;Intrusiveness&amp;rdquo;. You can check them out in more detail by looking under &amp;ldquo;default&amp;rdquo; in the Script Categories section on this website -sV: Probe open ports to determine service/version info It looks like we only have one open port (8080) and it&amp;rsquo;s running a service called Apache Tomcat/Coyote JSP engine 1.</description>
       </item>
     
       <item>
         <title>Walkthrough of Lame Machine – Hack the Box</title>
-        <link>https://s0merset7.github.io/posts/lame_machine/</link>
+        <link>http://localhost:1313/posts/lame_machine/</link>
         <pubDate>Sun, 23 Aug 2020 23:56:20 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/lame_machine/</guid>
+        <guid>http://localhost:1313/posts/lame_machine/</guid>
         <description>In a new terminal window, run nmap -sV -O -F --version-light 10.10.10.3 Another option is to open Zenmap and run a port scan on the same IP (to see just the information on the ports, you can go to the Ports/Hosts tab) Zenmap is a program that does a really good job at visualizing and breaking down nmap commands into digestible bites Now there a a LOT of different ways to use nmap, and being that I&amp;rsquo;m still learning you are going to be seeing a lot of different versions, but I will do my best to explain what each version does.</description>
       </item>
     
       <item>
         <title>Hack the Box Walkthroughs Intro</title>
-        <link>https://s0merset7.github.io/posts/intro/</link>
+        <link>http://localhost:1313/posts/intro/</link>
         <pubDate>Sun, 23 Aug 2020 23:34:33 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/posts/intro/</guid>
+        <guid>http://localhost:1313/posts/intro/</guid>
         <description>Hello and welcome to my walkthroughs for Hack the Box (HTB). I&amp;rsquo;ve challenged myself with completing 50 HTB machines to learn hacking tools and skills that will prepare me for a career in the field. Being that I am a beginner at the time of writing this, I won&amp;rsquo;t be able to solve any machine without guidance at first, so my plan is as follows:
 The first 10 machines I will do with the help of other write-ups and tutorials (I will attach links to any resources I use at the bottom of each of my walkthroughs).</description>
       </item>

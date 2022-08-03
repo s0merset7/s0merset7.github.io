@@ -4,7 +4,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/dynamicallocatormisuse/</loc>
+        <loc>http://localhost:1313/posts/dynamicallocatormisuse/</loc>
 
         
           <lastmod>2022-04-23T22:00:00-07:00</lastmod>
@@ -20,7 +20,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/memoryerrors/</loc>
+        <loc>http://localhost:1313/posts/memoryerrors/</loc>
 
         
           <lastmod>2022-04-23T22:00:00-07:00</lastmod>
@@ -36,7 +36,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/osint/introtoosint/</loc>
+        <loc>http://localhost:1313/posts/osint/introtoosint/</loc>
 
         
           <lastmod>2021-10-23T23:23:45-07:00</lastmod>
@@ -52,7 +52,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/reverse_engineering/reverseengineering/</loc>
+        <loc>http://localhost:1313/posts/reverse_engineering/reverseengineering/</loc>
 
         
           <lastmod>2021-09-19T22:00:00-07:00</lastmod>
@@ -68,7 +68,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/sandboxing_post/sandboxingpost/</loc>
+        <loc>http://localhost:1313/posts/sandboxing_post/sandboxingpost/</loc>
 
         
           <lastmod>2021-09-12T17:30:00-07:00</lastmod>
@@ -84,7 +84,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/shellcoding_post/shellcodingpost/</loc>
+        <loc>http://localhost:1313/posts/shellcoding_post/shellcodingpost/</loc>
 
         
           <lastmod>2021-09-06T19:00:00-07:00</lastmod>
@@ -100,7 +100,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/assembly_refresher/assemblyrefresher/</loc>
+        <loc>http://localhost:1313/posts/assembly_refresher/assemblyrefresher/</loc>
 
         
           <lastmod>2021-09-03T20:11:00-07:00</lastmod>
@@ -116,7 +116,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/program_misuse/programmisuse/</loc>
+        <loc>http://localhost:1313/posts/program_misuse/programmisuse/</loc>
 
         
           <lastmod>2021-09-02T14:00:00-07:00</lastmod>
@@ -132,7 +132,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/program_interaction/programinteraction/</loc>
+        <loc>http://localhost:1313/posts/program_interaction/programinteraction/</loc>
 
         
           <lastmod>2021-09-02T12:13:00-07:00</lastmod>
@@ -148,7 +148,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/regex_walkthrough/</loc>
+        <loc>http://localhost:1313/posts/regex_walkthrough/</loc>
 
         
           <lastmod>2020-07-28T17:26:20-07:00</lastmod>
@@ -164,7 +164,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/semgrep_intro/semgrepnotes/</loc>
+        <loc>http://localhost:1313/posts/semgrep_intro/semgrepnotes/</loc>
 
         
           <lastmod>2021-06-22T16:06:52-07:00</lastmod>
@@ -180,7 +180,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/website_pentesting/webpentesting/</loc>
+        <loc>http://localhost:1313/posts/website_pentesting/webpentesting/</loc>
 
         
           <lastmod>2021-05-31T16:30:00-07:00</lastmod>
@@ -196,7 +196,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/external_pentesting/externalpentesting/</loc>
+        <loc>http://localhost:1313/posts/external_pentesting/externalpentesting/</loc>
 
         
           <lastmod>2021-05-30T15:10:00-07:00</lastmod>
@@ -212,7 +212,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/information_gathering/informationgathering/</loc>
+        <loc>http://localhost:1313/posts/information_gathering/informationgathering/</loc>
 
         
           <lastmod>2021-05-27T15:40:00-07:00</lastmod>
@@ -228,7 +228,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/pentesting_checklist/</loc>
+        <loc>http://localhost:1313/posts/pentesting_checklist/</loc>
 
         
           <lastmod>2021-05-16T20:24:00-07:00</lastmod>
@@ -244,7 +244,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/useful_sites/</loc>
+        <loc>http://localhost:1313/posts/useful_sites/</loc>
 
         
           <lastmod>2021-05-16T18:44:00-07:00</lastmod>
@@ -260,7 +260,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/kali_setup/kali_setup/</loc>
+        <loc>http://localhost:1313/posts/kali_setup/kali_setup/</loc>
 
         
           <lastmod>2021-05-16T20:54:00-07:00</lastmod>
@@ -276,7 +276,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/jerry_machine/</loc>
+        <loc>http://localhost:1313/posts/jerry_machine/</loc>
 
         
           <lastmod>2020-08-23T23:56:29-07:00</lastmod>
@@ -292,7 +292,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/lame_machine/</loc>
+        <loc>http://localhost:1313/posts/lame_machine/</loc>
 
         
           <lastmod>2020-08-23T23:56:20-07:00</lastmod>
@@ -308,7 +308,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/posts/intro/</loc>
+        <loc>http://localhost:1313/posts/intro/</loc>
 
         
           <lastmod>2021-05-14T20:54:00-07:00</lastmod>
@@ -324,7 +324,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/archives/</loc>
+        <loc>http://localhost:1313/archives/</loc>
 
         
           <lastmod>2019-05-28T00:00:00+00:00</lastmod>
@@ -340,7 +340,7 @@
   
     
       <url>
-        <loc>https://s0merset7.github.io/about/</loc>
+        <loc>http://localhost:1313/about/</loc>
 
         
           
