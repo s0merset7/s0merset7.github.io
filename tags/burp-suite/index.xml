@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Somerset&#39;s Blog</title>
-    <link>http://localhost:1313/tags/burp-suite/</link>
+    <title>s0merset7&#39;s Blog</title>
+    <link>https://s0merset7.github.io/tags/burp-suite/</link>
     <description>Somerset&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022
 All rights reserved</copyright>
-    <lastBuildDate>Mon, 31 May 2021 16:30:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/burp-suite/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 16:30:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/burp-suite/index.xml" rel="self" type="application/rss+xml" />
       <item>
         <title>Website Penetration Testing</title>
-        <link>http://localhost:1313/posts/website_pentesting/webpentesting/</link>
+        <link>https://s0merset7.github.io/posts/website_pentesting/webpentesting/</link>
         <pubDate>Mon, 31 May 2021 16:30:00 -0700</pubDate>
         
-        <guid>http://localhost:1313/posts/website_pentesting/webpentesting/</guid>
+        <guid>https://s0merset7.github.io/posts/website_pentesting/webpentesting/</guid>
         <description>Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Pentration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
 There is a LOT to do when it comes to website penetration testing, and this post is by no means a comprehensive list of everything to do or than can be done.</description>
       </item>
