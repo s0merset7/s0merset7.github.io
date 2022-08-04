@@ -2,82 +2,82 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>s0merset7&#39;s Blog</title>
-    <link>https://s0merset7.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Somerset&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2022
 All rights reserved</copyright>
-    <lastBuildDate>Sat, 23 Apr 2022 12:00:00 -0700</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 12:00:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
       <item>
         <title>pwn.college</title>
-        <link>https://s0merset7.github.io/tags/pwn.college/</link>
+        <link>http://localhost:1313/tags/pwn.college/</link>
         <pubDate>Sat, 23 Apr 2022 12:00:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/tags/pwn.college/</guid>
+        <guid>http://localhost:1313/tags/pwn.college/</guid>
         <description></description>
       </item>
     
       <item>
         <title>OSINT</title>
-        <link>https://s0merset7.github.io/tags/osint/</link>
+        <link>http://localhost:1313/tags/osint/</link>
         <pubDate>Sat, 23 Oct 2021 23:23:45 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/tags/osint/</guid>
+        <guid>http://localhost:1313/tags/osint/</guid>
         <description></description>
       </item>
     
       <item>
         <title>Semgrep</title>
-        <link>https://s0merset7.github.io/tags/semgrep/</link>
+        <link>http://localhost:1313/tags/semgrep/</link>
         <pubDate>Mon, 12 Jul 2021 07:18:20 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/tags/semgrep/</guid>
+        <guid>http://localhost:1313/tags/semgrep/</guid>
         <description></description>
       </item>
     
       <item>
         <title>Burp Suite</title>
-        <link>https://s0merset7.github.io/tags/burp-suite/</link>
+        <link>http://localhost:1313/tags/burp-suite/</link>
         <pubDate>Mon, 31 May 2021 16:30:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/tags/burp-suite/</guid>
+        <guid>http://localhost:1313/tags/burp-suite/</guid>
         <description></description>
       </item>
     
       <item>
         <title>Pentesting</title>
-        <link>https://s0merset7.github.io/tags/pentesting/</link>
+        <link>http://localhost:1313/tags/pentesting/</link>
         <pubDate>Mon, 31 May 2021 16:30:00 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/tags/pentesting/</guid>
+        <guid>http://localhost:1313/tags/pentesting/</guid>
         <description></description>
       </item>
     
       <item>
         <title>Kali Linux Help</title>
-        <link>https://s0merset7.github.io/tags/kali-linux-help/</link>
+        <link>http://localhost:1313/tags/kali-linux-help/</link>
         <pubDate>Fri, 14 May 2021 20:34:33 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/tags/kali-linux-help/</guid>
+        <guid>http://localhost:1313/tags/kali-linux-help/</guid>
         <description></description>
       </item>
     
       <item>
         <title>HacktheBox</title>
-        <link>https://s0merset7.github.io/tags/hackthebox/</link>
+        <link>http://localhost:1313/tags/hackthebox/</link>
         <pubDate>Sun, 23 Aug 2020 23:56:29 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/tags/hackthebox/</guid>
+        <guid>http://localhost:1313/tags/hackthebox/</guid>
         <description></description>
       </item>
     
       <item>
         <title>Walkthrough</title>
-        <link>https://s0merset7.github.io/tags/walkthrough/</link>
+        <link>http://localhost:1313/tags/walkthrough/</link>
         <pubDate>Sun, 23 Aug 2020 23:56:29 -0700</pubDate>
         
-        <guid>https://s0merset7.github.io/tags/walkthrough/</guid>
+        <guid>http://localhost:1313/tags/walkthrough/</guid>
         <description></description>
       </item>
     
