@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>s0merset7&#39;s Blog</title>
-    <link>http://localhost:1313/tags/semgrep/</link>
-    <description>Somerset&#39;s blog</description>
+    <title>Semgrep on s0merset7&#39;s Blog</title>
+    <link>https://s0merset7.github.io/tags/semgrep/</link>
+    <description>Recent content in Semgrep on s0merset7&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright © 2022
-All rights reserved</copyright>
-    <lastBuildDate>Mon, 12 Jul 2021 07:18:20 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/semgrep/index.xml" rel="self" type="application/rss+xml" />
-      <item>
-        <title>Making Regex Rules in Semgrep</title>
-        <link>http://localhost:1313/posts/regex_walkthrough/</link>
-        <pubDate>Mon, 12 Jul 2021 07:18:20 -0700</pubDate>
-        
-        <guid>http://localhost:1313/posts/regex_walkthrough/</guid>
-        <description>One feature of Semgrep is the ability to use regular expressions (regex) in your rule making. In the previous post we discussed what Semgrep is and how to use it, here we will be focusing specifically on how to use Semgrep in conjunction with regex as it can get complicated
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/semgrep/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making Regex Rules in Semgrep</title>
+      <link>https://s0merset7.github.io/post/2021/july/regex_walkthrough/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://s0merset7.github.io/post/2021/july/regex_walkthrough/</guid>
+      <description>One feature of Semgrep is the ability to use regular expressions (regex) in your rule making. In the previous post we discussed what Semgrep is and how to use it, here we will be focusing specifically on how to use Semgrep in conjunction with regex as it can get complicated
 Setup Make sure you have a good understanding of how to use Semgrep, especially with creating your own custom YAML rules</description>
-      </item>
+    </item>
     
-      <item>
-        <title>Introduction to Semgrep</title>
-        <link>http://localhost:1313/posts/semgrep_intro/semgrepnotes/</link>
-        <pubDate>Wed, 16 Jun 2021 15:13:52 -0700</pubDate>
-        
-        <guid>http://localhost:1313/posts/semgrep_intro/semgrepnotes/</guid>
-        <description>The goal of this post is to give an introduction into how to create rules using Semgrep as well as getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into examples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</description>
-      </item>
+    <item>
+      <title>Introduction to Semgrep</title>
+      <link>https://s0merset7.github.io/post/2021/june/semgrepnotes/</link>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://s0merset7.github.io/post/2021/june/semgrepnotes/</guid>
+      <description>The goal of this post is to give an introduction into how to create rules using Semgrep as well as getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into examples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</description>
+    </item>
     
   </channel>
 </rss>

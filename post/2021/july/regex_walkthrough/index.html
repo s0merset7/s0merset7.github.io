@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Making Regex Rules in Semgrep - s0merset7&#39;s Blog</title>
+<meta name="description" content="Introduction to regex rules and how to create/implement them within Sempgrep.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2021\/july\/regex_walkthrough\/",
+          "name": "Making regex rules in semgrep"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "Making Regex Rules in Semgrep",
+  "description" : "Introduction to regex rules and how to create\/implement them within Sempgrep.",
+  "inLanguage" : "en",
+  "wordCount":  1058 ,
+  "datePublished" : "2021-07-12T00:00:00",
+  "dateModified" : "2021-07-12T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "Semgrep" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2021\/july\/regex_walkthrough\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/regex_walkthrough.jpg">
+<meta property="og:url" content="https://s0merset7.github.io/post/2021/july/regex_walkthrough/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.111.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Making Regex Rules in Semgrep
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;July 12, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/regex_walkthrough.jpg" alt="Making Regex Rules in Semgrep" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p>One feature of Semgrep is the ability to use regular expressions (regex) in your rule making. In the <a href="/posts/semgrep_intro/semgrepnotes/">previous post</a> we discussed what Semgrep is and how to use it, here we will be focusing specifically on how to use Semgrep in conjunction with regex as it can get complicated</p>
+<h2 id="setup">Setup</h2>
+<p>Make sure you have a good understanding of how to use Semgrep, especially with creating your own custom YAML rules</p>
+<h3 id="helpful-resources">Helpful Resources</h3>
+<p>While creating your regex rules, it is helpful to have an area to test and experiment with different patterns. To do so, you can check out either:</p>
+<ul>
+<li><a href="https://semgrep.dev/editor">Semgrep Playground</a> - where you can test custom Semgrep YAML rules against custom code</li>
+<li><a href="https://regex101.com/">Regex Playground</a> - where you can test specific regex patterns against custom datasets, in the upper right hand side it will even provide an explanation as to why it is matching certain cases
+<ul>
+<li>Please note that the compiler used on this site is not the same that Semgrep uses so there may be some small discrepancies between platforms</li>
+</ul>
+</li>
+</ul>
+<h3 id="semgrep-yaml-rule-template">Semgrep YAML Rule Template</h3>
+<p>The following is a template for a Semgrep YAML regex rule that you can use as a basis:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: name-of-regex-rule
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern-regex: regex_pattern_here
+</span></span><span style="display:flex;"><span>        message: Write your message here
+</span></span><span style="display:flex;"><span>        languages: [regex]
+</span></span><span style="display:flex;"><span>        severity: SEVERITYLEVEL
+</span></span></code></pre></div><ul>
+<li>Keep in mind that <code>pattern-regex</code> is only one of five different regex pattern options. To learn about the other four, <a href="/posts/semgrep_intro/semgrepnotes/#regex-patterns">click here</a></li>
+</ul>
+<h2 id="example-walkthrough">Example Walkthrough</h2>
+<p>For the following example, we will be trying to create a regex pattern that will match all four of these secret keys:</p>
+<ul>
+<li>PASSWORD(secret_key0:&ldquo;qwertyuiopas&rdquo;)</li>
+<li>PASSWORD(SECRET_KEY1:&lsquo;qwert92iop674&rsquo;)</li>
+<li>PASSWORD(secretkey2:`QweRt92iopD2Fr4`)</li>
+<li>PASSWORD(SECRETkey3:QweRt92iD2Fr4)</li>
+</ul>
+<p>To do so, we will answer four different questions and by the end, have our pattern ready to throw into Semgrep</p>
+<ul>
+<li>The following examples will use the <code>#</code> character as a placeholder for a part of the pattern that has not been addressed yet</li>
+</ul>
+<h3 id="1-is-there-any-part-that-wont-change-between-iterations">1. Is there any part that won&rsquo;t change between iterations?</h3>
+<p>If we look at each iteration of our secret keys, we can see that the beginning <code>PASSWORD()</code> along with the middle <code>:</code> are present in the same location. While alphanumeric characters can be used exactly as they appear within your regex rules, special characters must be treated differently</p>
+<h4 id="special-characters-are-reserved-characters-in-regex">Special characters are reserved characters in regex</h4>
+<p>There are many reserved characters in regex patterns, so many that almost every special character is also a reserved character. Meaning that if you want to match a special character, you must precede it with a forward slash <code>\</code></p>
+<ul>
+<li>Example Pattern: <code>PASSWORD\(####\:####\)</code> - see it in action <a href="https://regex101.com/r/I3kps1/1/">here</a></li>
+</ul>
+<h3 id="2-is-there-any-part-that-is-very-similar-between-iterations">2. Is there any part that is very similar between iterations?</h3>
+<p>Each iteration has the words &ldquo;secret&rdquo; and &ldquo;key&rdquo; in them, however they are both uppercase and lowercase, as well as sometimes separated with an underscore, and other times not. To get around these two types of variations, we need to introduce two new regex patterns:</p>
+<h4 id="case-variations">Case variations</h4>
+<p>If we know our pattern will be the same but changing upper vs. lower case, we can preceded that part with <code>(?i)</code> to indicate we want to ignore the case</p>
+<ul>
+<li>Example Pattern: <code>PASSWORD\((?i)secret#(?i)key\:####\)</code> - see it in action <a href="https://regex101.com/r/brTBsG/1">here</a></li>
+</ul>
+<h4 id="off-by-a-few-characters">Off by a few characters</h4>
+<p>When the the presence of a character changes, we can follow that character with a <code>?</code> to indicate that this character may be here OR not
+follow character by <code>?</code> to say it doesn&rsquo;t matter</p>
+<ul>
+<li>Example Pattern:<code>PASSWORD\((?i)secret_?(?i)key\:####\)</code> - see it in action <a href="https://regex101.com/r/3JVdKV/1">here</a></li>
+</ul>
+<h3 id="3-is-there-something-that-is-often-different-but-in-the-same-part">3. Is there something that is often different but in the same part?</h3>
+<p>Often times there will be a part of a pattern that will change, but have a limited number of variations it could be. In our case, at the beginning and the end of each key, there is either a <code>&quot;</code>, <code>'</code>, <code>`</code>, or none. To account for all of these variations we need to use an OR parameter</p>
+<h4 id="how-to-use-or">How to use OR</h4>
+<p>To use the OR parameter, simply separate your different variations with a <code>|</code> and surround them all with <code>[]</code> like this</p>
+<ul>
+<li><code>[Char1|Char1|Char3]</code>
+We can also add the <code>?</code> at the end to indicate it could be one of these options OR none</li>
+<li>Example Pattern: <code>PASSWORD\((?i)secret_?(?i)key\:[&quot;|'|`]?####[&quot;|'|`]?\)</code> - see it in action <a href="https://regex101.com/r/jSO4Xq/1">here</a></li>
+</ul>
+<h3 id="4-is-there-a-part-that-can-include-a-range-of-potential-characters">4. Is there a part that can include a range of potential characters?</h3>
+<p>Finally, we notice that in each iteration, there is something that is entirely different each time, the key number and the key value itself. Once we identify some key features about what these values can be (the key number is a one digit numeric value while the key value is a 12 to 15 character alphanumeric string) we can create patterns around them</p>
+<ul>
+<li>For common broad catagories, you can use the following
+<ul>
+<li><code>\d</code> - digit character (0-9)</li>
+<li><code>\w</code> - word character (alphanumeric and underscores)</li>
+<li><code>\s</code> - whitespace characters (tabs/linespaces)</li>
+<li><code>.</code> - any character</li>
+</ul>
+</li>
+<li>to indicate a specific range of potential characters use <code>[]</code> with the specific characters
+<ul>
+<li><code>0-9</code> for numbers</li>
+<li><code>a-z</code> for lowercase alphabet</li>
+<li><code>A-Z</code> for uppercase alphabet</li>
+<li>can also use individual special characters</li>
+</ul>
+</li>
+<li>to indicate a range of expected characters, append the pattern with a <code>{#,#}</code></li>
+<li>Pattern Example: <code>PASSWORD\((?i)secret_?(?i)key\d{1}\:[&quot;|'|`]?[0-9a-zA-Z]{12,15}[&quot;|'|`]?\)</code></li>
+</ul>
+<p>This brings us to our final YAML rule of: <a href="https://semgrep.dev/s/s0merset7:regex_pattern_matching">(check it out in action here)</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>  - id: detect-secret-keys
+</span></span><span style="display:flex;"><span>    languages:
+</span></span><span style="display:flex;"><span>      - regex
+</span></span><span style="display:flex;"><span>    message: Secret Key Detected
+</span></span><span style="display:flex;"><span>    pattern-regex: PASSWORD\((?i)secret_?(?i)key\d{1}\:[&#34;|&#39;|`]?[0-9a-zA-Z]{12,15}[&#34;|&#39;|`]?\)
+</span></span><span style="display:flex;"><span>    severity: ERROR
+</span></span></code></pre></div><h2 id="summary">Summary</h2>
+<ol>
+<li><strong>Is there any part that won&rsquo;t change between iterations?</strong>
+<ul>
+<li>You can copy the unchanged parts as is in your Semgrep pattern</li>
+<li>Special characters must be preceded by <code>\</code></li>
+</ul>
+</li>
+<li><strong>Is there any part that is very similar between iterations?</strong>
+<ul>
+<li>Precede a part with <code>(?i)</code> to ignore case</li>
+<li>Follow a character with <code>?</code> when it may OR may not be present</li>
+</ul>
+</li>
+<li><strong>Is there something that is often different but in the same part?</strong>
+<ul>
+<li>Put different possibilities of a part in an OR parameter <code>[Char1|Char1|Char3]</code></li>
+</ul>
+</li>
+<li><strong>Is there a part that can include a range of potential characters?</strong>
+<ul>
+<li>For common broad catagories, you can use the following
+<ul>
+<li><code>\d</code> - digit character (0-9)</li>
+<li><code>\w</code> - word character (alphanumeric and underscores)</li>
+<li><code>\s</code> - whitespace characters (tabs/linespaces)</li>
+<li><code>.</code> - any character</li>
+</ul>
+</li>
+<li>to indicate a specific range of potential characters use <code>[]</code> with the specific characters
+<ul>
+<li><code>0-9</code> for numbers</li>
+<li><code>a-z</code> for lowercase alphabet</li>
+<li><code>A-Z</code> for uppercase alphabet</li>
+<li>can also use individual special characters</li>
+</ul>
+</li>
+<li>to indicate a range of expected characters, append the pattern with a <code>{#,#}</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285">Regex Tutorial by Jonny Fox</a></li>
+<li><a href="https://semgrep.dev/docs/writing-rules/rule-syntax/#pattern-regex">Semgrep Regex Documentation</a></li>
+<li><a href="https://regex101.com/">Regex Playground</a></li>
+<li><a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expression Cheat Sheet</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/semgrep/">Semgrep</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fjuly%2fregex_walkthrough%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fjuly%2fregex_walkthrough%2f&amp;text=Making%20Regex%20Rules%20in%20Semgrep&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fjuly%2fregex_walkthrough%2f&amp;title=Making%20Regex%20Rules%20in%20Semgrep" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fjuly%2fregex_walkthrough%2f&amp;description=Making%20Regex%20Rules%20in%20Semgrep" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/june/semgrepnotes/"
+              data-toggle="tooltip" data-placement="top" title="Introduction to Semgrep">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+          <li class="list-group-item ms-auto b-0">
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/sept/program_interaction/programinteraction/"
+              data-toggle="tooltip" data-placement="top" title="Program Interaction (Module 1)">Next Post
+              &rarr;</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/june/semgrepnotes/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Introduction to Semgrep</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 16, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Introduction into how to use the Semgrep SAST tool.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/semgrepNotes.jpg" alt="Introduction to Semgrep" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2022
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+

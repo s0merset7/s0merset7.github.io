@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Memory Errors (Module 8) - s0merset7&#39;s Blog</title>
+<meta name="description" content="Summary of pwn.college&#39;s Module 8 recorded lessons.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2022\/apr\/memoryerrors\/",
+          "name": "Memory errors ( module 8)"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "Memory Errors (Module 8)",
+  "description" : "Summary of pwn.college\u0027s Module 8 recorded lessons.",
+  "inLanguage" : "en",
+  "wordCount":  1158 ,
+  "datePublished" : "2022-04-17T00:00:00",
+  "dateModified" : "2022-04-17T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "pwn.college" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2022\/apr\/memoryerrors\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/memoryErrors.png">
+<meta property="og:url" content="https://s0merset7.github.io/post/2022/apr/memoryerrors/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.111.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Memory Errors (Module 8)
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;April 17, 2022 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/memoryErrors.png" alt="Memory Errors (Module 8)" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p><em>Note: Most of the below information is summarized from Dr. Yan Shoshitaishvili’s <a href="https://pwn.college/modules/memory">pwn.college lectures</a> from the “Memory Errors” module. Much credit goes to Yan’s expertise! Please check out the pwn.college resources and challenges in the sources</em></p>
+<h1 id="memory-errors-module-8">Memory Errors (Module 8)</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#high-level-problems-with-the-c-language">High-Level Problems</a></li>
+<li><a href="#smashing-the-stack">Stack Smashing</a></li>
+<li><a href="#causes-of-corruption">Causes of Corruption</a></li>
+<li><a href="#stack-canaries">Stack Canaries</a></li>
+<li><a href="#address-space-layout-resolution-aslr">Address Space Layout Resolution</a>
+<ul>
+<li><a href="#overwriting-page-offsets">Overwriting Page Offsets</a></li>
+</ul>
+</li>
+<li><a href="#causes-of-disclosure">Causes of Disclosure</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+<h2 id="high-level-problems-with-the-c-language">High-Level Problems (with the C language)</h2>
+<ol>
+<li>Trusting the Developer
+<ul>
+<li>C is very low level, and trusts the developer knows what they are doing, even if it doest make sense. C does not implicitly track things (i.e. a programmer can try and access an 11th value of a size 4 array)</li>
+</ul>
+</li>
+<li>Mixing Control Information and Data
+<ul>
+<li>Programs start with potentially user-influenced data already present in the stack that is spread throughout the stack and heap during execution. While user data is normally &ldquo;non-control&rdquo; data, it is stored <em>together</em> with &ldquo;control&rdquo; data</li>
+<li>The stack has everything &ldquo;jumbled together&rdquo;. Stored together and treated the same
+<ul>
+<li>local variables (of active and caller functions)</li>
+<li>saved pointers to other places on stack/in memory</li>
+<li>return addresses</li>
+</ul>
+</li>
+<li><strong>Memory Corruption</strong> occurs when user-controlled data manages to spread into data that shouldn&rsquo;t be user controlled (via memory error)
+<ul>
+<li>When control data is overwritten (i.e., a return address), control flow can be redirected elsewhere (such as injected code)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Mixing Data and Metadata
+<ul>
+<li>Strings are null terminated in C based on the size of the character array. When null bytes are in the input or there are no null bytes at all, when compiled the string variable may no longer function as intended</li>
+</ul>
+</li>
+<li>Initialization and Cleanup
+<ul>
+<li>If memory is not cleaned up before/after it is used, C will not handle it</li>
+<li>If memory is not properly deleted after use, the values may still exist and be accessed after deallocation</li>
+<li>If memory is not properly initialized before use, then its value will be the memory that existed prior to allocation</li>
+</ul>
+</li>
+</ol>
+<h2 id="smashing-the-stack">Smashing the Stack</h2>
+<ul>
+<li>Common insecure C functions for user input are <code>gets</code>, <code>strcpy</code>, <code>scanf</code>, <code>sprintf</code> as they accept a pointer to user input and have no concept of the size of the value being pointed to, allowing for potential buffer overflows</li>
+<li>What can be corrupted in the presence of memory corruption vulnerabilities:
+<ol>
+<li>Memory that doesn&rsquo;t influence anything (not very useful for code exploitation)</li>
+<li>Memory that is used in a <strong>value</strong> to influence mathematical operations, conditional jumps, etc.</li>
+<li>Memory that is used as a <strong>read pointer</strong> (or offset), allowing us to force the program to access arbitrary memory</li>
+<li>Memory that is used as a <strong>write pointer</strong> (or offset), allowing us to force the program to overwrite arbitrary memory</li>
+<li>Memory that is used as a <strong>code pointer</strong> (or offset), allowing use to redirect program execution
+<ul>
+<li>Most powerful is when a return address is overwritten to control what is executed next (i.e., jumping to arbitrary functions, arbitrary instructions, between instructions, or chain functionality)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="causes-of-corruption">Causes of Corruption</h2>
+<ol>
+<li>Classic Buffer Overflow
+<ul>
+<li>Because C does not implicitly track buffer sizes, simple overwrites are common
+<ul>
+<li>Such as overwriting a return address with a different address</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Signedness Mixups
+<ul>
+<li>Standard C library used <em>unsigned integers</em> for sizes while the default integer types (<code>short</code>, <code>int</code>, <code>long</code>) are <em>signed</em></li>
+<li>In x86, instructions such as <code>cmp</code> will return a flag based upon its result to inform the conditional instructions regardless of signedness. The conditional instructions however (such as <code>jae</code> and <code>jge</code>) may interpret results based on signed vs unsigned, yielding different decisions for the same <code>cmp</code> flag</li>
+</ul>
+</li>
+<li>Integer Overflows
+<ul>
+<li>Since C used two&rsquo;s compliment to store negative values, when calculations go from negative to positive numbers, allocated size may be negatively impacted
+<ul>
+<li>Example: If a space of <code>-1</code> is allocated, the code will handle that as <code>0xFFFFFFFF</code> which is the maximum integer allowed. However if that value is mathematically changed later to say <code>0</code>, then there is a larger amount of memory not being used that can be abused as a buffer overflow</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Off-By-One Errors
+<ul>
+<li>If a developer makes the mistake of being &ldquo;off-by-one&rdquo; say in a comparative loop where memory is being accessed, this can allow for a small buffer overflow which may still break the program</li>
+</ul>
+</li>
+</ol>
+<h2 id="stack-canaries">Stack Canaries</h2>
+<ul>
+<li>Canaries are a buffer overflow mitigation technique based on real life canaries used in mines to detect poisonous gasses before it killed miners. The concept places a randomized value in the stack and will check if it has been &ldquo;killed&rdquo; (overwritten or altered) and if so, then terminated the program</li>
+<li>In general, stack canaries are VERY effective</li>
+<li>Ways in which to bypass canaries
+<ol>
+<li>Leak the canary (using another vulnerability)</li>
+<li>Brute-force the canary (for forking processes)</li>
+<li>Jump the canary (if the situation allows)
+<ul>
+<li>depending on the stack layout, it may be possible to overwrite a value and redirect a read to point to <em>after</em> the canary</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="address-space-layout-resolution-aslr">Address Space Layout Resolution (ASLR)</h2>
+<ul>
+<li>Memory corruption often focuses on corrupting <em>pointers</em> to point somewhere else. If the location of code and data in memory was randomized it makes corruption much more difficult</li>
+<li>Methods to redirect execution without knowing where code is
+<ol>
+<li>Leak the Location
+<ul>
+<li>The addresses still (mostly) have to be in memory so that the program can find its own assets</li>
+<li>Requires a different vulnerability</li>
+</ul>
+</li>
+<li>YOLO
+<ul>
+<li>Program assets are <em>page aligned</em> meaning only part of the address is randomized (the page offset)</li>
+<li>Brute force the page offset</li>
+</ul>
+</li>
+<li>Brute-Force (situational)
+<ul>
+<li>For forking processes, the addresses can be brute forced</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="overwriting-page-offsets">Overwriting Page Offsets</h3>
+<ul>
+<li>Pages are always aligned to a 0x1000 alignment
+<ul>
+<li>Possible page addresses are:
+<ul>
+<li><code>0x00007f8dce27f000</code> (a library)</li>
+<li><code>0x56531c9c5000</code> (a main binary)</li>
+<li><code>0xffffffffff600000</code> (kernel mapped helper)</li>
+<li><code>0x400000</code> (non-position independent binary)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The last 3 <em>nibbles</em> of an address are never changed</li>
+<li>If the two least significant bytes of a pointer are overwritten, there is only one nibble (4 bits) to redirect the pointer to another location on the same page
+<ul>
+<li>With little endian, these are the first two bytes that we will overwrite</li>
+</ul>
+</li>
+</ul>
+<h2 id="causes-of-disclosure">Causes of Disclosure</h2>
+<ul>
+<li>Most memory corruption mitigation techniques (canaries and ASLR) rely on keeping a &ldquo;secret&rdquo; value(s) from an attacker</li>
+<li>Types of memory errors that lead to disclosure of these &ldquo;secrets&rdquo;
+<ol>
+<li>Buffer Overread
+<ul>
+<li>analogous to buffer overflow but with reading instead of writing</li>
+</ul>
+</li>
+<li>Termination Problems
+<ul>
+<li>In C, strings do not have explicit size metadata in memory
+<ul>
+<li>To solve this, they are <em>null-terminated</em></li>
+</ul>
+</li>
+<li>If the null byte is forgotten, print functions that don&rsquo;t account for size will print until a null byte is found
+<ul>
+<li>Input can overflown to remove null bytes and print information from other parts in the stack</li>
+</ul>
+</li>
+<li>This does not work for canaries as in little-endian, they begin with a null byte, causing print statements to stop before printing their content</li>
+</ul>
+</li>
+<li>Uninitialized Data
+<ul>
+<li>C will not clean up memory, and when memory is deallocated, it is not removed just dereferenced</li>
+<li>Be cautious as some optimized compilers will remove attempts to clear memory as it is &ldquo;costly&rdquo; and seemingly &ldquo;pointless&rdquo;
+<ul>
+<li>Better to initialize variables to zero before using them</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://pwn.college/modules/reversing">pwn.college Module 8 Lectures</a></li>
+<li><a href="https://dojo.pwn.college/challenges/memory">pwn.college Module 8 Challenges</a></li>
+<li><a href="https://www.twitch.tv/pwncollege">pwn.college Class Twitch Streams</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/pwn.college/">pwn.college</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2022%2fapr%2fmemoryerrors%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2022%2fapr%2fmemoryerrors%2f&amp;text=Memory%20Errors%20%28Module%208%29&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2022%2fapr%2fmemoryerrors%2f&amp;title=Memory%20Errors%20%28Module%208%29" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2022%2fapr%2fmemoryerrors%2f&amp;description=Memory%20Errors%20%28Module%208%29" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/oct/introtoosint/"
+              data-toggle="tooltip" data-placement="top" title="Introduction to Open Source Intelligence (OSINT)">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+          <li class="list-group-item ms-auto b-0">
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2022/mar/dynamicallocatormisuse/"
+              data-toggle="tooltip" data-placement="top" title="Dynamic Allocator Misuse (Module B)">Next Post
+              &rarr;</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2022/mar/dynamicallocatormisuse/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Dynamic Allocator Misuse (Module B)</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;April 23, 2022 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Summary of pwn.college&#39;s Module B recorded lessons.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/dynamicAllocatorMisuse.png" alt="Dynamic Allocator Misuse (Module B)" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/sept/reverse_engineering/reverseengineering/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Reverse Engineering (Module 6)</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;September 19, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Summary of pwn.college&#39;s Module 6 recorded lessons.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/reverseEngineering.png" alt="Reverse Engineering (Module 6)" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/sept/sandboxing_post/sandboxingpost/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Sandboxing (Module 5)</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;September 12, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Summary of pwn.college&#39;s Module 5 recorded lessons.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/sandboxingPost.png" alt="Sandboxing (Module 5)" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2022
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+

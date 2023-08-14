@@ -1,359 +1,171 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/dynamicallocatormisuse/</loc>
-
-        
-          <lastmod>2022-04-23T22:00:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/memoryerrors/</loc>
-
-        
-          <lastmod>2022-04-23T22:00:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/osint/introtoosint/</loc>
-
-        
-          <lastmod>2021-10-23T23:23:45-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/reverse_engineering/reverseengineering/</loc>
-
-        
-          <lastmod>2021-09-19T22:00:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/sandboxing_post/sandboxingpost/</loc>
-
-        
-          <lastmod>2021-09-12T17:30:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/shellcoding_post/shellcodingpost/</loc>
-
-        
-          <lastmod>2021-09-06T19:00:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/assembly_refresher/assemblyrefresher/</loc>
-
-        
-          <lastmod>2021-09-03T20:11:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/program_misuse/programmisuse/</loc>
-
-        
-          <lastmod>2021-09-02T14:00:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/program_interaction/programinteraction/</loc>
-
-        
-          <lastmod>2021-09-02T12:13:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/regex_walkthrough/</loc>
-
-        
-          <lastmod>2020-07-28T17:26:20-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/semgrep_intro/semgrepnotes/</loc>
-
-        
-          <lastmod>2021-06-22T16:06:52-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/website_pentesting/webpentesting/</loc>
-
-        
-          <lastmod>2021-05-31T16:30:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/external_pentesting/externalpentesting/</loc>
-
-        
-          <lastmod>2021-05-30T15:10:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/information_gathering/informationgathering/</loc>
-
-        
-          <lastmod>2021-05-27T15:40:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/pentesting_checklist/</loc>
-
-        
-          <lastmod>2021-05-16T20:24:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/useful_sites/</loc>
-
-        
-          <lastmod>2021-05-16T18:44:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/kali_setup/kali_setup/</loc>
-
-        
-          <lastmod>2021-05-16T20:54:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/jerry_machine/</loc>
-
-        
-          <lastmod>2020-08-23T23:56:29-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/lame_machine/</loc>
-
-        
-          <lastmod>2020-08-23T23:56:20-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/posts/intro/</loc>
-
-        
-          <lastmod>2021-05-14T20:54:00-07:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/archives/</loc>
-
-        
-          <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:1313/about/</loc>
-
-        
-          
-        
-        
-        
-        
-        
-      </url>
-    
-  
-    
-  
-    
-  
+  <url>
+    <loc>https://s0merset7.github.io/post/</loc>
+    <lastmod>2022-04-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2022/mar/dynamicallocatormisuse/</loc>
+    <lastmod>2022-04-23T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/tags/pwn.college/</loc>
+    <lastmod>2022-04-23T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/</loc>
+    <lastmod>2022-04-23T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/tags/</loc>
+    <lastmod>2022-04-23T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2022/apr/memoryerrors/</loc>
+    <lastmod>2022-04-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/oct/introtoosint/</loc>
+    <lastmod>2021-10-23T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/tags/osint/</loc>
+    <lastmod>2021-10-23T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/sept/reverse_engineering/reverseengineering/</loc>
+    <lastmod>2021-09-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/sept/sandboxing_post/sandboxingpost/</loc>
+    <lastmod>2021-09-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/sept/shellcoding_post/shellcodingpost/</loc>
+    <lastmod>2021-09-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/sept/assembly_refresher/assemblyrefresher/</loc>
+    <lastmod>2021-09-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/sept/program_misuse/programmisuse/</loc>
+    <lastmod>2021-09-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/sept/program_interaction/programinteraction/</loc>
+    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/july/regex_walkthrough/</loc>
+    <lastmod>2021-07-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/tags/semgrep/</loc>
+    <lastmod>2021-07-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/june/semgrepnotes/</loc>
+    <lastmod>2021-06-16T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/tags/burp-suite/</loc>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/tags/pentesting/</loc>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/may/website_pentesting/webpentesting/</loc>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/may/externalpentesting/externalpentesting/</loc>
+    <lastmod>2021-05-30T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/may/information_gathering/informationgathering/</loc>
+    <lastmod>2021-05-27T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/may/pentesting_checklist/</loc>
+    <lastmod>2021-05-16T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/may/useful_sites/</loc>
+    <lastmod>2021-05-16T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/tags/kali-linux-help/</loc>
+    <lastmod>2021-05-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2021/may/kali_setup/kali_setup/</loc>
+    <lastmod>2021-05-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/tags/hackthebox/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2020/aug/jerry_machine/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2020/aug/lame_machine/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/tags/walkthrough/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/post/2020/aug/intro/</loc>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/about/example_index/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://s0merset7.github.io/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

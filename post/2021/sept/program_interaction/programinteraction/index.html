@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Program Interaction (Module 1) - s0merset7&#39;s Blog</title>
+<meta name="description" content="Summary of pwn.college&#39;s Module 1 recorded lessons.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2021\/sept\/program_interaction\/programinteraction\/",
+          "name": "Program interaction ( module 1)"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "Program Interaction (Module 1)",
+  "description" : "Summary of pwn.college\u0027s Module 1 recorded lessons.",
+  "inLanguage" : "en",
+  "wordCount":  1619 ,
+  "datePublished" : "2021-09-01T00:00:00",
+  "dateModified" : "2021-09-01T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "pwn.college" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2021\/sept\/program_interaction\/programinteraction\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/programInteraction.png">
+<meta property="og:url" content="https://s0merset7.github.io/post/2021/sept/program_interaction/programinteraction/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.111.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Program Interaction (Module 1)
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;September 1, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/programInteraction.png" alt="Program Interaction (Module 1)" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p>As a part of my degree program, I have to take a class called CSE466: Computer Systems Security. The professor for this class (<a href="https://www.yancomm.net/">Dr. Shoshitaishvili</a>) created <a href="https://pwn.college/">pwn.college</a>, a free education platform to guide not only students in the course, but anyone who wants to try it out. I will be publishing all of my notes from each relevant module of course here, though I highly recommend watching the lectures for yourself as they go much more in-depth!</p>
+<h2 id="table-of-contents">Table of Contents:</h2>
+<ul>
+<li><a href="#linux-command-line">Linux Command Line</a>
+<ul>
+<li><a href="#file-system">The File System</a></li>
+<li><a href="#environment-variables">Environment Variables</a></li>
+<li><a href="#files">Types of Files</a></li>
+<li><a href="#pipes">Pipes</a></li>
+<li><a href="#useful-commands-cli">Useful Commands</a></li>
+</ul>
+</li>
+<li><a href="#binary-files">Binary Files</a>
+<ul>
+<li><a href="#elf-files">ELF Files</a></li>
+<li><a href="#elf-program-headers">ELF Program Headers</a></li>
+<li><a href="#elf-section-headers">ELF Section Headers</a></li>
+<li><a href="#symbols">Symbols</a></li>
+<li><a href="#resources-to-interact-with-elf">Resources for ELF Interaction</a></li>
+<li><a href="#useful-commands-binary">Useful Commands</a></li>
+</ul>
+</li>
+<li><a href="#lifecycle-of-a-linux-process">Lifecycle of a Process</a>
+<ul>
+<li><a href="#what-is-a-process">What is a Process</a></li>
+<li><a href="#process-timeline">Process Timeline</a></li>
+<li><a href="#useful-commands-viewing-processes">Useful Commands</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="linux-command-line">Linux Command Line:</h2>
+<h3 id="file-system"><strong>File System:</strong></h3>
+<p><img src="../fileSystemStructure.png" alt="File System Structure"></p>
+<ul>
+<li>Absolute Paths: start with <code>/</code></li>
+<li>Relative Paths: do NOT start with <code>/</code>, relative to the current working directory</li>
+</ul>
+<h3 id="environment-variables"><strong>Environment Variables:</strong></h3>
+<p>Environment Variables: a set of Key/Value pairs passed into every process when launched. Critical variables include:</p>
+<ul>
+<li><code>PATH</code>: list of directories to search for programs in</li>
+<li><code>PWD</code>: current working directory</li>
+<li><code>HOME</code>: path to home directory</li>
+<li><code>HOSTNAME</code>: name of the system</li>
+</ul>
+<h3 id="files"><strong>Files:</strong></h3>
+<ul>
+<li>Symbolic Links (Soft Links): special type of file that references another file
+<ul>
+<li>symbolic links to relative paths are relative to the directory containing the link</li>
+</ul>
+</li>
+<li>Hard Links: a perfect reference to the data/content inside the linked file. They link only to the data of the linked file, not its original path</li>
+</ul>
+<p><strong>Different Types of Files:</strong></p>
+<ul>
+<li><code>-</code>: regular file</li>
+<li><code>d</code>: a directory (yes, directories are actually just special files!)</li>
+<li><code>l</code>: a symbolic link (a file that transparently points to another file or directory)</li>
+<li><code>p</code>: is a named pipe (also known as a FIFO)</li>
+<li><code>c</code>: is a character device file (i.e., backed by a hardware device that produces or receives data streams, such as a microphone)</li>
+<li><code>b</code>: a block device file (i.e., backed by a hardware device that stores and loads blocks of data, such as a hard drive)</li>
+<li><code>s</code>: a unix socket (essentially a local network connection encapsulated in a file)</li>
+</ul>
+<h3 id="pipes"><strong>Pipes:</strong></h3>
+<ul>
+<li>Unnamed Pipes (<code>|</code>): ethereal channels of communication, often used to direct data from one command to another</li>
+<li>Named Pipes (FIFOs): used to help facilitate data flow in certain situations. The flow of data is First In First Out (FIFO)</li>
+</ul>
+<h3 id="useful-commands-cli"><strong>Useful Commands (CLI):</strong></h3>
+<ul>
+<li><code>witch programName</code>: will return the absolute path of the program given found by the <code>PATH</code> variable</li>
+<li><code>env</code>: prints all the environment variables to the screen</li>
+<li><code>export variable=value</code>: can set new/existing variables to a new value</li>
+<li><code>ln -s fileToBeLinked symbolicLinkName</code>: creates a symbolic link</li>
+<li><code>ln fileToBeLinked hardLinkName</code>: creates a hard link</li>
+<li><code>ls -ld</code>: Lists all files in current directory along with the files&rsquo; absolute path</li>
+<li><code>mkfifo fifoName</code>: makes a new FIFO</li>
+<li><code>command &lt; in_file</code>: redirect in_file into command&rsquo;s input</li>
+<li><code>command &gt; out_file</code>: redirect command&rsquo;s output into out_file, overwriting it</li>
+<li><code>command &gt;&gt;out_file</code>: redirect the command&rsquo;s output into out_file, appending to it</li>
+<li><code>command 2&gt;error_file</code>: redirect the command&rsquo;s errors into error_file, overwriting it</li>
+<li><code>command 2&gt;&gt;error_file</code>: redirect the command&rsquo;s errors into error_file, appending to it</li>
+</ul>
+<h2 id="binary-files">Binary Files</h2>
+<h3 id="elf-files"><strong>ELF Files:</strong></h3>
+<p>Executable and Linkable Format (ELF): defines a program as it will be loaded and executed in memory for Linux/BSD systems. Allows for a compiler to create and define a program</p>
+<ul>
+<li>is a binary file format containing the program, its data, how the program should be loaded (program/segment headers), and the metadata describing program components (section headers)</li>
+<li>For Windows the equivalent are Portable Executables (PE)</li>
+<li>For MacOS the equivalent are Mach-O</li>
+</ul>
+<p>Dynamically Linked ELF: The ELF file relies on libraries that also need to be loaded</p>
+<h3 id="elf-program-headers"><strong>ELF Program Headers:</strong></h3>
+<p>Program Headers: specify information and define segments needed to prepare the program for execution. The source of information used when loading a file</p>
+<ul>
+<li>Segments: parts of an ELF file that are loaded into the memory of a computer when that file is executed</li>
+</ul>
+<p><strong>Important Entry Types:</strong></p>
+<ul>
+<li><code>INTERP</code>: entry type defining the library that should be used to load this ELF into memory</li>
+<li><code>LOAD</code>: entry type defining a part of the file that should be loaded into memory</li>
+</ul>
+<h3 id="elf-section-headers"><strong>ELF Section Headers:</strong></h3>
+<p>Section Headers: represent a different view inside an ELF file with a lot more semantic information that is less important for the actual loading process</p>
+<ul>
+<li>They are not required in an ELF file, they are stored as metadata</li>
+</ul>
+<p><strong>Important Sections:</strong></p>
+<ul>
+<li><code>.text</code>: the executable code of your program.</li>
+<li><code>.plt</code> and <code>.got</code>: used to resolve and dispatch library calls.</li>
+<li><code>.data</code>: used for pre-initialized global writable data (such as global arrays with initial values)</li>
+<li><code>.rodata</code>: used for global read-only data (such as string constants)</li>
+<li><code>.bss</code>: used for uninitialized global writable data (such as global arrays without initial values)</li>
+</ul>
+<h3 id="symbols"><strong>Symbols:</strong></h3>
+<p>Symbols: binaries and libraries that use dynamically loaded libraries to find libraries, resolve function calls into those libraries, etc
+<img src="../symbolsChar.jpg" alt="ELF Symbols"></p>
+<h3 id="resources-to-interact-with-elf"><strong>Resources to Interact with ELF:</strong></h3>
+<ul>
+<li><code>gcc</code>: to make your ELF.</li>
+<li><code>readelf</code>: to parse the ELF header.</li>
+<li><code>objdump</code>: to parse the ELF header and disassemble the source code.</li>
+<li><code>nm</code>: to view your ELF&rsquo;s symbols.</li>
+<li><code>patchelf</code>: to change some ELF properties.</li>
+<li><code>objcopy</code>: to swap out ELF sections.</li>
+<li><code>strip</code>: to remove otherwise-helpful information (such as symbols).</li>
+<li><a href="https://ide.kaitai.io/"><strong>kaitai struct</strong></a>: to look through your ELF interactively.</li>
+</ul>
+<h3 id="useful-commands-binary"><strong>Useful Commands (Binary):</strong></h3>
+<ul>
+<li><code>readelf -a programName</code>: will parse out the ELF file, providing information such as headers</li>
+<li><code>nm -a programName</code>: will list out all of the symbols associated with a program</li>
+<li><code>nm -D programName</code>: will list out all of the dynamic imports used at runtime</li>
+</ul>
+<h2 id="lifecycle-of-a-linux-process">Lifecycle of a Linux Process</h2>
+<h3 id="what-is-a-process"><strong>What is a Process:</strong></h3>
+<p><strong>Every Linux process has:</strong></p>
+<ul>
+<li>State
+<ul>
+<li>running, waiting, stopped, zombie</li>
+</ul>
+</li>
+<li>Priority (and other scheduling information)</li>
+<li>Parent, Siblings, Children</li>
+<li>Shared Resources
+<ul>
+<li>files, pipes, sockets</li>
+</ul>
+</li>
+<li>Virtual Memory Space</li>
+<li>Security Context
+<ul>
+<li>effective uid and gid</li>
+<li>saved uid and gid</li>
+<li>capabilities</li>
+</ul>
+</li>
+</ul>
+<p>Virtual Memory: memory dedicated to a specific process</p>
+<p>Physical Memory: memory shared among the whole system</p>
+<p>libc: a library full of helper functions that is used by almost every program (including common C functions)</p>
+<h3 id="process-timeline"><strong>Process Timeline:</strong></h3>
+<ol>
+<li><strong>Process is created</strong>
+<ul>
+<li>Kernel will check for executable permissions</li>
+<li>Calls <code>execve()</code> to begin loading</li>
+</ul>
+</li>
+<li><strong>Process is loaded</strong></li>
+</ol>
+<ul>
+<li>Figures out what steps need to be taken to load the file
+<ul>
+<li>Starts from the beginning of the file, looks for <code>#!</code> (sh-bang) to extract the rest of the line (the interpreter)
+<ul>
+<li>Will see if the interpreter matches one in the system, and will instead run your file as an argument to the interpreter from <code>#!</code></li>
+</ul>
+</li>
+<li>If there is no <code>#!</code> (not a script) then it will check if the file matches a format in <code>/proc/sys/binfmt_misc</code>
+<ul>
+<li>If a match is found, then it will execute the interpreter for that format with your file as an argument</li>
+</ul>
+</li>
+<li>If it is a dynamically-linked ELF file, the kernel will read the interpreter/loader (collectively loader) defined in the ELF file
+<ul>
+<li>The interpreter will be loaded and will be given control</li>
+<li>The interpreter then locates the libraries
+<ul>
+<li><code>LD_PRELOAD</code>: environment variable, and anything in /etc/ld.so.preload</li>
+<li><code>LD_LIBRARY_PATH</code>: environment variable (can be set in the shell)</li>
+<li><code>DT_RUNPATH</code> or <code>DT_RPATH</code>: specified in the binary file (both can be modified with patchelf)</li>
+<li>/etc/ld.so.conf: system-wide configuration</li>
+<li>/lib and /usr/lib</li>
+</ul>
+</li>
+<li>The interpreter then runs the libraries
+<ul>
+<li>May cause more libraries to load if libraries depend on other libraries</li>
+<li>Will also update relocations during this process</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If it is a static ELF file, the kernel will just load the file</li>
+</ul>
+</li>
+<li>All of this information will be loaded to its own virtual memory space containing (located in /proc/self/maps):
+<ul>
+<li>the binary</li>
+<li>the libraries</li>
+<li>the &ldquo;heap&rdquo;
+<ul>
+<li>for dynamically allocated memory</li>
+</ul>
+</li>
+<li>the &ldquo;stack&rdquo;
+<ul>
+<li>for function local variables</li>
+</ul>
+</li>
+<li>any memory specifically mapped by the program</li>
+<li>some helper regions</li>
+<li>kernel code in the &ldquo;upper half&rdquo; of memory is inaccessible to the process
+<ul>
+<li>above 0x8000000000000000 on 64-bit architectures</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><strong>Process is initialized</strong>
+<ul>
+<li>Will run any constructors specified in the ELF file</li>
+</ul>
+</li>
+<li><strong>Process is launched</strong>
+<ul>
+<li>The ELF file automatically calls <code>_libc_start_main()</code> from the libc library, which then calls the program&rsquo;s <code>main()</code> function</li>
+<li>Now the code is running</li>
+</ul>
+</li>
+<li><strong>Process reads its arguments and environment</strong></li>
+</ol>
+<ul>
+<li>The <code>int main(int argc, void **argv, void **envp);</code> function will take in three arguments:
+<ul>
+<li><code>argc</code>: the loaded objects (binaries and libraries)</li>
+<li><code>argv</code>: command-line arguments in argv</li>
+<li><code>envp</code>: environment variables</li>
+</ul>
+</li>
+</ul>
+<ol start="6">
+<li><strong>Process executes</strong></li>
+</ol>
+<ul>
+<li>To interact with the operating system(OS), the process will use system calls</li>
+<li>For the OS to communicate with the process, signals are used
+<ul>
+<li>Signals will pause process execution and invoke the handler (functions that take in the signal number)
+<ul>
+<li>If the signal has no handler, the default action is to kill the process</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Another method of outside interaction is by sharing memory with other processes
+<ul>
+<li>This requires an initial system call, but then is self sustaining</li>
+<li>One way is to use a shared memory-mapped file in /dev/shm</li>
+</ul>
+</li>
+</ul>
+<ol start="7">
+<li><strong>Process terminates</strong></li>
+</ol>
+<ul>
+<li>Only two ways a process can terminate:
+<ul>
+<li>Receive an unhandled signal</li>
+<li>Calling the <code>exit()</code> system call</li>
+</ul>
+</li>
+<li>After termination, processes must be &ldquo;reaped&rdquo;
+<ul>
+<li>A process will remain in a zombie state and take up memory until the <code>wait()</code> function is called by their parent</li>
+<li>This will return the process&rsquo;s exit code to the parent and then the process will be freed
+<ul>
+<li>If this does not happen, the process is re-parented to PID 1 and will remain there until cleaned up</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="useful-commands-viewing-processes">Useful Commands (Viewing Processes):</h3>
+<ul>
+<li><code>readelf -a fileName | grep interpret</code>: will return the specific loader being used to load the file</li>
+<li><code>patchelf --set-interpreter /some/interpreter ./fileName</code>: will forcibly set the interpreter for a provided file</li>
+<li><code>ldd ./fileName</code>: will list the libraries necessary for the file to run, including the interpreter</li>
+<li><code>strace ./executable uncompiledFile</code>: will &ldquo;trace&rdquo; out all of the system calls from when the process is first created to when its terminated</li>
+<li><code>./executable /proc/self/maps</code>: will show the virtual memory storage layout for the executable</li>
+<li><code>man 2 open</code>: documentation for all the different system calls</li>
+<li><code>du -sb programFile</code>: will output how many bytes a file is</li>
+</ul>
+<h2 id="sources">Sources:</h2>
+<ul>
+<li><a href="https://pwn.college/modules/interaction">pwn.college Module 1 Lectures</a></li>
+<li><a href="https://dojo.pwn.college/challenges/interaction">pwn.college Module 1 Challenges</a></li>
+<li><a href="https://www.twitch.tv/pwncollege">pwn.college Class Twitch Streams</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/pwn.college/">pwn.college</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fsept%2fprogram_interaction%2fprograminteraction%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fsept%2fprogram_interaction%2fprograminteraction%2f&amp;text=Program%20Interaction%20%28Module%201%29&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fsept%2fprogram_interaction%2fprograminteraction%2f&amp;title=Program%20Interaction%20%28Module%201%29" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fsept%2fprogram_interaction%2fprograminteraction%2f&amp;description=Program%20Interaction%20%28Module%201%29" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/july/regex_walkthrough/"
+              data-toggle="tooltip" data-placement="top" title="Making Regex Rules in Semgrep">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+          <li class="list-group-item ms-auto b-0">
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/sept/program_misuse/programmisuse/"
+              data-toggle="tooltip" data-placement="top" title="Program Misuse (Module 2)">Next Post
+              &rarr;</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2022/mar/dynamicallocatormisuse/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Dynamic Allocator Misuse (Module B)</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;April 23, 2022 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Summary of pwn.college&#39;s Module B recorded lessons.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/dynamicAllocatorMisuse.png" alt="Dynamic Allocator Misuse (Module B)" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2022/apr/memoryerrors/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Memory Errors (Module 8)</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;April 17, 2022 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Summary of pwn.college&#39;s Module 8 recorded lessons.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/memoryErrors.png" alt="Memory Errors (Module 8)" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/sept/reverse_engineering/reverseengineering/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Reverse Engineering (Module 6)</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;September 19, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Summary of pwn.college&#39;s Module 6 recorded lessons.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/reverseEngineering.png" alt="Reverse Engineering (Module 6)" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2022
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+

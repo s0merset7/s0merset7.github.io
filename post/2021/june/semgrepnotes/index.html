@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Introduction to Semgrep - s0merset7&#39;s Blog</title>
+<meta name="description" content="Introduction into how to use the Semgrep SAST tool.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2021\/june\/semgrepnotes\/",
+          "name": "Introduction to semgrep"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "Introduction to Semgrep",
+  "description" : "Introduction into how to use the Semgrep SAST tool.",
+  "inLanguage" : "en",
+  "wordCount":  2593 ,
+  "datePublished" : "2021-06-16T00:00:00",
+  "dateModified" : "2021-06-16T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "Semgrep" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2021\/june\/semgrepnotes\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/semgrepNotes.jpg">
+<meta property="og:url" content="https://s0merset7.github.io/post/2021/june/semgrepnotes/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.111.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Introduction to Semgrep
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;June 16, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/semgrepNotes.jpg" alt="Introduction to Semgrep" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p>The goal of this post is to give an introduction into how to create rules using Semgrep as well as getting a broad overview of what the tool is. The structure here will be to first explore the tool, then go into examples on how to use it with the User Interface(UI) to understand the logic, then finally go into how to actually code the rules on a more complex level.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#what-is-semgrep">What is Semgrep</a></li>
+<li><a href="#the-basics">Semgrep Basics</a></li>
+<li><a href="#basic-examples">Introductory Examples</a></li>
+<li><a href="#coding-in-yaml">Coding Rules in Semgrep</a></li>
+<li><a href="#running-locally">Running Semgrep in the Commandline</a></li>
+<li><a href="#advanced">Advanced Semgrep</a></li>
+</ul>
+<h3 id="what-is-semgrep">What is Semgrep</h3>
+<p>&ldquo;Semgrep is a customizable, lightweight, static analysis tool for finding bugs/enforcing code standards designed for security consultants and hackers&rdquo;</p>
+<p><strong>It is useful because:</strong></p>
+<ul>
+<li>It is open source (free)</li>
+<li>Supports many languages (go, python, java, javascript, php, and more)</li>
+<li>There are about <a href="https://semgrep.dev/r">1000 predefined rules</a> you can use &ldquo;out of the box&rdquo;</li>
+<li>Does NOT require buildable source code</li>
+<li>There is no Domain Specific Language (DSL) to learn, you can make custom patterns to match the code you are targeting</li>
+<li>Easy to use for any developer, does not require expertise</li>
+</ul>
+<p><strong>Assumptions Made by the Developers</strong></p>
+<ul>
+<li>Speed is important, scans should be completed in minutes, not hours/days</li>
+<li>It&rsquo;s better to have false negatives than false positives</li>
+<li>Ease of use is important
+<ul>
+<li>Prioritize first time users (as they are the average user)</li>
+<li>Should be accessible to developers, not just security professionals</li>
+</ul>
+</li>
+<li>Enforcing security standards is MORE important than finding every bug</li>
+</ul>
+<p><strong>Design Decisions</strong></p>
+<ul>
+<li>Focuses on single file/localized analysis
+<ul>
+<li>Better for speed and enforcing security protocols</li>
+</ul>
+</li>
+<li>Has rules that look like source code
+<ul>
+<li>Makes it easier for first time users</li>
+</ul>
+</li>
+</ul>
+<p><strong>Other Features</strong></p>
+<ul>
+<li>Compatible with Regex</li>
+<li>Confirming proper access given to files
+<ul>
+<li>Map out application routes</li>
+</ul>
+</li>
+<li>Check for weak RSA keys</li>
+<li>Check for calls on runtime objects</li>
+<li>Match JSON</li>
+<li>&ldquo;Generic&rdquo; mode to analyze code in languages not directly supported or any text</li>
+<li>Autofix/suggest option to correct common mistakes</li>
+<li>Software as a Service (SaaS) option when used on large scale (not open source)
+<ul>
+<li>Can interact with GitHub, Jira, Slack, and more</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-basics">The Basics</h3>
+<p>There are two operators that add functionality to Semgrep on top of whatever programming language you choose to use:</p>
+<ul>
+<li><strong>Ellipsis</strong> <code>...</code> - the ellipsis operator is a filler for an unknown space with zero or more arguments regardless of what they are</li>
+<li><strong>Metavariables</strong> <code>$VARIABLE</code> - these are like capture groups, a fill in for a unknown variable you want to match prior to its a assignment of a value</li>
+</ul>
+<p>To get a good introduction on these two operators, check out <a href="https://semgrep.dev/learn">this site</a> for a tutorial into Semgrep</p>
+<h3 id="basic-examples">Basic Examples</h3>
+<p>To test some of the functionalities of Semgrep, visit <a href="https://semgrep.dev/editor">this site</a> to play with the Semgrep Playground and follow along with the demos below:</p>
+<p>Taking a look at the image below we can see the Semgrep Playground User Interface. The basic layout will have the top left dropdown allowing you to choose your language, the Rule Bar to enter your rule, the Test Code block to see the code that the rule will be tested on and any results from the query will show up on the right hand side
+<img src="../semgrepSS1.png" alt="Semgrep Playground Layout"></p>
+<h4 id="identifying-a-function-call"><strong>Identifying a Function Call</strong></h4>
+<p><a href="https://semgrep.dev/s/clintgibler:python-exec-try">Click Here</a> to follow along with this example:</p>
+<ol>
+<li><code>exec(...)</code> will find all instances of the function <code>exec()</code> in your code. But it is smart, as you can see in the image below, the query will IGNORE comments and string literals while also IDENTIFYING the function even with varying syntax and aliases of the function call like <code>safe_function</code>
+<img src="../semgrepSS2.png" alt="Semgrep &amp;hellip; Example"></li>
+</ol>
+<h4 id="cross-site-scripting-xss"><strong>Cross Site Scripting (XSS)</strong></h4>
+<p>Following <a href="https://semgrep.dev/s/clintgibler:js-express-xss-try">this example</a>, we can see the code is vulnerable to a XSS attack as the user inputted query is not being filtered for any potentially malicious input.</p>
+<ol>
+<li>The benefit of Semgrep is we can search for whatever we want in out chosen language. So to start making a rule, we can just copy the source code and then begin to abstract it</li>
+<li>Let&rsquo;s replace <code>/foo</code> with <code>...</code>, as we want to search for anytime a general string is used regardless of its value</li>
+<li>We can add an <code>$</code> in front of an all caps name to represent a Metavariable. In this case, we can replace <code>name</code> in <code>req.query.name</code> with <code>$PARAM</code> to represent an unknown parameter
+<ul>
+<li>Similarly we can replace the variable <code>resp</code> with <code>$VAR</code> to represent an unknown variable being passed</li>
+</ul>
+</li>
+<li>This brings us to the rule of:
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>app.get(&#39;...&#39;, function (req, res) {
+</span></span><span style="display:flex;"><span>    var $VAR = req.query.$PARAM;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    res.write($VAR);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div>Which we can see, correctly identifies one of our XSS vulnerabilities, but not both</li>
+</ol>
+<p><img src="../semgrepSS3.png" alt="XSS Rule V1"></p>
+<ol start="5">
+<li>We can see that the main differences between the two are the extra lines of code, and the extra arguments in functions. To take care of that, we can add some strategic ellipsis and arrows:
+<ul>
+<li>What these arrow brackets are doing is saying that we know our Metavariable exists somewhere in the expression, but we don&rsquo;t know exactly where it is</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>app.get(&#39;...&#39;, function (req, res) {
+</span></span><span style="display:flex;"><span>    var $VAR = req.query.$PARAM;
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    res.write(&lt;... $VAR ...&gt;);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p><img src="../semgrepSS4.png" alt="XSS Rule V2"></p>
+<h4 id="business-logic"><strong>Business Logic</strong></h4>
+<p>Business Logic is when the code itself seems fine, but how the code works is fundamentally wrong (such as the order in which methods are called). Lets take a look at <a href="https://semgrep.dev/s/LNX">this example</a></p>
+<ol>
+<li>Sometimes we have a need for conditionals in our rules, for example if we want to check for the order of, or presence of certain items. To start off, lets copy the first method (lines 9-13)</li>
+<li>We don&rsquo;t care about the return type, so lets replace <code>void</code> with <code>$RETTYPE</code> as our Metavariable</li>
+<li>The function type and arguments don&rsquo;t matter either so we can replace <code>base_ok</code> with <code>$FUNC</code> and <code>Transaction t</code> with <code>...</code></li>
+<li>The main thing we are looking at here is the <code>make_transaction()</code> function, so we can add ellipsis above and below that statement as well as replacing the function&rsquo;s argument leaving us with this:
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>public $RETTYPE $FUNC(...) {
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>    make_transaction(...);
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>If we run that, we get this result which locates everything that use the <code>make_transaction()</code> function
+<img src="../semgrepSS5.png" alt="Business Logic V1"></li>
+<li>This is good but doesn&rsquo;t actually check if they business logic is right, we need to add a conditional by clicking the plus button to the right of the rule block</li>
+<li>We can see a dropdown of options, here we want <strong>and is not</strong>, and then copy the top rule into the bottom box</li>
+<li>Above the <code>make_transaction()</code> line in our new rule section, lets add an ellipsis followed by <code>verify_transaction(...);</code>. What this does is make sure the verify function is never called prior to the make transaction function in any place the make transaction function exists, as we only want the transaction to be verified if it first has been made
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>public $RETTYPE $FUNC(...) {
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>    verify_transaction(...);
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>    make_transaction(...);
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>When we run, we can see that it works and returns every time the verify transaction function is called before the make transaction function, with one exception
+<img src="../semgrepSS6.png" alt="Business Logic V2"></li>
+<li>In the very last method of the sample code, we see that it should be flagged as a vulnerability as the transaction that is verified is not the same one that is made</li>
+<li>To fix this, we can replace the function ellipses in the <strong>and is not</strong> rule with a Metavariable <code>$T</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>public $RETTYPE $FUNC(...) {
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    verify_transaction($T);
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>    make_transaction($T);
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And when we run this version we see it is able to catch all of the exceptions:
+<img src="../semgrepSS7.png" alt="Business Logic V3"></p>
+<h3 id="coding-in-yaml">Coding in YAML</h3>
+<p>What we were looking at before is the Semgrep UI, but as we make more complex rules it is easier to do so using Semgrep&rsquo;s natural syntax language, YAML
+You can read up on the specifics of YAML <a href="https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html">here</a>, but the main outline of a Semgrep command is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: name-of-rule
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern: $PATTERN_A
+</span></span><span style="display:flex;"><span>        message: |
+</span></span><span style="display:flex;"><span>            Write your message here
+</span></span><span style="display:flex;"><span>        languages: [languageName]
+</span></span><span style="display:flex;"><span>        severity: SEVERITYLEVEL
+</span></span></code></pre></div><p>To break this down:</p>
+<ul>
+<li><code>id</code> - the name of the rule, this should be alphanumeric with dashes replacing spaces</li>
+<li><code>patterns</code> - this is where your specific rules are, more information below but make sure to have proper syntax</li>
+<li><code>message</code> - this is the message that will be displayed when something is flagged. Often it is meant to help developers by providing context to what needs to be changed
+<ul>
+<li>Note the pipeline (<code>|</code>) in YAML is used to have multiple lines be compiled into single lines</li>
+</ul>
+</li>
+<li><code>language</code> - a place where you can put the language that this rule applies to</li>
+<li><code>severity</code> - what kind of issue this code is, it can be either <code>INFO</code>, <code>WARNING</code>, or <code>ERROR</code></li>
+</ul>
+<h4 id="coded-patterns"><strong>Coded Patterns</strong></h4>
+<p>There are five main pattern commands that can be used in combination with one another. They are very similar to boolean expressions. Here is a brief description of each one followed by an example:</p>
+<ul>
+<li><code>pattern</code> = search for &ldquo;this&rdquo; AND &ldquo;that&rdquo;</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: default-pattern-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern: print(...)
+</span></span></code></pre></div><p>This rule will search for any instance of the <code>print()</code> function being called, regardless of its arguments</p>
+<ul>
+<li><code>pattern-either</code> = search for &ldquo;this&rdquo; OR &ldquo;that&rdquo;</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: either-pattern-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern-either:
+</span></span><span style="display:flex;"><span>            - pattern: if(...)...
+</span></span><span style="display:flex;"><span>            - pattern: print(...)
+</span></span></code></pre></div><p>This rule will return any instances of an <code>if()</code> statement call OR a <code>print()</code> statement call</p>
+<ul>
+<li><code>pattern-not</code> = filters out patterns you do not want to match, ie. matches &ldquo;this&rdquo; AND NOT &ldquo;that&rdquo;</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: not-pattern-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern: if (...)...
+</span></span><span style="display:flex;"><span>        - pattern-not: if (&#34;...&#34; == $VAR)...
+</span></span></code></pre></div><p>This rule finds all instances of an <code>if</code> statement, but will filter out any instance where the first value is a string literal being compared to some other value</p>
+<ul>
+<li><code>pattern-inside</code> = allows you to search for patterns inside the pattern specified by <code>pattern-inside</code>. This means this command must be FIRST, and the following patterns will only search based on the set received from this command call</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: inside-pattern-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern-inside: |
+</span></span><span style="display:flex;"><span>            func $FUNC(..., $VAR, ...) {
+</span></span><span style="display:flex;"><span>                ...
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        - pattern: print($VAR)
+</span></span></code></pre></div><p>This rule will first narrow down its search to only functions that have at least one argument, and in those search for an instance of a <code>print()</code> statement that uses the same function argument</p>
+<ul>
+<li><code>pattern-not-inside</code> = filters out any matches inside the range defined by the pattern. This means this command can only come AFTER a previously defined pattern</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: not-inside-pattern-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern: print(...)
+</span></span><span style="display:flex;"><span>        - pattern-not-inside: |
+</span></span><span style="display:flex;"><span>            if (...) ...
+</span></span><span style="display:flex;"><span>            ...
+</span></span></code></pre></div><p>This rule will find all instances of <code>print()</code>, but then narrow down those results to only <code>print()</code> calls that occur BEFORE an <code>if()</code> statement</p>
+<h3 id="running-locally">Running Locally</h3>
+<h4 id="installing"><strong>Installing</strong></h4>
+<ol>
+<li>Run <code>brew install semgrep</code> to install semgrep locally on a Mac (you must have <a href="https://brew.sh/">Homebrew</a> already installed)
+<ul>
+<li>For more details on installation on both Macs and other devices, <a href="https://semgrep.dev/docs/getting-started/">look here</a></li>
+</ul>
+</li>
+</ol>
+<h4 id="environment"><strong>Environment</strong></h4>
+<p>As Semgrep is now installed locally, you will be able to use <code>semgrep</code> as a command. Make sure that before running the command, your YAML rule file is in your current directory, which should be in the same directory that contains the directory/file you want to test. The general format is as follows:</p>
+<p><code>semgrep --config ruleFile.yml --timeout 0 /directoryToTest</code></p>
+<ul>
+<li><code>--config ruleFile.yml</code> - this tells Semgrep which YAML rule file you want to use in your test</li>
+<li><code>--timeout 0</code> - while this flag is technically optional, what it is doing is giving the time in seconds for how long Semgrep will wait for a single rule to run before it times out. When set to 0, it will never timeout, without the flag, the default is set to 30 seconds</li>
+<li><code>/directoryToTest</code> - this is the directory (or file) that you wish to run your rule(s) against</li>
+</ul>
+<h4 id="shared-rulesets"><strong>Shared Rulesets</strong></h4>
+<p>While we know we have the ability to create our own rules, Semgrep has over 1000 pre-existing rules that have been vetted by the company for precision. Accessing these rulesets is pretty simple:</p>
+<ol>
+<li>Find the ruleset you want to use <a href="https://semgrep.dev/explore">on the Semgrep explore page</a>
+<ul>
+<li>Each ruleset will list all of it&rsquo;s rules along with examples of how they work if you wish to explore them more in depth</li>
+</ul>
+</li>
+<li>Once you&rsquo;ve selected your ruleset, in the top right corner there will be a section titled &ldquo;Test and Run Locally&rdquo; with a command you can copy as seen below
+<img src="../semgrepSS8.png" alt="Test and Run Locally Command"></li>
+<li>With this command copied, we can add our <code>timeout 0 /directoryToTest</code> to the end and the ruleset will be run against the selected directory
+<ul>
+<li>Example: <code>semgrep --config &quot;p/r2c-security-audit&quot; --timeout 0 /directoryToTest</code> - this will run the <a href="https://semgrep.dev/p/r2c-security-audit">r2c-security-audit</a> ruleset on whatever directory you indicate</li>
+</ul>
+</li>
+</ol>
+<h3 id="advanced">Advanced</h3>
+<p>While the instructions above will be able to guide you through ~80% of what you&rsquo;ll need to know for Semgrep, there are several other useful rule syntaxes that are good to know. I will provide a basic description of each of them followed by an example showing how to use it. For a more in-depth explanation of each rule, check out the <a href="https://semgrep.dev/docs/writing-rules/rule-syntax/">documentation</a></p>
+<h4 id="regex-patterns"><strong>Regex Patterns</strong></h4>
+<p>The five patterns we looked at before were all based on bitwise operators of the code. The following patterns are all based on bitwise operators of the regular expressions that can be found in the code, allowing for more specificity. While there are many different types of Regex syntax, Semgrep uses <a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expressions(PCRE)</a>:</p>
+<ul>
+<li><code>pattern-regex</code> = searches for a compatible regular expression (works best for Python)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: regex-pattern-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern-inside: print(...)
+</span></span><span style="display:flex;"><span>        - pattern-regex: \d
+</span></span></code></pre></div><p>This rule will find all instances of <code>print()</code>, but then narrow down those results to only <code>print()</code> calls that include a decimal number in them</p>
+<ul>
+<li><code>pattern-not-regex</code> = will filter out compatible regular expressions (works best for Python)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: not-regex-pattern-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern-inside: print(...)
+</span></span><span style="display:flex;"><span>        - pattern-not-regex: \d
+</span></span></code></pre></div><p>This rule will find all instances of <code>print()</code>, but then narrow down those results to only <code>print()</code> calls that DO NOT include a decimal number in them</p>
+<h4 id="metavariable-rules"><strong>Metavariable Rules</strong></h4>
+<ul>
+<li><code>metavariable-regex</code> = this works similar to <code>pattern-regex</code>, but instead of matching any instance of the regex in the code, this will only match regex patterns found in a given Metavariable</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: metavariable-regex-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern: print($VAR)
+</span></span><span style="display:flex;"><span>        - metavariable-regex:
+</span></span><span style="display:flex;"><span>            metavariable: $VAR
+</span></span><span style="display:flex;"><span>            regex: (hello|hi|welcome)
+</span></span></code></pre></div><p>To break this down:</p>
+<ul>
+<li><code>pattern</code> - like we defined above, can be any of the patterns/combination of that we&rsquo;ve learned</li>
+<li><code>metavariable-regex</code> - we type this to let YAML know we are about to provide a regex rule</li>
+<li><code>metavariable</code> - this is where you specify which of your previously defined Metavariables you are going to be writing your regex rule for</li>
+<li><code>regex</code> - this is where you specify what expressions you want to match to the Metavariable you picked. In this case you would only be returning instances where $VAR includes &ldquo;hello&rdquo;, &ldquo;hi&rdquo;, OR &ldquo;welcome&rdquo; inside <code>print()</code> statements</li>
+</ul>
+<h1 id="heading"></h1>
+<ul>
+<li><code>metavariable-pattern</code> = this rule works the same way as <code>metavariable-regex</code> but instead of searching for matching regular expressions, it searches for matching patterns using the five pattern rules from above</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: metavariable-pattern-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern: | 
+</span></span><span style="display:flex;"><span>            if(&lt;... $VAR ...&gt;) {
+</span></span><span style="display:flex;"><span>                $CALL
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        - metavariable-pattern:
+</span></span><span style="display:flex;"><span>            metavariable: $CALL
+</span></span><span style="display:flex;"><span>            pattern: print($VAR)
+</span></span></code></pre></div><p>This rule will search for all <code>if()</code> statements where the Metavariable <code>$VAR</code> is used, then it will check what is being executed in the <code>if()</code> statement with the <code>$CALL</code> Metavariable and will return any instance where <code>$CALL</code> is <code>print($VAR)</code></p>
+<ul>
+<li><code>metavariable-comparison</code> = this rule will take a provided Metavariable and use a Python comparison function to evaluate the Metavariable&rsquo;s numeric value</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>rules:
+</span></span><span style="display:flex;"><span>    - id: metavariable-comparison-example
+</span></span><span style="display:flex;"><span>        patterns:
+</span></span><span style="display:flex;"><span>        - pattern: set_value($VAR)
+</span></span><span style="display:flex;"><span>        - metavariable-pattern:
+</span></span><span style="display:flex;"><span>            comparison: $VAR &lt; 900
+</span></span><span style="display:flex;"><span>            metavariable: $VAR
+</span></span></code></pre></div><p>This rule will search for all calls of the <code>set_value()</code> function where the variable passed in is less than 900. This can be useful if a value must be greater/less than a certain number to avoid issues</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://semgrep.dev/">Semgrep Official Site</a></li>
+<li><a href="https://semgrep.dev/learn">Semgrep Tutorial</a></li>
+<li><a href="https://www.youtube.com/watch?v=O5mh8j7-An8">Semgrep Presentation</a>
+<ul>
+<li><a href="https://go.r2c.dev/empire-hacking-semgrep">Clint Gibler&rsquo;s Presentation Slides</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=EIjoqwT53E4">Semgrep Open Security Summit Presentation</a>
+<ul>
+<li><a href="https://bit.ly/2020OpenSecuritySummit">Presentation Slides</a></li>
+</ul>
+</li>
+<li><a href="https://learnxinyminutes.com/docs/pcre/">Perl Compatible Regular Expression Cheat Sheet</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/semgrep/">Semgrep</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fjune%2fsemgrepnotes%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fjune%2fsemgrepnotes%2f&amp;text=Introduction%20to%20Semgrep&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fjune%2fsemgrepnotes%2f&amp;title=Introduction%20to%20Semgrep" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fjune%2fsemgrepnotes%2f&amp;description=Introduction%20to%20Semgrep" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/may/website_pentesting/webpentesting/"
+              data-toggle="tooltip" data-placement="top" title="Website Penetration Testing">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+          <li class="list-group-item ms-auto b-0">
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/july/regex_walkthrough/"
+              data-toggle="tooltip" data-placement="top" title="Making Regex Rules in Semgrep">Next Post
+              &rarr;</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/july/regex_walkthrough/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Making Regex Rules in Semgrep</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;July 12, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Introduction to regex rules and how to create/implement them within Sempgrep.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/regex_walkthrough.jpg" alt="Making Regex Rules in Semgrep" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2022
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+

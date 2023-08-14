@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Information Gathering (Reconnaissance Phase) - s0merset7&#39;s Blog</title>
+<meta name="description" content="Introduction to the Information Gathering phase of a pentest.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2021\/may\/information_gathering\/informationgathering\/",
+          "name": "Information gathering ( reconnaissance phase)"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "Information Gathering (Reconnaissance Phase)",
+  "description" : "Introduction to the Information Gathering phase of a pentest.",
+  "inLanguage" : "en",
+  "wordCount":  1909 ,
+  "datePublished" : "2021-05-27T00:00:00",
+  "dateModified" : "2021-05-27T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "Pentesting" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2021\/may\/information_gathering\/informationgathering\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/informationGathering.webp">
+<meta property="og:url" content="https://s0merset7.github.io/post/2021/may/information_gathering/informationgathering/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.111.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Information Gathering (Reconnaissance Phase)
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;May 27, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/informationGathering.webp" alt="Information Gathering (Reconnaissance Phase)" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p><em>Note: Much of the below information is summarized from <a href="https://ethicalhackingblog.com/about/">Gus Khawaja&rsquo;s</a> Pluralsight course &ldquo;Penetration Testing and Ethical Hacking with Kali Linux&rdquo;. Much credit goes to Gus&rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight</em></p>
+<p>In this post, I will be demonstrating some of the tools and processes used during the Information Gathering (or Passive Reconnaissance) phase of pentesting. For our purposes, reconnaissance is defined as the use of open-sources to gain information about a target</p>
+<ul>
+<li>You&rsquo;ll want a good place to store all of your notes as you are testing. Kali comes pre-installed with an application called <strong>CherryTree</strong>, which is essentially a hierarchial text editor with options to add pictures graphs and more:</li>
+</ul>
+<p><img src="../cherrytreeSS.png" alt="Cherry Tree Setup"></p>
+<h3 id="website-reconnaissance">Website Reconnaissance</h3>
+<ol>
+<li><strong>Website Footer</strong>: Aside from the basic website search, make sure to focus on the content in the footer of the website to find lots of useful information (About, Management, Press Releases, Careers, Offices &amp; Departments, etc)
+<ul>
+<li>Seek out anything that seems important: names, contact info, sensitive info, acquisitions, used technologies, physical addresses, etc.</li>
+</ul>
+</li>
+<li><strong>Google Hacking Database/Google Dorks</strong>: This is a process used to manipulate the google search function to find more specific results. Here are some of the terms you can use in your searches and what they do:
+<ul>
+<li><strong>cache:</strong> <em>URL[string]</em> - searches through google&rsquo;s cache for information on a specific site, retrieving a copy of the website from google&rsquo;s cache. The second phrase is optional but will search the selected website for any instances of the provided word</li>
+<li><strong>filetype:</strong> <em>[type][string]</em> - searches only for files of a specific type (ex: pdf, docx, xlx) where <em>type</em> is the type of file and <em>string</em> is what you are looking for</li>
+<li><strong>info:</strong> <em>[string]</em> - searches for information that google stores about the website itself</li>
+<li><strong>intitle:</strong> <em>[string]</em> - searches for pages that contain the <em>string</em> in the title</li>
+<li><strong>inurl:</strong> <em>[string]</em> - displays pages with the <em>string</em> in the URL</li>
+<li><strong>site:</strong> <em>[string]</em> - displays pages for a specific site or domain with the <em>string</em>
+To learn more about Google Dorks, many examples can be found here: <a href="https://www.exploit-db.com/google-hacking-database">https://www.exploit-db.com/google-hacking-database</a></li>
+</ul>
+</li>
+<li><strong>Document Metadata</strong>: the information that is appended to documents so that an application can manage them during their creation and storage (ex: application owner, date/time of creation/modification, network location, geolocation)</li>
+</ol>
+<ul>
+<li><strong>Metagoofil</strong>: Tool that performs a google search to identify and download a target&rsquo;s website documents, extracting usernames, software versions, server names, and workstation names. The ultimate goal here as a pentester is to make sure there are no results from tools like this on your client&rsquo;s site. Here are some of the common flags:
+<ul>
+<li><code>-d domainName</code> - specifies the domain name</li>
+<li><code>-t fileType</code> - specifies the file type you are searching for</li>
+<li><code>-o localDirectory</code> - specifies the working directory where we want to save our results</li>
+<li><code>-f</code> - indicates that you want the results to be saved as a txt file in provided directory (will be named &ldquo;html_links_timestamp.txt&rdquo;)</li>
+<li>Example: <code>metagoofil -d exampleSite.com -t pdf -o temp -f</code> - uses google to search exampleSite.com for any pdfs and saves the results in a the temp directory</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li><strong>TheHarvester</strong>: python script that searches through popular search engines and other sites for email addresses, hosts, and sub domains
+<ul>
+<li><code>-d domainName</code> - identifies the domain to be searched</li>
+<li><code>-b searchEngine</code> - identifies the tool that will be used to extract the information (ex: Google, Bing, etc.). Can also just put <code>all</code> to specify all options</li>
+<li><code>-l number</code> - where <code>number</code> indicates the limit of returned search results</li>
+<li>Example: <code>theHarvester -d exampleSite.com -b google -l 100</code> - will use google to search the website exampleSite.com, limited to 100 search results, in an attempt to find any emails, IPs, or hosts (in this case nothing was found as it is just a placeholder website)</li>
+</ul>
+</li>
+</ol>
+<p><img src="../theHarvesterSS.png" alt="theHarvester Example"></p>
+<ol start="5">
+<li><strong>Whois</strong>: a request that will return the names, physical addresses, phone numbers, email addresses, IP address, and DNS server names. You can pay to register a DNS to be secure from queries like this
+<ul>
+<li>Example: <code>whois exampleSite.com</code> - will return all information that can be found about exampleSite.com followed by a long list of where that information was retrieved from</li>
+</ul>
+</li>
+</ol>
+<p><img src="../whoisExampleSS.png" alt="Whois Example"></p>
+<ol start="6">
+<li><strong>DNS Reconnaissance</strong>: identifying who owns a particular domain or series of IP addresses
+<ul>
+<li><strong>Fierce</strong>: Tool that will run tests on given domains to attempt to find IP addresses, subdomains, hosts, and other sensitive information about a given domain
+<ul>
+<li><code>--domain domainName</code> - specifies the domain to run the tests on</li>
+<li>Example: <code>fierce --domain exampleSite.com</code> - will return all information that can be found from running tests on exampleSite.com</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Deepmagic Information Gathering Tool (Dmitry)</strong>: command line program written in C with the goal of finding out information about a host. This tool is especially useful for its speed by removing the need to enter multiple commands when searching through information different sources. For simplicity&rsquo;s sake, I included all of the testing flags in the example below, for specifics on each flag, run <code>dmitry -h</code>. The general idea is that this command runs many of the previous tests in addition to some new ones all at once and will save the results in a text file
+<ul>
+<li>Example: <code>dmitry -winsepfbo s0merset7.github.io</code> - will perform every test (including whois lookups, search for subdomains and email addresses, TCP port scans, and more). Here is an example of the first few results found in the text file created after the program is run:</li>
+</ul>
+</li>
+</ol>
+<p><img src="../dmitrySS.png" alt="Dmitry Example"></p>
+<ol start="8">
+<li>
+<p><strong>Discover Scripts</strong>: a framework with the goal of quickly conducting a passive reconnaissance by automating a lot of searches into one tool, including many of the ones we have been using previously</p>
+<ol>
+<li>Download the Discover github project by running <code>git clone https://github.com/leebaird/discover.git</code> or visit <a href="https://github.com/leebaird/discover">https://github.com/leebaird/discover</a> to see the project yourself</li>
+<li>To start the program, <code>cd</code> into the newly created &ldquo;discover&rdquo; directory and run <code>./discover</code> (you must be running this program as root or else the program will not work properly)</li>
+<li>At first you will see a menu with lots of options, feel free to explore, however we will be focusing on the &ldquo;RECON&rdquo; section as that is for Passive Reconnaissance</li>
+</ol>
+<p><img src="../discoverSS1.png" alt="Discover Menu"></p>
+<ol start="4">
+<li>Type <code>1</code> and press enter to select the &ldquo;Domain&rdquo; option which will then prompt another menu. Select option 1 again, &ldquo;Passive&rdquo;</li>
+</ol>
+<p><img src="../discoverSS2.png" alt="Discover Domain Menu"></p>
+<ol start="5">
+<li>Using the example, provide the name of the company you are scanning and the domain name and start the scan</li>
+<li>The scan may take a while, but when finished, it will store the scan results in an index.html file under <strong>/root/data/domainName</strong></li>
+<li>There will also be an option to press enter, upon doing so, Firefox will be used to open lots of tabs that show how the program got much of its information for you to be able to look at it yourself (this may also happen automatically so don&rsquo;t be alarmed if a bunch of new browser tabs start opening)</li>
+<li>The final tab that is opened (if not you can open up the index.html file in <strong>/root/data/domainName</strong>) should be the summary file. This will appear as a browser tab with drop down options that summarize all of the information gathered from the scan. You can explore all of the information, much of it will be similar to what we found using the previous tools</li>
+</ol>
+<p><img src="../discoverSS3.png" alt="Discover Report"></p>
+</li>
+<li>
+<p><strong>Recon-ng</strong>: a python module based framework that allows you to perform a variety of different tests on websites one at a time to see the progress of information found</p>
+<ol>
+<li>You can install recon-ng with <code>apt-get install recon-ng</code></li>
+<li>To start the program just run <code>recon-ng</code> (this assumes you are acting as root user, so just add <code>sudo</code> to the front if you are not). You should see a screen similar to this:</li>
+</ol>
+<p><img src="../reconSS1.png" alt="Recon-ng Home"></p>
+<ol start="3">
+<li>Now there are a LOT of different functions of this program (type <code>help</code> to see all of the commands), and the best way to learn is by exploring on your own. So for the rest of this section, I will be showing an example, that you can then use to explore the rest of the program with</li>
+<li>Lets create workspace for this example. This option allows users to conduct tests without having to configure global options or databases repeatedly. To do this, type <code>workspaces create name</code> where <code>name</code> is what you choose to call your workspace. I will call mine &ldquo;example&rdquo;</li>
+<li>By typing <code>modules search</code>, you should see a list of all the different modules, each one showing a different tool that you can use, organized in the order of the normal flow of a penetration test</li>
+</ol>
+<p><img src="../reconSS2.png" alt="Recon-ng Modules"></p>
+<ol start="6">
+<li>To access a module, type <code>modules load moduleName</code> where <code>moduleName</code> is your selected module from the list. If the name is unique enough, you don&rsquo;t have to type the entire name, for our example lets type <code>modules load brute_hosts</code>, this will try and brute force hosts from a word list when given a domain</li>
+<li>Once in the module, type <code>info</code> to see a description on how to use the module.</li>
+</ol>
+<p><img src="../reconSS5.png" alt="Module Info"></p>
+<p>We can here that in addition to instructions for use, under &ldquo;Options&rdquo; there is a &ldquo;SOURCE&rdquo; that we need to set to the domain we want to be searching. To do so, run <code>options set SOURCE domainName</code> where <code>domainName</code> is your domain. For the example, I will use my blog site s0merset7.github.io
+8. Once the SOURCE (the domain) is set, we can run the test by typing <code>run</code>
+9. If you wanted to run another test module, you can type the same command <code>modules load moduleName</code> from inside the current module, or use <code>back</code> to first exit the module, search for a new one, and then use the <code>modules load</code> command
+10. Since I&rsquo;m using github to host my site, the test found almost every host on its wordlist to be a match. Normally this will not be the case. To see all of the matches, run <code>show hosts</code> and it will display a table with the hosts, along with IP Addresses, Region, Country, and more. We can run other modules to fill in the missing values</p>
+<p><img src="../reconSS6.png" alt="Host List"></p>
+<p>Some other modules we can use to fill in the missing information are:</p>
+<ul>
+<li><code>brute_hosts</code> - module that we used, will compare domain to a word list and also try and find corresponding IPs</li>
+<li><code>hosts-hosts/resolve</code> - will try and update IPs to found hosts</li>
+<li><code>hosts-hosts/reverse_resolve</code> - will try and update IPs to found hosts</li>
+<li><code>ipinfodb</code> - will try and find all information of a given IP, specifically geographical locations
+<ul>
+<li>to use this tool, you will need to register a free account on <a href="https://www.ipinfodb.com/">https://www.ipinfodb.com/</a> and get an API key from them. With the API key, run <code>keys add ipinfodb yourApiKey</code>. Then you will be able to run the ipinfodb module</li>
+</ul>
+</li>
+</ul>
+<ol start="11">
+<li>If you run <code>show hosts</code> now, you should be able to see most of the information filled in. You can also run <code>dashboard</code> at any time to see how many values you have in the database and the different modules you have run</li>
+</ol>
+<p><img src="../reconSS7.png" alt="Recon-ng Dashboard"></p>
+<ol start="12">
+<li>We also have the option of condensing all of our findings to a report. Run <code>modules load html</code> to get to the html module. Upon running <code>info</code>, we can see we need to set a CREATOR and CUSTOMER value. For the example I will set them to <code>options set creator Somerset</code> and <code>options set customer mywebsite</code>. Once we type <code>run</code>, we can see that a report has been generated at <code>/root/.recon-ng/workspaces/example/results.html</code></li>
+</ol>
+<p><img src="../reconSS8.png" alt="HTML Info"></p>
+<ol start="13">
+<li>Finally, to open this file, copy paste the given file path (in my case <code>/root/.recon-ng/workspaces/example/results.html</code>) into the search bar of your browser of choice. You should be able to see something similar to this:</li>
+</ol>
+<p><img src="../reconSS9.png" alt="Recon-ng Report"></p>
+</li>
+</ol>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://ethicalhackingblog.com/">Gus Khawaja&rsquo;s Blog</a></li>
+<li><a href="https://www.pluralsight.com/courses/kali-linux-penetration-testing-ethical-hacking">Gus&rsquo;s Pluralsight Course: “Pentration Testing and Ethical Hacking with Kali Linux”</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/pentesting/">Pentesting</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fmay%2finformation_gathering%2finformationgathering%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fmay%2finformation_gathering%2finformationgathering%2f&amp;text=Information%20Gathering%20%28Reconnaissance%20Phase%29&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fmay%2finformation_gathering%2finformationgathering%2f&amp;title=Information%20Gathering%20%28Reconnaissance%20Phase%29" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2021%2fmay%2finformation_gathering%2finformationgathering%2f&amp;description=Information%20Gathering%20%28Reconnaissance%20Phase%29" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/may/pentesting_checklist/"
+              data-toggle="tooltip" data-placement="top" title="Pre-Pentration Test Checklist">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+          <li class="list-group-item ms-auto b-0">
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2021/may/externalpentesting/externalpentesting/"
+              data-toggle="tooltip" data-placement="top" title="External Pen-Testing">Next Post
+              &rarr;</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/may/website_pentesting/webpentesting/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Website Penetration Testing</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;May 31, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Introduction on the common high-level steps performed when pentesting a web application.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/webPenTesting.webp" alt="Website Penetration Testing" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/may/externalpentesting/externalpentesting/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">External Pen-Testing</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;May 30, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Introduction to the concept of an external pentest, including how it works and tasks normally performed.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/externalPentesting.png" alt="External Pen-Testing" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/may/pentesting_checklist/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Pre-Pentration Test Checklist</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;May 16, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Covering what considerations and actions must take place before performing a pentest.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/pentesting_checklist.webp" alt="Pre-Pentration Test Checklist" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2022
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+
