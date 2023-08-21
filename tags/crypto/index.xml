@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crypto on s0merset7&#39;s Blog</title>
+    <link>https://s0merset7.github.io/tags/crypto/</link>
+    <description>Recent content in Crypto on s0merset7&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Cryptocurrency Investigations</title>
+      <link>https://s0merset7.github.io/post/2023/aug/cryptocurrencyinvestigator/introtocrypto/</link>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://s0merset7.github.io/post/2023/aug/cryptocurrencyinvestigator/introtocrypto/</guid>
+      <description>Note: Much of the below information is summarized from Blockchain Intelligence Group&amp;rsquo;s Certified Cryptocurrency Investigator certification training course. Much credit goes to expertise of everyone at the Blockchain Intelligence Group! Check out their website and partners the sources
+Cryptocurrency investigations are an essential part of modern day criminal investigations. Regardless of the crime committed, cryptocurrency is becoming a growing method of payment for illicit activities. Being that cryptocurrency alone is not illegal with countless real world positive use cases, it is essential that investigators understand how cryptocurrencies operate, both at a technical level real world situations.</description>
+    </item>
+    
+  </channel>
+</rss>
