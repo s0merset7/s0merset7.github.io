@@ -6,16 +6,14 @@
     <description>Recent content in Burp Suite on s0merset7&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/burp-suite/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://s0merset7.github.io/tags/burp-suite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Website Penetration Testing</title>
       <link>https://s0merset7.github.io/post/2021/may/website_pentesting/webpentesting/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/post/2021/may/website_pentesting/webpentesting/</guid>
-      <description>Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Penetration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight
-There is a LOT to do when it comes to website penetration testing, and this post is by no means a comprehensive list of everything to do or than can be done.</description>
+      <description>Note: Much of the below information is summarized from Gus Khawaja&amp;rsquo;s Pluralsight course &amp;ldquo;Penetration Testing and Ethical Hacking with Kali Linux&amp;rdquo;. Much credit goes to Gus&amp;rsquo;s expertise! Check out his blog in the sources and how to get started with Pluralsight&#xA;There is a LOT to do when it comes to website penetration testing, and this post is by no means a comprehensive list of everything to do or than can be done.</description>
     </item>
-    
   </channel>
 </rss>

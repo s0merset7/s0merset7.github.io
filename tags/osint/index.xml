@@ -6,16 +6,14 @@
     <description>Recent content in OSINT on s0merset7&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/osint/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://s0merset7.github.io/tags/osint/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to Open Source Intelligence (OSINT)</title>
       <link>https://s0merset7.github.io/post/2021/oct/introtoosint/</link>
       <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/post/2021/oct/introtoosint/</guid>
-      <description>Note: Much of the below information is summarized from OSINT Combine&amp;rsquo;s course &amp;ldquo;Trace Labs OSINT Foundations Course&amp;rdquo;. Much credit goes to Chris Poulter&amp;rsquo;s expertise! Check out their website and partners the sources
-Open Source Intelligence (OSINT) is a way of searching for information on only publicly available sources (open source). While this may seem to be the same way everyone searches for information, there are many tools and methodologies that can be used to enhance your research capabilities.</description>
+      <description>Note: Much of the below information is summarized from OSINT Combine&amp;rsquo;s course &amp;ldquo;Trace Labs OSINT Foundations Course&amp;rdquo;. Much credit goes to Chris Poulter&amp;rsquo;s expertise! Check out their website and partners the sources&#xA;Open Source Intelligence (OSINT) is a way of searching for information on only publicly available sources (open source). While this may seem to be the same way everyone searches for information, there are many tools and methodologies that can be used to enhance your research capabilities.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,34 +6,28 @@
     <description>Recent content in HacktheBox on s0merset7&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://s0merset7.github.io/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jerry Machine Walkthrough</title>
       <link>https://s0merset7.github.io/post/2020/aug/jerry_machine/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/post/2020/aug/jerry_machine/</guid>
       <description>In a new terminal window, run nmap -sC -sV 10.10.10.95 -sC: Adds on the &amp;ldquo;default&amp;rdquo; scripts to be run which include things like &amp;ldquo;Speed&amp;rdquo;, &amp;ldquo;usefulness&amp;rdquo;, and &amp;ldquo;Intrusiveness&amp;rdquo;. You can check them out in more detail by looking under &amp;ldquo;default&amp;rdquo; in the Script Categories section on this website -sV: Probe open ports to determine service/version info It looks like we only have one open port (8080) and it&amp;rsquo;s running a service called Apache Tomcat/Coyote JSP engine 1.</description>
     </item>
-    
     <item>
       <title>Lame Machine Walkthrough</title>
       <link>https://s0merset7.github.io/post/2020/aug/lame_machine/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/post/2020/aug/lame_machine/</guid>
       <description>In a new terminal window, run nmap -sV -O -F --version-light 10.10.10.3 Another option is to open Zenmap and run a port scan on the same IP (to see just the information on the ports, you can go to the Ports/Hosts tab) Zenmap is a program that does a really good job at visualizing and breaking down nmap commands into digestible bites Now there a a LOT of different ways to use nmap, and being that I&amp;rsquo;m still learning you are going to be seeing a lot of different versions, but I will do my best to explain what each version does.</description>
     </item>
-    
     <item>
       <title>Hack the Box Walkthroughs Intro</title>
       <link>https://s0merset7.github.io/post/2020/aug/intro/</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/post/2020/aug/intro/</guid>
-      <description>Hello and welcome to my walkthroughs for Hack the Box (HTB). I&amp;rsquo;ve challenged myself with completing 50 HTB machines to learn hacking tools and skills that will prepare me for a career in the field. Being that I am a beginner at the time of writing this, I won&amp;rsquo;t be able to solve any machine without guidance at first, so my plan is as follows:
-The first 10 machines I will do with the help of other write-ups and tutorials (I will attach links to any resources I use at the bottom of each of my walkthroughs).</description>
+      <description>Hello and welcome to my walkthroughs for Hack the Box (HTB). I&amp;rsquo;ve challenged myself with completing 50 HTB machines to learn hacking tools and skills that will prepare me for a career in the field. Being that I am a beginner at the time of writing this, I won&amp;rsquo;t be able to solve any machine without guidance at first, so my plan is as follows:&#xA;The first 10 machines I will do with the help of other write-ups and tutorials (I will attach links to any resources I use at the bottom of each of my walkthroughs).</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,87 +6,77 @@
     <description>Recent content in Tags on s0merset7&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://s0merset7.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://s0merset7.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Certification</title>
+      <link>https://s0merset7.github.io/tags/certification/</link>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://s0merset7.github.io/tags/certification/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Crypto</title>
       <link>https://s0merset7.github.io/tags/crypto/</link>
       <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/tags/crypto/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pwn.college</title>
+      <title>Pwn.college</title>
       <link>https://s0merset7.github.io/tags/pwn.college/</link>
       <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/tags/pwn.college/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>OSINT</title>
       <link>https://s0merset7.github.io/tags/osint/</link>
       <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/tags/osint/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Semgrep</title>
       <link>https://s0merset7.github.io/tags/semgrep/</link>
       <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/tags/semgrep/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Burp Suite</title>
       <link>https://s0merset7.github.io/tags/burp-suite/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/tags/burp-suite/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Pentesting</title>
       <link>https://s0merset7.github.io/tags/pentesting/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/tags/pentesting/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Kali Linux Help</title>
       <link>https://s0merset7.github.io/tags/kali-linux-help/</link>
       <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/tags/kali-linux-help/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>HacktheBox</title>
       <link>https://s0merset7.github.io/tags/hackthebox/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/tags/hackthebox/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Walkthrough</title>
       <link>https://s0merset7.github.io/tags/walkthrough/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://s0merset7.github.io/tags/walkthrough/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
