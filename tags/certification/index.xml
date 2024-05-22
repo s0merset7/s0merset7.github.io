@@ -6,8 +6,15 @@
     <description>Recent content in Certification on s0merset7&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://s0merset7.github.io/tags/certification/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CompTIA Security&#43;: Attacks, Threats, and Vulnerabilities</title>
+      <link>https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/</link>
+      <pubDate>Wed, 22 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/</guid>
+      <description>Note: Much of the below information is summarized from Christopher Rees&amp;rsquo; Security+ training course hosted on Pluralsight. Much credit goes to Chris&amp;rsquo; expertise! Check out his courses in the sources&#xA;CompTIA&amp;rsquo;s Security+ certification is a cert that many receive at the beginning of their journey into cybersecurity to prove their competency of basic security principles. Having taken and passed the exam, I condensed all of my notes for easy reference and to allow anyone to use them to help study.</description>
+    </item>
     <item>
       <title>Introduction to Cryptocurrency Investigations</title>
       <link>https://s0merset7.github.io/post/2023/aug/cryptocurrencyinvestigator/introtocrypto/</link>

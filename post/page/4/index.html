@@ -184,6 +184,51 @@
         
           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
     <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/may/kali_setup/kali_setup/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Kali Linux Setup and Customization</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;May 14, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Intro to installing and using Kali Linux for beginners including some cool customizations features.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/kali_setup.jpeg" alt="Kali Linux Setup and Customization" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
         <a href="https://s0merset7.github.io/post/2020/aug/jerry_machine/">
             <div class="card-body">
 
@@ -317,502 +362,6 @@
     </div>
 </div> 
         
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
-    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
-        <a href="https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/">
-            <div class="card-body">
-
-                <h3 class="fw-bold post-title"></h3>
-                
-
-                <p class="post-meta">
-                    <span class="post-meta">
-  
-  
-  &nbsp;January 1, 0001 
-
-  
-
-  
-  
-  
-</span>
-
-
-                </p>
-                
-                <div class="post-entry">
-
-                    
-                    <h1 id="attacks-threats-and-vulnerabilities">Attacks, Threats, and Vulnerabilities</h1>
-<p><em>Note: Much of the below information is summarized from Christopher Rees&rsquo; Security+ training course hosted on Pluralsight. Much credit goes to Chris&rsquo; expertise! Check out his courses in the sources</em></p>
-<p>CompTIA&rsquo;s Security+ certification is a cert that many receive at the beginning of their journey into cybersecurity to prove their competency of basic security principles. Having taken and passed the exam, I condensed all of my notes for easy reference and to allow anyone to use them to help study. The exam breaks down its curriculum into several sections, and this portion of my notes covers the &ldquo;Attacks, Threats, and Vulnerabilities&rdquo; content.
-Please keep in mind these are only my notes, and should not be used as the sole resource to study for the Security+ certification. Additionally, since taking the exam, a new version has been published (SYO-701), meaning some of the below content may be out of date/missing important details.</p>
-<h2 id="table-of-contents">Table of Contents</h2>
-<ul>
-<li><a href="#attacks-threats-and-vulnerabilities">Attacks, Threats, and Vulnerabilities</a>
-<ul>
-<li><a href="#table-of-contents">Table of Contents</a></li>
-<li><a href="#social-engineering">Social Engineering</a>
-<ul>
-<li><a href="#definitions">Definitions</a></li>
-<li><a href="#principles-reasons-for-effectiveness">Principles (Reasons for Effectiveness):</a></li>
-</ul>
-</li>
-<li><a href="#malware">Malware</a>
-<ul>
-<li><a href="#definitions-1">Definitions</a></li>
-</ul>
-</li>
-<li><a href="#application-attacks">Application Attacks</a>
-<ul>
-<li><a href="#definitions-2">Definitions</a></li>
-</ul>
-</li>
-<li><a href="#network-attacks">Network Attacks</a>
-<ul>
-<li><a href="#definitions-3">Definitions</a></li>
-<li><a href="#networking-protocols">Networking Protocols</a></li>
-</ul>
-</li>
-<li><a href="#threat-actors-vectors-and-intelligence-sources">Threat Actors, Vectors, and Intelligence Sources</a>
-<ul>
-<li><a href="#definitions-4">Definitions</a></li>
-<li><a href="#attack-vectors">Attack Vectors</a></li>
-</ul>
-</li>
-<li><a href="#vulnerabilities-and-security-risks">Vulnerabilities and Security Risks</a>
-<ul>
-<li><a href="#definitions-5">Definitions</a></li>
-<li><a href="#weak-configuration-considerations">Weak Configuration Considerations</a></li>
-<li><a href="#impact-areas">Impact Areas</a></li>
-</ul>
-</li>
-<li><a href="#security-assessment-techniques">Security Assessment Techniques</a>
-<ul>
-<li><a href="#definitions-6">Definitions</a></li>
-<li><a href="#types-of-threats">Types of Threats</a></li>
-<li><a href="#threat-intelligence-classifications">Threat Intelligence Classifications</a></li>
-<li><a href="#stages-of-risk-management">Stages of Risk Management</a></li>
-<li><a href="#risk-management-data-sources">Risk Management Data Sources</a></li>
-</ul>
-</li>
-<li><a href="#penetration-testing">Penetration Testing</a>
-<ul>
-<li><a href="#definitions-7">Definitions</a></li>
-<li><a href="#testing-environments">Testing Environments</a></li>
-<li><a href="#security-teams">Security Teams</a></li>
-</ul>
-</li>
-<li><a href="#sources">Sources</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="social-engineering">Social Engineering</h2>
-<h3 id="definitions">Definitions</h3>
-<ul>
-<li><strong>Social Engineer</strong>: someone who is a master of asking seemingly non-invasive/unimportant questions to gather information over time</li>
-<li><strong>Phishing</strong>: obtaining sensitive information by tricking a user into entering their info into a fake website</li>
-<li><strong>Smishing</strong>: phishing attack but through SMS</li>
-<li><strong>Spear Phishing</strong>: phishing where the target is well researched and the attempt appears to come from a trusted sender</li>
-<li><strong>Whaling</strong>: phishing campaign that targets the &ldquo;big fish&rdquo; in an organization (goal is to get information on wire transfers, tax information, and other financial data)</li>
-<li><strong>Vishing</strong>: voice phishing (on phone/voicemail) where an attacker poses as a legitimate company/repair person/security personal/someone of trust in order to gather personal/sensitive information</li>
-<li><strong>Spam</strong>: sending large quantities of unsolicited emails (typically for commercial advertising)
-<ul>
-<li>About 85% of emails are spam</li>
-</ul>
-</li>
-<li><strong>SPIM</strong> SPAM over Instant Messaging. Can be more effective as it happens over real time</li>
-<li><strong>Dumpster Diving</strong>: removing trash from dumpsters that can reveal sensitive information</li>
-<li><strong>Shoulder Surfing</strong>: social engineering trick to get someone to enter credentials into an application/website while watching them do so</li>
-<li><strong>Tailgating</strong>: following someone into a building through a gated area or badged access area</li>
-<li><strong>Pharming</strong>: redirecting a user&rsquo;s website traffic to a fake, malicious website</li>
-<li><strong>Hoaxes</strong>: social engineering technique using phone/voicemail to trick the target into providing sensitive information
-<ul>
-<li>Types of hoaxes include: phishing, spear phishing, vishing, etc</li>
-</ul>
-</li>
-<li><strong>Prepending</strong>: adding mentions (@username) to tweets or social media posts to make them seem more personal</li>
-<li><strong>Impersonation</strong>: pretending to be someone else via social engineering, stolen credentials/credential harvesting, infiltrating network and replaying captured packets</li>
-<li><strong>Invoice Scam</strong>: whaling technique where bad actors spoof executive email accounts to contact finance/accounts payable and ask to pay a fraudulent invoice (wire transfer, company credit card, cryptocurrency, etc)</li>
-<li><strong>Identity Fraud/Theft</strong>: malware, social engineering, dumpster diving is used to gather someones personal information which is then used without the owner&rsquo;s knowledge/consent</li>
-<li><strong>Credential Harvesting</strong>: done via phishing campaigns, malware, pastebin/paste services in order to gather credentials at a large scale</li>
-<li><strong>Watering Hole Attack</strong>: sophisticated attack that identifies less secure websites users in a company/organization are likely to visit to plant malware to scan targeted users/victims for system vulnerabilities</li>
-<li><strong>Typo Squatting/URL Hijacking</strong>: Setting up domain names to capitalize on typos in website urls (i.e. Facbook.com vs Facebook.com). Fake websites are set up resemble the real ones. May include ad portals full of ads that appeal to a users visiting that website</li>
-<li><strong>Hybrid Warfare</strong>: combination of traditional and irregular forces in the same military campaign with the same aim/political goal</li>
-<li><strong>Influence Campaigns</strong>: using social media to shape public opinion such as helping/hurting company image, stock price, consumer confidence, public policy, elections, law enforcement, etc</li>
-</ul>
-<h3 id="principles-reasons-for-effectiveness">Principles (Reasons for Effectiveness):</h3>
-<ol>
-<li>Authority: the bad actor appears to know what they are talking about/has special knowledge of the company (i.e. has a position of authority)</li>
-<li>Intimidation: the bad actor is able to impose their will on the target (i.e. threats)</li>
-<li>Consensus/Social Proof: targets will act when they believe they are in alignment with the larger group</li>
-<li>Familiarity/Liking: targets are more likely to complete actions they are already familiar with (i.e. buy things they like, talk with people similar to them/have a same contact, etc.)</li>
-<li>Trust: targets are more likely to act when they trust a person/situation</li>
-<li>Scarcity/Urgency: bad actors will make the target feel they must act quickly or risk missing out/gaining an advantage</li>
-</ol>
-<h2 id="malware">Malware</h2>
-<h3 id="definitions-1">Definitions</h3>
-<ul>
-<li><strong>Malware</strong>: any software that impairs the intended functionality of a system
-<ul>
-<li>Serves the purposes of the software&rsquo;s author rather than the system&rsquo;s user</li>
-</ul>
-</li>
-<li><strong>Indicator of Compromise (IOC)</strong>: artifacts observed that indicate <em>(with a high degree of confidence)</em> a computer intrusion
-<ul>
-<li>Potential indicators: unusual <em>outbound</em> network traffic, <em>DNS</em> request anomalies, mismatch <em>port-application</em> traffic, anomalies in <em>privileged user account</em> activity</li>
-</ul>
-</li>
-<li><strong>Virus</strong>: malicious code that <em>requires user interaction</em> to install and replicate</li>
-<li><strong>Crypto-malware/Ransomware</strong>: malicious applications that <em>scare</em> or <em>scam</em> users into taking some type of <em>action</em>
-<ul>
-<li>Typically paying the creator for the <em>removal</em> of the ransomware/decryption of files</li>
-</ul>
-</li>
-<li><strong>Trojan/Remote Access Tool (RAT)</strong>: seemingly friendly software that contains <em>hidden</em> malicious software</li>
-<li><strong>Worms</strong>: self-replicating program that is usually self-contained and can execute and spread <em>without user interaction</em>
-<ul>
-<li><strong>Network Service Worm</strong>: exploits network vulnerability to propagate and infect others</li>
-<li><strong>Mass Mailing Worm</strong>: exploits email systems to spread and infect others</li>
-</ul>
-</li>
-<li><strong>Potentially Unwanted Program (PUP)</strong>: applications that are typically downloaded as part of another program (i.e. adware, spyware, etc.)</li>
-<li><strong>Fileless Virus</strong>: malware that operates in memory (not stored in a file/installed on a machine)
-<ul>
-<li>Typically hooks into Windows PC via PowerShell or WMI</li>
-</ul>
-</li>
-<li><strong>Botnet</strong>: malicious code that infects <em>large numbers</em> of hosts for the purpose of launching <em>large scale attacks</em> on <em>specific targets</em>
-<ul>
-<li>Can be located <em>anywhere</em> in the world, with one or more Command and Control (C&amp;C) servers</li>
-</ul>
-</li>
-<li><strong>Logic Bomb</strong>: malicious code that triggers after a period of time based on some date or <em>specific activity</em></li>
-<li><strong>Spyware</strong>: malicious software that captures <em>user activity</em> and reports back</li>
-<li><strong>Keylogger</strong>: a malicious application that once installed on a host can capture all keystrokes which can be uploaded to a remote location, emailed, or stored locally for later retrieval</li>
-<li><strong>Rootkit</strong>: malicious code that installs itself at the <em>OS</em> or <em>Kernel</em> level to avoid detection</li>
-<li><strong>Backdoors</strong>: software that installs for the purpose of opening ports and installing <em>additional software</em></li>
-<li><strong>Spraying</strong>: a brute force type of attack (can be used with dictionary attacks or database of compromised passwords) that feeds a large number of usernames into a program that loops through passwords</li>
-<li><strong>Brute Force Attack</strong>: systematic approach to trying every possible combination of passwords/passphrases</li>
-<li><strong>Dictionary Attack</strong>: using known words (words in a dictionary/predefined set of possible words) to try and defeat a cipher
-<ul>
-<li><strong>Hybrid Attack</strong>: combination of dictionary attack along with word variations</li>
-</ul>
-</li>
-<li><strong>Rainbow Table</strong>: precomputed table to <em>reversing</em> cryptographic hashes (a unique table is needed for each type of hash)</li>
-<li><strong>Password Salting</strong>: adding random data to the hashing algorithm so that each users hash is <em>unique</em> even if both have the same password</li>
-<li><strong>Birthday Attack</strong>: brute force attack that works on the idea that given enough time, two independent sources could yield the same hash (varies based on the hash algorithm)</li>
-<li><strong>Downgrade Attack</strong>: attack that forces a system to negotiate down to a lower-quality (less secure) method of communication
-<ul>
-<li>Typically allowed to enable communication with legacy systems</li>
-</ul>
-</li>
-<li><strong>Adversarial Artificial Intelligence</strong>: technique to fool models by supplying deceptive (tainted) input</li>
-<li><strong>Supply Chain Attack</strong>: attack on an organization by targeting less-secure elements in a supply network</li>
-</ul>
-<h2 id="application-attacks">Application Attacks</h2>
-<h3 id="definitions-2">Definitions</h3>
-<ul>
-<li><strong>Privilege Escalation</strong>: obtaining elevated privileges (i.e. administrator or root) on a target</li>
-<li><strong>Cross Site Scripting (XSS)</strong>: technique used to hijack sessions by having the browser run malicious code served from a site it trusts
-<ul>
-<li><strong>Non-Persistent</strong>: specially crafted on the client side (generally in a URL, email, blog post, etc.)</li>
-<li><strong>Document Object Model (DOM) Based</strong>: can be persistent or non-persistent</li>
-<li><strong>Persistent</strong>: the attack is based on the server side where an attacker doesn&rsquo;t need to actively target a user and the site itself is infected</li>
-</ul>
-</li>
-<li><strong>Structured Query Language (SQL) Injection</strong>: modifying the SQL query that&rsquo;s passed to a web application to add code into a data stream</li>
-<li><strong>Dynamic Link Library (DLL) Injection</strong>: process of inserting code into a running process by:
-<ol>
-<li>Attaching to the process</li>
-<li>Allocating memory within the process</li>
-<li>Copying the DLL/DLL Path into the processes memory and determine appropriate memory addresses</li>
-<li>Instruct the process to execute the DLL</li>
-</ol>
-</li>
-<li><strong>Lightweight Directory Access Protocol (LDAP) Injection</strong>: modifying the query passed to the web server to include malicious query statements/code in order to access the &ldquo;address book&rdquo; of user accounts user to authenticate users</li>
-<li><strong>XML Injection</strong>: attack that manipulates the logic of an XML application or service by injecting XML into a statement</li>
-<li><strong>Pointer Dereference</strong>: vulnerability that can cause an application to throw an exception error, which can result in the application crashing</li>
-<li><strong>Buffer Overflow</strong>: attack that causes a system or app to crash or behave unexpectedly by having calls or pointers to jump to a different address than what was intended</li>
-<li><strong>Race Condition</strong>: occurs when a pair of routine programming calls in an application do not perform in the sequential manner that was intended
-<ul>
-<li><strong>Time of Check to Time of Use (TOCTTOU)</strong>: type of race condition where an attacker gains access <em>prior</em> to an authentication check by inserting code/altering authentication to disrupt the normal authentication process</li>
-</ul>
-</li>
-<li><strong>Replay Attack</strong>: an attack that captures packets via sniffing the wired/wireless network and puts them back on the wire</li>
-<li><strong>Integer Overflow</strong>: condition that occurs when the result of an arithmetic operation exceeds the maximum size integer type used to store it which allows the interpreted value to &ldquo;wrap around&rdquo; the max value and start at the min value</li>
-<li><strong>Cross Site Request Forgery (CSRF/XSRF)</strong>: exploiting a website&rsquo;s trust in a user by stealing a victim&rsquo;s valid cookie after recently visiting a website
-<ul>
-<li>The server performs an action because it was sent a request from a client it trusts</li>
-</ul>
-</li>
-<li><strong>Resource Exhaustion</strong>: an attack where a malicious user executes code or processes on a machine over and over until all resources are exhausted (DoS, DDoS)</li>
-<li><strong>Memory Leak</strong>: typically an unintentional consumption of memory that the application fails to release once it&rsquo;s no longer needed</li>
-<li><strong>Secure Sockets Layer (SSL) Stripping</strong>: a Man in the Middle type of attack that strips away SSL encryption to enable an attacker in intercept traffic between victim and target</li>
-<li><strong>Refactoring</strong>: modifying an application&rsquo;s source code without changing the underlying functionality for the purpose of fixing bugs, patching code, and tightening up security</li>
-<li><strong>Pass the Hash</strong>: harvesting a user&rsquo;s password hash to authenticate to a remote server or service</li>
-<li><strong>Driver Attack</strong>: application version of supply chain attacks (such as getting a malware packet signed and trusted to avoid detection)</li>
-</ul>
-<h2 id="network-attacks">Network Attacks</h2>
-<h3 id="definitions-3">Definitions</h3>
-<ul>
-<li><strong>Rogue Access Point</strong>: when an attacker adds a point of access on a corporate network to steal/intercept data
-<ul>
-<li><strong>Evil Twin</strong>: a rogue access point that is impersonating a legitimate access point using the same SSID</li>
-</ul>
-</li>
-<li><strong>Bluejacking</strong>: sending unauthorized messages or data to a victim&rsquo;s device via Bluetooth technology
-<ul>
-<li>Typically sending a vCard containing a message in the name field to another Bluetooth-enabled device bia tha Object Exchange (OBEX) protocol</li>
-</ul>
-</li>
-<li><strong>Bluesnarfing</strong>: pulls data off of the victim&rsquo;s device through Bluetooth (opposite of bluejacking)</li>
-<li><strong>Dissociation</strong>: sending a spoofed disassociation frame to create a DoS scenario on a wireless network</li>
-<li><strong>Jamming</strong>: sending out excessive RF noise which can make Wi-Fi channels unusable (illegal in most places)</li>
-<li><strong>Near Field Communication (NFC)</strong>: technology to allow communication between devices within close procimity to each other (~3-4&quot;)
-<ul>
-<li>Two-way communication (vs RFID which is one way)</li>
-</ul>
-</li>
-<li><strong>Initialization Vector (IV) Attack</strong>: when weaker encrypted networks are flooded and sniffed to find repeated IVs, derive it, and gain access</li>
-<li><strong>On-Path Attacks</strong>
-<ul>
-<li><strong>Man-in-The-Middle (MiTM)</strong>: when an attacker is able to capture network traffic to replay/manipulate it for the intended target</li>
-<li><strong>Man-in-the-Browser (MiTB)</strong>: when an attacker gets malware on a victim&rsquo;s device that sits and waits for them to go onto certain sites that the malware will steal data from/perform unauthorized actions</li>
-</ul>
-</li>
-<li><strong>ARP (Cache) Poisoning</strong>: when an attacker sends out spoofed ARP messages onto a LAN to associate their machine with another hose IP which allows the attacker to intercept data intended for another recipient</li>
-<li><strong>IP/MAC Spoofing</strong>: masquerading as another device using their IP or MAC address via spoofing</li>
-<li><strong>MAC Flooding</strong>: when an attacker floods a network switch with ethernet frames to replace stored MAC addresses in the MAC table with their own devices, allowing them to receive all of the data intended for the original MAC address destinations</li>
-<li><strong>MAC Cloning/Spoofing</strong>: change the MAC address of a network interface card</li>
-<li><strong>DNS (Cache) Poisoning</strong>: manipulating the data in a DNS server;s cache to point to different IP addresses</li>
-<li><strong>Distributed Denial of Service (DDoS)</strong>: large scale attack against a target by botnets or similar distributed devices. Goal is to slow down the target server/network to the point of being unusable
-<ul>
-<li><strong>Smurf Attack</strong>: when a victim&rsquo;s IP address is spoofed and ICMP messages are broadcast to a computer network where recipients will respond with a reply to and flood the victim&rsquo;s IP</li>
-</ul>
-</li>
-</ul>
-<h3 id="networking-protocols">Networking Protocols</h3>
-<ul>
-<li><strong>IP (Internet Protocol)</strong>: <em>connectionless</em> protocol that is responsible for network addressing. Provided routing of packets between networks</li>
-<li><strong>TCP (Transmission Control Protocol)</strong>: <em>connection</em> oriented protocol that established connections between endpoints. Provides guaranteed delivery of packets</li>
-<li><strong>UDP (User Datagram Protocol)</strong>: <em>connectionless</em> oriented protocol with no guarantee of delivery (best effort)</li>
-</ul>
-<h2 id="threat-actors-vectors-and-intelligence-sources">Threat Actors, Vectors, and Intelligence Sources</h2>
-<h3 id="definitions-4">Definitions</h3>
-<ul>
-<li><strong>Script Kiddies</strong>: hackers that are relatively new or unskilled</li>
-<li><strong>Hacktivists</strong>: hackers motivated by ideology or some social/political cause</li>
-<li><strong>Organized Crime</strong>: hackers who are motivated by financial crime</li>
-<li><strong>Nation States/Advanced Persistent Threats (APT)</strong>: highly skilled hackers whose main goal is to penetrate government or commercial systems</li>
-<li><strong>Insiders</strong>: individuals who belong to a company/organization that chooses to defame/reveal information about said company often for financial gain
-<img src="0.png" alt="Types of Threat Actors"></li>
-<li><strong>Indicators of Compromise (IOC)</strong>: pieces of data (breadcrumbs) that can identify potential malicious activity</li>
-<li><strong>Automated Indicator Sharing (AIS)</strong>: free sharing service by the DHS to share indicators between the federal government /private sector at machine speed over STIX and TAXII specifications</li>
-<li><strong>MITRE</strong>: not-for-profit organizations that manages federal funding for research projects across multiple agencies (CVE/CWE databases)
-<ul>
-<li><strong>MITRE ATT&amp;CK (Adversarial Tactics, Techniques and Common Knowledge) Framework</strong>
-<ul>
-<li><strong>Trusted Automated Exchange of Indicator Information (TAXII)</strong>: transport protocol that allows sharing of threat intelligence information over HTTPS using APIs
-<strong>Structured Threat Information Expression (STIX)</strong>: standardized format for presenting threat intelligence information</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="attack-vectors">Attack Vectors</h3>
-<ul>
-<li>Direct Access: physical access, on-site, theft/removal</li>
-<li>Wireless: captive portal, evil twin, network swimming</li>
-<li>Email: malware, malicious links, phishing/whaling</li>
-<li>Supply Chain: weak link, downstream attacks</li>
-<li>Social Media: malicious links, phishing, social proof, group consensus</li>
-<li>Removable Media: USB sticks, CF cards, CD/DVD, malware/ransomware</li>
-<li>Cloud: cloud provider vulnerabilities, DDoS, multi-tenancy</li>
-</ul>
-<h2 id="vulnerabilities-and-security-risks">Vulnerabilities and Security Risks</h2>
-<h3 id="definitions-5">Definitions</h3>
-<ul>
-<li><strong>Non-repudiation</strong>: being able to identify and validate user activity</li>
-<li><strong>Cipher Suite</strong>: bundled together cryptographic algorithms used in a connections containing:
-<ul>
-<li>Key exchange</li>
-<li>Authentication</li>
-<li>Encryption</li>
-<li>Integrity algorithm</li>
-</ul>
-</li>
-</ul>
-<h3 id="weak-configuration-considerations">Weak Configuration Considerations</h3>
-<ul>
-<li>Open permissions</li>
-<li>Unsecured root accounts</li>
-<li>Errors (how they are handled)</li>
-<li>Unsecure protocols</li>
-<li>Default settings</li>
-<li>Open ports and services</li>
-</ul>
-<h3 id="impact-areas">Impact Areas</h3>
-<ul>
-<li>Data Loss</li>
-<li>Data Breaches</li>
-<li>Data Exfiltration</li>
-<li>Identity Theft</li>
-<li>Availability Loss</li>
-</ul>
-<h2 id="security-assessment-techniques">Security Assessment Techniques</h2>
-<h3 id="definitions-6">Definitions</h3>
-<ul>
-<li><strong>Threat</strong>: possible danger that can be used to exploit an existing vulnerability (via breach) with intent to cause harm to systems, networks, or entire organizations (can be external or internal)</li>
-<li><strong>Tactical Cyber Intelligence</strong>: involves specific actions being taken to defend networks against malicious actors attempting infiltration. Relies on devoted resources to strategic and operational levels</li>
-<li><strong>Operational Cyber Intelligence</strong>: assesses the organization&rsquo;s operating environment to identify indicators and warnings of potential cyber risks</li>
-<li><strong>Strategic Cyber Intelligence</strong>: requires senior leadership to determine objectives and guidance based on what is known of potential adversaries and what security posture is already in place, in order to successfully assess threats</li>
-<li><strong>Credentialed Access Testing</strong>: has easier access and <em>less impact</em> on tested systems as well as more accurate results</li>
-<li><strong>Non-credentialed Access Testing</strong>: required more resources as it may require brute-force/multiple approaches to gain access</li>
-<li><strong>Common Vulnerabilities and Exposures (CVE)</strong>: reference for publicly known information security vulnerabilities maintained by the MITRE Corporation</li>
-<li><strong>Common Vulnerability Scoring System (CVSS)</strong>: open frameworks for communicating the characteristics and severity of software vulnerabilities</li>
-<li><strong>CVSS</strong>: maintained by Forum of Incident Response and Security Teams (FIRST) and is used to assess the principal characteristics of a vulnerability and produce a numerical score reflecting its severity</li>
-<li><strong>Security Information and Event Management (SIEM)</strong>: software suites that provide the following:
-<ul>
-<li>Collects data</li>
-<li>Aggregates the data</li>
-<li>Analyzes normalized data for anomalies, threats, and trends</li>
-<li>Investigates alerts, identifies breaches, and takes action</li>
-<li>Remediates discovered vulnerabilities</li>
-<li>Reports on risk and compliance</li>
-</ul>
-</li>
-<li><strong>Security Orchestration, Automation, and Response</strong>: complements SIEM by aggregating all tools within a SOC and providing automated playbooks
-<ul>
-<li>Ticket creation, case management, etc.</li>
-<li>Integrations with 3rd party products</li>
-</ul>
-</li>
-</ul>
-<h3 id="types-of-threats">Types of Threats</h3>
-<ul>
-<li>Physical Damage</li>
-<li>Natural Events</li>
-<li>Loss of Essential Services</li>
-<li>Compromise of Information</li>
-<li>Technical Failures</li>
-<li>Compromise of Functions</li>
-</ul>
-<h3 id="threat-intelligence-classifications">Threat Intelligence Classifications</h3>
-<ul>
-<li><strong>Unknown-Unknown</strong>: unaware of a threat&rsquo;s existence, little chance to deter/remediate</li>
-<li><strong>Known-Unknown</strong>: threat that is known, but not fully understood (how it works, intention, etc.)</li>
-<li><strong>Known-Known</strong>: threats that are known and fully understood, an outcome can be directed to deter/mitigate a threat</li>
-</ul>
-<h3 id="stages-of-risk-management">Stages of Risk Management</h3>
-<ul>
-<li>Assessing Requirements: understanding the business and IT objectives and how security can meet those objectives
-<ul>
-<li>IT and Security Operations should align and enable business outcomes, <em>not</em> drive them</li>
-</ul>
-</li>
-<li>Aligning with Current Capabilities: understand what&rsquo;s available today and what capabilities exist across people, process, and technology</li>
-<li>Creating Plans and Initiatives: quantify existing gaps and develop plans to prioritize initiatives and fill the gaps</li>
-<li>Creating Metrics and Monitoring Progress: develop metrics to track progress and ensure programs are meeting business requirements</li>
-</ul>
-<h3 id="risk-management-data-sources">Risk Management Data Sources</h3>
-<ul>
-<li>Internal Sources
-<ul>
-<li>Internal audits</li>
-<li>Known Issues</li>
-<li>Previous security incidents</li>
-</ul>
-</li>
-<li>Threat Intelligence
-<ul>
-<li>Attack frequency</li>
-<li>Cost to company</li>
-<li>Emerging bad actors/Targets</li>
-</ul>
-</li>
-<li>Contextual Data
-<ul>
-<li>Industry</li>
-<li>Technology</li>
-<li>Geography</li>
-<li>Attack Method</li>
-</ul>
-</li>
-</ul>
-<h2 id="penetration-testing">Penetration Testing</h2>
-<h3 id="definitions-7">Definitions</h3>
-<ul>
-<li><strong>Penetration (Pen) Testing</strong>: the practice of testing a computer system, network, or web application to find vulnerabilities that an attacker could exploit
-<ol>
-<li>Establish Goals/Set Parameters</li>
-<li>Reconnaissance/Discovery</li>
-<li>Exploitation/Brute Force</li>
-<li>Take Control/Escalate Privilege</li>
-<li>Pivoting</li>
-<li>Data Collections/Reporting</li>
-</ol>
-</li>
-<li><strong>Rules of Engagement (ROE)</strong>: terms that clearly define what is in-scope for the engagement
-<ul>
-<li>What activities are allowed/prohibited</li>
-<li>Key stakeholders</li>
-<li>Relevant contact lists</li>
-<li>Communication methods/frequency</li>
-<li>Handling of sensitive data</li>
-<li>Specific goals/definition of success</li>
-</ul>
-</li>
-<li><strong>Persistence</strong>: installing backdoors or methods to maintain access to a host/network</li>
-<li><strong>Bug Bounty</strong>: program that encourages users to find and report bugs and rewards them with recognition/compensation</li>
-<li><strong>Pivoting</strong>: a technique that allows lateral movement from a compromised host
-<ul>
-<li><em>Foothold</em> is gained on a target system</li>
-<li>Compromised target system is leveraged to compromise other, normally inaccessible systems</li>
-</ul>
-</li>
-<li><strong>War Flying</strong>: using airplanes, drones, or UAV to sniff Wi-Fi networks, calculate GPS coordinates, and provide aerial imagery
-<ul>
-<li>Flight time can last up to 30-45min</li>
-</ul>
-</li>
-<li><strong>War Driving</strong>: using a vehicle to actively seek out wireless access points with little to no security (open, WEP, WPA)</li>
-</ul>
-<h3 id="testing-environments">Testing Environments</h3>
-<ul>
-<li><strong>Unknown Environment</strong>: tester is given little to no information about the target. More &ldquo;real world&rdquo; but also more time consuming and more expensive</li>
-<li><strong>Known Environment</strong>: tester is given full disclosure about the target (i.e. network, hosts, source code, protocols, diagrams, etc.)</li>
-<li><strong>Partially Known Environment</strong>: combination of known/unknown where a tester is given partial information about the target, but not access to documentation or data</li>
-</ul>
-<h3 id="security-teams">Security Teams</h3>
-<ul>
-<li><strong>Red Team (Attackers)</strong>: offensive security, ethical hackers, pen testers</li>
-<li><strong>Blue Team (Defenders)</strong>: defensive security, infrastructure protection, DFIR</li>
-<li><strong>Purple Team (Collaborators)</strong>: facilitate collaboration, improve skills of both teams</li>
-<li><strong>White Team (Managers)</strong>: define the rules of engagement, manage engagement</li>
-</ul>
-<h2 id="sources">Sources</h2>
-<ul>
-<li><a href="https://www.comptia.org/certifications/security">Official CompTIA Security+ Site</a></li>
-<li><a href="https://www.pluralsight.com/paths/comptia-security-sy0-601">Pluralsight Security+ (SYO-601) Course</a></li>
-<li><a href="https://www.pluralsight.com/authors/chris-rees">Christopher Rees Pluralsight Bio</a></li>
-</ul>
-
-                    
-                </div>
-
-                <div class="read-more-section">
-                    <h6>Read more</h6>
-                </div>
-            </div>
-
-            
-            
-        </a>
-    </div>
-</div> 
-        
       </div>
     </div>
   </div>
@@ -906,7 +455,7 @@ Please keep in mind these are only my notes, and should not be used as the sole 
 
           &nbsp;&bull;&nbsp;&copy;
           
-          2023
+          2024
           
 
           

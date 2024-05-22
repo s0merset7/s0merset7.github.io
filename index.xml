@@ -6,8 +6,15 @@
     <description>Recent content on s0merset7&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CompTIA Security&#43;: Attacks, Threats, and Vulnerabilities</title>
+      <link>https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/</link>
+      <pubDate>Wed, 22 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/</guid>
+      <description>Note: Much of the below information is summarized from Christopher Rees&amp;rsquo; Security+ training course hosted on Pluralsight. Much credit goes to Chris&amp;rsquo; expertise! Check out his courses in the sources&#xA;CompTIA&amp;rsquo;s Security+ certification is a cert that many receive at the beginning of their journey into cybersecurity to prove their competency of basic security principles. Having taken and passed the exam, I condensed all of my notes for easy reference and to allow anyone to use them to help study.</description>
+    </item>
     <item>
       <title>Introduction to Cryptocurrency Investigations</title>
       <link>https://s0merset7.github.io/post/2023/aug/cryptocurrencyinvestigator/introtocrypto/</link>
@@ -154,13 +161,6 @@
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://s0merset7.github.io/post/2020/aug/intro/</guid>
       <description>Hello and welcome to my walkthroughs for Hack the Box (HTB). I&amp;rsquo;ve challenged myself with completing 50 HTB machines to learn hacking tools and skills that will prepare me for a career in the field. Being that I am a beginner at the time of writing this, I won&amp;rsquo;t be able to solve any machine without guidance at first, so my plan is as follows:&#xA;The first 10 machines I will do with the help of other write-ups and tutorials (I will attach links to any resources I use at the bottom of each of my walkthroughs).</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/</guid>
-      <description>Attacks, Threats, and Vulnerabilities Note: Much of the below information is summarized from Christopher Rees&amp;rsquo; Security+ training course hosted on Pluralsight. Much credit goes to Chris&amp;rsquo; expertise! Check out his courses in the sources&#xA;CompTIA&amp;rsquo;s Security+ certification is a cert that many receive at the beginning of their journey into cybersecurity to prove their competency of basic security principles. Having taken and passed the exam, I condensed all of my notes for easy reference and to allow anyone to use them to help study.</description>
     </item>
     <item>
       <title>About me</title>
