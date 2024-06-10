@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>CompTIA Security&#43;: Architecture and Design - s0merset7&#39;s Blog</title>
+<meta name="description" content="Part two of my notes for the CompTIA Security&#43; Certification covering Architecture and Design concepts.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2024\/may\/security\u002b_pt2\/",
+          "name": "Comp TIA security architecture and design"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "CompTIA Security\u002b: Architecture and Design",
+  "description" : "Part two of my notes for the CompTIA Security\u002b Certification covering Architecture and Design concepts.",
+  "inLanguage" : "en",
+  "wordCount":  3600 ,
+  "datePublished" : "2024-06-10T00:00:00",
+  "dateModified" : "2024-06-10T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "CompTIA, Certification, Security\u002b" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2024\/may\/security\u002b_pt2\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/Security&#43;_pt1.webp">
+<meta property="og:url" content="https://s0merset7.github.io/post/2024/may/security&#43;_pt2/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.123.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                CompTIA Security&#43;: Architecture and Design
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;June 10, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Architecture and Design" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p><em>Note: Much of the below information is summarized from Christopher Rees&rsquo; Security+ training course hosted on Pluralsight. Much credit goes to Chris&rsquo; expertise! Check out his courses in the sources</em></p>
+<p>Continuing with my notes from studying for the CompTIA Security+ exam. The exam breaks down its curriculum into several sections, and this portion of my notes covers the &ldquo;Architecture and Design&rdquo; content.
+Please keep in mind these are only my notes, and should not be used as the sole resource to study for the Security+ certification. Additionally, since taking the exam, a new version has been published, meaning some of the below content may be out of date/missing important details.</p>
+<ul>
+<li><a href="#architecture-and-design">Architecture and Design</a>
+<ul>
+<li><a href="#enterprise-security-concepts">Enterprise Security Concepts</a>
+<ul>
+<li><a href="#definitions">Definitions</a></li>
+<li><a href="#types-of-data-to-secure">Types of Data to Secure</a></li>
+</ul>
+</li>
+<li><a href="#virtualization-and-cloud-computing">Virtualization and Cloud Computing</a>
+<ul>
+<li><a href="#definitions-1">Definitions</a></li>
+<li><a href="#type-of-clouds">Type of Clouds</a></li>
+<li><a href="#types-of-virtualized-servers">Types of Virtualized Servers</a></li>
+<li><a href="#steps-to-avoid-vm-sprawl">Steps to Avoid VM Sprawl</a></li>
+</ul>
+</li>
+<li><a href="#implementing-secure-application-development-deployment-and-automation">Implementing Secure Application Development, Deployment, and Automation</a>
+<ul>
+<li><a href="#definitions-2">Definitions</a></li>
+<li><a href="#environments">Environments</a></li>
+<li><a href="#secure-coding-techniques">Secure Coding Techniques</a></li>
+</ul>
+</li>
+<li><a href="#authentication-and-authorization-methods">Authentication and Authorization Methods</a>
+<ul>
+<li><a href="#definitions-3">Definitions</a></li>
+<li><a href="#efficacy-rates">Efficacy Rates</a></li>
+</ul>
+</li>
+<li><a href="#cybersecurity-resilience">Cybersecurity Resilience</a>
+<ul>
+<li><a href="#definitions-4">Definitions</a></li>
+<li><a href="#backup-types">Backup Types</a></li>
+</ul>
+</li>
+<li><a href="#security-implications-of-embedded-and-specialized-systems">Security Implications of Embedded and Specialized Systems</a>
+<ul>
+<li><a href="#definitions-5">Definitions</a></li>
+</ul>
+</li>
+<li><a href="#physical-security-controls">Physical Security Controls</a>
+<ul>
+<li><a href="#definitions-6">Definitions</a></li>
+<li><a href="#data-destruction">Data Destruction</a></li>
+</ul>
+</li>
+<li><a href="#cryptographic-concepts">Cryptographic Concepts</a>
+<ul>
+<li><a href="#definitions-7">Definitions</a></li>
+<li><a href="#common-use-cases">Common Use Cases</a></li>
+<li><a href="#cryptographic-methods-and-design">Cryptographic Methods and Design</a></li>
+<li><a href="#homomorphic-encryption">Homomorphic Encryption</a></li>
+</ul>
+</li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="architecture-and-design">Architecture and Design</h1>
+<h2 id="enterprise-security-concepts">Enterprise Security Concepts</h2>
+<h3 id="definitions">Definitions</h3>
+<ul>
+<li><strong>Configuration Management</strong>: the management and control of configurations for an information system with the goal of enabling security and managing risk
+<ul>
+<li>The method of determining what&rsquo;s normal</li>
+</ul>
+</li>
+<li><strong>Standardization</strong>: the more standardized things are, the easier they are to maintain, deploy and troubleshoot</li>
+<li><strong>Data Loss Prevention (DLP)</strong>: detects potential reaches and exfiltration of data</li>
+<li><strong>Data Masking</strong>: hiding/obfuscating data from people who should not have access to it (partial access)
+<ul>
+<li><strong>IP Address Masking</strong>: enabling private IP addresses on a network to allow them to connect to the internet, but restricting non-members of the private network from seeing IPs within</li>
+</ul>
+</li>
+<li><strong>Tokenization</strong>: replacing sensitive data with non-sensitive equivalent
+<ul>
+<li>Can be single use, multiple use, cryptographic, or non-cryptographic, reversible, irreversible, etc.</li>
+<li><strong>High-Value Tokens (HVTs)</strong>: used to replace things like primary account numbers on credit card transactions, but to specific devices</li>
+<li><strong>Low-Value Tokens (LVTs)</strong>: can serve similar functions as HVTs, but needs the underlying tokenization system to match it back to the actual PAN</li>
+</ul>
+</li>
+<li><strong>Digital Rights Management (DRM)</strong>: suite of tools designed to limit how/where content can be accessed</li>
+<li><strong>Trusted Platform Module (TPM)</strong>: a hardware chip embedded on a computer&rsquo;s motherboard used to store cryptographic keys used for encryption</li>
+<li><strong>Hardware Security Module (HSM)</strong>: similar to a TPM but removable/external devices that can be added later</li>
+<li><strong>Cloud Access Security Broker (CASP)</strong>: ensures policies are enforced when accessing cloud-based assets
+<ul>
+<li>Placed between the company/consumer and the cloud provider</li>
+</ul>
+</li>
+<li><strong>Honeypot</strong>: computers or hosts that are set up specifically to become targets of attacks</li>
+<li><strong>Honeyfile</strong>: similar to a honeypot but applies to individual files designed to entice bad actors and monitor their activities</li>
+<li><strong>Honeynet</strong>: similar to a honeypot but larger in scale applying to an entire network setup</li>
+<li><strong>DNS Sinkhole</strong>: DNS server that supplies false results</li>
+</ul>
+<h3 id="types-of-data-to-secure">Types of Data to Secure</h3>
+<ul>
+<li><strong>Data At-Rest</strong>: data sitting on a hard drive/removable media
+<ul>
+<li>Local to the computer or remotely on SAN or NAS storage</li>
+</ul>
+</li>
+<li><strong>Data In-Transit</strong>: data that is being sent over a wired or wireless network
+<ul>
+<li>VPN connection will encrypt the data while in transit (wired or wireless)</li>
+</ul>
+</li>
+<li><strong>Data In-Use</strong>: data not &ldquo;at rest&rdquo; and only on one particular node on a network
+<ul>
+<li>Could be memory resident,temp space, etc.</li>
+</ul>
+</li>
+</ul>
+<h2 id="virtualization-and-cloud-computing">Virtualization and Cloud Computing</h2>
+<h3 id="definitions-1">Definitions</h3>
+<ul>
+<li><strong>The Cloud</strong>: storage external to a company&rsquo;s data center accessible from an outside network</li>
+<li><strong>Cloud Computing</strong>: the virtualization of infrastructure, platform, and services</li>
+<li><strong>Multi-tenant</strong>: where many users can use the same set of resources</li>
+<li><strong>Infrastructure as a Service (IaaS)</strong>: allows for distribution and consumption of resources as a service. Leverages automation and self-service, enabling a customer to select their own hardware/software configurations and provision their own infrastructure
+<ul>
+<li>Multiple users can utilize the same infrastructure (multi-tenant)</li>
+<li>Allows for elastic scaling as needs and demands increase/decrease</li>
+</ul>
+</li>
+<li><strong>Platform as a Service (PaaS)</strong>: environment comprised on computational resources (test/dev environments) that can be easily created and configured
+<ul>
+<li>Avoids having to order/acquire rack/stack hardware, configure network, IP addresses, load balancers, VLANS, install software, etc.</li>
+<li>Test environments can be quickly created, expand as needed, run tests, report, and tear down on-demand</li>
+</ul>
+</li>
+<li><strong>Software as a Service (SaaS)</strong>: applications that are provided on demand (no setup, installation, or configuration required)</li>
+<li><strong>Managed Service Provider (MSP)</strong>: deliver services either on-prem at customer site, in the MSP&rsquo;s data center, or in a third-party data center</li>
+<li><strong>Managed Security Service Provider (MSSP)</strong>: provide outsourced monitoring and management of security devices and systems (usually 24/7 monitoring)</li>
+<li><strong>Fog Computing</strong>: extends cloud computing to the network edge
+<ul>
+<li>Compromised of compute, network, and storage</li>
+<li><strong>Edge Computing</strong>: puts resources close to where the data is created</li>
+</ul>
+</li>
+<li><strong>Virtual Desktop Infrastructure (VDI)</strong>: centralized hosting and management of desktop images (users can access their desktop from the server)
+<ul>
+<li><strong>Application Streaming</strong>: applications are packaged and streamed to hosts (each application has its own computing environment)</li>
+<li><strong>Terminal Services</strong>: applications run on the server and displayed to hosts (users received graphic updates, mouse/keyboard events, etc.)</li>
+</ul>
+</li>
+<li><strong>Virtualization</strong>: taking the capabilities and &ldquo;personality&rdquo; of a physical device and converting to a virtual representation
+<ul>
+<li>Can perform the <em>same functions</em> as its physical counterpart</li>
+</ul>
+</li>
+<li><strong>Microservice</strong>: treats each function of an application as an independent service that can be altered, updated, or taken down without affecting the rest of the application</li>
+<li><strong>Infrastructure as Code (IAC)</strong>: methodology to create repeatable processes for deploying infrastructure</li>
+<li><strong>Software Defined Networking (SDN)</strong>: reducing routers/switches to &ldquo;dumb devices&rdquo; with intelligence handled by a centralized controller suite with a wholistic view of the network and programmatic tuning based on activity, workloads, etc.</li>
+<li><strong>Software Defined Visibility</strong>: &ldquo;visibility fabric&rdquo; that can be in-line or out of band and monitor the entire network to proactively respond to events and adjust traffic, shut down ports, log/alert, capture traffic decrypt/inspect SSL, etc.</li>
+<li><strong>Serverless Architecture</strong>: only the code is managed/deployed and can scale at the individual call level (pay only for the times the function is called vs. paying for an application to always be on and waiting for requests)</li>
+<li><strong>Transit Gateway</strong>: connects Virtual Private Clouds (VPCs) with on-premise networks
+<ul>
+<li>Controls how traffic is routed among all connected networks (hub and spoke architecture)</li>
+</ul>
+</li>
+<li><strong>VM Sprawl</strong>: a large number of virtual machines on a network without proper IT management</li>
+<li><strong>VM Escape</strong>: attack that allows an attacker to escape out of their VM and access resources on the host</li>
+</ul>
+<h3 id="type-of-clouds">Type of Clouds</h3>
+<ul>
+<li><strong>Private</strong>: you manage and maintain all resources</li>
+<li><strong>Public</strong>: cloud provider manages resources</li>
+<li><strong>Hybrid</strong>: public and private mix (starts internally usually)</li>
+<li><strong>Community</strong>: resources are shared among several groups</li>
+</ul>
+<h3 id="types-of-virtualized-servers">Types of Virtualized Servers</h3>
+<ul>
+<li><strong>Type 1</strong>: host runs on bare metal server and guests run on the host (ex: VMware)</li>
+<li><strong>Type 2</strong>: host runs on top of OS and guests run inside of host (Virtual Box)</li>
+<li><strong>Container Based</strong>: has the application/binaries run on top of the OS itself without needing a hypervisor (shares OS Kernel)</li>
+</ul>
+<h3 id="steps-to-avoid-vm-sprawl">Steps to Avoid VM Sprawl</h3>
+<ul>
+<li>Define virtual machine policy</li>
+<li>Create standard VM templates</li>
+<li>Implement lifecycle management</li>
+<li>Routinely audit</li>
+</ul>
+<h2 id="implementing-secure-application-development-deployment-and-automation">Implementing Secure Application Development, Deployment, and Automation</h2>
+<h3 id="definitions-2">Definitions</h3>
+<ul>
+<li><strong>Integrity Management</strong>: open source alternative that creates a measured runtime environment to prevent sophisticated or targeted persistent attacks
+<ul>
+<li>Creates a list of components that need to load</li>
+<li>Anchors that list to the TPM chip to prevent tampering</li>
+</ul>
+</li>
+<li><strong>Security Automation</strong>: automating the process of implementing rules, enforcing policies, and making changes based on triggers or policy violations</li>
+<li><strong>Continuous Integration</strong>: merging developer updates continuously (daily) to avoid integration challenges</li>
+<li><strong>Continuous Delivery</strong>: extension of continuous integration, automation of the release process in addition to automated testing</li>
+<li><strong>Continuous Deployment</strong>: automates the continuous delivery process where all changes that pass all stages of a pipeline are automatically released to the customer</li>
+<li><strong>Software Diversity</strong>: creating functionally equivalent, but internally different variants of a program</li>
+</ul>
+<h3 id="environments">Environments</h3>
+<ul>
+<li><strong>Development</strong>: initiation and requirements gathering</li>
+<li><strong>Test</strong>: can take different forms and can be integrated throughout all phases, typically prior to, or &ldquo;lower than&rdquo; staging</li>
+<li><strong>Staging</strong>: a &ldquo;production-like&rdquo; environment to test installation, configuration, and migration scripts</li>
+<li><strong>Production</strong>: fully functioning live environment</li>
+</ul>
+<h3 id="secure-coding-techniques">Secure Coding Techniques</h3>
+<ul>
+<li><strong>Proper Error Handling</strong>: making sure errors don&rsquo;t crash the system, allow for elevated privileges or expose unintended information</li>
+<li><strong>Proper Input Validation</strong>: sanitize data to mitigate XSS and XSRF</li>
+<li><strong>Normalization</strong>: ensure database integrity and optimization of data</li>
+<li><strong>Stored Procedures</strong>: utilize vetted, secure procedures vs writing new code on the fly</li>
+<li><strong>Code Signing</strong>: ensure validated, trusted code is used and mitigate risk from unsigned code being allowed to run</li>
+<li><strong>Encryption</strong>: encrypting the data mitigates the risk of compromise should the computers or drives housing the data be lost or stolen</li>
+<li><strong>Obfuscation/Camouflage</strong>: masking the data to avoid detection by static code analysis</li>
+<li><strong>Code Reuse/Dead Code</strong>: code that can be used for some future use, project, etc. Typically better to write clean code that can be minimally modified/refactored in the future</li>
+<li><strong>Server-Side vs. Client-Side</strong>: taking into account where validation, input sanitization, etc. occurs and ways those controls could be bypassed</li>
+<li><strong>Memory Management</strong>: ensure code calls and managed memory properly to avoid heap and buffer overrun errors</li>
+<li><strong>Third Party Libraries &amp; SDKs</strong>: ensure you understand any third party&rsquo;s security requirements, vetting process, where their data is stored, interaction with other apps/data/etc.</li>
+<li><strong>Data Exposure</strong>: what types of data are exposed if unexpected inputs crash the system or cause an unintended result</li>
+<li><strong>Stress Testing</strong>: placing load on the system or application to see where the performance and usability breakpoints exist</li>
+<li><strong>Sandboxing</strong>: isolating the application from other systems to enable testing without impact to other applications, production, etc.</li>
+<li><strong>Model Verification</strong>: testing to verify the produced product/application aligns with the proposed models</li>
+</ul>
+<h2 id="authentication-and-authorization-methods">Authentication and Authorization Methods</h2>
+<h3 id="definitions-3">Definitions</h3>
+<ul>
+<li><strong>Directory Services</strong>: provides authorization and authentication
+<ul>
+<li><strong>Lightweight Directory Active Protocol (LDAP)</strong>: protocol used to talk to Active Directory</li>
+</ul>
+</li>
+<li><strong>Federation</strong>: allowing access to company resources to outside parties</li>
+<li><strong>Attestation</strong>: used to prove that a system is secure and operates from a secure code base</li>
+<li><strong>Time-Based One-Time Password (TOTP)</strong>: unique password that uses time-based algorithm to generate the password</li>
+<li><strong>Hash Message Authentication Code(HMAC)-Based One-Time Password (HOTP)</strong></li>
+<li><strong>Token</strong>: authentication mechanism that can identify and authenticate by telling servers/resources what access rights a user possesses to allow or deny access</li>
+<li><strong>Static Codes</strong>: codes that can be created and stored as backup and/or for one-time use</li>
+<li><strong>Personal Identification Verification Card (PIV)</strong>: United State Federal smart card that grants cardholders access to federal facilities and information systems</li>
+<li><strong>Common Access Card</strong>: smart card issued by the Department of Defense enabling general identification mechanism to access computers, signing email, etc.</li>
+<li><strong>Vein Analysis</strong>: biometric authentication using the vein pattern in a human finger
+<ul>
+<li>Insert finger into an attester terminal to capture images of veins under the fingers/hand using near-infrared LED light</li>
+</ul>
+</li>
+<li><strong>Gait Analysis</strong>: identifying a person based upon their unique walking pattern</li>
+<li><strong>Identification</strong>: who you are (label such as username, security ID, etc.)</li>
+<li><strong>Authentication</strong>: proving who you are/the process of validating an identity (username/password combo, biometric data, etc.)</li>
+<li><strong>Authorization</strong>: permissions (what you&rsquo;re allowed to access once authenticated)</li>
+<li><strong>Accounting</strong>: tracks the start and stop time of each session (can be used for billing or &ldquo;showback&rdquo;)</li>
+</ul>
+<h3 id="efficacy-rates">Efficacy Rates</h3>
+<ul>
+<li><strong>False Acceptance Rate (FAR)</strong>: probability that the system incorrectly authorizes a non-authorized person</li>
+<li><strong>False Rejection Rate (FRR)</strong>: probability that the system incorrectly rejects access to an authorized person</li>
+<li><strong>Crossover Error Rate (CER)</strong>: rate where both accept and reject error rates are equal (a good system should have equal FAR and FRR)</li>
+</ul>
+<h2 id="cybersecurity-resilience">Cybersecurity Resilience</h2>
+<h3 id="definitions-4">Definitions</h3>
+<ul>
+<li><strong>Redundant Array of Independent/Inexpensive Disks (RAID)</strong>: fault tolerant array of disks where data is mirrored or spread across multiple disks (parity is used to recreate data in the event of drive failure)
+<ul>
+<li>RAID 0 (Disk striping): not fault tolerant</li>
+<li>RAID 1 (Disk mirroring)</li>
+<li>RAID 5 (Disk striping with parity)</li>
+<li>RAID 6 (Disk striping with double parity)</li>
+<li>RAID 10 (Disk striping that is mirrored)</li>
+</ul>
+</li>
+<li><strong>Multipath</strong>: a redundancy concept that provides multiple paths from point &ldquo;A&rdquo; to point &ldquo;B&rdquo;</li>
+<li><strong>Load Balancer</strong>: devices that will spread the incoming load among multiple pieces of infrastructure</li>
+<li><strong>Uninterruptible Power Supply (UPS)</strong>: battery backup that provides power in the event of a disruption</li>
+<li><strong>Dual Supply</strong>: power is supplied by dual feeds independent of one another</li>
+<li><strong>Managed Power Distribution Units (PDUs)</strong>: provides the ability to monitor and control critical factors such as voltage, current, and power factor</li>
+<li><strong>Non-Persistence</strong>: prevents people from customizing their desktops, installing unapproved applications, tweaking settings, etc.</li>
+<li><strong>Snapshots</strong>: allow a user to quickly revert to a known good state or rollback changes in the event of a virus, malware, spyware is installed</li>
+<li><strong>Live Boot Media</strong>: operating system on USB drive or removable media to allow cleaning of a system, removing malware, etc.</li>
+<li><strong>High Availability</strong>: two or more systems that are in sync or near-real time</li>
+<li><strong>Clustering</strong>: multiple servers operating as one</li>
+<li><strong>Fault Tolerant Hardware</strong>: having redundant components in case one fails, operations can continue</li>
+<li><strong>Technology Diversity</strong>: utilizing more than one type of technology to accomplish a given task</li>
+<li><strong>Crypto Diversity</strong>: rotate cryptographic keys; use technology from more than one provider</li>
+</ul>
+<h3 id="backup-types">Backup Types</h3>
+<ul>
+<li><strong>Differential</strong>: data that has changed since the last full backup</li>
+<li><strong>Incremental</strong>: data that has changed since the last incremental backup</li>
+<li><strong>Full</strong>: all data is backed-up each time</li>
+<li><strong>Snapshot</strong>: point in time copy of the data, that typically maintains pointers to the original data rather than copying the data itself</li>
+</ul>
+<h2 id="security-implications-of-embedded-and-specialized-systems">Security Implications of Embedded and Specialized Systems</h2>
+<h3 id="definitions-5">Definitions</h3>
+<ul>
+<li><strong>Embedded System</strong>: microprocessor-based computer hardware system with software that is designed to perform a dedicated function
+<ul>
+<li>At its core, it is an integrated circuit designed to carry out computation for real-time operations</li>
+</ul>
+</li>
+<li><strong>Supervisory Control and Data Acquisition (SCADA)</strong>: refers to centralized systems which monitor and control entire sites, or complexes of systems spread out over large areas
+<ul>
+<li><strong>Remote Terminal Unit (RTU)</strong>: connects to sensors that convert the sensor information into digital data</li>
+<li><strong>Programmable Logic Controller (PLC)</strong>: similar to RTUs but more versatile and economical</li>
+<li><strong>Human Machine Interface (HMI)</strong>: presents data to a human operator who then acts upon the data</li>
+<li><strong>Master Terminal Unit (MTU)</strong>: sends instructions and accepts input from the various RTU or PLC devices</li>
+</ul>
+</li>
+<li><strong>Real-Time Operating System (RTO)</strong>: designed to process data with minimal delay or latency, more concerned with deterministic processing of data than with the amount of work that can be performed</li>
+<li><strong>System on a Chip (SoC)</strong>: integrated circuit (IC) that integrates all component of a computer or other systems onto a single substrate or chip</li>
+<li><strong>Narrow-band</strong>: small amounts of data transfer, &lt; 10sec latency, with secure mechanism built-in</li>
+<li><strong>Baseband Radio</strong>: dedicated processors that run RTOs and control radio functions (except Wi-Fi and Bluetooth)</li>
+<li><strong>Zigbee</strong>: suite of high-level communication protocols used for PANs
+<ul>
+<li>Low-power (batter powered), low data rate, low latency, and close proximity wireless ad-hoc network</li>
+<li>Operates in the industrial, scientific, nd medical (ISM) radio band</li>
+</ul>
+</li>
+</ul>
+<h2 id="physical-security-controls">Physical Security Controls</h2>
+<h3 id="definitions-6">Definitions</h3>
+<ul>
+<li><strong>Mantraps</strong>: access control via two sets of doors where a person will enter a first set of doors that will close behind them, then then need a guard/automated control to provide access through the second door after authentication</li>
+<li><strong>Two Person Integrity (TPI)</strong>: control mechanism designed to achieve a high level of security for especially critical material or operations where two people must be present at all times when sensitive material is being handled
+<ul>
+<li>Two locks on any containers containing sensitive material</li>
+<li>No one person can possess both keys</li>
+</ul>
+</li>
+<li><strong>Air Gap</strong>: method of isolating a computer or network from the internet/external networks</li>
+<li><strong>Demilitarized Zone (DMZ)</strong>: typically consist of hosts that provide services to users outside of the local (internal) network</li>
+<li><strong>Protected Distribution Systems (PDS)</strong>: secure conduit for copper or fiber optic cabling with monitors in place to detect any disruption to the PDS
+<ul>
+<li>Hardened Distribution Systems:
+<ul>
+<li>Hardened Carrier: conduit is electrical metal tubing, ferrous conduit or pipe that is permanently sealed (welds, expoxy, etc.) and if run underground, are also encased in concrete</li>
+<li>Alarmed Carrier: fibers within the conduit are used for monitoring acoustic vibrations associated with attempted access which reduces the need for visual inspection/monitoring</li>
+<li>Continuously Viewed Carrier: conduit is continuously viewed/monitored 24/7/365 and guards will investigate any attempts to disturb the PDS within 15 min of an alert</li>
+</ul>
+</li>
+<li>Simple Distribution Systems: cables can be installed in a carrier and made of any material. Access points are monitored by personnel who periodically inspect it and they must be cleared to the highest level of data handled by the PDS</li>
+</ul>
+</li>
+<li><strong>Hot and Cold Aisles</strong>: arranging a data center in such a way to maximize efficiency to properly cool server racks while effectively disposing of heat</li>
+</ul>
+<h3 id="data-destruction">Data Destruction</h3>
+<ul>
+<li>Non Digital Data Destruction:
+<ul>
+<li>Burning: documents are incinerated (can be combined with other methods)</li>
+<li>Shredding: documents are cut into small pieces
+<ul>
+<li>Long-cut shredders are not considered secure</li>
+<li>Cross-cut shredders are more secure, but slower and more expensive</li>
+</ul>
+</li>
+<li>Pulping: paper is soaked in a solution until it is reduced to a slurry
+<ul>
+<li>Can be expensive, time-consuming, and difficult to transport</li>
+</ul>
+</li>
+<li>Pulverizing: storage media is fed into a pulverizing machine
+<ul>
+<li>Hydraulic/pneumatic action used to reduce media to loose fibers/shards</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Digital Data Destruction:
+<ul>
+<li>Degaussing: using AC/DC erasure techniques to render data unrecoverable
+<ul>
+<li>Hard drives are typically unusable after degaussing as it erases low-level formatting that is only done at the factory at the time of manufacture</li>
+</ul>
+</li>
+<li>Purging: removes data remanence so that data cannot be reconstructed by any known means(AKA sanitizing)
+<ul>
+<li>Considered a step beyond wiping data, and is performed in situations where highly sensitive data exists</li>
+</ul>
+</li>
+<li>Wiping: overwrites data &ldquo;x&rdquo; number of times to ensure it is unrecoverable
+<ul>
+<li>For SSD disk sanitation, resets the NAND and marks all blocks as empty</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="cryptographic-concepts">Cryptographic Concepts</h2>
+<h3 id="definitions-7">Definitions</h3>
+<ul>
+<li><strong>Cryptography</strong>: the practice and study of hiding information</li>
+<li><strong>Cryptanalysis</strong>: discovering some weakness or insecurity in a cryptographic scheme</li>
+<li><strong>Encryption</strong>: the method of transforming data (plaintext) into an unreadable format</li>
+<li><strong>Plaintext</strong>: the (readable) format of data before being encrypted</li>
+<li><strong>Ciphertext</strong>: the &ldquo;scrambled&rdquo; format of data after being encrypted</li>
+<li><strong>Decryption</strong>: the method od turning cipher text back into plaintext</li>
+<li><strong>Encryption Algorithm</strong>: a set of rules or procedures that defines how to encrypt and decrypt data (AKA encryption cipher)</li>
+<li><strong>Key</strong>: a value used in the encryption process to encrypt and decrypt (AKA cryptovariable)</li>
+<li><strong>Digital Signatures</strong>: asymmetric encryption using public-key/private-key (PKI)</li>
+<li><strong>Key Stretching</strong>: pseudorandom function applied to a password or passphrase
+<ul>
+<li>Password-Based Key Derivation Function 2 (PBKDF2)</li>
+<li>Salt for randomness</li>
+<li>Bcrypt</li>
+</ul>
+</li>
+<li><strong>Out-of-Band Key Exchange</strong>: transmitting a key via manual means (in-person, telephone, courier, etc.) so that it is not sent over the network</li>
+<li><strong>In-band Key Exchange</strong>: transmitting a key over the network as the communication session is established
+<ul>
+<li>Created in real time and typically discarded once the session is over</li>
+</ul>
+</li>
+<li><strong>Elliptic Curve Cryptography (ECC)</strong>: asymmetric encryption using algebraic structure of elliptic curves
+<ul>
+<li>Makes strong encryption using a smaller key size with less resources</li>
+</ul>
+</li>
+<li><strong>Perfect Forward Secrecy</strong>: session keys that are derived from a set of long-term keys, yet discreet in nature
+<ul>
+<li>If a long term key is compromised it doesn&rsquo;t compromise the session key or the data it protects</li>
+</ul>
+</li>
+<li><strong>Ephemeral Key</strong>: temporary key that is used once (can be used to derive an additional key to be used for subsequent communication)</li>
+<li><strong>Cipher Modes</strong>: algorithms or methods used to encrypt data
+<ul>
+<li><strong>Counter Mode (CTR)</strong>: random 64-bit block as first Initialization Vector (IV). Increments a specified number of each subsequent block of plaintext</li>
+<li><strong>Galois/Counter Mode (GCM)</strong>: used with symmetric key block ciphers and is very efficient</li>
+</ul>
+</li>
+<li><strong>Blockchain</strong>: immutable, decentralized digital ledger that is distributed among a network of many computers. Once a transaction is recorded, it can&rsquo;t be altered or removed
+<ul>
+<li><strong>Block</strong>: batch of transactions with a cryptographic hash of the prior block, timestamp, and other info</li>
+</ul>
+</li>
+<li><strong>Block Cipher</strong>: encrypts in fixed length chunks (blocks) of data at a time</li>
+<li><strong>Stream Cipher</strong>: encrypts one bit at a time using a pseudorandom cipher digit stream (keystream)</li>
+<li><strong>Session Keys</strong>: single-use symmetric key used for encrypting all communication in one communication session
+<ul>
+<li>Can use an asymmetric key to encrypt the session key itself</li>
+</ul>
+</li>
+<li><strong>Symmetric Encryption</strong>: uses the <em>same</em> key to encrypt and decrypt a piece of data (AKA shared/secret key encryption)</li>
+<li><strong>Asymmetric Encryption</strong>: uses a two key (Public/Private Key) system
+<ul>
+<li><strong>Key Pair</strong>: one key for encryption, the other fo decryption</li>
+</ul>
+</li>
+<li><strong>Lightweight Cryptography</strong>: encryption method that utilizes low computational power or energy consumption
+<strong>Kerckhoffs&rsquo; Principle</strong>: a cryptosystem should be secure even if everything about the system, except the key, is public knowledge</li>
+</ul>
+<h3 id="common-use-cases">Common Use Cases</h3>
+<ul>
+<li>Low Power Devices: ECC uses low power consumption, making it suited for mobile device security</li>
+<li>Low Latency: symmetric key cryptography is quick and uses the same key for encryption and decryption</li>
+<li>High Resiliency: cryptosystems that are made public, allowing the community to test, vet, and discover vulnerabilities</li>
+</ul>
+<h3 id="cryptographic-methods-and-design">Cryptographic Methods and Design</h3>
+<ul>
+<li><strong>Electronic Code Book (ECB)</strong>: the same plaintext will produce the same ciphertext every time. Should only be used for transmitting small amounts of data as patterns are easy to distinguish</li>
+<li><strong>Cipher Block Chaining Mode (CBC)</strong>: similar to ECB but inserts (via XORing) some of the cipher text created from the previous block of data into the the next block (an IV is used in the first block)</li>
+<li><strong>Output Feedback Mode (OFB)</strong>: makes a block cipher into a stream cipher as the entire output of the previous block is used as input for the next block&rsquo;s encryption (transmission errors do NOT propagate throughout the encryption process)</li>
+<li><strong>Cipher Feedback Mode (CFB)</strong>: Same as OFB but transmission errors are allowed to propagate through the encryption process</li>
+</ul>
+<h3 id="homomorphic-encryption">Homomorphic Encryption</h3>
+<ul>
+<li><strong>Partially Homomorphic Encryption</strong>: allows select mathematical functions to be performed on encrypted values
+<ul>
+<li>One operation (addition or multiplication) can be performed an unlimited number of times on the ciphertext</li>
+</ul>
+</li>
+<li><strong>Somewhat Homomorphic Encryption</strong>: select mathematical function to be performed (addition or multiplication), but the operations can only be performed a set number of times</li>
+<li><strong>Fully Homomorphic Encryption</strong>: capable of both addition and multiplication any number of times and makes secure multi-party computation more secure</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://www.comptia.org/certifications/security">Official CompTIA Security+ Site</a></li>
+<li><a href="https://www.pluralsight.com/paths/comptia-security-sy0-601">Pluralsight Security+ (SYO-601) Course</a></li>
+<li><a href="https://www.pluralsight.com/authors/chris-rees">Christopher Rees Pluralsight Bio</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/comptia/">CompTIA</a>
+            
+              <a href="https://s0merset7.github.io//tags/certification/">Certification</a>
+            
+              <a href="https://s0merset7.github.io//tags/security&#43;/">Security&#43;</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecurity%2b_pt2%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecurity%2b_pt2%2f&amp;text=CompTIA%20Security%2b%3a%20Architecture%20and%20Design&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecurity%2b_pt2%2f&amp;title=CompTIA%20Security%2b%3a%20Architecture%20and%20Design" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecurity%2b_pt2%2f&amp;description=CompTIA%20Security%2b%3a%20Architecture%20and%20Design" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/"
+              data-toggle="tooltip" data-placement="top" title="CompTIA Security&#43;: Attacks, Threats, and Vulnerabilities">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Attacks, Threats, and Vulnerabilities</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;May 22, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part one of my notes for the CompTIA Security&#43; Certification covering Attacks, Threats, and Vulnerabilities.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Attacks, Threats, and Vulnerabilities" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2023/aug/cryptocurrencyinvestigator/introtocrypto/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Introduction to Cryptocurrency Investigations</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;August 21, 2023 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Introduction to cryptocurrency investigations including what is crypto and how it works.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/introToCrypto.png" alt="Introduction to Cryptocurrency Investigations" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2021/oct/introtoosint/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Introduction to Open Source Intelligence (OSINT)</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;October 23, 2021 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Introduction to the process of OSINT and common resources that can be used to assist in investigations.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/introToOsint.webp" alt="Introduction to Open Source Intelligence (OSINT)" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+
