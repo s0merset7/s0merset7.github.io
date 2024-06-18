@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>CompTIA Security&#43;: Implementation of Secure Solutions - s0merset7&#39;s Blog</title>
+<meta name="description" content="Part three of my notes for the CompTIA Security&#43; Certification covering the Implementation of Secure Solutions.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2024\/may\/securitypluspt3\/security\u002b_pt3\/",
+          "name": "Comp TIA security implementation of secure solutions"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "CompTIA Security\u002b: Implementation of Secure Solutions",
+  "description" : "Part three of my notes for the CompTIA Security\u002b Certification covering the Implementation of Secure Solutions.",
+  "inLanguage" : "en",
+  "wordCount":  3519 ,
+  "datePublished" : "2024-06-17T00:00:00",
+  "dateModified" : "2024-06-17T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "CompTIA, Certification, Security\u002b" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2024\/may\/securitypluspt3\/security\u002b_pt3\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/Security&#43;_pt1.webp">
+<meta property="og:url" content="https://s0merset7.github.io/post/2024/may/securitypluspt3/security&#43;_pt3/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.123.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                CompTIA Security&#43;: Implementation of Secure Solutions
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;June 17, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Implementation of Secure Solutions" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p><em>Note: Much of the below information is summarized from Christopher Rees&rsquo; Security+ training course hosted on Pluralsight. Much credit goes to Chris&rsquo; expertise! Check out his courses in the sources</em></p>
+<p>Continuing with my notes from studying for the CompTIA Security+ exam. The exam breaks down its curriculum into several sections, and this portion of my notes covers the &ldquo;Implementation of Secure Solutions&rdquo; content.
+Please keep in mind these are only my notes, and should not be used as the sole resource to study for the Security+ certification. Additionally, since taking the exam, a new version has been published, meaning some of the below content may be out of date/missing important details.</p>
+<ul>
+<li><a href="#implementation-of-secure-solutions">Implementation of Secure Solutions</a>
+<ul>
+<li><a href="#implementing-secure-protocols">Implementing Secure Protocols</a>
+<ul>
+<li><a href="#definitions">Definitions</a></li>
+<li><a href="#use-cases">Use Cases</a></li>
+</ul>
+</li>
+<li><a href="#host-and-application-security-solutions">Host and Application Security Solutions</a>
+<ul>
+<li><a href="#definitions-1">Definitions</a></li>
+<li><a href="#endpoint-detection-and-response-edr">Endpoint Detection and Response (EDR)</a></li>
+</ul>
+</li>
+<li><a href="#implementing-secure-network-designs">Implementing Secure Network Designs</a>
+<ul>
+<li><a href="#definitions-2">Definitions</a></li>
+<li><a href="#segmentation-modules">Segmentation Modules</a></li>
+<li><a href="#proxies">Proxies</a></li>
+<li><a href="#ids-approaches">IDS Approaches</a></li>
+<li><a href="#types-of-firewalls">Types of Firewalls</a></li>
+</ul>
+</li>
+<li><a href="#installing-and-configuring-wireless-security-settings">Installing and Configuring Wireless Security Settings</a>
+<ul>
+<li><a href="#definitions-3">Definitions</a></li>
+</ul>
+</li>
+<li><a href="#implementing-secure-mobile-solutions">Implementing Secure Mobile Solutions</a>
+<ul>
+<li><a href="#definitions-4">Definitions</a></li>
+<li><a href="#securing-wi-fi">Securing Wi-Fi</a></li>
+<li><a href="#application-security-policies">Application Security Policies</a></li>
+</ul>
+</li>
+<li><a href="#cybersecurity-solutions-in-the-cloud">Cybersecurity Solutions in the Cloud</a>
+<ul>
+<li><a href="#definitions-5">Definitions</a></li>
+<li><a href="#secrets-management">Secrets Management</a>
+<ul>
+<li><a href="#best-practices">Best Practices</a></li>
+</ul>
+</li>
+<li><a href="#the-cyber-kill-chain">The Cyber Kill Chain</a></li>
+</ul>
+</li>
+<li><a href="#identity-and-account-management-controls">Identity and Account Management Controls</a>
+<ul>
+<li><a href="#definitions-6">Definitions</a></li>
+<li><a href="#authentication-factors">Authentication Factors</a></li>
+<li><a href="#user-access-best-practices">User Access Best Practices</a></li>
+</ul>
+</li>
+<li><a href="#authentication-and-authorization-solutions">Authentication and Authorization Solutions</a>
+<ul>
+<li><a href="#definitions-7">Definitions</a></li>
+<li><a href="#access-control-types">Access Control Types</a></li>
+</ul>
+</li>
+<li><a href="#public-key-infrastructure">Public Key Infrastructure</a>
+<ul>
+<li><a href="#definitions-8">Definitions</a></li>
+<li><a href="#types-of-certificates">Types of Certificates</a></li>
+<li><a href="#certificate-formats">Certificate Formats</a></li>
+<li><a href="#trust-models">Trust Models</a></li>
+</ul>
+</li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="implementation-of-secure-solutions">Implementation of Secure Solutions</h1>
+<h2 id="implementing-secure-protocols">Implementing Secure Protocols</h2>
+<h3 id="definitions">Definitions</h3>
+<ul>
+<li><strong>DNS Security Extensions (DNSSEC)</strong>: adds security to the original DNS specification by providing a chain of trust via secured signed keys from the DNS server
+<ul>
+<li>DNS was not originally designed with security mechanisms in place and was instead meant to be massively scalable</li>
+<li>Responses from DNSSEC servers (protected zones) are digitally signed, authenticating their origin</li>
+</ul>
+</li>
+<li><strong>Secure Shell (SSH)</strong>: cryptographic network protocol for doing things securely over an unsecured network, often signing on to remote hosts (connects over TCP port 22)</li>
+<li><strong>Secure/Multipurpose Internet Mail Extensions (S/MIME)</strong>: public key encryption and signing of MIME data (emails)</li>
+<li><strong>Secure Real-Time Transport Protocol (SRTP)</strong>: security protocol for RTP that adds confidentiality, message authentication, and replay protection to that protocol (secure VoIP traffic)</li>
+<li><strong>Lightweight Directory Access Protocol over SSL (LDAPS)</strong>: secures traffic between client and server over SSL/TLS via TCP/UDP port 636</li>
+<li><strong>File Transfer Protocol over SSL (FTPS)</strong>: secure file transfers that use SSL for encryption via TCP ports 989 and 990</li>
+<li><strong>SSH File Transfer Protocol (SFPT)</strong>: provides remote file transfer, access, and management via FTP tunneled through an SSH connection (TCP port 22)</li>
+<li><strong>Simple Network Management Protocol Version 3 (SNMPv3)</strong>: encrypting information for remote management and reporting of IP devices over UDP port 161</li>
+<li><strong>Secure Sockets Layer (SSL)</strong>: adds confidentiality and data integrity to communications initiated via a handshake
+<ul>
+<li><strong>Transport Layer Security (TLS)</strong>: newer version based on SSL</li>
+</ul>
+</li>
+<li><strong>HTTPS</strong>: authentication of visited websites as well as privacy/integrity of the data exchange over TCP port 443</li>
+<li><strong>Post Office Protocol POP</strong>: accessing webmail securely using SSL/TLS over TCP port 110/995</li>
+<li><strong>Internet Message Access Protocol (IMAP)</strong>: accessing webmail securely using SSL/TLS over TCP port 143/993</li>
+</ul>
+<h3 id="use-cases">Use Cases</h3>
+<ul>
+<li>Voice and Video</li>
+<li>Time Synchronization</li>
+<li>Email and Web Browsing</li>
+<li>File Transfer</li>
+<li>Directory Services</li>
+<li>Remote Access</li>
+<li>Domain Name Resolution</li>
+<li>Routing and Switching</li>
+<li>Network Address Allocation</li>
+<li>Subscription Services</li>
+</ul>
+<h2 id="host-and-application-security-solutions">Host and Application Security Solutions</h2>
+<h3 id="definitions-1">Definitions</h3>
+<ul>
+<li><strong>Next-Generation Firewall (NGFW)</strong>: go beyond traditional firewalls and offer advanced services such as deep packet inspection, application firewalls, intrusion detection/prevention, TLS/SSL inspection, and bandwidth management</li>
+<li><strong>Host-based IDS/IPS (HIDS/HIPS)</strong>: similar in function to NIDS/NIPS but runs on a specific host
+<ul>
+<li>HIDS can detect anomalous behavior and alert while HIPS can detect but not take action</li>
+</ul>
+</li>
+<li><strong>Secure Boot</strong>: UEFI (universal extensible firmware interface)feature that allows only signed boot software to load</li>
+<li><strong>Measured Boot</strong>: boot components have been identified cryptographically and are checked at boot to validate each component and provides a detailed log of everything</li>
+<li><strong>Integrity Measurement Architecture (IMA)</strong>: open source alternative that creates a measured runtime environment with a list of components that need to load which is anchored to the TPM chip to prevent tampering</li>
+<li><strong>Universal Extensible Firmware Interface (UEFI)</strong>: alternative to traditional BIOS with CPU-independent architecture and drivers</li>
+<li><strong>Fuzzing</strong>: intentionally trying to crash a program or application by providing invalid, unexpected, or random data</li>
+<li><strong>Self-Encrypting Drives (SED)</strong>: provide security with self-contained keys within the drive&rsquo;s firmware maintained separately from the CPU
+<ul>
+<li><strong>Opal Specification</strong>: security subsystem class (SSC) specifies how data is encrypted on the drive</li>
+</ul>
+</li>
+</ul>
+<h3 id="endpoint-detection-and-response-edr">Endpoint Detection and Response (EDR)</h3>
+<ol>
+<li>Monitor and collect activity data from endpoints</li>
+<li>Analyze data to identify threats, patterns, or IOCs</li>
+<li>Automatically respond to identified threats to remove or mitigate them, notify appropriate teams, etc.</li>
+<li>Forensics and analysis tools to research threats and search for suspicious activities</li>
+</ol>
+<h2 id="implementing-secure-network-designs">Implementing Secure Network Designs</h2>
+<h3 id="definitions-2">Definitions</h3>
+<ul>
+<li><strong>Load Balancer</strong>: dynamically balance the load between devices (typically servers but can also be other devices)
+<ul>
+<li>Could be hardware or software based</li>
+</ul>
+</li>
+<li><strong>East-West Traffic</strong>: data moving between devices within a data center</li>
+<li><strong>North-South Traffic</strong>: data entering/exiting a data center</li>
+<li><strong>Zero Trust</strong>: internal and external traffic should be monitored and nothing implicitly trusted
+<ul>
+<li>Micro-segmentation and granular access providing only the levels of permissions required</li>
+</ul>
+</li>
+<li><strong>Split Tunnel</strong>: allows a user to access one set of resources via Firewall/VPN and other resources directly</li>
+<li><strong>VPN Concentrator</strong>: has the ability to create a large number of VPN tunnels, typically used for site-to-site architectures</li>
+<li><strong>Network Access/Admission Control (NAC)</strong>: a set of policies that define a minimal set of requirements each device must have before being allowed on the network (i.e. anti-virus up to date, certain OS, applications, etc.)
+<ul>
+<li><strong>Permanent Agent</strong>: persistent agent that is installed on the host device and runs continuously</li>
+<li><strong>Dissolvable Agent</strong>: agent that is run from a portal. Is only run once before removal/deactivation</li>
+<li><strong>Agentless</strong>: embedded within Active Directory, NAC code verifies the host complies with access policy</li>
+</ul>
+</li>
+<li><strong>802.1x - EAPOL (Extensible Authentication Access Protocol over LAN)</strong>: allows only EAPOL traffic over port until client authenticates with a RADIUS or authentication server</li>
+<li><strong>Loop Protection</strong>: method that enforces a Time to Live (TTL) protocol on network packets to prevent packets from infinitely searching fro connection and flooding resources (for Layer 3/Network Layer protection)</li>
+<li><strong>Spanning Tree Protocol (STP)</strong>: protections against resource flooding due to packet loops by having switches &ldquo;clamp down&rdquo; once broadcasts hits a certain percentage (for Layer 2/Data Link Layer protection)
+<ul>
+<li><strong>Root Bridge</strong>: the elected enter of the network</li>
+<li><strong>Designated Bridge</strong>: forwarder that sends data to the Root Bridge</li>
+<li><strong>Root Port</strong>: port that sends data forward to the root bridge</li>
+</ul>
+</li>
+<li><strong>DHCP Snooping</strong>: layer 2 security technology that monitors for rogue DHCP servers</li>
+<li><strong>MAC Filtering</strong>: predefines which MAC addresses can connect to the router or access point</li>
+<li><strong>Jump Server</strong>: servers used to connect to devices in remote networks, typically for performing admin tasks in networks with limited connectivity</li>
+<li><strong>Intrusion Detection System (IDS)</strong>: enables log alerts and events that allow for reactive response/research</li>
+<li><strong>Intrusion Prevention System (IPS)</strong>: enables prevention features such as blocking IP addresses</li>
+<li><strong>Alert</strong>: message generated from the analyzer indicating an &ldquo;interesting&rdquo; event has occurred</li>
+<li><strong>Analyzer</strong>: processes data collected form one or more sensors and looks for suspicious activity</li>
+<li><strong>Data Source</strong>: raw data being analyzed (i.e. log files, audit logs, system logs, network traffic, etc.)</li>
+<li><strong>Event</strong>: indication that suspicious activity may have occurred (can trigger an Alert or notification)
+<ul>
+<li>If confirmed, the Event will become an Incident</li>
+</ul>
+</li>
+<li><strong>Manager</strong>: IDS console that is used to manage the system</li>
+<li><strong>Notification</strong>: process by which the operator is alerted to an event or incident</li>
+<li><strong>Operator</strong>: user, admin, etc. that is responsible for the IDS</li>
+<li><strong>Sensor</strong>: primary data collection point for the IDS. Can be the device driver on a system or a separate physical device attached to the network to collect data
+<img src="idsComponentWorkflow.png" alt="IDS/IPS Component Workflow"></li>
+<li><strong>Unified Threat Management (UTM)</strong>: multi-purpose suite of tools that provide some of the following - firewall, NIDS/NIPS, gateway anti-virus/spams, VPN, content filtering, load balancing, DLP</li>
+<li><strong>Content Filters</strong>: hardware/software that limits or restricts access to certain types of content (i.e. inappropriate material, malware, spam, etc.)</li>
+<li><strong>Implicit Deny</strong>: Firewall Access Control List (ACL) that specifies what type of traffic is allowed, denying what is not on the list</li>
+<li><strong>Quality of Service (QoS)</strong>: a set of technologies to ensure critical applications or services have a certain level of performance</li>
+</ul>
+<h3 id="segmentation-modules">Segmentation Modules</h3>
+<ul>
+<li><strong>Physical</strong>: where all nodes are physically connected to the same switches</li>
+<li><strong>Logical (VLAN)</strong>: where all nodes are physically connected to the same switches, but logically organized/group as separate VLANs
+<ul>
+<li>Creates smaller collision domains which reduces chatter</li>
+</ul>
+</li>
+<li><strong>Virtualization</strong>: method of segmenting or isolating that can keep a host in a &ldquo;sandboxed&rdquo; environment while separating guests from the host hypervisor</li>
+<li><strong>Air Gapped</strong>: method of isolating a computer or network from the internet/external networks</li>
+<li><strong>File Integrity Check</strong>: check to protect against tampering by ensuring a file hasn&rsquo;t been modified by comparing the current state against a known good state(look at credentials, security settings, content, attributes, hash, etc.)</li>
+</ul>
+<h3 id="proxies">Proxies</h3>
+<ul>
+<li><strong>Forward Proxy</strong>: sits between multiple users and the internet with the goal of speeding up connectivity by caching commonly used resources from users behind the proxy as well as protecting internal user info by using a proxy IP for external facing resources
+<ul>
+<li>Can also be configured as a NAT</li>
+</ul>
+</li>
+<li><strong>Reverse Proxy (Load Balancer)</strong>: sits between the internet and external resources in order to properly/efficiently divert incoming traffic as to not overwhelm resources</li>
+<li><strong>Transparent Proxy</strong>: intermediary system that typically sits between a user and content provider for caching and filtering
+<ul>
+<li><strong>Gateway</strong>: another possible setup of a transparent proxy that is rule based, typically requiring registration or user acceptance</li>
+</ul>
+</li>
+<li><strong>Web Security Gateway</strong>: proxy server with advanced features such as virus scanning, preventing connections to inappropriate sites, 3rd party cookies, and data loss prevention
+<ul>
+<li>Can also enable granular access to websites where access itself is allowed, but certain functionality of the site is blocked</li>
+</ul>
+</li>
+</ul>
+<h3 id="ids-approaches">IDS Approaches</h3>
+<ul>
+<li>Behavior Based Detection: look for variations in behavior (i.e. increase traffic, policy violations etc.)</li>
+<li>Signature Based Detection: uses attack signatures and audit trails</li>
+<li>Anomaly Detection: learn what is &ldquo;normal&rdquo; system behavior and then look for deviations from the baseline</li>
+<li>Heuristic: use algorithms to analyze traffic as it passes through the IDS</li>
+</ul>
+<h3 id="types-of-firewalls">Types of Firewalls</h3>
+<ul>
+<li><strong>Packet Filtering</strong>: allow block traffic based on port</li>
+<li><strong>Proxy Firewall</strong>: dual-homed firewall that segments internal users from the outside world</li>
+<li><strong>Stateful Packet Inspection (SPI) Firewalls</strong>: examines packet and keeps packet table of every communication channel. Tracks the entire conversation and only allows packets from known active connections</li>
+<li><strong>Web Application Firewall (WAF)</strong>: designed with granular rules specifically to analyze traffic to webs servers and prevent typical attacks (operates on Layer 7/Application Layer)</li>
+</ul>
+<h2 id="installing-and-configuring-wireless-security-settings">Installing and Configuring Wireless Security Settings</h2>
+<h3 id="definitions-3">Definitions</h3>
+<ul>
+<li><strong>Wired Equivalency Protocol (WEP)</strong>: designed to provide security equal to a wired network but has since been depreciated due to an emergence of vulnerabilities
+<ul>
+<li>An initialization vector attack/packet injection can crack WEP in several seconds (only 24-bit encryption)</li>
+</ul>
+</li>
+<li><strong>Wi-Fi Protected Access (WPA/WPA2)</strong>: based on WEP and used as a stop gap. WPA2 implements 802.11i protocol and provides additional security enhancements</li>
+<li><strong>Wireless Application Protocol (WAP)</strong>: used to provide mobile devices wit internet connectivity with a suite of protocols similar to TCP/IP
+<ul>
+<li>Uses Wireless Transport Layer Security (WTLS)</li>
+</ul>
+</li>
+<li><strong>Extensible Authentication Protocol (EAP)</strong>: a set of authentication frameworks for wireless networks
+<ul>
+<li><strong>Lightweight Extensible Authentication Protocol (LEAP)</strong>: proprietary protocol developed by Cisco as a stop gap to WEP and lacked windows support but has since been depreciated
+<ul>
+<li>Was very easy to configure with no digital certificates and clear text transmissions</li>
+</ul>
+</li>
+<li><strong>Protected Extensible Authentication Protocol (PEAP)</strong>: joint development effort by Cisco, RSA, Microsoft that allows a digital certificate to be used on the authentication server and establishes encrypted channel between the client and server via a TLS tunnel</li>
+</ul>
+</li>
+<li><strong>RADIUS Federation</strong>: connects a common system of authentication and credentials database that can be used by multiple applications/platforms wirelessly</li>
+<li><strong>Wi-Fi Protected Setup (WPS)</strong>: designed to make it easy for devices to join Wi-Fi networks with minimal effort with an 8 character pin (only 7 characters are used)</li>
+<li><strong>Captive Portal</strong>: authentication/acceptance page typically found in open and public networks that requires the user to enter credentials, agree to acceptable use policies, make payment, etc. before granting access
+<ul>
+<li>Vulnerable to packet sniffing as once a user is authenticated, sniffed packets can determine the IP and MAC address to be spoofed for access</li>
+</ul>
+</li>
+<li><strong>Fat (Thick) Access Point</strong>: have everything needed to manage wireless clients</li>
+<li><strong>Thin Access Point</strong>: just the radio/antenna and can be managed via a central switch</li>
+<li><strong>Stand-Alone Access Point</strong>: provide everything required to service clients with limited encryption and typically no load balancing</li>
+<li><strong>Controller-Based Access Point</strong>: meant for large scalability through central configuration and managements that includes load balancing and full-features IDS functionality</li>
+</ul>
+<h2 id="implementing-secure-mobile-solutions">Implementing Secure Mobile Solutions</h2>
+<h3 id="definitions-4">Definitions</h3>
+<ul>
+<li><strong>Mobile Device Management (MDM)</strong>: software that enables provisioning of mobile devices, application of policy, remote wiping, etc.</li>
+<li><strong>Mobile Application Management (MAM)</strong>: more granular control over mobile devices (especially BYOD) where policy enforcement can be at the app level, along with application containerization</li>
+<li><strong>Unified Endpoint Management (UEM)</strong>: evolution of MDM, EMM, and MAM that combines the features of several technologies along with being able to manage desktop and laptops</li>
+<li><strong>Security Enhanced Android (SEAndroid)</strong>: Security Linux (SELinux) kernel security module to provide a mechanism for supporting access control security policies by restricting actions that installed software can take</li>
+</ul>
+<h3 id="securing-wi-fi">Securing Wi-Fi</h3>
+<ul>
+<li>Disable the Security Set Identified (SIDD): will prevent clients who are browsing from discovering the network (not skilled hackers)</li>
+<li>MAC Filtering: predefines which MAC addresses can connect to the router or access point (won&rsquo;t prevent skilled hackers)</li>
+<li>Require Secure Connectivity Protocols: require WPA2-PSK (AES) as it uses a pre-shared key with Advanced Encryption Standard (AES) which is considered the most secure option currently</li>
+</ul>
+<h3 id="application-security-policies">Application Security Policies</h3>
+<ul>
+<li>Authentication</li>
+<li>Geo-Tagging</li>
+<li>Biometrics</li>
+<li>Push Notification Services</li>
+<li>Encryption</li>
+<li>Key/Credential Management</li>
+</ul>
+<h2 id="cybersecurity-solutions-in-the-cloud">Cybersecurity Solutions in the Cloud</h2>
+<h3 id="definitions-5">Definitions</h3>
+<ul>
+<li><strong>High Availability (HA)</strong>: ensures a resources remains available even when sub-components fail</li>
+<li><strong>Next-Generation Secure Web Gateway (SWG)</strong>: combines the features of multiple cybersecurity tools such as CASB, DLP, activity controls, and being instance aware</li>
+</ul>
+<h3 id="secrets-management">Secrets Management</h3>
+<p>Tools and methods for managing digital authentication credentials (secrets)</p>
+<h4 id="best-practices">Best Practices</h4>
+<ul>
+<li>Authenticate all access requests that use non-human credentials</li>
+<li>Enforce the principle of least privilege</li>
+<li>Enforce role-based access control (RBAC) and regularly rotate secrets and credentials</li>
+<li>Automate management of secrets and apply consistent access policies</li>
+<li>Track all access and maintain a comprehensive audit
+Remove secrets from code, configuration files, and other unprotected areas</li>
+</ul>
+<h3 id="the-cyber-kill-chain">The Cyber Kill Chain</h3>
+<ol>
+<li>Reconnaissance</li>
+<li>Weaponization</li>
+<li>Delivery</li>
+<li>Exploit</li>
+<li>Installation</li>
+<li>Command and Control</li>
+<li>Actions</li>
+</ol>
+<h2 id="identity-and-account-management-controls">Identity and Account Management Controls</h2>
+<h3 id="definitions-6">Definitions</h3>
+<ul>
+<li><strong>Identity Provider (IdP)</strong>: stores and manages users&rsquo; identities</li>
+<li><strong>Multi-Factor Authentication (MFA)</strong>: two or more pieces of information being used to authenticate (must be from two different authentication factors)</li>
+<li><strong>Security Assertion Markup Language (SAML)</strong>: standardized way to tell external applications/services that a user is who they say they are</li>
+<li><strong>Attributes</strong>: pieces of information about a user</li>
+<li><strong>Certificates</strong>: electronic credentials tat are issued to people, computers, and other electronic devices used to authenticate, provide non-repudiation, or to enable secure communications</li>
+<li><strong>Tokens</strong>: typically used to authenticate or grant access to an API or some type of web application</li>
+<li><strong>SSH Keys</strong>: used to securely authenticate when connecting to servers over SSH, using public/private key certificates</li>
+<li><strong>Recertification</strong>: contractors and 3rd party personnel must be regularly audited and recertified to determine appropriate credentials, clearances, and level of access</li>
+<li><strong>Disablement</strong>: unused accounts should be disabled, not deleted as deleting may make it more difficult to recover encrypted documents</li>
+</ul>
+<h3 id="authentication-factors">Authentication Factors</h3>
+<ul>
+<li>Something you know (a password or some &ldquo;secret&rdquo;)</li>
+<li>Something you have (a smart card, token, two-factor, etc.)</li>
+<li>Something you are (fingerprint, retina scan, etc.)</li>
+</ul>
+<h3 id="user-access-best-practices">User Access Best Practices</h3>
+<ul>
+<li>Account Maintenance: automatically disable temporary accounts after a period of time and periodically audit to ensure group memberships are appropriate</li>
+<li>Group-based Access Control: assign permission to groups not individual users</li>
+<li>Location-based Policies: ensure permissions/access adjust accordingly as users move from location to location</li>
+</ul>
+<h2 id="authentication-and-authorization-solutions">Authentication and Authorization Solutions</h2>
+<h3 id="definitions-7">Definitions</h3>
+<ul>
+<li><strong>Password Vaults</strong>: secure platform to store passwords for automated or manual retrieval</li>
+<li><strong>Extensible Authentication Protocol (EAP)</strong>: authentication framework that can be added on to new or existing mechanisms without issue</li>
+<li><strong>Challenge Handshake Authentication Protocol (CHAP)</strong>: used to authenticate Point to Point Protocol (PPP) clients logging into a remote server by providing a one-way hash based on a shared secret compared on both the client and server</li>
+<li><strong>Password Authentication Protocol (PAP)</strong>: username and password is sent in plain text (has since been depreciated)</li>
+<li><strong>Single Sign On (SSO)</strong>: method of allowing users access to all resources they need within an environment with a single username and password</li>
+<li><strong>Terminal Access Controller Access-Control System (TACACS)</strong>: developed for controlling access to the military network (no longer used)
+<ul>
+<li><strong>Extended Terminal Access Controller Access-Control System (XTACACS)</strong>: proprietary extensions to TACACS to add authentication, authorization, and accounting (not backwards compatibility with TACACS)</li>
+<li><strong>TACACS+</strong>: most common implementation that encrypts the entire communication, separates authentication and authorization, and runs on TCP over port 49 (not backwards compatibility with predecessors)</li>
+</ul>
+</li>
+<li><strong>Open Authentication (OAUTH)</strong>: an open standard for authentication used as method for internet users to sign onto websites without exposing their password</li>
+<li><strong>OpenID</strong>: open SSO standard that provides SSO capabilities
+<ul>
+<li>Cooperating sites are called Relying Parties (RP)</li>
+</ul>
+</li>
+<li><strong>Shibboleth</strong>: based on SAML and provides a free and open-source federated SSO and attribute exchange framework</li>
+<li><strong>Kerberos</strong>: a network authentication service used for mutual authentication between a client and server</li>
+<li><strong>Attribute Based Access Control (ABAC)</strong>: dynamic &ldquo;next-gen&rdquo; authorization mechanism where policies are comprised on attributes that can be about anything or anyone and allows for set-values or atomic-valued that can be combined for complex boolean rule sets
+<ul>
+<li><strong>Policy Enforcement Point (PEP)</strong>: protects the resources being accessed by generating authorization requests and sending it to the PDP</li>
+<li><strong>Policy Decision Point (PDP)</strong>: evaluates incoming requests against configured policies by permitting, denying or requesting additional information/metadata from the PIP</li>
+<li><strong>Policy Information Point (PIP)</strong>: bridge between the PDP and external sources of information (such as a database)</li>
+</ul>
+</li>
+<li><strong>Conditional Access</strong>: policy based on IF/THEN type logic to determine level of access or actions required</li>
+</ul>
+<h3 id="access-control-types">Access Control Types</h3>
+<ul>
+<li><strong>Managerial (Administrative)</strong>: policies, standards, processes, procedures, guidelines, risk management, account management, regulatory controls</li>
+<li><strong>Operational (Technical)</strong>:endpoint protection, AV software, encryption, access control, IPS/IDS, firewalls, etc.</li>
+<li><strong>Physical</strong>: locks, fences, man-traps, CCTV, guards, etc.</li>
+<li><strong>Mandatory Access Control (MAC)</strong>: inflexible, rigid, the most secure
+<ul>
+<li>Predefined set of capabilities and access to information (who can share what to who)</li>
+</ul>
+</li>
+<li><strong>Discretionary Access Control (DAC)</strong>: flexible, dynamic access, least secure
+<ul>
+<li>Allows users to dynamically share information with others</li>
+</ul>
+</li>
+<li><strong>Role-Based Access Control (RBAC)</strong>: access based on role or group membership</li>
+<li><strong>Rule-Based Access Control (RBAC)</strong>: access based on predefined lists (allow or deny lists)</li>
+</ul>
+<h2 id="public-key-infrastructure">Public Key Infrastructure</h2>
+<h3 id="definitions-8">Definitions</h3>
+<ul>
+<li><strong>Public Key Infrastructure (PKI)</strong>: facilitates a secure communication between sender/recipient over a secure or insecure medium</li>
+<li><strong>Certificate Authority (CA)</strong>: issues and verifies the digital certificates</li>
+<li><strong>Registration Authority (RA)</strong>: verifies the identity of users requesting information from the CA</li>
+<li><strong>Central Directory</strong>: secure location in which to store and index keys</li>
+<li><strong>Certificate Management System</strong>: method to manage valid certificates, publish CRLs</li>
+<li><strong>Certificate Policy</strong>: defining who can request, issues, and use certificates and for what purpose</li>
+<li><strong>Client Revocation List (CRL)</strong>: published by the certificate authorities and used to inform clients that certificates have been revoked or are no longer valid</li>
+<li><strong>Online Certificate Status Protocol (OCSP)</strong>: used to obtain a revocation status of X.509 digital certificate as an alternative to CRLs containing less information which puts less burden on the network/client resources</li>
+<li><strong>Certificate Signing Request (CSR)</strong>: request to get a signed certificate from a CA</li>
+<li><strong>Object Identifiers (OID)</strong>: incorporated into a PKI and used to assign one or more certificate policies to a given CA</li>
+<li><strong>Stapling</strong>: when a certificate bearer appends &ldquo;staples&rdquo; time-stamped OCSP response to the initial TLS handshake, removing the need for the client to contact the CA</li>
+<li><strong>Pinning</strong>: process of associating a host with their expected X.509 certificate or public key</li>
+<li><strong>Key Escrow</strong>: a trusted third party that holds the keys needed to decrypt data</li>
+</ul>
+<h3 id="types-of-certificates">Types of Certificates</h3>
+<ul>
+<li><strong>Wildcard</strong>: public key certificate used with multiple sub-domains of a domain</li>
+<li><strong>Subject Alternate Name (SAN)</strong>: allows multiple hostnames to be protected by a single certificate</li>
+<li><strong>Code Signing</strong>: digital certificate typically issued by a trusted CA for downloading code, macros, object, etc.</li>
+<li><strong>Self-Signed</strong>: used to provide SSL functionality in temporary, test, or development servers</li>
+<li><strong>Machine/Computer</strong>: used to authenticate a machine/computer into an Active Directory environment</li>
+<li><strong>Email</strong>: used to secure and authenticate email</li>
+<li><strong>User</strong>: used to authenticate a user into an AD environment</li>
+<li><strong>Root</strong>: self-signed public key certificate that identifies a root CA</li>
+<li><strong>Domain Validation</strong>: server security certificate that provides the lowest level of validation available</li>
+<li><strong>Extended Validation</strong>: increased security over domain validation certificates due to an enhanced validation process, which requires human validation (&ldquo;high assurance&rdquo;)</li>
+</ul>
+<h3 id="certificate-formats">Certificate Formats</h3>
+<ul>
+<li><strong>PEM</strong>: most common format CAs issue and can have .pem, .crt, .cer, and .key extensions (base64 encoded ASCII files)</li>
+<li><strong>DER</strong>: binary form of a certificate instead of ASCII PEM format that can have extensions of either .der or .cer</li>
+<li><strong>PFX</strong>: typically encrypted and requires a password to open. Can contain certificate, certificate chains, or private keys with extensions .pfx or .p12</li>
+<li><strong>P7B</strong>: only contains certificates or certificate chains (no private keys) with base64 encoding and extensions .p7b (AKA PKCS#7)</li>
+</ul>
+<h3 id="trust-models">Trust Models</h3>
+<ul>
+<li><strong>Hierarchical Trust Model</strong>: single Root CA that digitally signs all certificates</li>
+<li><strong>Distributed Trust Model</strong>: multiple CAs with one master Root CA with the goal of limiting risk if a CA is compromised and distributing the load</li>
+<li><strong>Web of Trust (WoT)</strong>: used in smaller environments or end user communication with centralized certificate authority</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://www.comptia.org/certifications/security">Official CompTIA Security+ Site</a></li>
+<li><a href="https://www.pluralsight.com/paths/comptia-security-sy0-601">Pluralsight Security+ (SYO-601) Course</a></li>
+<li><a href="https://www.pluralsight.com/authors/chris-rees">Christopher Rees Pluralsight Bio</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/comptia/">CompTIA</a>
+            
+              <a href="https://s0merset7.github.io//tags/certification/">Certification</a>
+            
+              <a href="https://s0merset7.github.io//tags/security&#43;/">Security&#43;</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecuritypluspt3%2fsecurity%2b_pt3%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecuritypluspt3%2fsecurity%2b_pt3%2f&amp;text=CompTIA%20Security%2b%3a%20Implementation%20of%20Secure%20Solutions&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecuritypluspt3%2fsecurity%2b_pt3%2f&amp;title=CompTIA%20Security%2b%3a%20Implementation%20of%20Secure%20Solutions" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecuritypluspt3%2fsecurity%2b_pt3%2f&amp;description=CompTIA%20Security%2b%3a%20Implementation%20of%20Secure%20Solutions" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2024/may/security&#43;_pt2/"
+              data-toggle="tooltip" data-placement="top" title="CompTIA Security&#43;: Architecture and Design">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/security&#43;_pt2/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Architecture and Design</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 10, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part two of my notes for the CompTIA Security&#43; Certification covering Architecture and Design concepts.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Architecture and Design" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Attacks, Threats, and Vulnerabilities</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;May 22, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part one of my notes for the CompTIA Security&#43; Certification covering Attacks, Threats, and Vulnerabilities.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Attacks, Threats, and Vulnerabilities" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2023/aug/cryptocurrencyinvestigator/introtocrypto/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">Introduction to Cryptocurrency Investigations</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;August 21, 2023 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Introduction to cryptocurrency investigations including what is crypto and how it works.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/introToCrypto.png" alt="Introduction to Cryptocurrency Investigations" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+
