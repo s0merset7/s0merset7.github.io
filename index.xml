@@ -6,8 +6,15 @@
     <description>Recent content on s0merset7&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://s0merset7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance</title>
+      <link>https://s0merset7.github.io/post/2024/may/security&#43;_pt4/</link>
+      <pubDate>Sun, 23 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://s0merset7.github.io/post/2024/may/security&#43;_pt4/</guid>
+      <description>Note: Much of the below information is summarized from Christopher Rees&amp;rsquo; Security+ training course hosted on Pluralsight. Much credit goes to Chris&amp;rsquo; expertise! Check out his courses in the sources&#xA;Continuing with the final part my notes from studying for the CompTIA Security+ exam. The exam breaks down its curriculum into several sections, and this final portion of my notes covers the &amp;ldquo;Operations and Incident Response&amp;rdquo; and &amp;ldquo;Governance, Risk, and Compliance&amp;rdquo; content.</description>
+    </item>
     <item>
       <title>CompTIA Security&#43;: Implementation of Secure Solutions</title>
       <link>https://s0merset7.github.io/post/2024/may/securitypluspt3/security&#43;_pt3/</link>

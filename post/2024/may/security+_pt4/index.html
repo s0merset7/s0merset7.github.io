@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance - s0merset7&#39;s Blog</title>
+<meta name="description" content="Part four of my notes for the CompTIA Security&#43; Certification covering the Operations and Incident Response and Governance, Risk, and Compliance sections.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2024\/may\/security\u002b_pt4\/",
+          "name": "Comp TIA security operations, incident response, governance, risk, and compliance"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "CompTIA Security\u002b: Operations, Incident Response, Governance, Risk, and Compliance",
+  "description" : "Part four of my notes for the CompTIA Security\u002b Certification covering the Operations and Incident Response and Governance, Risk, and Compliance sections.",
+  "inLanguage" : "en",
+  "wordCount":  1507 ,
+  "datePublished" : "2024-06-23T00:00:00",
+  "dateModified" : "2024-06-23T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "CompTIA, Certification, Security\u002b" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2024\/may\/security\u002b_pt4\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/Security&#43;_pt1.webp">
+<meta property="og:url" content="https://s0merset7.github.io/post/2024/may/security&#43;_pt4/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.123.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;June 23, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p><em>Note: Much of the below information is summarized from Christopher Rees&rsquo; Security+ training course hosted on Pluralsight. Much credit goes to Chris&rsquo; expertise! Check out his courses in the sources</em></p>
+<p>Continuing with the final part my notes from studying for the CompTIA Security+ exam. The exam breaks down its curriculum into several sections, and this final portion of my notes covers the &ldquo;Operations and Incident Response&rdquo; and &ldquo;Governance, Risk, and Compliance&rdquo; content.
+Please keep in mind these are only my notes, and should not be used as the sole resource to study for the Security+ certification. Additionally, since taking the exam, a new version has been published, meaning some of the below content may be out of date/missing important details.</p>
+<ul>
+<li><a href="#operations-and-incident-response">Operations and Incident Response</a>
+<ul>
+<li><a href="#tools-to-assess-organizational-security">Tools to Assess Organizational Security</a>
+<ul>
+<li><a href="#definitions">Definitions</a></li>
+</ul>
+</li>
+<li><a href="#policies-processes-and-procedures-for-incident-response">Policies, Processes, and Procedures for Incident Response</a>
+<ul>
+<li><a href="#definitions-1">Definitions</a></li>
+<li><a href="#phases-of-incident-response">Phases of Incident Response</a></li>
+<li><a href="#types-of-testing-and-exercises">Types of Testing and Exercises</a></li>
+<li><a href="#types-of-plans">Types of Plans</a></li>
+</ul>
+</li>
+<li><a href="#appropriate-data-sources-to-support-an-investigation">Appropriate Data Sources to Support an Investigation</a>
+<ul>
+<li><a href="#definitions-2">Definitions</a></li>
+</ul>
+</li>
+<li><a href="#mitigation-techniques-to-secure-and-environment">Mitigation Techniques to Secure and Environment</a>
+<ul>
+<li><a href="#definition">Definition</a></li>
+</ul>
+</li>
+<li><a href="#key-aspects-of-digital-forensics">Key Aspects of Digital Forensics</a>
+<ul>
+<li><a href="#definitions-3">Definitions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#governance-risk-and-compliance">Governance, Risk, and Compliance</a>
+<ul>
+<li><a href="#comparing-and-contrasting-types-of-controls">Comparing and Contrasting Types of Controls</a>
+<ul>
+<li><a href="#definitions-4">Definitions</a></li>
+</ul>
+</li>
+<li><a href="#regulations-standards-and-frameworks-that-impact-a-security-organization">Regulations, Standards, and Frameworks that Impact a Security Organization</a>
+<ul>
+<li><a href="#definitions-5">Definitions</a></li>
+<li><a href="#gdpr-data-processing-principles">GDPR Data Processing Principles</a></li>
+<li><a href="#gdpr-legal-grounds-for-processing-data">GDPR Legal Grounds for Processing Data</a></li>
+</ul>
+</li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="operations-and-incident-response">Operations and Incident Response</h1>
+<h2 id="tools-to-assess-organizational-security">Tools to Assess Organizational Security</h2>
+<h3 id="definitions">Definitions</h3>
+<ul>
+<li><strong>Tracert/Traceroute</strong>: network tool to test connectivity between host and target that will show hops along the way and the associated latency with each hop</li>
+<li><strong>nslookup/dig</strong>: DNS troubleshooting tool for Window, Linux, and Mac OS that can provide a wide range of information on DNS and associated troubleshooting
+<ul>
+<li><code>nslookup</code> can be used on Windows and Linux while <code>dig</code> is Linux an Mac</li>
+</ul>
+</li>
+<li><strong>nmap</strong>: open-source network scanner that can discover hosts, services, detect OS type, vulnerabilities, etc.</li>
+<li><strong>ping/pathping</strong>: network troubleshooting tool to test network connectivity by sending ICMP packets to a host
+<ul>
+<li><code>pathping</code> combines the features of <code>ping</code> and <code>tracert</code></li>
+<li>PING = Packet Inter-Network Groper</li>
+</ul>
+</li>
+<li><strong>hping</strong>: packet crafting tool that can be used to generate network traffic, craft packets (spoofed addresses, ICMP floods, etc.)</li>
+<li><strong>Netstat</strong>: displays network statistics about TCP/UDP connections, ports, routing tables, and protocol statistics</li>
+<li><strong>netcat</strong>: network troubleshooting, pentesting, hacking tool that can read from and write to network connections (TCP/UDP)</li>
+<li><strong>IP Scanner</strong>: a tool that can scan a network, range of IP addresses, discover hosts, test for open ports, troubleshoot connectivity, etc.</li>
+<li><strong>Address Resolution Protocol (ARP)</strong>: resolves an IP to a MAC address via link-payer protocol
+<ul>
+<li><strong>Reverse ARP</strong>: deriving an IP from a MAC address</li>
+<li><strong>ARP Spoofing</strong>: malicious user can intercept and reply to ARP requests (ARP cache poisoning)</li>
+</ul>
+</li>
+<li><strong>route</strong>: command used to view and manipulate the IP routing table on Windows and Linux hosts</li>
+<li><strong>curl</strong>: transfers data from or to a server using a variety of protocols</li>
+<li><strong>The Harvester</strong>: tool for gathering email accounts and subdomain names from public sources</li>
+<li><strong>sn1per</strong>: automated pentesting tool with extensible scripting features that leverages several other testing/exploit tools to scan hosts and networks</li>
+<li><strong>scanless</strong>: port scanner that leverages online port scanning services to anonymise scanning a target system</li>
+<li><strong>Nessus</strong>: commercial vulnerability scanner</li>
+<li><strong>Cuckoo</strong>: open-source automated malware analysis platform designed to be run in a isolated lab environment</li>
+<li><strong>Logger</strong>: creates entries in the system log via a provided shell command interface to the syslog system-log module</li>
+<li><strong>Powershell</strong>: command-line shell and associated scripting language</li>
+<li><strong>OpenSSL</strong>: software library for applications that secure communications, using an open source implementation of SSL and TLS</li>
+<li><strong>tcpdump</strong>: CLI packet-capture tool to capture/display packets in real time with options to filter by IP address, port, connection type, protocol type, etc.</li>
+<li><strong>Wireshark</strong>: GUI packet capture utility, similar to <code>tcpdump</code> that can be used to troubleshoot network issues, communications, and eavesdrop on communications</li>
+<li><strong>tcpreplay</strong>: CLI tool for editing and replaying previously captured packets</li>
+<li><strong>dd</strong>: CLI tool to copy/clone disks, partitions/files, erase disks, etc.</li>
+<li><strong>memdump</strong>: dumps either physical or kernel memory to a file (can be done over the network)</li>
+<li><strong>WinHex</strong>: hex editor for examining files, recovering/searching for files, etc.</li>
+<li><strong>FTK Imager</strong>: forensic toolkit for acquiring disk images and performing analysis/investigations</li>
+<li><strong>Autopsy</strong>: forensic toolkit for acquiring disk images and performing analysis/investigations</li>
+<li><strong>Exploitation Frameworks</strong>: toolsets that can be used offensively or defensively and are often used by pentesters and hackers</li>
+</ul>
+<h2 id="policies-processes-and-procedures-for-incident-response">Policies, Processes, and Procedures for Incident Response</h2>
+<h3 id="definitions-1">Definitions</h3>
+<ul>
+<li><strong>Cyberthreat Intelligence Frameworks</strong>: focuses attention on the proper areas to ensure follow up, eradication, and mitigation of future threats
+<ul>
+<li>Common language to communicate internally and externally regarding threat details</li>
+</ul>
+</li>
+<li><strong>Diamond Model</strong>: complementary model to the Cyberthreat Kill Chain to track attack groups over time rather than individual attacks
+<ul>
+<li>For every intrusion event there exists an adversary taking a step towards an intended goal by using a capability over infrastructure against a victim to produce a result</li>
+</ul>
+</li>
+</ul>
+<h3 id="phases-of-incident-response">Phases of Incident Response</h3>
+<ol>
+<li>Preparation
+<ul>
+<li>Identify Team Members</li>
+<li>Define Roles and Responsibilities</li>
+<li>Develop Defense-in-Depth Strategies</li>
+</ul>
+</li>
+<li>Detection and Analysis
+<ul>
+<li>Determine the level of impact</li>
+<li>Analyze event/log files from IDS and firewalls, routers, switches, directory servers, and other networked systems</li>
+<li>Determine the true intent of the attack</li>
+</ul>
+</li>
+<li>Containment</li>
+<li>Eradication
+<ul>
+<li>Disabling affected accounts</li>
+<li>Shutting down ports and protocols</li>
+</ul>
+</li>
+<li>Recovery
+<ul>
+<li>Recover form backups</li>
+<li>Coordinate with other sites/locations</li>
+</ul>
+</li>
+<li>Document Lessons Learned</li>
+</ol>
+<h3 id="types-of-testing-and-exercises">Types of Testing and Exercises</h3>
+<ul>
+<li><strong>Walk-through</strong>: reading through the proposed plan and gather feedback</li>
+<li><strong>Communications</strong>: ensuring all relevant personnel, vendors, and emergency responders are identified and identify gaps in response times/availability</li>
+<li><strong>Simulation</strong>: having as close to a real-world scenario with some variability/randomness (AKA table-top exercise)</li>
+<li><strong>Partial Exercise</strong>: preparing for disaster recovery (can be somewhat intrusive and may disrupt normal operations)</li>
+<li><strong>Full Exercise</strong>: complete testing of the business continuity and disaster recovery plans (most disruptive to a business)</li>
+</ul>
+<h3 id="types-of-plans">Types of Plans</h3>
+<ul>
+<li><strong>Incident Management</strong>: deals with the initial response to an incident
+<ul>
+<li>Tasks, actions, and priorities</li>
+<li>Emergency contact details</li>
+<li>Contact guidelines, internal, media, emergency responder, etc.</li>
+</ul>
+</li>
+<li><strong>Business Continuity</strong>: deal with resumption and recovery of business operations once the initial disruption is contained
+<ul>
+<li>How to begin recovery</li>
+<li>Location of key personnel/resources</li>
+<li>Standardized data collection and reporting template, forms, portals, etc.</li>
+</ul>
+</li>
+<li><strong>Disaster Recovery</strong>: similar to business continuity but focused on information technology
+<ul>
+<li>Includes tasks, action lists, order of recovery, etc.</li>
+<li>Emergency contact info, documentation/references to incident management/command center location</li>
+</ul>
+</li>
+<li><strong>Business Resumption</strong>: defines who owns the resumptions process (can be the same/part of the business continuity plan)
+<ul>
+<li>Process for determining replacement of staff, buildings, infrastructure, services, etc.</li>
+</ul>
+</li>
+</ul>
+<h2 id="appropriate-data-sources-to-support-an-investigation">Appropriate Data Sources to Support an Investigation</h2>
+<h3 id="definitions-2">Definitions</h3>
+<ul>
+<li><strong>syslog</strong>: developed as a part of a sendmail implementation for collecting system logs (UDP port 514)</li>
+<li><strong>syslog-ng</strong>: extended syslog functionality with TCP, content-based filtering, database logging features, and TLS encryption</li>
+<li><strong>rsyslog</strong>: added buffered operation support and Reliable Event Logging Protocol (RELP)</li>
+<li><strong>journalctl</strong>: Linux command to view systemd, kernel, and journal logs</li>
+<li><strong>nxlog</strong>: multi-OS log collection/aggregation platform that aggregate, filters, enriches data, and integrates with SIEM software</li>
+<li><strong>Bandwidth Monitors</strong>: monitor network traffic/bandwidth to identify anomalies, IOCs, data exfiltration, and unusual traffic</li>
+<li><strong>Metadata</strong>: data that provides information about other data</li>
+<li><strong>Protocol Analyzers</strong>: packet inspection tools used to troubleshoot network issues, detect/inspect IOCs, decrypt SSL transmission, etc.</li>
+</ul>
+<h2 id="mitigation-techniques-to-secure-and-environment">Mitigation Techniques to Secure and Environment</h2>
+<h3 id="definition">Definition</h3>
+<ul>
+<li><strong>Application Whitelisting</strong>: a list of applications allowed to be run on a client
+<ul>
+<li>Blacklisting is a list of applications not allowed to be run on a client</li>
+</ul>
+</li>
+<li><strong>Quarantine</strong>: proactively blocking access or the ability to run/execute hosts that don&rsquo;t meet certain criteria or applications/processes that are flagged as suspicious/malicious</li>
+</ul>
+<h2 id="key-aspects-of-digital-forensics">Key Aspects of Digital Forensics</h2>
+<h3 id="definitions-3">Definitions</h3>
+<ul>
+<li><strong>Computer Forensics</strong>: analysis of digital data to aid in an investigation or make a determination of criminality</li>
+<li><strong>Legal Hold</strong>: data that has been identified as material to an investigation</li>
+<li><strong>Non-Repudiation</strong>: accountability/inability to refute an action, ownership, etc.</li>
+</ul>
+<h1 id="governance-risk-and-compliance">Governance, Risk, and Compliance</h1>
+<h2 id="comparing-and-contrasting-types-of-controls">Comparing and Contrasting Types of Controls</h2>
+<h3 id="definitions-4">Definitions</h3>
+<ul>
+<li><strong>Deterrent</strong>: systems or signage that is designed to discourage people from doing something</li>
+<li><strong>Preventative Controls</strong>: designed to keep someone from doing something</li>
+<li><strong>Detective Controls</strong>: detect activity and initiate some type of action</li>
+<li><strong>Corrective/Recovery Controls</strong>: used to get a system back to normal</li>
+<li><strong>Compensating Controls</strong>: provides an alternate solution to a countermeasure that is too difficult or too expensive to implement</li>
+</ul>
+<h2 id="regulations-standards-and-frameworks-that-impact-a-security-organization">Regulations, Standards, and Frameworks that Impact a Security Organization</h2>
+<h3 id="definitions-5">Definitions</h3>
+<ul>
+<li><strong>General Data Protection Regulation (GDPR)</strong>: privacy and security law from the EU in 2018 that imposes obligations onto organizations anywhere, so long as they target or collect data related to people in the EU
+<ul>
+<li>Provides individuals (data subject) more control over how organizations process, or control the processing of their data</li>
+</ul>
+</li>
+<li><strong>Processing</strong>: any operations, whether automated or manual, that is performed on personal data</li>
+<li><strong>Data Processor</strong>: responsible for the processing of personal data on behalf of data controllers</li>
+<li><strong>Data Controller</strong>: determine the purpose and the means by which personal data is processed</li>
+<li><strong>Compliance</strong>: adherence to a set of rules pertaining to people, process, and technology as it relates to policies, standards, regulations, laws, etc.</li>
+</ul>
+<h3 id="gdpr-data-processing-principles">GDPR Data Processing Principles</h3>
+<ol>
+<li>Lawfulness, fairness, and transparency</li>
+<li>Purpose limitation
+<ul>
+<li>Specified and explicit</li>
+</ul>
+</li>
+<li>Data minimization
+<ul>
+<li>Only what is necessary</li>
+</ul>
+</li>
+<li>Accurate and where possible kept up to date</li>
+<li>Storage limitation
+<ul>
+<li>Kept only as long as necessary</li>
+</ul>
+</li>
+<li>Integrity and confidentiality
+<ul>
+<li>Data kept secure</li>
+</ul>
+</li>
+</ol>
+<h3 id="gdpr-legal-grounds-for-processing-data">GDPR Legal Grounds for Processing Data</h3>
+<ul>
+<li>Consent</li>
+<li>Legitimate Interest</li>
+<li>Contract</li>
+<li>Legal Obligation</li>
+<li>Public Authority</li>
+<li>Vital Interest</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://www.comptia.org/certifications/security">Official CompTIA Security+ Site</a></li>
+<li><a href="https://www.pluralsight.com/paths/comptia-security-sy0-601">Pluralsight Security+ (SYO-601) Course</a></li>
+<li><a href="https://www.pluralsight.com/authors/chris-rees">Christopher Rees Pluralsight Bio</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/comptia/">CompTIA</a>
+            
+              <a href="https://s0merset7.github.io//tags/certification/">Certification</a>
+            
+              <a href="https://s0merset7.github.io//tags/security&#43;/">Security&#43;</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecurity%2b_pt4%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecurity%2b_pt4%2f&amp;text=CompTIA%20Security%2b%3a%20Operations%2c%20Incident%20Response%2c%20Governance%2c%20Risk%2c%20and%20Compliance&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecurity%2b_pt4%2f&amp;title=CompTIA%20Security%2b%3a%20Operations%2c%20Incident%20Response%2c%20Governance%2c%20Risk%2c%20and%20Compliance" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fmay%2fsecurity%2b_pt4%2f&amp;description=CompTIA%20Security%2b%3a%20Operations%2c%20Incident%20Response%2c%20Governance%2c%20Risk%2c%20and%20Compliance" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2024/may/securitypluspt3/security&#43;_pt3/"
+              data-toggle="tooltip" data-placement="top" title="CompTIA Security&#43;: Implementation of Secure Solutions">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/securitypluspt3/security&#43;_pt3/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Implementation of Secure Solutions</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 17, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part three of my notes for the CompTIA Security&#43; Certification covering the Implementation of Secure Solutions.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Implementation of Secure Solutions" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/security&#43;_pt2/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Architecture and Design</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 10, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part two of my notes for the CompTIA Security&#43; Certification covering Architecture and Design concepts.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Architecture and Design" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/securitypluspt1/security&#43;_pt1/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Attacks, Threats, and Vulnerabilities</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;May 22, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part one of my notes for the CompTIA Security&#43; Certification covering Attacks, Threats, and Vulnerabilities.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Attacks, Threats, and Vulnerabilities" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+
