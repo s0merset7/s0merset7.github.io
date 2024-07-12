@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>INE eJPT: Information Gathering and Enumeration - s0merset7&#39;s Blog</title>
+<meta name="description" content="Part one of my notes for the INE Junior Penetration Tester (eJPT) Certification covering Information Gathering and Enumeration content.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2024\/july\/ejpt_pt1\/",
+          "name": "Ine e jpt information gathering and enumeration"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "INE eJPT: Information Gathering and Enumeration",
+  "description" : "Part one of my notes for the INE Junior Penetration Tester (eJPT) Certification covering Information Gathering and Enumeration content.",
+  "inLanguage" : "en",
+  "wordCount":  3186 ,
+  "datePublished" : "2024-07-12T00:00:00",
+  "dateModified" : "2024-07-12T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "INE, Certification, eJPT" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2024\/july\/ejpt_pt1\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/eJPT.png">
+<meta property="og:url" content="https://s0merset7.github.io/post/2024/july/ejpt_pt1/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.123.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                INE eJPT: Information Gathering and Enumeration
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;July 12, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/eJPT.png" alt="INE eJPT: Information Gathering and Enumeration" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p><em>Note: Much of the below information is summarized from Alexis Ahmed&rsquo;s and Josh Mason&rsquo;s eJPT training videos hosted on INE Penetration Testing Student learning path. Much credit goes to their expertise! Check out their training materials in the sources</em></p>
+<p>INE&rsquo;s Junior Penetration Tester (eJPT) certification is cert designed to be taken by individuals with minimal cybersecurity experience, teaching them everything they need to know about penetration testing in order to get their foot in the door. Having taken and passed the exam, I condensed all of my notes for easy reference and to allow anyone to use them to assist with studying. The exam is a 48hr interactive test during which students must attempt to pentest several virtual environments in a lab setting and as proof answer questions about their exploitation process. The official study material is broken down into sections mirroring the penetration testing process, and this portion of my notes covers the &ldquo;Introduction&rdquo;, &ldquo;Information Gathering&rdquo;, and &ldquo;Enumeration&rdquo; content.</p>
+<p>Please keep in mind these are only my notes, and should not be used as the sole resource to study for the eJPT certification. Much of the necessary material is learned through interactive labs found in the Penetration Testing Student learning path. Additionally, the course constantly updates its material to remain up to current, meaning some of the below content may be out of date/missing important details.</p>
+<h1 id="ine-junior-penetration-tester-ejpt-notes">INE Junior Penetration Tester (eJPT) Notes</h1>
+<ul>
+<li><a href="#ine-junior-penetration-tester-ejpt-notes">INE Junior Penetration Tester (eJPT) Notes</a>
+<ul>
+<li><a href="#pentesting-methodology">Pentesting Methodology</a></li>
+<li><a href="#information-gathering">Information Gathering</a>
+<ul>
+<li><a href="#passive-reconnaissance">Passive Reconnaissance</a></li>
+<li><a href="#active-reconnaissance">Active Reconnaissance</a></li>
+<li><a href="#information-gathering-tools">Information Gathering Tools</a></li>
+</ul>
+</li>
+<li><a href="#enumeration">Enumeration</a>
+<ul>
+<li><a href="#smb">SMB</a></li>
+<li><a href="#ftp">FTP</a></li>
+<li><a href="#ssh">SSH</a></li>
+<li><a href="#https">HTTPS</a></li>
+<li><a href="#sql">SQL</a></li>
+<li><a href="#enumeration-tools">Enumeration Tools</a></li>
+</ul>
+</li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="pentesting-methodology">Pentesting Methodology</h2>
+<ol>
+<li>Information Gathering
+<ol>
+<li>Passive Information Gathering
+<ul>
+<li>OSINT</li>
+</ul>
+</li>
+<li>Active Information Gathering
+<ol>
+<li>Network Mapping</li>
+<li>Host Discovery</li>
+<li>Port Scanning</li>
+<li>Service Detection and Operating System Detection</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Enumeration
+<ol>
+<li>Service and Operating System Enumeration
+<ol>
+<li>Service Enumeration</li>
+<li>User Enumeration</li>
+<li>Share Enumeration</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Exploitation/Initial Access
+<ol>
+<li>Vulnerability Analysis and Threat Modeling
+<ol>
+<li>Vulnerability Analysis</li>
+<li>Vulnerability Identification</li>
+</ol>
+</li>
+<li>Exploitation
+<ol>
+<li>Developing/Modifying Exploits</li>
+<li>Service Exploitation</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Post-Exploitation
+<ol>
+<li>Post Exploitation
+<ol>
+<li>Local Enumeration</li>
+<li>Privilege Exploitation</li>
+<li>Credential Access</li>
+<li>Persistence</li>
+<li>Defense Evasion</li>
+<li>Lateral Movement</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Reporting
+<ol>
+<li>Report Writing</li>
+<li>Recommendations</li>
+</ol>
+</li>
+</ol>
+<h2 id="information-gathering">Information Gathering</h2>
+<ul>
+<li><strong>Information Gathering</strong>: the first step of any penetration test involving gathering or collecting information about an individual, company, website or system that you are targeting
+<ul>
+<li><strong>Passive Information Gathering</strong>: gathering as much information as possible without actively engaging with the target</li>
+<li><strong>Active Information Gathering</strong>: gathering as much information as possible by actively engaging with the target system
+<ul>
+<li>Requires authorization in order to perform</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="passive-reconnaissance">Passive Reconnaissance</h3>
+<ul>
+<li><strong>WHOIS</strong>: internet query and response protocol widely used for querying databases that store the registered users or assignees of a particular internet resources such as a domain name, IP address block, or autonomous system</li>
+<li><strong>Google Dorks/Hacking</strong>: additional search parameters that can be added to a Google search to specify desired search results
+<ul>
+<li><code>site:</code> specifies that all results should only be from a certain domain
+<ul>
+<li>Ex: <code>site:yourDomain.com</code></li>
+</ul>
+</li>
+<li><code>inurl:</code> specifies that all results must include the word(s) in the full URL
+<ul>
+<li>Ex: <code>inurl:forum</code></li>
+</ul>
+</li>
+<li><code>intitle:</code> specifies that all results must include the word(s) in the website title
+<ul>
+<li>Ex: <code>intitle:pottery</code></li>
+</ul>
+</li>
+<li><code>filetype:</code> specifies that all results must be of a certain file type
+<ul>
+<li>Ex: <code>filetype:pdf</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="active-reconnaissance">Active Reconnaissance</h3>
+<ul>
+<li><strong>DNS Interrogation</strong>: the process of enumerating DNS records for a specific domain
+<ul>
+<li><strong>DNS Zone File</strong>: a file containing records pertinent to a particular domain</li>
+</ul>
+</li>
+<li><strong>Network Mapping</strong>: the process of discovering and identifying devices, hosts, and network infrastructure elements within a target network
+<ul>
+<li><strong>Host Discovery</strong>: phase to identify live hosts on a network before further exploration and vulnerability assessment
+<ul>
+<li><strong>Ping Sweeps (ICMP Echo Requests)</strong>: sending ICMP Echo Requests (ping) to a range of IP addresses to identify live hosts
+<ul>
+<li>Pros: widley supported, quick method for identification of live hosts</li>
+<li>Cons: some hosts/firewalls (like Windows) can be configured to block ICMP traffic, can be easily detected</li>
+</ul>
+</li>
+<li><strong>ARP Scanning</strong>: using Address Resolution Protocol (ARP) requests to identify hosts on a local network</li>
+<li><strong>TCP SYN Ping (Half-Open Scan)</strong>: sending TCP SYN packets to a specific port (often 80) to check if a host is alive. This technique is stealthier than an ICMP ping
+<ul>
+<li>Pros: stealthier than ICMP ping, may bypass firewalls that allow outbound connections</li>
+<li>Cons: some hosts may not respond to to TCP SYN requests, firewalls and security devices can affect results</li>
+</ul>
+</li>
+<li><strong>UDP Ping</strong>: sending UDP packets to a specific port to check if a host is alive</li>
+<li><strong>TCP ACK Ping</strong>: sending TCP ACK packets to a specific port to check if a host is alive. This technique expects no response, but if a TCP RST is received, it indicates that the host is alive</li>
+<li><strong>SYN-ACK Ping</strong>: sending TCP SYN-ACK packets to a specific port to check if a host is alive. If a TCP RST is received, it indicates the host is alive</li>
+</ul>
+</li>
+<li>Identification of Open posts and services</li>
+<li>Network topology mapping</li>
+<li>Operating system fingerprinting</li>
+<li>Service version detection</li>
+<li>Identifying filtering and security measure</li>
+</ul>
+</li>
+</ul>
+<h3 id="information-gathering-tools">Information Gathering Tools</h3>
+<ul>
+<li><strong>BuiltWith</strong>: browser plugin that will list all technologies in use on a webpage</li>
+<li><strong>Wappalyzer</strong>: browser plugin that identified technologies used on a website</li>
+<li><strong>Whatweb</strong>: CLI tool that will return detected technologies found on a provided URL
+<ul>
+<li>Usage: <code>whatweb yourDomain.com</code></li>
+</ul>
+</li>
+<li><strong>HTTrack</strong>: downloadable tool that allows a user to download an internet website to a local directory, building recursively all directories, getting HTML, images, and other files from the server
+<ul>
+<li>Found <a href="https://wwww.httrack.com">here</a></li>
+</ul>
+</li>
+<li><strong>Netcraft</strong>: 3rd party tool that provides an automated lookup of many passive reconnaissance information such as WHOIS, website certificates, technologies used, basic SSl/TLS vulnerability checking, and network information
+<ul>
+<li>Found <a href="netcraft.com">here</a></li>
+</ul>
+</li>
+<li><strong>DNSRecon</strong>: a CLI tool based python script that provides the ability to perform DNS record lookups, NS records for one transforms, common SRV record enumeration, and TLD expansion
+<ul>
+<li>Usage: <code>dnsrecon -d yourDomain.com</code></li>
+</ul>
+</li>
+<li><strong>DNS Dumpster</strong>: web based solution to DNS reconnaissance research in a organized UI
+<ul>
+<li>Found <a href="dnsdumpster.com">here</a></li>
+</ul>
+</li>
+<li><strong>WAFW00F</strong>: a python based CLI tool used to detect web application firewalls (WAF) active on a given domain
+<ul>
+<li>Usage: <code>wafw00f yourDomain.com</code></li>
+</ul>
+</li>
+<li><strong>Sublist3r</strong>: a python based CLI tool designed to enumerate subdomains of websites using open source intelligence (OSINT)
+<ul>
+<li>Usage: <code>sublist3r -d yourDomain.com</code></li>
+</ul>
+</li>
+<li><strong>The Wayback Machine</strong>: a web based tool that records and stores versions of internet websites throughout time
+<ul>
+<li>Found <a href="web.archive.org">here</a></li>
+</ul>
+</li>
+<li><strong>theHarvester</strong>: a python based CLI tool designed to perform both passive and active reconnaissance to gather emails, names, subdomains, IPs, and URLs
+<ul>
+<li>Usage: <code>theHarvester -d yourDomain.com</code></li>
+</ul>
+</li>
+<li><strong>have i been pwned?</strong>: website that can check if an email/password has appeared in a past databreach
+<ul>
+<li>Found <a href="haveibeenpwned.com">here</a></li>
+</ul>
+</li>
+<li><strong>DNS Enumerator</strong>: CLI tool designed to perform passive and active DNS recon with features to automatically attempt zone transfers, DNS brute force, and more
+<ul>
+<li>Usage: <code>dnsenum yourDomain.com</code></li>
+</ul>
+</li>
+<li><strong>Network Mapper (nmap)</strong>: open source CLI tool for network exploration and security auditing that can rapidly scan large networks or single hosts
+<ul>
+<li>Usage: <code>nmap host</code>
+<ul>
+<li>Host Discovery
+<ul>
+<li><code>-sn</code> no port scan, will stop nmap after host discovery and only print available hosts that have responded to host discovery pings</li>
+<li><code>-Pn</code> ignores ping probes intended to check if the host is online and instead performs the port scan without checking for host activity first</li>
+<li><code>--send-ip</code> specify to use ICMP regardless of the detected network</li>
+<li><code>-PS</code> specify using a TCP SYN scan (default is to send to port 80)
+<ul>
+<li><code>-PS#</code> customize the port to send the TCP SYN packets to</li>
+</ul>
+</li>
+<li><code>-PA</code> specify using a TCP ACK scan (default is to send to port 80)
+<ul>
+<li><code>-PA#</code> customize the port to send the TCP ACK packets to</li>
+</ul>
+</li>
+<li><code>-PE</code> specify using a ICMP echo request scan</li>
+<li><code>-iL targetList.txt</code> have a newline separated file with a list of targets to scan</li>
+</ul>
+</li>
+<li>Port Scanning
+<ul>
+<li><code>--open</code> scan the network only returning results of open ports</li>
+<li><code>--top-ports #</code> scan only for the top &lsquo;x&rsquo; amount of common ports</li>
+<li><code>-F</code> fast scan, only scans the 100 most commonly used ports</li>
+<li><code>-p-</code> scan the entire port range instead of only the 1000 most commonly used ports</li>
+<li><code>-p</code> scan the selected port range
+<ul>
+<li>Ex: <code>-p 80</code> only scan port 80; <code>-p 80,443</code> only scan ports 80 and 443; <code>-p 1-100</code> only scan ports 1 through 100</li>
+</ul>
+</li>
+<li><code>-sS</code> stealth scan, ensures a TCP SYN scan is performed without completing a TCP 3-way handshake (no RST packet sent by namp) preventing connection logs from being generated</li>
+<li><code>sT</code> TCP connects scan (default scan), TCP SYN scan completed and nmap closes and connections (RST packet sent)</li>
+<li><code>-sU</code> UDP port scan, will perform a UDP port scan instead of the default TCP port scan</li>
+<li><code>-sA</code> TCP ACK scan, will send ACK packets to ports, typically best for identifying filtered ports</li>
+<li><code>-v</code> verbose, add output during the scan indicating scan progress and current results</li>
+<li><code>-sV</code> service version detection, check the version of active port services
+<ul>
+<li><code>--version-intensity #</code> with a number (higher is more accuracy required) will force nmap to provide a more detailed level of accuracy to the service version detection</li>
+</ul>
+</li>
+<li><code>-O</code> operating system detection, check the operating system of the host (accuracy varies)
+<ul>
+<li><code>--osscan-guess</code> will force nmap to guess what the OS is with percentage accuracy</li>
+</ul>
+</li>
+<li><code>-sC</code> default script scan, runs a list of script on open ports to try and find more information
+<ul>
+<li><code>--script=scriptName</code> specifies which script is desired to be run</li>
+<li><code>--script-help=scriptName</code> provides a brief description as to what the script does</li>
+<li><code>--script-args arg1,arg2</code> allows arguments to be included if a script requires them</li>
+</ul>
+</li>
+<li><code>-A</code> aggressive scan, combines the <code>-sV</code>, <code>-O</code>, and <code>-sC</code> flags into the scan</li>
+</ul>
+</li>
+<li>Timing and Performance
+<ul>
+<li>Timing Templates <code>-T#</code>: changes to the speed that can be modified based on the goal of the scan
+<ul>
+<li><code>T0</code> paranoid</li>
+<li><code>T1</code> sneaky</li>
+<li><code>T2</code> polite</li>
+<li><code>T3</code> normal</li>
+<li><code>T4</code> aggressive</li>
+<li><code>T5</code> insane</li>
+</ul>
+</li>
+<li><code>--host-timeout #units</code> changes the amount of time a scan will wait for a host to respond before quitting an attempt
+<ul>
+<li>Ex: <code>--host-timeout 5s</code> timeout after 5 seconds</li>
+</ul>
+</li>
+<li><code>--scan-delay #units</code> changes the amount of time to wait between a packet being sent
+<ul>
+<li>Ex: <code>--scan-delay 5s</code> wait 5 seconds between packets being sent</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Output Modes <code>-o* filename</code>: formats that the port scan results can be outputted to
+<ul>
+<li><code>-oN output.txt</code> normal, copies the results in the same format as when printed to the terminal</li>
+<li><code>-oX output.xml</code> XML, translates the results into XML format</li>
+<li><code>-oG output.txt</code> greppable format, translates the results into a mode that is easy to use Grep with</li>
+<li><code>-oA output</code> all flag, will translate the results into the three above common output formats</li>
+</ul>
+</li>
+<li>Detection Evasion
+<ul>
+<li><code>-f</code> fragmented packets, will fragment packets in an effort to evade IDS and firewalls
+<ul>
+<li><code>-f --mtu #</code> can set a maximum transmission unit (MTU) for how the packets should be fragmented</li>
+</ul>
+</li>
+<li><code>-D decoy_IP</code> can set a decoy IP address for nmap to be sending the packets from</li>
+<li><code>-g #</code> decoy port number, what to set the source port number to in packets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Net Discover</strong>:
+<ul>
+<li>Usage: <code>netdiscover -i interface -r IP_Range</code>
+<ul>
+<li><code>-i</code> interface, specify which interface should be used (Ex: eth0)</li>
+<li><code>-r</code> IP Range, the IP address range to be scanned in CIDR notation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>FPing</strong>: send ICMP ECHO_REQUEST packets to network hosts (modification of <code>ping</code>)
+<ul>
+<li>Usage: <code>fping IP_Range</code>
+<ul>
+<li><code>-a</code> alive, show targets that are alive</li>
+<li><code>-g</code> generate target list (if not <code>-f</code> is specified), allows a subnet to be specified as the IP_Range in CIDR notation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="smb">SMB</h3>
+<ul>
+<li><strong>SMB (Server Message Block)</strong>: a Windows implementation of a file share. Typically runs on port 445
+<ul>
+<li><strong>CIFS (Common Internet File Sharing System)</strong>: generic term for SMB</li>
+<li>Helpful <code>nmap</code> scripts for enumeration: (all scripts visible by running <code>ls /usr/share/nmap/script/ | grep &quot;smb&quot;</code>)
+<ul>
+<li><code>--script smb-protocols</code> helps find protocols being run on the instance of SMB</li>
+<li><code>--script smb-security-mode</code> reveals information about the security of the SMB instance (such as authentication levels, message signing, etc)</li>
+<li><code>--script smb-enum-sessions</code> shows active sessions on the SMB instance
+<ul>
+<li><code>--script smb-enum-sessions --script-args smbusername=&lt;username&gt;,smbpassword=&lt;password&gt;</code> shows active sessions being checked from the account that the credentials are for</li>
+</ul>
+</li>
+<li><code>--script smb-enum-shares</code> lists all shares on the device with access rights and other information
+<ul>
+<li><code>--script smb-enum-shares --script-args smbusername=&lt;username&gt;,smbpassword=&lt;password&gt;</code> lists all shares on the device with the access rights of the account that the credentials are for</li>
+<li><code>--script smb-enum-shares,smb-ls --script-args smbusername=&lt;username&gt;,smbpassword=&lt;password&gt;</code> lists all shares along with their directory structure (if user has access)</li>
+</ul>
+</li>
+<li><code>--script smb-enum-users --script-args smbusername=&lt;username&gt;,smbpassword=&lt;password&gt;</code> lists all user accounts for the SMB instance along with account info</li>
+<li><code>--script smb-server-stats --script-args smbusername=&lt;username&gt;,smbpassword=&lt;password&gt;</code> lists information about the server</li>
+<li><code>--script smb-enum-domains --script-args smbusername=&lt;username&gt;,smbpassword=&lt;password&gt;</code> lists available domains on the SMB instance</li>
+<li><code>--script smb-enum-sessions --script-args smbusername=&lt;username&gt;,smbpassword=&lt;password&gt;</code> lists all groups and corresponding users on the SMB instance</li>
+<li><code>--script smb-enum-services --script-args smbusername=&lt;username&gt;,smbpassword=&lt;password&gt;</code> lists all running services on the SMB instance</li>
+<li><code>--script smb-os-discovery</code> reveals operating system information about the SMB server</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>net</code>: Windows CLI tool to connect/disconnect to SMB servers</li>
+<li><code>net use Z: \\&lt;IP_Of_SMB_Server&gt;\C$ &lt;password&gt; /user:&lt;username&gt;</code> - connect and mount an SMB server located at a given IP address with provided credentials</li>
+<li><code>net use * /delete</code> - disconnect from any SMB mounted servers currently synched to</li>
+</ul>
+</li>
+<li><strong>SMB Map</strong>: python based CLI tool to enumerate SMB servers
+<ul>
+<li>Ex: <code>smbmap -u guest -p &quot;&quot; -d . -H &lt;IP_Of_SMB_Server&gt;</code> - logs into and prints a snapshot of the shares of the SMB server at given address under the guest account with a null password
+<ul>
+<li><code>-u &lt;username&gt;</code> username field</li>
+<li><code>-p &quot;&lt;password&quot;</code> password field (leave empty for no password)</li>
+<li><code>-d &lt;directory/mapping&gt;</code> directory to navigate to and print upon sign-in</li>
+<li><code>-H &lt;IP_Of_SMB_Server&gt;</code> hostname/IP address of the SMB server to login to</li>
+<li><code>-x &quot;&lt;command&gt;&quot;</code> runs the listed command upon login</li>
+<li><code>-L</code> list out the contents of the the SMB server</li>
+<li><code>-r '&lt;drive&gt;'</code> list the contents of the provided drive (Ex: <code>-r 'C$</code> lists the contents of the C-Drive)</li>
+<li><code>--upload '/local/filepath' 'SMB\filepath'</code> upload a local file to the SMB server (Ex: <code>--upload '/root/backdoor' 'C$\backdoor'</code> uploads the local file &ldquo;backdoor&rdquo; to the SMB server in the C-Drive)</li>
+<li><code>--download 'SMB\filepath'</code> download a file from the SMB server (Ex: <code>--download 'C$\test.txt'</code> downloads the test.txt file from the SMB C-Drive)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>SMB Client</strong>: linux CLI command to connect to and retrieve information about a server&rsquo;s SMB configuration
+<ul>
+<li>Usage: <code>smbclient &lt;flags&gt;</code>
+<ul>
+<li><code>-L &lt;IP_Address&gt;</code> list share information</li>
+<li><code>-N</code> check for a null session availability
+<ul>
+<li><code>smbclient //&lt;IP_Address&gt;/&lt;Share_Name&gt; -N</code> sign into the SMB server with a null password</li>
+</ul>
+</li>
+<li><code>-U &lt;username&gt;</code> indicate the username to sign in with (password will be prompted)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ftp">FTP</h3>
+<ul>
+<li><strong>FTP (File Transfer Protocol)</strong>: protocol that allows for remote access and storage of files</li>
+<li><code>ftp</code> CLI command to connect to an FTP server
+<ul>
+<li>Usage: <code>ftp &lt;IP_Address&gt;</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Helpful <code>nmap</code> scripts for enumeration: (all scripts visible by running <code>ls /usr/share/nmap/script/ | grep &quot;ftp&quot;</code>)
+<ul>
+<li><code>--script ftp-brute --script-args userdb=&lt;path/to/file&gt;</code> attempts to brute force passwords given a list of known users in a provided newline separated file</li>
+<li><code>--script ftp-anon</code> attempts to sign into the FTP server using default anonymous logins</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ssh">SSH</h3>
+<ul>
+<li><strong>SSH (Secure Shell)</strong>: used for remote administration by providing remote access to a machine via an encrypted tunnel</li>
+<li><code>ssh</code> CLI command to connect to a server via SSH
+<ul>
+<li>Usage: <code>ssh &lt;username&gt;@&lt;IP_Address&gt;</code></li>
+</ul>
+</li>
+<li>Helpful <code>nmap</code> scripts for enumeration: (all scripts visible by running <code>ls /usr/share/nmap/script/ | grep &quot;ssh&quot;</code>)
+<ul>
+<li><code>--script ssh2-enum-algos</code> enumerates all algorithms that can be used to create a sign-on key</li>
+<li><code>--script ssh-hostkey --script-args ssh_hostkey=full</code> attempts to find and present the SSH RSA host key</li>
+<li><code>--script ssh-auth-methods --script-args=&quot;ssh.user=&lt;username&gt;&quot;</code> identifies what (if any) authentication methods are in place for a known user</li>
+<li><code>--script ssh-brute --script-args userdb=&lt;path/to/file&gt;</code> tries to brute force the password for provided usernames</li>
+</ul>
+</li>
+</ul>
+<h3 id="https">HTTPS</h3>
+<ul>
+<li><strong>HTTP(S) (HyperText Transfer Protocol (Secure))</strong>: service used to host websites and allow for remote connection to them</li>
+<li>Helpful <code>nmap</code> scripts for enumeration: (all scripts visible by running <code>ls /usr/share/nmap/script/ | grep &quot;http&quot;</code>)
+<ul>
+<li><code>--script http-enum</code> enumerates services running on http and common directory listings found on the site</li>
+<li><code>--script http-headers</code> finds http header information</li>
+<li><code>--script http-methods --script-args http-methods.url-path=/&lt;website_path&gt;/</code> return allowed methods on that specific page of the website</li>
+<li><code>--script http-webdav-scan --script-args http-webdav-scan.path=/&lt;website_path&gt;/</code> helps identify webdav installations and enumerate information about them</li>
+<li><code>--script banner</code> returns the banner for a device connecting to the service for the first time</li>
+</ul>
+</li>
+<li><strong>httpie</strong>: CLI tool made to interact with HTTP services in a way similar to curl
+<ul>
+<li>Usage: <code>http &lt;IP_Address&gt;</code></li>
+</ul>
+</li>
+<li><strong>Bowsh</strong>: CLI tool to attempt to render a website in the command line
+<ul>
+<li>Usage: <code>browsh --startup-url &lt;website_URL&gt;</code></li>
+</ul>
+</li>
+<li><code>wget</code>: retrieves web files
+<ul>
+<li>Usage: <code>wget &quot;&lt;website_URL&gt;&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="sql">SQL</h3>
+<ul>
+<li><strong>SQL (Structured Query Language)</strong>: service used to interact with data</li>
+<li><strong>MySQL</strong>: one of the most common open versions of SQL, often run on Unix/Linux distributions
+<ul>
+<li>Typically run on port 3306</li>
+</ul>
+</li>
+<li>Helpful <code>nmap</code> scripts for enumeration: (all scripts visible by running <code>ls /usr/share/nmap/script/ | grep &quot;mysql&quot;</code>)
+<ul>
+<li><code>--script mysql-empty-password</code> finds any logons that allow an empty password for authentication</li>
+<li><code>--script mysql-info</code> provides enumeration info about a mysql service</li>
+<li><code>--script mysql-users --script-args=&quot;mysqluser='&lt;username&gt;',mysqlpass='&lt;password&gt;'&quot;</code> using provided user creds, will sign in and return a list of user accounts on the server</li>
+<li><code>--script mysql-databases --script-args=&quot;mysqluser='&lt;username&gt;',mysqlpass='&lt;password&gt;'&quot;</code> using provided user creds, will sign in and return a list of databases on the server</li>
+<li><code>--script mysql-variables --script-args=&quot;mysqluser='&lt;username&gt;',mysqlpass='&lt;password&gt;'&quot;</code> using provided user creds, will sign in and return a list of variables on the server</li>
+<li><code>--script mysql-audit --script-args=&quot;mysql-audit.username='&lt;username&gt;',mysql-audit.password='&lt;password&gt;',mysql-audit.filename='/usr/share/nmap/nselib/data/mysql-cis.audit'&quot;</code> provides common audit configuration checks and results</li>
+<li><code>--script mysql-dump-hashes --script-args=&quot;username='&lt;username&gt;',password='&lt;password&gt;'&quot;</code> using provided user creds, will sign in and return a list of account password hashes</li>
+</ul>
+</li>
+<li><code>mysql</code>: CLI tool used to interact with MySQL servers
+<ul>
+<li>Usage: <code>mysql -h &lt;IP_Address&gt; </code>
+<ul>
+<li><code>-h &lt;IP_Address&gt;</code> indicate the host IP address</li>
+<li><code>-u &lt;username&gt;</code> username to sign in with (default is &ldquo;root&rdquo;)</li>
+</ul>
+</li>
+<li>Commands to use in the interface:
+<ul>
+<li><code>show databases;</code> displays a list of all databases on the server</li>
+<li><code>use &lt;database_name&gt;;</code> changes the database to the selected one</li>
+<li><code>help</code> display help menu</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>MSSQL (Microsoft SQL)</strong>: most common Microsoft instance of SQL
+<ul>
+<li>Helpful <code>nmap</code> scripts for enumeration: (all scripts visible by running <code>ls /usr/share/nmap/script/ | grep &quot;ms-sql&quot;</code>)
+<ul>
+<li><code>--script ms-sql-info</code> performs basic enumeration on the MSSQL instance</li>
+<li><code>--script ms-sql-ntlm-sql --script-args mssql.instance-port=&lt;port_number&gt;</code> performs basic enumeration on an NTLM MSSQL instance</li>
+<li><code>--script ms-sql-brute --script-args userdb=&lt;file/path/to/wordlist&gt;,passdb=&lt;file/path/to/wordlist&gt;</code> attempts to brute force a login from the supplied wordlists</li>
+<li><code>--script ms-sql-empty-password</code> attempt to login to the MSSQL service with a null password</li>
+<li><code>--script ms-sql-dump-hashes --script-args mssql.username=&lt;username&gt;,mssql.password=&lt;password&gt;</code> logs in using provided credentials to find and list other user account password hashes</li>
+<li><code>--script ms-sql-xp-cmdshell --script-args mssql.username=&lt;username&gt;,mssql.password=&lt;password&gt;,cmd=&quot;&lt;command_to_use&gt;&quot;</code> logs in using provided credentials and executes the provided command</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="enumeration-tools">Enumeration Tools</h3>
+<ul>
+<li><strong>NMB Lookup</strong>: CLI tool that utilizes NetBIOS information to view configuration settings
+<ul>
+<li>Usage: <code>nmblookup &lt;flags&gt;</code>
+<ul>
+<li><code>-A &lt;IP_Address&gt;</code> lookup by IP to connect to a server&rsquo;s NetBIOS info and list server connection information</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>RPC Client</strong>:
+<ul>
+<li>Usage <code>rpcclient &lt;flags&gt; &lt;IP_Address&gt;</code>
+<ul>
+<li><code>-U &quot;&lt;username&gt;&quot;</code> username field (leave empty string for null session)</li>
+<li><code>-N</code> no password</li>
+</ul>
+</li>
+<li>Commands to use when connected:
+<ul>
+<li><code>?</code> list all available commands (help)</li>
+<li><code>srvinfo</code> show server information</li>
+<li><code>enumdomusers</code> show list of users</li>
+<li><code>lookupnames &lt;username&gt;</code> show info (SID) of provided user</li>
+<li><code>enumdomgroups</code> show all domain groups</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Enumeration for Linux</strong>: enumeration CLI tooling
+<ul>
+<li>Usage: <code>enum4linux &lt;flags&gt; &lt;IP_Address&gt;</code>
+<ul>
+<li><code>-o</code> operating system information</li>
+<li><code>-U</code> show a list of users on the server</li>
+<li><code>-S</code> list all shares</li>
+<li><code>-G</code> list all domain groups</li>
+<li><code>-i</code> list if printers are available</li>
+<li><code>-r</code> list users and SIDs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hydra</strong>: brute force CLI tool
+<ul>
+<li>Usage: <code>hydra &lt;flags&gt; &lt;IP_Address&gt; &lt;protocol&gt;</code> (Ex: <code>hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.10.10 smb</code> will try to login to the SMB server at the IP address with the username admin trying passwords found in the rockyou txt file)
+<ul>
+<li><code>-l &lt;username&gt;</code> login name</li>
+<li><code>-P &lt;path/to/file&gt;</code> indicate password wordlist</li>
+<li><code>-L &lt;path/to/file&gt;</code> indicates login username wordlist</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Net Cat</strong>: CLI tool to connect to remote hosts
+<ul>
+<li>Usage: <code>nc &lt;IP_Address&gt; &lt;Port_Number&gt;</code></li>
+</ul>
+</li>
+<li><strong>WhatWeb</strong>: CLI tool to help enumerate website information
+<ul>
+<li>Usage: <code>whatweb &lt;IP_Address&gt;</code></li>
+</ul>
+</li>
+<li><strong>Directory Buster</strong>: CLI tool to enumerate directories of a website from a wordlist
+<ul>
+<li>Usage: <code>dirb &lt;website_URL&gt; &lt;file/path/to/wordlist&gt;</code></li>
+</ul>
+</li>
+<li><code>lynx</code>: CLI tool to display the text and formatting from a website
+<ul>
+<li>Usage: <code>lynx &lt;website_URL&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://ine.com/">Official INE Site</a></li>
+<li><a href="https://my.ine.com/CyberSecurity/learning-paths/61f88d91-79ff-4d8f-af68-873883dbbd8c/penetration-testing-student">INE eJPT Study Course</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/ine/">INE</a>
+            
+              <a href="https://s0merset7.github.io//tags/certification/">Certification</a>
+            
+              <a href="https://s0merset7.github.io//tags/ejpt/">eJPT</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fjuly%2fejpt_pt1%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fjuly%2fejpt_pt1%2f&amp;text=INE%20eJPT%3a%20Information%20Gathering%20and%20Enumeration&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fjuly%2fejpt_pt1%2f&amp;title=INE%20eJPT%3a%20Information%20Gathering%20and%20Enumeration" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fjuly%2fejpt_pt1%2f&amp;description=INE%20eJPT%3a%20Information%20Gathering%20and%20Enumeration" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2024/may/security&#43;_pt4/"
+              data-toggle="tooltip" data-placement="top" title="CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/security&#43;_pt4/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 23, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part four of my notes for the CompTIA Security&#43; Certification covering the Operations and Incident Response and Governance, Risk, and Compliance sections.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/securitypluspt3/security&#43;_pt3/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Implementation of Secure Solutions</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 17, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part three of my notes for the CompTIA Security&#43; Certification covering the Implementation of Secure Solutions.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Implementation of Secure Solutions" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/security&#43;_pt2/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Architecture and Design</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 10, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part two of my notes for the CompTIA Security&#43; Certification covering Architecture and Design concepts.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Architecture and Design" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+
