@@ -6,8 +6,22 @@
     <description>Recent content in Certification on s0merset7&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://s0merset7.github.io/tags/certification/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>INE eJPT: Introduction to Attacks</title>
+      <link>https://s0merset7.github.io/post/2024/july/ejpt_pt2/</link>
+      <pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://s0merset7.github.io/post/2024/july/ejpt_pt2/</guid>
+      <description>Note: Much of the below information is summarized from Alexis Ahmed&amp;rsquo;s and Josh Mason&amp;rsquo;s eJPT training videos hosted on INE Penetration Testing Student learning path. Much credit goes to their expertise! Check out their training materials in the sources&#xA;Continuing with my notes from studying for the INE Junior Penetration Tester (eJPT) exam. The exam breaks down its curriculum into several sections, and this portion of my notes covers the &amp;ldquo;Introduction to Attacks&amp;rdquo; content.</description>
+    </item>
+    <item>
+      <title>INE eJPT: Information Gathering and Enumeration</title>
+      <link>https://s0merset7.github.io/post/2024/july/ejpt_pt1/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://s0merset7.github.io/post/2024/july/ejpt_pt1/</guid>
+      <description>Note: Much of the below information is summarized from Alexis Ahmed&amp;rsquo;s and Josh Mason&amp;rsquo;s eJPT training videos hosted on INE Penetration Testing Student learning path. Much credit goes to their expertise! Check out their training materials in the sources&#xA;INE&amp;rsquo;s Junior Penetration Tester (eJPT) certification is cert designed to be taken by individuals with minimal cybersecurity experience, teaching them everything they need to know about penetration testing in order to get their foot in the door.</description>
+    </item>
     <item>
       <title>CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance</title>
       <link>https://s0merset7.github.io/post/2024/may/security&#43;_pt4/</link>
