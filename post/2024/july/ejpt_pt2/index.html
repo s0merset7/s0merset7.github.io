@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>INE eJPT: Introduction to Attacks - s0merset7&#39;s Blog</title>
+<meta name="description" content="Part two of my notes for the INE Junior Penetration Tester (eJPT) Certification covering Introduction to Attacks.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2024\/july\/ejpt_pt2\/",
+          "name": "Ine e jpt introduction to attacks"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "INE eJPT: Introduction to Attacks",
+  "description" : "Part two of my notes for the INE Junior Penetration Tester (eJPT) Certification covering Introduction to Attacks.",
+  "inLanguage" : "en",
+  "wordCount":  2471 ,
+  "datePublished" : "2024-07-23T00:00:00",
+  "dateModified" : "2024-07-23T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "INE, Certification, eJPT" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2024\/july\/ejpt_pt2\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/eJPT.png">
+<meta property="og:url" content="https://s0merset7.github.io/post/2024/july/ejpt_pt2/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.123.3"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                INE eJPT: Introduction to Attacks
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;July 23, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/eJPT.png" alt="INE eJPT: Introduction to Attacks" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p><em>Note: Much of the below information is summarized from Alexis Ahmed&rsquo;s and Josh Mason&rsquo;s eJPT training videos hosted on INE Penetration Testing Student learning path. Much credit goes to their expertise! Check out their training materials in the sources</em></p>
+<p>Continuing with my notes from studying for the INE Junior Penetration Tester (eJPT) exam. The exam breaks down its curriculum into several sections, and this portion of my notes covers the &ldquo;Introduction to Attacks&rdquo; content.</p>
+<p>Please keep in mind these are only my notes, and should not be used as the sole resource to study for the eJPT certification. Much of the necessary material is learned through interactive labs found in the Penetration Testing Student learning path. Additionally, the course constantly updates its material to remain up to current, meaning some of the below content may be out of date/missing important details.</p>
+<h1 id="ine-junior-penetration-tester-ejpt-notes">INE Junior Penetration Tester (eJPT) Notes</h1>
+<ul>
+<li><a href="#ine-junior-penetration-tester-ejpt-notes">INE Junior Penetration Tester (eJPT) Notes</a>
+<ul>
+<li><a href="#introduction-to-attacks">Introduction to Attacks</a>
+<ul>
+<li><a href="#windows">Windows</a>
+<ul>
+<li><a href="#frequently-exploited-windows-services">Frequently Exploited Windows Services:</a>
+<ul>
+<li><a href="#microsoft-iis-and-webdav-web-distributed-authoring--versioning">Microsoft IIS and WebDAV (Web Distributed Authoring &amp; Versioning)</a></li>
+<li><a href="#smbcifs-server-message-block-protocol">SMB/CIFS (Server Message Block Protocol)</a></li>
+<li><a href="#rdp">RDP</a></li>
+<li><a href="#winrm">WinRM</a></li>
+</ul>
+</li>
+<li><a href="#privilege-escalation">Privilege Escalation</a>
+<ul>
+<li><a href="#windows-kernel">Windows Kernel</a></li>
+<li><a href="#user-account-control">User Account Control</a></li>
+<li><a href="#access-token-impersonation">Access Token Impersonation</a></li>
+</ul>
+</li>
+<li><a href="#alternate-data-streams">Alternate Data Streams</a></li>
+<li><a href="#credential-dumping">Credential Dumping</a></li>
+</ul>
+</li>
+<li><a href="#linux">Linux</a>
+<ul>
+<li><a href="#apache-web-server">Apache Web Server</a></li>
+<li><a href="#ssh-secure-shell">SSH (Secure Shell)</a></li>
+<li><a href="#ftp-file-transfer-protocol">FTP (File Transfer Protocol)</a></li>
+<li><a href="#samba">SAMBA</a></li>
+<li><a href="#kernel-exploitation">Kernel Exploitation</a></li>
+<li><a href="#password-cracking">Password Cracking</a></li>
+<li><a href="#tools">Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction-to-attacks">Introduction to Attacks</h2>
+<h3 id="windows">Windows</h3>
+<ul>
+<li>Types of Windows Vulnerabilities:
+<ul>
+<li><strong>Information Disclosure</strong>: vulnerability that allows an attacker to access confidential data</li>
+<li><strong>Buffer Overflows</strong>: caused by a programming error, allows attackers to write data to a buffer and overrun the allocated buffer, consequently writing data to allocated memory addresses</li>
+<li><strong>Remote Code Execution</strong>: vulnerability that allows an attacker to remotely execute code on the target system</li>
+<li><strong>Privilege Escalation</strong>: vulnerability that allows an attacker to elevate their privileges after initial compromise</li>
+<li><strong>Denial of Service (DOS)</strong>: vulnerability that allows an attacker to consume a system/host&rsquo;s resources (CPU, RAM, Network, etc) consequently preventing the system from functioning normally</li>
+</ul>
+</li>
+</ul>
+<h4 id="frequently-exploited-windows-services">Frequently Exploited Windows Services:</h4>
+<h5 id="microsoft-iis-and-webdav-web-distributed-authoring--versioning">Microsoft IIS and WebDAV (Web Distributed Authoring &amp; Versioning)</h5>
+<ul>
+<li>
+<p><strong>Microsoft IIS (Internet Information Services)</strong></p>
+<ul>
+<li>Proprietary web server software developed by Microsoft that runs on Windows</li>
+<li>TCP ports 80,443</li>
+<li>Can be used to host websites/web apps and provides admins with a robust GUI for management</li>
+<li>USes to host both static and dynamic web pages developed in ASP.NET and PHP</li>
+<li>Supports the following executable file extensions
+<ul>
+<li>.asp, .aspx, .config, .php</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>WebDAV (Web Distributed Authoring &amp; Versioning)</strong></p>
+<ul>
+<li>HTTP extension that allows clients to update, delete, move, and copy files on a wbe server
+<ul>
+<li>It is used to enable a web server to act as a file server</li>
+</ul>
+</li>
+<li>TCP ports 80,443 (on top of Microsoft IIS)</li>
+<li>In order to connect to a WebDAV server, one needs to provide legitimate credentials as WebDAV implements authentication in the form of a user/pass</li>
+</ul>
+</li>
+<li>
+<p><strong>Exploitation</strong></p>
+<ol>
+<li>Identify whether WebDAV is configured to run on the IIS web server</li>
+<li>Perform a brute-force attack on the server to identify credentials for authentication</li>
+<li>Authenticate with the WebDAV server to upload a malicious .asp payload use to execute arbitrary commands/obtain a reverse shell</li>
+</ol>
+<ul>
+<li>Tools:
+<ul>
+<li><strong>DAV Test</strong>: used to scan, authenticate, and exploit a WebDAV server
+<ul>
+<li>Usage: <code>davtest -&lt;flags&gt;</code></li>
+</ul>
+</li>
+<li><strong>Cadaver</strong>: supports file upload, download, on-screen display, in-place editing, namespace operations, collection creation/deletion, property manipulation, and resource locking on WebDAV servers
+<ul>
+<li>Usage: <code>cadaver &lt;vulnerable_url&gt;</code></li>
+<li>To find provided webshells, search <code>ls /user/share/webshells/</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="smbcifs-server-message-block-protocol">SMB/CIFS (Server Message Block Protocol)</h5>
+<ul>
+<li>Network file sharing protocol that is used to facilitate the sharing of files and peripherals between computers on a local network</li>
+<li>TCP port 445 (originally ran on top of NetBIOS on port 139)</li>
+<li><strong>SAMBA</strong>: the open source Linux implementation of AMB that allows Windows systems to access Linux shares/devices</li>
+<li>Uses two levels of authentication (both a challenge response authentication system):
+<ul>
+<li><strong>User Authentication</strong>: users must provide a username/password in order to authenticate with the SMB server in order to access a share</li>
+<li><strong>Share Authentication</strong>: users must provide a password in order to access a restricted share</li>
+</ul>
+</li>
+<li><strong>PsExec</strong>: a lightweight telnet-replacement developed by Microsoft that allows a user to execute processes on remote windows systems using any user&rsquo;s credentials
+<ul>
+<li>PsExec authentication is (performed bia SMB)</li>
+<li>PsExec utility can be used to authenticate with the target system legitimately and run arbitrary commands/launch a remote command prompt</li>
+<li>Very similar to RDP, however commands are sent via CMD vs controlling the remote system via GUI</li>
+</ul>
+</li>
+<li><strong>Exploitation</strong>:
+<ol>
+<li>Identify legitimate user accounts and their respective passwords/password hashes</li>
+</ol>
+<ul>
+<li>Can be performed many ways but commonly achieved by performing an SMB login brute-force attack</li>
+<li>Can narrow down brute-force attacks to only include common Windows user accounts (ex: Administrator)</li>
+</ul>
+<ol start="2">
+<li>With credentials, can authenticate with the target system via PsExec and execute arbitrary system commands/obtain a reverse shell</li>
+</ol>
+<ul>
+<li>Tools:
+<ul>
+<li><code>psexec.py</code>: python script to install a reverse shell to gain access to an SMB server with proper credentials
+<ul>
+<li>Usage: <code>psexec.py &lt;username&gt;@&lt;IP_address&gt; &lt;desired_name_of_executable&gt;.exe</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>EternalBlue Exploit (MS17-010/CVE-2017-0144)</strong>: collection of windows vulnerabilities and exploits that allow attackers to remotely execute arbitrary code and gain access to a Windows system and consequently the network that the target system is a part of
+<ul>
+<li>Takes advantage of a vulnerability in the Windows SMBv1 protocol that allows attackers to send specially crafted packets that consequently facilitate the execution of arbitrary commands</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="rdp">RDP</h5>
+<ul>
+<li><strong>RDP (Remote Desktop Protocol)</strong>: proprietary GUI remote access protocol developed by Microsoft and is used to remotely authenticate and interact with a Windows system</li>
+<li>Uses TCP port 3389 by default but can be configured to run on any other TCP port</li>
+<li>RDP authentication requires a legitimate user account on the target system as well as the user&rsquo;s password in clear-text</li>
+<li>RDP brute-force attacks can be used to identify legitimate user credentials that can then be used to gain remote access to the target system</li>
+<li>Tools:
+<ul>
+<li><strong>X-Free RDP</strong>: CLI tool to connect to an RDP session
+<ul>
+<li>Usage: <code>xfreerdp /u:&lt;username&gt; /p:&lt;password&gt; /v:&lt;IP_Address&gt;:&lt;port_number&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>BlueKeep (CVE-2019-0708)</strong>: RDP vulnerability in Windows that could potentially allow attackers to remotely execute arbitrary code and gain access to a Windows system/network
+<ul>
+<li>The exploit takes advantage of a vulnerability in the RDP protocol that allows attackers to gain access to a chunk of kernel memory which gives arbitrary code execution at the system level without authentication</li>
+</ul>
+</li>
+</ul>
+<h5 id="winrm">WinRM</h5>
+<ul>
+<li><strong>WinRM (Windows Remote Management Protocol)</strong>: Windows remote management protocol that cna be used to facilitate remote access with Windows systems</li>
+<li>TCP ports 5986,443</li>
+<li>Implemented into Windows to assist system administrators by allowing:
+<ul>
+<li>Remote access and interaction with Windows hosts on a local network</li>
+<li>Remote access and command execution on Windows systems</li>
+<li>Manage and configure Windows systems remotely</li>
+</ul>
+</li>
+<li><strong>Exploitation</strong>
+<ul>
+<li>WinRM implements access control and security for communication between systems through various forms of authentication</li>
+<li><code>crackmapexec</code> can be used to perform a brute-force attack in order to identify users and passwords, leading to command execution on a target system</li>
+<li>Utilize a ruby script called &ldquo;evil-winrm&rdquo; to obtain a command shell session on the target system</li>
+</ul>
+</li>
+<li>Tools:
+<ul>
+<li><strong>Evil WinRM</strong>: a ruby script used to create a shell over WinRM for an attacker
+<ul>
+<li>Usage: <code>evil-winrm.rb -u &lt;username&gt; -p '&lt;password&gt;' -i &lt;IP_Address&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="privilege-escalation">Privilege Escalation</h4>
+<h5 id="windows-kernel">Windows Kernel</h5>
+<ul>
+<li><strong>Kernel</strong>: a computer program that is the core of an operating system and has complete control over every resource and hardware on a system
+<ul>
+<li>Acts as a translation layer between hardware and software and facilitates communication between the two layers</li>
+</ul>
+</li>
+<li><strong>Windows NT</strong>: the kernel that comes pre-packaged with all versions of Microsoft Windows and operates as a traditional kernel with a few exceptions based on user design philosophy
+<ul>
+<li>Consists of two main modes of operation that determine access to system resources and hardware
+<ul>
+<li><strong>User Mode</strong>: programs and services running in user mode have limited access to system resources and functionality</li>
+<li><strong>Kernel Mode</strong>: kernel mode has unrestricted access to system resources and functionality with the added functionality of managing devices and system memory</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="user-account-control">User Account Control</h5>
+<ul>
+<li><strong>UAC (User Account Control)</strong>: a Windows security feature (introduced in Windows Vista) that is used to prevent unauthorized changes from being made to the operating system
+<ul>
+<li>Used to ensure changes to the operating system require approval from the administrator or a user account that is part of the local administrators group</li>
+<li>A non-privileged user attempting to execute a program with elevated privileges will be prompted with the UAC credential prompt
+<ul>
+<li>While a privileges user would be prompted with a consent prompt</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="access-token-impersonation">Access Token Impersonation</h5>
+<ul>
+<li><strong>Windows Access Token</strong>: a core element of the authentication process on Windows and are created and managed by the Local Security Authority Subsystem Service (LSASS)
+<ul>
+<li>Responsible for identifying and describing the security context of a process/thread running on a system</li>
+<li>Generated by the winlogon.exe process every time a user authenticates successfully and includes the identity and privileges of the user account associated with the thread/process
+<ul>
+<li>Token is then attached to the userinit.exe process which then all child processes started by a user will inherit a cop of the access token from their creator and will run under the privileges of the same access token</li>
+</ul>
+</li>
+<li>Access tokens are categorized based on the varying security levels assigned to them
+<ul>
+<li><strong>Impersonate-Level</strong>: tokens created as a direct result of a non-interactive login on Windows, typically through specific system services or domain logons
+<ul>
+<li>Can be used to impersonate a token on the local system and not on any external systems that utilize the token</li>
+</ul>
+</li>
+<li><strong>Delegate-Level</strong>: tokens are typically created through an interactive login on Windows, primarily through a traditional login or through remote access protocols such as RDP
+<ul>
+<li>Pose the largest threat as they can impersonate tokens on any system</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Windows Privileges Required for Impersonation Attack:
+<ul>
+<li><strong>SeAssignPrimaryToken</strong>: allows a user to impersonate tokens</li>
+<li><strong>SeCreateToken</strong>: allows a user to create an arbitrary token with administrative privileges</li>
+<li><strong>SeImpersonatePrivilege</strong>: allows a user to create a process under the security context of another user typically with administrative privileges</li>
+</ul>
+</li>
+</ul>
+<h4 id="alternate-data-streams">Alternate Data Streams</h4>
+<ul>
+<li><strong>Alternate Data Streams (ADS)</strong>: a New Technology File System (NTFS) file attribute and was designed to provide compatibility with the MacOS HFS (Hierarchical File System)</li>
+<li>Any file created on an NTFS formatted drive will have two different forks/streams
+<ul>
+<li><strong>Data Stream</strong>: default stream that contains the data of the file</li>
+<li><strong>Resource Stream</strong>: typically contains the metadata of the file</li>
+</ul>
+</li>
+<li>ADS can be used to fide malicious code/executables in legitimate files to evade detection
+<ul>
+<li>Done by storing the malicious code/executable in the files attribute resource stream (metadata) of a legitimate file</li>
+<li>Usually used to evade basic signature based Anti-Virus and static scanning tools</li>
+</ul>
+</li>
+</ul>
+<h4 id="credential-dumping">Credential Dumping</h4>
+<ul>
+<li>Windows OS stores hashed user account passwords locally in the Security Accounts Manager (SAM) database</li>
+<li>Authentication and verification of user credentials is facilitated by the Local Security Authority (LSA)</li>
+<li>Windows versions up to Windows Server 2003 use LM and NTLM hashes, Windows Vista onwards only utilizes NTLM</li>
+<li><strong>SAM (Security Accoun Manager)</strong>: a database file responsible for managing user accounts and passwords on Windows
+<ul>
+<li>All account passwords stored in the SAM database are hashed</li>
+<li>The SAM database file cannot be copied while the operating system is running</li>
+<li>Windows NT kernel keeps the SAM database file locked, forcing hackers to utilize in-memory techniques and tools to dump SAM hashes from teh LSASS process</li>
+<li>Modern Windows versions encrypt the SAM database with a syskey</li>
+</ul>
+</li>
+<li><strong>LM (LanMan) Hash</strong>: the default hashing algorithm implemented in Windows operating systems prior to NT4.0
+<ul>
+<li>Used to hash user passwords using the following process:
+<ul>
+<li>Password is broken into two seven-character chunks</li>
+<li>All characters are converted to uppercase</li>
+<li>Each chunk is hashed separately with the DES algorithm</li>
+</ul>
+</li>
+<li>Considered to be a weak protocol and easily cracked as the password hash does not include salts</li>
+</ul>
+</li>
+<li><strong>NTLM (NTHash)</strong>: a collection of authentication protocols utilized in Windows to facilitate authentication between computers
+<ul>
+<li>Process involves using a valid username and password to authenticate successfully</li>
+<li>Used in Windows Vista onwards (LM is disabled)</li>
+<li>When a user account is created, it is encrypted using the MD4 hashing algorithm, while the original password is disposed of</li>
+<li>Improves on LM by:
+<ul>
+<li>Does not split the hash into two chunks</li>
+<li>Case sensitive</li>
+<li>Allows the use of symbols/unicode characters</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Unattended Windows Setup</strong>: capability to automatically configure multiple Windows setups on different devices by deploying a custom configuration file
+<ul>
+<li>The utility will typically utilize one of the following config files that contain user account and system config info
+<ul>
+<li><code>C:\Windows\Panther\Unattend.xml</code></li>
+<li><code>C:\Windows\Panther\Autounattend.xml</code></li>
+</ul>
+</li>
+<li>The passwords to these files may be base64 encoded</li>
+</ul>
+</li>
+<li><strong>Mimicatz</strong>: A Windows post-exploitation tool allowing for the extraction of clear-text passwords, hashes, and kerberos tickets from memory
+<ul>
+<li>Can be used to extract hashes from the lsass.exe process memory where hashes are cached</li>
+</ul>
+</li>
+<li><strong>Pass-The-Hash</strong>: an exploitation technique that involves capturing or harvesting NTLM hashes/clear-text passwords and utilizing them to authenticate with the target legitimately
+<ul>
+<li>Allows attackers to obtain access to the target system via legitimate credentials as opposed to obtaining access via service exploitation</li>
+</ul>
+</li>
+</ul>
+<h3 id="linux">Linux</h3>
+<h4 id="apache-web-server">Apache Web Server</h4>
+<ul>
+<li>A free an open source cross-platform web server released under the Apache License 2.0</li>
+<li>Accounts for over 80% of web servers globally</li>
+<li>TCP ports 80/443</li>
+<li><strong>Shellshock (CVE-2014-6271)</strong>: a family of vulnerabilities in the Bash shell that allows an attacker to execute remote arbitrary commands via Bash, consequently allowing the attacker to obtain remote access to the target system via a reverse shell
+<ul>
+<li>Caused by a vulnerability in Bash when Bash mistakenly executes trailing commands after a series of characters</li>
+<li>Affects only Linux (Windows does not utilize Bash)</li>
+<li>Apache web servers configured to run CGI (Common Gateway Interface) or .sh scripts are also vulnerable</li>
+<li>For execution, an input vector/script that allows for Bash communication must be located</li>
+</ul>
+</li>
+</ul>
+<h4 id="ssh-secure-shell">SSH (Secure Shell)</h4>
+<ul>
+<li>A cryptographic remote access protocol that is used to remotely access and control systems over an unsecured network</li>
+<li>Developed as a secure successor to telnet</li>
+<li>Authentication is either username and password or key based authentication</li>
+<li>TCP port 22 (can be configured to run on any open TCP port)</li>
+</ul>
+<h4 id="ftp-file-transfer-protocol">FTP (File Transfer Protocol)</h4>
+<ul>
+<li>A protocol used to facilitate file sharing between a server and client/clients (and vice-versa)</li>
+<li>Frequently used as a means of transferring files to and from the directory of a web server</li>
+<li>Authentication requires a username and password combination</li>
+<li>May be configured to allow anonymous access allowing unauthenticated access</li>
+<li>TCP port 21</li>
+</ul>
+<h4 id="samba">SAMBA</h4>
+<ul>
+<li>Samba is the Linux implementation of SMB, and allows Windows systems to access linux shares and devices</li>
+<li>Authentication uses username and password</li>
+<li>TCP port 445</li>
+</ul>
+<h4 id="kernel-exploitation">Kernel Exploitation</h4>
+<ul>
+<li>Typically target vulnerabilities in the Linux kernel to execute arbitrary code
+<ul>
+<li>With the goal of running privileged system commands or obtaining a system shell</li>
+</ul>
+</li>
+<li>Process differs based on Kernel version and distribution</li>
+</ul>
+<h4 id="password-cracking">Password Cracking</h4>
+<ul>
+<li>The <code>passwd</code> file gives information in regard to the hashing algorithm being used and the password has
+<ul>
+<li>This can be determined by viewing the number after the username encapsulated by the dollar symbol ($)</li>
+</ul>
+</li>
+<li><code>$1</code> = MD5</li>
+<li><code>$2</code> = Blowfish</li>
+<li><code>$3</code> = SHA-256</li>
+<li><code>$6</code> = SHA-512</li>
+</ul>
+<h4 id="tools">Tools</h4>
+<ul>
+<li><code>crackmapexec</code>: swiss army tool for penetration testing</li>
+<li><code>searchsploit</code>: tool to search for known exploits</li>
+<li><code>Linux-Exploit-Suggester</code>: tool designed to assist in detecting security deficiencies in a Linux Kernel
+<ul>
+<li>Using heuristics methods will assess the exposure of the given kernel on every publicly known kernel exploit</li>
+</ul>
+</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://ine.com/">Official INE Site</a></li>
+<li><a href="https://my.ine.com/CyberSecurity/learning-paths/61f88d91-79ff-4d8f-af68-873883dbbd8c/penetration-testing-student">INE eJPT Study Course</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/ine/">INE</a>
+            
+              <a href="https://s0merset7.github.io//tags/certification/">Certification</a>
+            
+              <a href="https://s0merset7.github.io//tags/ejpt/">eJPT</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fjuly%2fejpt_pt2%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fjuly%2fejpt_pt2%2f&amp;text=INE%20eJPT%3a%20Introduction%20to%20Attacks&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fjuly%2fejpt_pt2%2f&amp;title=INE%20eJPT%3a%20Introduction%20to%20Attacks" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2fjuly%2fejpt_pt2%2f&amp;description=INE%20eJPT%3a%20Introduction%20to%20Attacks" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2024/july/ejpt_pt1/"
+              data-toggle="tooltip" data-placement="top" title="INE eJPT: Information Gathering and Enumeration">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/july/ejpt_pt1/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">INE eJPT: Information Gathering and Enumeration</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;July 12, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part one of my notes for the INE Junior Penetration Tester (eJPT) Certification covering Information Gathering and Enumeration content.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/eJPT.png" alt="INE eJPT: Information Gathering and Enumeration" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/security&#43;_pt4/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 23, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part four of my notes for the CompTIA Security&#43; Certification covering the Operations and Incident Response and Governance, Risk, and Compliance sections.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/securitypluspt3/security&#43;_pt3/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Implementation of Secure Solutions</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 17, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part three of my notes for the CompTIA Security&#43; Certification covering the Implementation of Secure Solutions.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Implementation of Secure Solutions" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+
