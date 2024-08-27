@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>INE eJPT: Exploitation and Post Exploitation - s0merset7&#39;s Blog</title>
+<meta name="description" content="Part three of my notes for the INE Junior Penetration Tester (eJPT) Certification covering Exploitation and Post Exploitation content.">
+
+<meta name="author" content="s0merset7"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "s0merset7\u0027s Blog",
+    
+    "url": "https:\/\/s0merset7.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/s0merset7.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/s0merset7.github.io\/post\/2024\/august\/ejpt_pt3\/",
+          "name": "Ine e jpt exploitation and post exploitation"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "s0merset7"
+  },
+  "headline": "INE eJPT: Exploitation and Post Exploitation",
+  "description" : "Part three of my notes for the INE Junior Penetration Tester (eJPT) Certification covering Exploitation and Post Exploitation content.",
+  "inLanguage" : "en",
+  "wordCount":  1356 ,
+  "datePublished" : "2024-08-27T00:00:00",
+  "dateModified" : "2024-08-27T00:00:00",
+  "image" : "https:\/\/s0merset7.github.io\/",
+  "keywords" : [ "INE, Certification, eJPT" ],
+  "mainEntityOfPage" : "https:\/\/s0merset7.github.io\/post\/2024\/august\/ejpt_pt3\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/s0merset7.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/s0merset7.github.io\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:image" content="https://s0merset7.github.io/posts/eJPT.png">
+<meta property="og:url" content="https://s0merset7.github.io/post/2024/august/ejpt_pt3/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="s0merset7&#39;s Blog">
+   
+<link rel="apple-touch-icon" sizes="180x180" href=" https://s0merset7.github.io/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s0merset7.github.io/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s0merset7.github.io/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.128.2"><link rel="alternate" href="https://s0merset7.github.io/index.xml" type="application/rss+xml" title="s0merset7&#39;s Blog">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/main.css">
+<link disabled id="dark-mode-theme" rel="stylesheet" href="https://s0merset7.github.io/css/dark.css">
+<link rel="stylesheet" href="https://s0merset7.github.io/css/highlight.min.css"><link rel="stylesheet" href="https://s0merset7.github.io/css/codeblock.css">
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+          
+          <a class="navbar-brand fw-bold" href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Home"
+                  href="/"> Home</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="Tags"
+                  href="/tags/"> Tags</a>
+              </li>
+
+              
+              
+              
+
+              <li class="nav-item">
+
+                
+                
+                
+                
+                
+
+                <a class="nav-link " title="About"
+                  href="/about/"> About</a>
+              </li>
+
+              
+              
+
+              
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-sun"></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="post-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                INE eJPT: Exploitation and Post Exploitation
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              <span class="post-meta">
+  
+  
+  &nbsp;August 27, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        <img src="/posts/eJPT.png" alt="INE eJPT: Exploitation and Post Exploitation" class="card-img-bottom img-fluid">
+        
+        
+      </div>
+    </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <p><em>Note: Much of the below information is summarized from Alexis Ahmed&rsquo;s and Josh Mason&rsquo;s eJPT training videos hosted on INE Penetration Testing Student learning path. Much credit goes to their expertise! Check out their training materials in the sources</em></p>
+<p>Continuing with my notes from studying for the INE Junior Penetration Tester (eJPT) exam. The exam breaks down its curriculum into several sections, and this portion of my notes covers the &ldquo;Exploitation&rdquo; and &ldquo;Post Exploitation&rdquo; content.</p>
+<p>Please keep in mind these are only my notes, and should not be used as the sole resource to study for the eJPT certification. Much of the necessary material is learned through interactive labs found in the Penetration Testing Student learning path. Additionally, the course constantly updates its material to remain up to current, meaning some of the below content may be out of date/missing important details.</p>
+<ul>
+<li><a href="#exploitation">Exploitation</a>
+<ul>
+<li><a href="#anti-virus-av-detection-methods">Anti-Virus (AV) Detection Methods</a></li>
+<li><a href="#anti-virus-evasion-techniques">Anti-Virus Evasion Techniques</a>
+<ul>
+<li><a href="#on-disk">On-Disk</a></li>
+<li><a href="#in-memory">In-Memory</a></li>
+</ul>
+</li>
+<li><a href="#tools">Tools</a></li>
+</ul>
+</li>
+<li><a href="#post-exploitation">Post-Exploitation</a>
+<ul>
+<li><a href="#post-exploitation-methodology">Post-Exploitation Methodology</a></li>
+<li><a href="#windows-enumeration">Windows Enumeration</a>
+<ul>
+<li><a href="#system-enumeration">System Enumeration</a></li>
+<li><a href="#user-and-group-enumeration">User and Group Enumeration</a></li>
+<li><a href="#network-enumeration">Network Enumeration</a></li>
+<li><a href="#services-and-processes-enumeration">Services and Processes Enumeration</a></li>
+<li><a href="#tools-1">Tools</a></li>
+</ul>
+</li>
+<li><a href="#linux-enumeration">Linux Enumeration</a>
+<ul>
+<li><a href="#system-enumeration-1">System Enumeration</a></li>
+<li><a href="#user-and-group-enumeration-1">User and Group Enumeration</a></li>
+<li><a href="#network-enumeration-1">Network Enumeration</a></li>
+<li><a href="#process-and-cron-job-enumeration">Process and Cron Job Enumeration</a></li>
+<li><a href="#tools-2">Tools</a></li>
+</ul>
+</li>
+<li><a href="#privilege-escalation">Privilege Escalation</a>
+<ul>
+<li><a href="#tools-3">Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+<h2 id="exploitation">Exploitation</h2>
+<ul>
+<li><strong>Exploitation</strong>: the techniques and tools used by adversaries/pentesters to gain an initial foothold on a target system or network</li>
+<li><strong>Cross-Compilation</strong>: the process of compiling code for a platform other than the one performing the compilation</li>
+<li><strong>Bind Shell</strong>: type of remote shell where the attacker connects directly to a listener on the target system, consequently allowing for execution of commands on the target system</li>
+<li><strong>Reverse Shell</strong>: type of remote shell where the target connects directly to a listener on the attacker&rsquo;s system, consequently allowing for execution of commands on the target system</li>
+<li><strong>Defense Evasion</strong>: techniques that adversaries use to avoid detection throughout their compromise</li>
+</ul>
+<h3 id="anti-virus-av-detection-methods">Anti-Virus (AV) Detection Methods</h3>
+<ul>
+<li><strong>Signature Based Detection</strong>: an AV signature is a unique sequence of bytes that uniquely identifies malware</li>
+<li><strong>Heuristic-based detection</strong>: relies on rules or decisions to determine whether a binary is malicious
+<ul>
+<li>Also looks for specific patterns within the code or program calls</li>
+</ul>
+</li>
+<li><strong>Behavior Based Detection</strong>: relies on identifying malware by monitoring it&rsquo;s behavior
+<ul>
+<li>Often used for newer strains of malware</li>
+</ul>
+</li>
+</ul>
+<h3 id="anti-virus-evasion-techniques">Anti-Virus Evasion Techniques</h3>
+<h4 id="on-disk">On-Disk</h4>
+<ul>
+<li><strong>Obfuscation</strong>: the process of concealing something important, valuable, or critical
+<ul>
+<li>Reorganises code in order to make it harder to analyze or reverse engineer</li>
+</ul>
+</li>
+<li><strong>Encoding</strong>: process involving chaining date into a new format using a scheme
+<ul>
+<li>A reversible process, data can be encoded to a new format and decoded to its original format</li>
+</ul>
+</li>
+<li><strong>Packing</strong>: generate executable with anew binary structure with a smaller size and therefore provides the payload with a new signature</li>
+<li><strong>Cypters</strong>: encrypts code/payloads and decrypts the encrypted code in memory
+<ul>
+<li>The decryption key/function is usually stored in a stub</li>
+</ul>
+</li>
+</ul>
+<h4 id="in-memory">In-Memory</h4>
+<ul>
+<li>Focuses on manipulation of memory and does not write files to disk</li>
+<li>Injects a payload into a process by leveraging various Windows APIs</li>
+<li>Payload is then executed in memory in a separate thread</li>
+</ul>
+<h3 id="tools">Tools</h3>
+<ul>
+<li><strong>Netcat</strong>: AKA TCP/IP Swiss Army Knife, networking utility used to read and write data to network connections using TCP or UDP
+<ul>
+<li>Available for both *NIX and Windows operating systems</li>
+<li>Utilizes a client-server communication architecture with two modes
+<ul>
+<li><strong>Client Mode</strong>: used to connect to any TCP/UDP port as well as a Netcat listener (server)</li>
+<li><strong>Server Mode</strong>: used to listen for connections from clients on a specific port</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>revshells.com</strong>: website to help generate reverse shells based upon requirements</li>
+<li><strong>Shelter</strong>: AV evasion software to disguise shellcode/payloads
+<ul>
+<li>Found: <code>shelterproject.com</code></li>
+</ul>
+</li>
+<li><strong>Invoke-Obfuscation</strong>: open source PowerShell v2.0+ compatible PowerShell command and script obfuscator
+<ul>
+<li>Found: <code>https://github.com/danielbohannon/Invoke-Obfuscation</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="post-exploitation">Post-Exploitation</h2>
+<ul>
+<li><strong>Post-Exploitation</strong>: the final phase of a pentest consisting of the tactics, techniques, and procedures that attackers/adversaries undertake after obtaining initial access on a target system</li>
+<li><strong>Process</strong>: an instance of a running executable/program</li>
+<li><strong>Service</strong>: a process which runs in the background and does not interact with the desktop</li>
+</ul>
+<h3 id="post-exploitation-methodology">Post-Exploitation Methodology</h3>
+<ol>
+<li>Local Enumeration</li>
+</ol>
+<ul>
+<li>System Information</li>
+<li>Users and Groups</li>
+<li>Network Information</li>
+<li>Services</li>
+<li>Automating Local Enumeration</li>
+</ul>
+<ol start="2">
+<li>Transferring Files</li>
+<li>Upgrading Shells</li>
+<li>Privilege Escalation</li>
+<li>Persistence</li>
+<li>Dumping and Cracking Hashes</li>
+<li>Pivoting</li>
+<li>Clearing Tracks</li>
+</ol>
+<h3 id="windows-enumeration">Windows Enumeration</h3>
+<h4 id="system-enumeration">System Enumeration</h4>
+<ul>
+<li><code>hostname</code>: provides the name of the computer/device</li>
+<li><code>systeminfo</code>: gives all of the operating system information
+<ul>
+<li>Such as build number, edition, hot fixes/updates, host name, OS name/version/manufacturer/configuration, processor, directory info, boot device, system locale, domain, network interfaces, etc.</li>
+</ul>
+</li>
+<li><code>wmic qfe get Caption,Description,HotFixID,InstalledOn</code>: additional information surrounding hotfixes</li>
+<li><code>type C:\\Windows\System32\eula.txt</code>: more operating system version/build/service pack information</li>
+</ul>
+<h4 id="user-and-group-enumeration">User and Group Enumeration</h4>
+<ul>
+<li><code>whoami</code>: who the current user is
+<ul>
+<li><code>whoami /priv</code>: privileges associated with the current user</li>
+</ul>
+</li>
+<li><code>query user</code>: information about the current logged on user(s)</li>
+<li><code>net users</code>: display all other accounts on the system
+<ul>
+<li><code>net user &lt;username&gt;</code>: display detailed information about the selected user&rsquo;s account</li>
+</ul>
+</li>
+<li><code>net localgroup</code>: list all groups on the system
+<ul>
+<li><code>net localgroup &lt;groupname&gt;</code>: display all users associated with that group</li>
+</ul>
+</li>
+</ul>
+<h4 id="network-enumeration">Network Enumeration</h4>
+<ul>
+<li><code>ipconfig</code>: current adapter with IP information, subnet, gateway router, info
+<ul>
+<li><code>ipconfig /all</code>: additional information about adapters</li>
+</ul>
+</li>
+<li><code>route print</code>: display routing table</li>
+<li><code>arp -a</code>: display arp table (containing information of other services on the network)</li>
+<li><code>netstat -ano</code>: display a list of services that are currently running/listening</li>
+<li><code>netsh firewall show state</code>: display firewall settings and configurations
+<ul>
+<li>In newer systems, <code>firewall</code> is deprecated and replaced with <code>advfirewall</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="services-and-processes-enumeration">Services and Processes Enumeration</h4>
+<ul>
+<li><code>ps</code>: display a list of running processes</li>
+<li><code>net start</code>: list of services that have been started (are running)</li>
+<li><code>wmic service list</code>: list of all running services
+<ul>
+<li>Can append with <code>brief</code> to shorten results</li>
+</ul>
+</li>
+<li><code>tasklist /SVC</code>: display a list of processes running and services running under a particular process</li>
+<li><code>schtasks /query /fo LIST</code>: entire list of scheduled tasks configured to run on the system
+<ul>
+<li>Can append with <code>/v</code> to include additional information</li>
+</ul>
+</li>
+</ul>
+<h4 id="tools-1">Tools</h4>
+<ul>
+<li><strong>JAWS (Just Another Windows Script)</strong>: PowerShell script designed to help pentesters quickly identify potential priv-esc vectors on Windows systems
+<ul>
+<li>Found: <code>https://github.com/411Hall/JAWS</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="linux-enumeration">Linux Enumeration</h3>
+<h4 id="system-enumeration-1">System Enumeration</h4>
+<ul>
+<li><code>hostname</code>: retrieve the name of the device</li>
+<li><code>cat /etc/issue</code>: retrieve what distribution is running</li>
+<li><code>cat /etc/*release</code>: display even more information about the current distribution</li>
+<li><code>uname -a</code>: display the current kernel version and adjacent information
+<ul>
+<li><code>uname -r</code>: clean up the display and only show the kernel version</li>
+</ul>
+</li>
+<li><code>env</code>: list the current environment variables</li>
+<li><code>lscpu</code>: display CPU information</li>
+<li><code>free -h</code>: display RAM usage information</li>
+<li><code>df -h</code>: display a list of file systems, size, used/available storage, and mounting location
+<ul>
+<li><code>df -ht &lt;fileExtension&gt;</code>: limit results to showing what drives are storing that file extension</li>
+</ul>
+</li>
+<li><code>lsblk | grep sd</code>: display a list of storage devices and usages</li>
+<li><code>dpkg -l</code>: list all installed packages on the device</li>
+</ul>
+<h4 id="user-and-group-enumeration-1">User and Group Enumeration</h4>
+<ul>
+<li><code>whoami</code>: identifies the current user being used</li>
+<li><code>groups</code>: list all groups on the system
+<ul>
+<li><code>groups &lt;username&gt;</code>: list what groups the user is part of</li>
+</ul>
+</li>
+<li><code>cat /etc/passwd</code>: list all user and service accounts on the system
+<ul>
+<li><code>cat /etc/passwd | grep -v /nologin</code>: list all user accounts (exclude service accounts)</li>
+</ul>
+</li>
+<li><code>ls /home</code>: list all user accounts (excluding root)</li>
+<li><code>w</code>: list out currently logged on users
+<ul>
+<li><code>who</code>: also lists currently logged on users</li>
+</ul>
+</li>
+<li><code>last</code>: display a list of users to last log on to the system</li>
+<li><code>lastlog</code>: display a list of users who have logged on to the system</li>
+</ul>
+<h4 id="network-enumeration-1">Network Enumeration</h4>
+<ul>
+<li><code>ifconfig</code>: display current interfaces configured on the device with their network information
+<ul>
+<li><code>ip a s</code>: displays current configured interfaces in the case <code>ifconfig</code> is not installed/enabled</li>
+</ul>
+</li>
+<li><code>cat /etc/networks</code>: display a list of interfaces and their configuration</li>
+<li><code>cat /etc/hostname</code>: display the hostname of the system</li>
+<li><code>cat /etc/hosts</code>: display all hosts and corresponding domain-names on the system</li>
+<li><code>cat /etc/resolv.conf</code>: display the nameserver and DNS information</li>
+<li><code>arp -a</code>: display the ARP table</li>
+</ul>
+<h4 id="process-and-cron-job-enumeration">Process and Cron Job Enumeration</h4>
+<ul>
+<li><code>ps</code>: list out currently running processes
+<ul>
+<li><code>ps aux</code>: list out currently running processes with additional information</li>
+</ul>
+</li>
+<li><code>top</code>: display a list of all running processes in a dynamic view updating as they run/execute</li>
+<li><code>crontab -l</code>: display a list of cronjobs for the current user</li>
+<li><code>ls /etc/cron*</code>: display all cronjobs in the system
+<ul>
+<li><code>cat /etc/cron*</code>: show specifically the cronjobs and tasks</li>
+</ul>
+</li>
+</ul>
+<h4 id="tools-2">Tools</h4>
+<ul>
+<li><strong>LinEnum</strong>: a simple bash script that automates common Linux local enumeration checks in addition to identifying priv-esc vulns
+<ul>
+<li>Found: <code>https://github.com/rebootuser/LinEnum</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="privilege-escalation">Privilege Escalation</h3>
+<h4 id="tools-3">Tools</h4>
+<ul>
+<li><strong>PrivescCheck</strong>: script to enumerate common Windows configuration issues that can be leveraged for local priv-esc
+<ul>
+<li>Also gathers various information for use in exploitation/post exploitation</li>
+<li>Found: <code>https://github.com/itm4n/PrivescCheck</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://ine.com/">Official INE Site</a></li>
+<li><a href="https://my.ine.com/CyberSecurity/learning-paths/61f88d91-79ff-4d8f-af68-873883dbbd8c/penetration-testing-student">INE eJPT Study Course</a></li>
+</ul>
+
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr />
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+        
+          <div class="blog-tags">
+            
+              <a href="https://s0merset7.github.io//tags/ine/">INE</a>
+            
+              <a href="https://s0merset7.github.io//tags/certification/">Certification</a>
+            
+              <a href="https://s0merset7.github.io//tags/ejpt/">eJPT</a>
+            
+          </div>
+        
+      </div>
+ 
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+      <section id="social-share">
+        <div class="list-inline footer-links">
+          
+
+<div class="share-box" aria-hidden="true">
+    <div>
+        <p class="list-inline footer-links">Please share using the links if you enjoyed!</p>
+    </div>
+    <ul class="share">
+
+        
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2faugust%2fejpt_pt3%2f" target="_blank" title="Share on Facebook">
+                <i class="bi bi-facebook facebook-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//twitter.com/share?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2faugust%2fejpt_pt3%2f&amp;text=INE%20eJPT%3a%20Exploitation%20and%20Post%20Exploitation&amp;via=map%5bgithub%3as0merset7%20linkedin%3aryan-dinnan%20name%3as0merset7%20twitter%3as0merset7%5d" target="_blank" title="Share on Twitter">
+                <i class="bi bi-twitter twitter-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="//reddit.com/submit?url=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2faugust%2fejpt_pt3%2f&amp;title=INE%20eJPT%3a%20Exploitation%20and%20Post%20Exploitation" target="_blank" title="Share on Reddit">
+                <i class="bi bi-reddit reddit-color"></i>
+            </a>
+        </li>
+
+        
+        <li>
+            <a href="whatsapp://send?text=https%3a%2f%2fs0merset7.github.io%2fpost%2f2024%2faugust%2fejpt_pt3%2f&amp;description=INE%20eJPT%3a%20Exploitation%20and%20Post%20Exploitation" target="_blank" rel="noopener" title="Share on WhatsApp">
+                <i class="bi bi-whatsapp whatsapp-color"></i>
+            </a>
+        </li>
+
+
+        
+
+        
+
+        
+
+        
+        
+
+    </ul>
+</div>
+
+
+        </div>
+      </section>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-2 "> 
+            <div class="card-body ">
+            <img src="/img/profilePic.png" class="img-responsive img-50 img-round" alt="">
+          </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+
+              <p class="p-0 m-0"><small class="text-muted ">Written By</small></p>
+              <h5>
+                
+                
+                s0merset7
+                
+                
+              </h5>
+              <p class="card-text fs-1"></p>
+            </div>
+          </div>
+        </div>
+
+      
+    </div>
+  </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+        
+        <ul class="list-group list-group-horizontal" style="flex-direction: row">
+          
+          <li class="list-group-item b-0">
+
+            <a type="button" class="btn btn-dark" role="button" href="https://s0merset7.github.io/post/2024/july/ejpt_pt2/"
+              data-toggle="tooltip" data-placement="top" title="INE eJPT: Introduction to Attacks">&larr;
+              Previous Post</a>
+          </li>
+          
+
+
+          
+        </ul>
+        
+      </div>
+
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4"> 
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3">
+          <h3>Read more</h3>
+          <hr />
+        </div>
+
+        
+        
+        
+        
+
+        
+ 
+        
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/july/ejpt_pt2/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">INE eJPT: Introduction to Attacks</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;July 23, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part two of my notes for the INE Junior Penetration Tester (eJPT) Certification covering Introduction to Attacks.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/eJPT.png" alt="INE eJPT: Introduction to Attacks" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/july/ejpt_pt1/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">INE eJPT: Information Gathering and Enumeration</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;July 12, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part one of my notes for the INE Junior Penetration Tester (eJPT) Certification covering Information Gathering and Enumeration content.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/eJPT.png" alt="INE eJPT: Information Gathering and Enumeration" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+        
+         
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
+    <div class="card h-100 single-post-card shadow-effect bg-faded-light">
+        <a href="https://s0merset7.github.io/post/2024/may/security&#43;_pt4/">
+            <div class="card-body">
+
+                <h3 class="fw-bold post-title">CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance</h3>
+                
+
+                <p class="post-meta">
+                    <span class="post-meta">
+  
+  
+  &nbsp;June 23, 2024 
+
+  
+
+  
+  
+  
+</span>
+
+
+                </p>
+                
+                <div class="post-entry">
+
+                    
+                    Part four of my notes for the CompTIA Security&#43; Certification covering the Operations and Incident Response and Governance, Risk, and Compliance sections.
+
+                    
+                </div>
+
+                <div class="read-more-section">
+                    <h6>Read more</h6>
+                </div>
+            </div>
+
+            
+            <img src="/posts/Security&#43;_pt1.webp" alt="CompTIA Security&#43;: Operations, Incident Response, Governance, Risk, and Compliance" class="card-img-top img-fluid">
+            
+            
+        </a>
+    </div>
+</div> 
+         
+
+        
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          <li>
+            <a href="https://github.com/s0merset7" title="GitHub" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-github"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/s0merset7" title="Twitter" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-twitter"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ryan-dinnan" title="LinkedIn" target="_blank">
+              <span class="mx-2">
+                <i class="bi bi-linkedin"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+          
+          s0merset7
+          
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="https://s0merset7.github.io/">s0merset7&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://s0merset7.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function () { $("pre.chroma").css("padding", "0"); }); </script><script src="https://s0merset7.github.io/js/dark-mode.js"></script>
+    
+  </body>
+</html>
+
